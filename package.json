@@ -1,0 +1,35 @@
+{
+  "name": "@styple/design-system",
+  "description": "Styple design system",
+  "version": "0.1.0",
+  "source": "index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "unpkg": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "ds-build": "microbundle --jsx React.createElement",
+    "ds-dev": "microbundle watch --jsx React.createElement"
+  },
+  "peerDependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "dependencies": {
+    "@radix-ui/react-id": "^0.1.0",
+    "@stitches/react": "^1.2.5",
+    "lucide-react": "^0.16.10"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.27",
+    "microbundle": "^0.14.0",
+    "next": "11.1.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "typescript": "^4.4.3"
+  }
+}

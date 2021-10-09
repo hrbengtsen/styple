@@ -1,0 +1,215 @@
+import { createStitches } from "@stitches/react";
+import type * as Stitches from "@stitches/react";
+import { normalize } from "./lib/normalize";
+
+export const {
+  styled,
+  css,
+  globalCss,
+  keyframes,
+  getCssText,
+  theme,
+  createTheme,
+  config,
+} = createStitches({
+  theme: {
+    colors: {
+      primary100: "#FF9999",
+      primary200: "#CC7A7A",
+      secondary100: "#FFC8C8",
+      secondary200: "#CCA0A0",
+
+      text100: "#5C5E61",
+      text200: "#404143",
+      button100: "#FCEDA2",
+      button200: "#F3E49C",
+      bg100: "#FFFFFF",
+      bg200: "#F5F5F5",
+
+      danger100: "#F25E4C",
+      danger200: "#D95444",
+      success100: "#369E94",
+      success200: "#308C84",
+    },
+    fonts: {
+      inter:
+        "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
+      mono: "Söhne Mono, menlo, monospace",
+    },
+    fontWeights: {
+      reg: 400,
+      semibold: 500,
+      bold: 700,
+      black: 900,
+    },
+    space: {
+      xs: "4px",
+      sm: "8px",
+      md: "12px",
+      lg: "16px",
+      xl: "24px",
+      xxl: "32px",
+      xxxl: "48px",
+      xxxxl: "64px",
+      max: "128px",
+    },
+    sizes: {
+      xs: "8px",
+      sm: "16px",
+      md: "32px",
+      lg: "64px",
+      xl: "128px",
+      xxl: "256px",
+      xxxl: "512px",
+      xxxxl: "768px",
+      max: "1200px",
+    },
+    fontSizes: {
+      xs: "14px",
+      sm: "16px",
+      md: "20px",
+      lg: "24px",
+      xl: "32px",
+      xxl: "40px",
+      xxxl: "48px",
+      xxxxl: "64px",
+      max: "72px",
+    },
+    radii: {
+      xs: "2px",
+      sm: "4px",
+      md: "6px",
+      lg: "8px",
+      xl: "12px",
+      xxl: "16px",
+      round: "50%",
+      pill: "9999px",
+    },
+    lineHeights: {
+      normal: "1.5",
+    },
+    letterSpacings: {
+      normal: "normal",
+    },
+    borderWidths: {
+      sm: "1px",
+      md: "2px",
+      lg: "4px",
+      xl: "8px",
+    },
+    shadows: {
+      sm:
+        "0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.20)",
+      md:
+        "0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.20)",
+      lg:
+        "0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.20)",
+    },
+    zIndices: {
+      1: "100",
+      2: "200",
+      3: "300",
+      4: "400",
+      max: "999",
+    },
+    transitions: {},
+  },
+  media: {
+    bp1: "(min-width: 576px)",
+    bp2: "(min-width: 768px)",
+    bp3: "(min-width: 992px)",
+    bp4: "(min-width: 1200px)",
+    motion: "(prefers-reduced-motion)",
+    hover: "(any-hover: hover)",
+    dark: "(prefers-color-scheme: dark)",
+    light: "(prefers-color-scheme: light)",
+  },
+  utils: {
+    // Margin utils
+    m: (value: Stitches.PropertyValue<"margin">) => ({
+      margin: value,
+    }),
+    mt: (value: Stitches.PropertyValue<"marginTop">) => ({
+      marginTop: value,
+    }),
+    mr: (value: Stitches.PropertyValue<"marginRight">) => ({
+      marginRight: value,
+    }),
+    mb: (value: Stitches.PropertyValue<"marginBottom">) => ({
+      marginBottom: value,
+    }),
+    ml: (value: Stitches.PropertyValue<"marginLeft">) => ({
+      marginLeft: value,
+    }),
+    mx: (value: Stitches.PropertyValue<"marginLeft">) => ({
+      marginLeft: value,
+      marginRight: value,
+    }),
+    my: (value: Stitches.PropertyValue<"marginTop">) => ({
+      marginTop: value,
+      marginBottom: value,
+    }),
+
+    // Padding utils
+    p: (value: Stitches.PropertyValue<"padding">) => ({
+      padding: value,
+    }),
+    pt: (value: Stitches.PropertyValue<"paddingTop">) => ({
+      paddingTop: value,
+    }),
+    pr: (value: Stitches.PropertyValue<"paddingRight">) => ({
+      paddingRight: value,
+    }),
+    pb: (value: Stitches.PropertyValue<"paddingBottom">) => ({
+      paddingBottom: value,
+    }),
+    pl: (value: Stitches.PropertyValue<"paddingLeft">) => ({
+      paddingLeft: value,
+    }),
+    px: (value: Stitches.PropertyValue<"paddingLeft">) => ({
+      paddingLeft: value,
+      paddingRight: value,
+    }),
+    py: (value: Stitches.PropertyValue<"paddingTop">) => ({
+      paddingTop: value,
+      paddingBottom: value,
+    }),
+
+    // Util for applying width and height at the same time with same value
+    size: (value: Stitches.PropertyValue<"width">) => ({
+      width: value,
+      height: value,
+    }),
+
+    // Shorthand util for backgroundColor
+    bg: (value: Stitches.PropertyValue<"backgroundColor">) => ({
+      backgroundColor: value,
+    }),
+  },
+});
+
+export const globalStyles = globalCss({
+  ...normalize,
+  "*, *::before, *::after": {
+    boxSizing: "border-box",
+  },
+  "@font-face": {
+    fontFamily: "Inter",
+    fontStyle: "normal",
+    fontWeight: "100 900",
+    fontDisplay: "optional",
+    src: "url(/fonts/inter-var-latin.woff2) format('woff2')",
+    unicodeRange:
+      "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",
+  },
+  body: {
+    m: "0",
+    fontFamily: "$inter",
+    lineHeight: "$normal",
+    letterSpacing: "$normal",
+    bg: "$bg100",
+  },
+  "html, body, #root, #__next": {
+    height: "100%",
+  },
+});
