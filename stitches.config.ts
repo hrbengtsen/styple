@@ -104,6 +104,7 @@ export const {
         "0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.20)",
       lg:
         "0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.20)",
+      border: "0 0 0 0.1rem $colors$text100",
     },
     zIndices: {
       1: "100",
@@ -112,7 +113,13 @@ export const {
       4: "400",
       max: "999",
     },
-    transitions: {},
+    transitions: {
+      color: "color 0.2s ease-in-out",
+      bgColor: "background-color 0.2s ease-in-out",
+      transform: "transform 0.2s ease-in-out",
+      border: "border 0.2s ease-in-out",
+      boxShadow: "box-shadow 0.2s ease-in-out",
+    },
   },
   media: {
     bp1: "(min-width: 576px)",
@@ -188,6 +195,9 @@ export const {
   },
 });
 
+export type { VariantProps } from "@stitches/react";
+export type CSS = Stitches.CSS<typeof config>;
+
 export const globalStyles = globalCss({
   ...normalize,
   "*, *::before, *::after": {
@@ -211,5 +221,9 @@ export const globalStyles = globalCss({
   },
   "html, body, #root, #__next": {
     height: "100%",
+  },
+  a: {
+    color: "inherit",
+    textDecoration: "none",
   },
 });

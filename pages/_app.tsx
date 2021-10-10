@@ -1,8 +1,9 @@
-import "../styles/globals.css";
 import Head from "next/head";
 import { DesignSystemProvider } from "../components/DesignSystemProvider";
+import { globalStyles } from "..";
 
 function App({ Component, pageProps }) {
+  globalStyles();
   return (
     <DesignSystemProvider>
       <Head>
