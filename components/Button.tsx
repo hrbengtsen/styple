@@ -3,10 +3,10 @@ import { styled } from "../stitches.config";
 export const Button = styled("button", {
   // Reset
   fontSize: "$sm",
-  color: "$text100",
+  color: "$textNormal",
   p: "$sm",
-  bg: "$button100",
-  borderRadius: "$md",
+  bg: "$buttonNormal",
+  borderRadius: "$xl",
   display: "inline-block",
   lineHeight: "$normal",
   textAlign: "center",
@@ -18,10 +18,10 @@ export const Button = styled("button", {
   transition: "$color, $bgColor, $transform, $border, $boxShadow",
 
   "&:hover": {
-    bg: "$button200",
+    bg: "$buttonDark",
   },
   "&:focus": {
-    bg: "$button200",
+    bg: "$buttonDark",
   },
   "&:disabled": {
     opacity: "0.7",
@@ -42,16 +42,17 @@ export const Button = styled("button", {
     },
     variant: {
       primary: {
-        bg: "$primary100",
+        bg: "$primaryNormal",
+        color: "$bgNormal",
         "&:hover": {
-          bg: "$primary200",
+          bg: "$primaryDark",
         },
         "&:focus": {
-          bg: "$primary200",
+          bg: "$primaryDark",
           boxShadow: "$border",
         },
       },
-      secondary: {
+      accent: {
         bg: "$secondary100",
         "&:hover": {
           bg: "$secondary200",

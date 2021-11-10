@@ -14,7 +14,7 @@ export const StyledHeading = styled(Text, {
   fontWeight: "$bold",
 
   defaultVariants: {
-    color: "text2",
+    color: "heading",
   },
 });
 

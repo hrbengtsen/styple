@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { DesignSystemProvider } from "../components/DesignSystemProvider";
-import { globalStyles } from "..";
+import { globalStyles, darkTheme } from "../stitches.config";
+import { ThemeProvider } from "next-themes";
 
 function App({ Component, pageProps }) {
   globalStyles();
@@ -9,7 +10,14 @@ function App({ Component, pageProps }) {
       <Head>
         <title>styple design system</title>
       </Head>
-      <Component {...pageProps} />
+      <ThemeProvider
+        disableTransitionOnChange
+        attribute="class"
+        value={{ light: "light-theme", dark: darkTheme.className }}
+        defaultTheme="system"
+      >
+        <Component {...pageProps} />
+      </ThemeProvider>
     </DesignSystemProvider>
   );
 }

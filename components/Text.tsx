@@ -37,27 +37,27 @@ export const Text = styled("p", {
     },
     color: {
       primary: {
-        color: "$primary100",
+        color: "$primaryNormal",
       },
-      secondary: {
-        color: "$secondary100",
-      },
-      text1: {
-        color: "$text100",
-      },
-      text2: {
-        color: "$text200",
+      accent: {
+        color: "$accentNormal",
       },
       danger: {
-        color: "$danger100",
+        color: "$dangerNormal",
       },
       success: {
-        color: "$success100",
+        color: "$successNormal",
+      },
+      text: {
+        color: "$textNormal",
+      },
+      heading: {
+        color: "$headingNormal",
       },
     },
   },
   defaultVariants: {
     size: "sm",
-    color: "text1",
+    color: "text",
   },
 });

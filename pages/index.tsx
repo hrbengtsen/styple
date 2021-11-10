@@ -1,4 +1,5 @@
 import { Container, Heading, Text, Button } from "..";
+import { ThemeButton } from "../custom/ThemeButton";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         gap: "$xl",
       }}
     >
+      <ThemeButton />
       {/*--------------- HEADING ---------------*/}
       <Heading
         size="max"
@@ -21,18 +23,49 @@ export default function Home() {
       </Heading>
 
       {/*--------------- TEXT ---------------*/}
-      <Container>
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+        }}
+      >
         <Text>Testing text component.</Text>
-        <Text size="md" color="danger">
-          Different color n' stuff.
-        </Text>
+        <Container>
+          <Text size="md" color="primary">
+            Primary colored text
+          </Text>
+          <Text size="md" color="accent">
+            Accent colored text
+          </Text>
+          <Text size="md" color="danger">
+            Danger colored text
+          </Text>
+          <Text size="md" color="success">
+            Success colored text
+          </Text>
+        </Container>
       </Container>
 
       {/*--------------- BUTTON ---------------*/}
-      <Container>
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+        }}
+      >
         <Text>Testing Button component.</Text>
-        <Button move>Test button with move</Button>
-        <Button variant="primary">Test button with variant</Button>
+        <Container
+          css={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "$md",
+          }}
+        >
+          <Button move>Test button with move</Button>
+          <Button variant="primary">Test button with variant</Button>
+        </Container>
       </Container>
     </Container>
   );
