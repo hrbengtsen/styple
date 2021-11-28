@@ -1,4 +1,4 @@
-import { Container, Heading, Text, Button } from "..";
+import { Container, Heading, Text, Button, Spacer } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
 
 export default function Home() {
@@ -9,6 +9,7 @@ export default function Home() {
         alignItems: "center",
         flexDirection: "column",
         gap: "$xl",
+        py: "$xl",
       }}
     >
       <ThemeButton />
@@ -17,9 +18,28 @@ export default function Home() {
         size="max"
         css={{
           fontWeight: "$black",
+          color: "$textLight",
         }}
       >
-        styple
+        styple lorem ipsum
+      </Heading>
+      <Heading
+        size="max"
+        css={{
+          fontWeight: "$black",
+          color: "$textNormal",
+        }}
+      >
+        styple lorem ipsum
+      </Heading>
+      <Heading
+        size="max"
+        css={{
+          fontWeight: "$black",
+          color: "$textDark",
+        }}
+      >
+        styple lorem ipsum
       </Heading>
 
       {/*--------------- TEXT ---------------*/}
@@ -61,10 +81,48 @@ export default function Home() {
             display: "flex",
             flexDirection: "column",
             gap: "$md",
+            alignItems: "center",
           }}
         >
-          <Button move>Test button with move</Button>
-          <Button variant="primary">Test button with variant</Button>
+          <Button move>Move button</Button>
+          <Button tactile>Tactile button</Button>
+          <Button pill>Pill button</Button>
+          <Button outline>Outline button</Button>
+          <Button size="sm">Small button</Button>
+          <Button size="md">Medium button</Button>
+          <Button size="lg">Large button</Button>
+
+          <Button variant="primary">Primary</Button>
+          <Button variant="primary" outline>
+            Primary outline
+          </Button>
+          <Button variant="primary" transparent>
+            Primary transparent
+          </Button>
+
+          <Button variant="accent">Accent</Button>
+          <Button variant="accent" outline>
+            Accent outline
+          </Button>
+          <Button variant="accent" transparent>
+            Accent transparent
+          </Button>
+
+          <Button variant="danger">Danger</Button>
+          <Button variant="danger" outline>
+            Danger outline
+          </Button>
+          <Button variant="danger" transparent>
+            Danger transparent
+          </Button>
+
+          <Button variant="success">Success</Button>
+          <Button variant="success" outline>
+            Success outline
+          </Button>
+          <Button variant="success" transparent>
+            Success transparent
+          </Button>
         </Container>
       </Container>
     </Container>

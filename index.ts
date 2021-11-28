@@ -14,6 +14,7 @@ export {
 // Components
 export { DesignSystemProvider } from "./components/DesignSystemProvider";
 export { Container } from "./components/Container";
+export { Spacer } from "./components/Spacer";
 export { Text } from "./components/Text";
 export { Heading } from "./components/Heading";
 export { Button } from "./components/Button";
