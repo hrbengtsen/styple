@@ -303,7 +303,6 @@ export const darkTheme = createTheme("dark-theme", {
   },
 });
 
-// Theme/colors from bitetap
 export const cozyTheme = createTheme("cozy-theme", {
   colors: {
     // Element based colors
@@ -324,7 +323,7 @@ export const cozyTheme = createTheme("cozy-theme", {
     buttonDark: "#F3E49C",
 
     // Semantic colors
-    primaryLight: "#FDDA3B",
+    primaryLight: "#FDDA3B", // primary color still needs work for more accessibility
     primaryNormal: "#FDD523",
     primaryDark: "#ffcc33",
     primaryLightA: "rgba(253, 213, 35, 0.08)",
@@ -350,5 +349,5 @@ export const cozyTheme = createTheme("cozy-theme", {
   },
 });
 
-// (ONYX (figma) #0E0E2C, use as base for a "deep" theme) violet/purple/red primary color
+// (ONYX #0E0E2C, use as base for a "deep" theme) violet/purple/red primary color
 export const deepTheme = createTheme("deep-theme", {});
