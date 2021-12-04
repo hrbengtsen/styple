@@ -1,12 +1,41 @@
 import React from "react";
 import { Button } from "../components/Button";
 import { useTheme } from "next-themes";
-import { Sun, Moon } from "lucide-react";
+import { Sun, Moon, Coffee } from "lucide-react";
 import { useHasMounted } from "../lib/hooks/useHasMounted";
 
 export function ThemeButton() {
   const { theme, setTheme } = useTheme();
   const hasMounted = useHasMounted();
+
+  function changeTheme() {
+    switch (theme) {
+      case "light":
+        setTheme("dark");
+        break;
+
+      case "dark":
+        setTheme("cozy");
+        break;
+
+      case "cozy":
+        setTheme("light");
+        break;
+    }
+  }
+
+  function getThemeIcon() {
+    switch (theme) {
+      case "light":
+        return <Sun style={{ verticalAlign: "middle", display: "block" }} />;
+
+      case "dark":
+        return <Moon style={{ verticalAlign: "middle", display: "block" }} />;
+
+      case "cozy":
+        return <Coffee style={{ verticalAlign: "middle", display: "block" }} />;
+    }
+  }
 
   return (
     hasMounted && (
@@ -18,15 +47,9 @@ export function ThemeButton() {
           top: 8,
         }}
         size="circle"
-        onClick={() =>
-          theme === "dark" ? setTheme("light") : setTheme("dark")
-        }
+        onClick={() => changeTheme()}
       >
-        {theme === "dark" ? (
-          <Moon style={{ verticalAlign: "middle", display: "block" }} />
-        ) : (
-          <Sun style={{ verticalAlign: "middle", display: "block" }} />
-        )}
+        {getThemeIcon()}
       </Button>
     )
   );

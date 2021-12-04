@@ -1,4 +1,4 @@
-import { Container, Heading, Text, Button, Spacer } from "..";
+import { Container, Heading, Text, Button } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
 
 export default function Home() {

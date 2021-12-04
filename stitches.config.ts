@@ -304,7 +304,51 @@ export const darkTheme = createTheme("dark-theme", {
 });
 
 // Theme/colors from bitetap
-export const cozyTheme = createTheme("cozy-theme", {});
+export const cozyTheme = createTheme("cozy-theme", {
+  colors: {
+    // Element based colors
+    headingLight: "#7a705f",
+    headingNormal: "#63533c",
+    headingDark: "#4f4230",
 
-// (ONYX (figma) #0E0E2C, use as base for a "deep" theme)
+    textLight: "$headingLight",
+    textNormal: "$headingNormal",
+    textDark: "$headingDark",
+
+    bgLight: "#fdfae7",
+    bgNormal: "#FDF9E2",
+    bgDark: "#EDE1CA",
+
+    buttonLight: "#78787C",
+    buttonNormal: "#FCEDA2",
+    buttonDark: "#F3E49C",
+
+    // Semantic colors
+    primaryLight: "#FDDA3B",
+    primaryNormal: "#FDD523",
+    primaryDark: "#ffcc33",
+    primaryLightA: "rgba(253, 213, 35, 0.08)",
+    primaryNormalA: "rgba(253, 213, 35, 0.04)",
+
+    accentLight: "#308e85",
+    accentNormal: "#2b7e76",
+    accentDark: "#256e67",
+    accentLightA: "rgba(43, 126, 118, 0.09)",
+    accentNormalA: "rgba(43, 126, 118, 0.05)",
+
+    dangerLight: "#d95444",
+    dangerNormal: "#c14b3c",
+    dangerDark: "#a94135",
+    dangerLightA: "rgba(193, 75, 60, 0.08)",
+    dangerNormalA: "rgba(193, 75, 60, 0.04)",
+
+    successLight: "$accentLight",
+    successNormal: "$accentNormal",
+    successDark: "$accentDark",
+    successLightA: "$accentLightA",
+    successNormalA: "$accentNormalA",
+  },
+});
+
+// (ONYX (figma) #0E0E2C, use as base for a "deep" theme) violet/purple/red primary color
 export const deepTheme = createTheme("deep-theme", {});

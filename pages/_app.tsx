@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { DesignSystemProvider } from "../components/DesignSystemProvider";
-import { globalStyles, darkTheme } from "../stitches.config";
+import { globalStyles, darkTheme, cozyTheme } from "../stitches.config";
 import { ThemeProvider } from "next-themes";
 
 function App({ Component, pageProps }) {
@@ -13,7 +13,11 @@ function App({ Component, pageProps }) {
       <ThemeProvider
         disableTransitionOnChange
         attribute="class"
-        value={{ light: "light-theme", dark: darkTheme.className }}
+        value={{
+          light: "light-theme",
+          dark: darkTheme.className,
+          cozy: cozyTheme.className,
+        }}
         defaultTheme="system"
       >
         <Component {...pageProps} />
