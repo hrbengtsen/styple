@@ -1,4 +1,4 @@
-import { styled } from "../stitches.config";
+import { cozyTheme, styled } from "../stitches.config";
 
 export const Button = styled("button", {
   // Reset
@@ -39,8 +39,8 @@ export const Button = styled("button", {
       },
       circle: {
         p: "$sm",
-        width: "40px",
-        height: "40px",
+        width: "48px",
+        height: "48px",
         borderRadius: "$round",
       },
     },
@@ -89,6 +89,12 @@ export const Button = styled("button", {
       primary: {
         bg: "$primaryNormal",
         color: "$bgNormal",
+
+        // Fix primary color text being inaccessible in cozy
+        [`.${cozyTheme} &`]: {
+          color: "$textNormal",
+        },
+
         "&:hover": {
           bg: "$primaryDark",
         },
@@ -209,10 +215,22 @@ export const Button = styled("button", {
         color: "$primaryNormal",
         "&:hover": {
           color: "$primaryLight",
+
+          // Fix primary color text being inaccessible in cozy
+          [`.${cozyTheme} &`]: {
+            color: "$textLight",
+          },
+
           bg: "transparent",
         },
         "&:focus": {
           color: "$primaryLight",
+
+          // Fix primary color text being inaccessible in cozy
+          [`.${cozyTheme} &`]: {
+            color: "$textLight",
+          },
+
           bg: "transparent",
         },
       },

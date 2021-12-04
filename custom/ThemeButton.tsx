@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "../components/Button";
 import { useTheme } from "next-themes";
-import { Sun, Moon, Coffee } from "lucide-react";
+import { Sun, Moon, Coffee, MountainSnow } from "lucide-react";
 import { useHasMounted } from "../lib/hooks/useHasMounted";
 
 export function ThemeButton() {
@@ -15,6 +15,10 @@ export function ThemeButton() {
         break;
 
       case "dark":
+        setTheme("deep");
+        break;
+
+      case "deep":
         setTheme("cozy");
         break;
 
@@ -27,13 +31,16 @@ export function ThemeButton() {
   function getThemeIcon() {
     switch (theme) {
       case "light":
-        return <Sun style={{ verticalAlign: "middle", display: "block" }} />;
+        return <Sun style={{ verticalAlign: "middle" }} />;
 
       case "dark":
-        return <Moon style={{ verticalAlign: "middle", display: "block" }} />;
+        return <Moon style={{ verticalAlign: "middle" }} />;
+
+      case "deep":
+        return <MountainSnow style={{ verticalAlign: "middle" }} />;
 
       case "cozy":
-        return <Coffee style={{ verticalAlign: "middle", display: "block" }} />;
+        return <Coffee style={{ verticalAlign: "middle" }} />;
     }
   }
 

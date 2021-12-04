@@ -13,6 +13,7 @@ export const {
   config,
 } = createStitches({
   theme: {
+    // improve light theme to make it less bland
     colors: {
       // Element based colors
       headingLight: "#6c6c6f",
@@ -248,7 +249,7 @@ export const globalStyles = globalCss({
     letterSpacing: "$normal",
     bg: "$bgNormal",
   },
-  "html, body, #root, #__next": {
+  "html, body, #__next": {
     height: "100%",
   },
   a: {
@@ -323,11 +324,11 @@ export const cozyTheme = createTheme("cozy-theme", {
     buttonDark: "#F3E49C",
 
     // Semantic colors
-    primaryLight: "#FDDA3B", // primary color still needs work for more accessibility
+    primaryLight: "#FDDA3B",
     primaryNormal: "#FDD523",
     primaryDark: "#ffcc33",
-    primaryLightA: "rgba(253, 213, 35, 0.08)",
-    primaryNormalA: "rgba(253, 213, 35, 0.04)",
+    primaryLightA: "rgba(253, 213, 35, 0.16)",
+    primaryNormalA: "rgba(253, 213, 35, 0.12)",
 
     accentLight: "#308e85",
     accentNormal: "#2b7e76",
@@ -349,5 +350,48 @@ export const cozyTheme = createTheme("cozy-theme", {
   },
 });
 
-// (ONYX #0E0E2C, use as base for a "deep" theme) violet/purple/red primary color
-export const deepTheme = createTheme("deep-theme", {});
+export const deepTheme = createTheme("deep-theme", {
+  colors: {
+    // Element based colors
+    headingLight: "#F4F4F6",
+    headingNormal: "#C2C7CA",
+    headingDark: "#78787C",
+
+    textLight: "$headingLight",
+    textNormal: "$headingNormal",
+    textDark: "$headingDark",
+
+    bgLight: "#0d0c22",
+    bgNormal: "#0b0a1e",
+    bgDark: "#000000",
+
+    buttonLight: "#43424f",
+    buttonNormal: "#191824",
+    buttonDark: "#171622",
+
+    // Semantic colors
+    primaryLight: "#ec5d94",
+    primaryNormal: "#ea4c89",
+    primaryDark: "#d2447b",
+    primaryLightA: "rgba(234, 76, 137, 0.09)",
+    primaryNormalA: "rgba(234, 76, 137, 0.05)",
+
+    accentLight: "#5dbec5",
+    accentNormal: "#4bb7bf",
+    accentDark: "#43a4ab",
+    accentLightA: "rgba(75, 183, 191, 0.09)",
+    accentNormalA: "rgba(75, 183, 191, 0.05)",
+
+    dangerLight: "#ff9090",
+    dangerNormal: "#ff6161",
+    dangerDark: "#e55757",
+    dangerLightA: "rgba(255, 97, 97, 0.09)",
+    dangerNormalA: "rgba(255, 97, 97, 0.05)",
+
+    successLight: "#8ae0b7",
+    successNormal: "#59d499",
+    successDark: "#50be89",
+    successLightA: "rgba(89, 212, 153, 0.09)",
+    successNormalA: "rgba(89, 212, 153, 0.05)",
+  },
+});

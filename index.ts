@@ -13,8 +13,13 @@ export {
 
 // Components
 export { DesignSystemProvider } from "./components/DesignSystemProvider";
+
 export { Container } from "./components/Container";
 export { Spacer } from "./components/Spacer";
-export { Text } from "./components/Text";
+
 export { Heading } from "./components/Heading";
+export { Text } from "./components/Text";
+
 export { Button } from "./components/Button";
+export { NavItem } from "./components/NavItem";
+export { NavLinkItem } from "./components/NavLinkItem";

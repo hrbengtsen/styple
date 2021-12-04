@@ -1,6 +1,11 @@
 import Head from "next/head";
 import { DesignSystemProvider } from "../components/DesignSystemProvider";
-import { globalStyles, darkTheme, cozyTheme } from "../stitches.config";
+import {
+  globalStyles,
+  darkTheme,
+  cozyTheme,
+  deepTheme,
+} from "../stitches.config";
 import { ThemeProvider } from "next-themes";
 
 function App({ Component, pageProps }) {
@@ -16,6 +21,7 @@ function App({ Component, pageProps }) {
         value={{
           light: "light-theme",
           dark: darkTheme.className,
+          deep: deepTheme.className,
           cozy: cozyTheme.className,
         }}
         defaultTheme="system"

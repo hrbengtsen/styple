@@ -1,4 +1,4 @@
-import { Container, Heading, Text, Button } from "..";
+import { Container, Heading, Text, Button, NavLinkItem } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
 
 export default function Home() {
@@ -123,6 +123,31 @@ export default function Home() {
           <Button variant="success" transparent>
             Success transparent
           </Button>
+        </Container>
+      </Container>
+
+      {/*--------------- NAV ITEM ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+        }}
+      >
+        <Text>
+          Testing NavItem/NavLinkItem (with next Link) components (it has all
+          button variants + the following).
+        </Text>
+        <Container
+          css={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "$md",
+            alignItems: "center",
+          }}
+        >
+          To-do (new variants): Icon link, Icon link with text, Link in navbar,
+          Link in text, Card link
         </Container>
       </Container>
     </Container>
