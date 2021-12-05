@@ -16,9 +16,9 @@ export const {
     // improve light theme to make it less bland
     colors: {
       // Element based colors
-      headingLight: "#6c6c6f",
+      headingLight: "#131314",
       headingNormal: "#242426",
-      headingDark: "#131314",
+      headingDark: "#6c6c6f",
 
       textLight: "$headingLight",
       textNormal: "$headingNormal",
@@ -26,7 +26,7 @@ export const {
 
       bgLight: "#FFFFFF",
       bgNormal: "#FBFCFC",
-      bgDark: "#E0E1E4",
+      bgDark: "#F5F6F6",
 
       buttonLight: "#c9cacd",
       buttonNormal: "#E0E1E4",
@@ -125,11 +125,11 @@ export const {
     },
     shadows: {
       sm:
-        "0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.20)",
+        "0px 2px 8px -2px rgba(22, 23, 24, 0.35), 0px 2px 5px -3px rgba(22, 23, 24, 0.2)",
       md:
-        "0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.20)",
+        "0px 5px 16px -5px rgba(22, 23, 24, 0.35), 0px 5px 10px -7px rgba(22, 23, 24, 0.2)",
       lg:
-        "0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.20)",
+        "0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)",
     },
     zIndices: {
       1: "100",
@@ -153,8 +153,6 @@ export const {
     bp4: "(min-width: 1200px)",
     motion: "(prefers-reduced-motion)",
     hover: "(any-hover: hover)",
-    dark: "(prefers-color-scheme: dark)",
-    light: "(prefers-color-scheme: light)",
   },
   utils: {
     // Margin utils
@@ -256,6 +254,11 @@ export const globalStyles = globalCss({
     color: "inherit",
     textDecoration: "none",
   },
+  ".image-in-card": {
+    borderRadius: "$xl",
+    zIndex: "-1",
+    filter: "brightness(55%)",
+  },
 });
 
 export const darkTheme = createTheme("dark-theme", {
@@ -269,13 +272,13 @@ export const darkTheme = createTheme("dark-theme", {
     textNormal: "$headingNormal",
     textDark: "$headingDark",
 
-    bgLight: "#242426",
+    bgLight: "#1C1C1D",
     bgNormal: "#131314",
     bgDark: "#000000",
 
-    buttonLight: "#858589",
-    buttonNormal: "#242426",
-    buttonDark: "#202022",
+    buttonLight: "#545455",
+    buttonNormal: "#3f3f40",
+    buttonDark: "#2A2A2B",
 
     // Semantic colors
     primaryLight: "#FFFFFF",
@@ -307,17 +310,17 @@ export const darkTheme = createTheme("dark-theme", {
 export const cozyTheme = createTheme("cozy-theme", {
   colors: {
     // Element based colors
-    headingLight: "#7a705f",
+    headingLight: "#4f4230",
     headingNormal: "#63533c",
-    headingDark: "#4f4230",
+    headingDark: "#756957",
 
     textLight: "$headingLight",
     textNormal: "$headingNormal",
     textDark: "$headingDark",
 
-    bgLight: "#fdfae7",
+    bgLight: "#FEFCEE",
     bgNormal: "#FDF9E2",
-    bgDark: "#EDE1CA",
+    bgDark: "#F5EDD6",
 
     buttonLight: "#858589",
     buttonNormal: "#FCEDA2",
@@ -361,13 +364,13 @@ export const deepTheme = createTheme("deep-theme", {
     textNormal: "$headingNormal",
     textDark: "$headingDark",
 
-    bgLight: "#0d0c22",
+    bgLight: "#171629",
     bgNormal: "#0b0a1e",
-    bgDark: "#000000",
+    bgDark: "#060612",
 
-    buttonLight: "#43424f",
-    buttonNormal: "#191824",
-    buttonDark: "#171622",
+    buttonLight: "#4e4e5c",
+    buttonNormal: "#383848",
+    buttonDark: "#232234",
 
     // Semantic colors
     primaryLight: "#ec5d94",

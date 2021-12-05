@@ -54,6 +54,12 @@ export const Text = styled("p", {
       heading: {
         color: "$headingNormal",
       },
+      white: {
+        color: "#FFFFFF",
+      },
+      black: {
+        color: "#000000",
+      },
     },
   },
   defaultVariants: {

@@ -1,6 +1,7 @@
-import { Container, Heading, Text, Button, NavLinkItem } from "..";
+import { Container, Heading, Text, Button, NavLinkItem, Card } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
 import { Plus } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -223,6 +224,93 @@ export default function Home() {
             </NavLinkItem>
           </Container>
         </Container>
+      </Container>
+
+      {/*--------------- NAV ITEM ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+        }}
+      >
+        <Text>Testing Card component.</Text>
+        <Card css={{ p: "$lg", gap: "$sm", bg: "$bgDark" }}>
+          <Heading as="h3" size="lg">
+            This is a card component
+          </Heading>
+          <Text
+            css={{
+              color: "$textDark",
+            }}
+          >
+            Lorem ipsum
+          </Text>
+          <Button>Button in Card</Button>
+        </Card>
+        <Card
+          as="a"
+          href="#"
+          interactive
+          css={{ p: "$lg", gap: "$sm", bg: "$bgLight" }}
+        >
+          <Heading as="h3" size="lg">
+            Interactive card variant
+          </Heading>
+          <Text
+            css={{
+              color: "$textDark",
+            }}
+          >
+            Try clicking this interactive card
+          </Text>
+          <Text
+            css={{
+              color: "$textDark",
+            }}
+          >
+            Lorem ipsum
+          </Text>
+        </Card>
+        <Card
+          as="a"
+          href="https://www.bitetap.com/"
+          interactive
+          css={{
+            p: "$lg",
+          }}
+        >
+          <Image
+            src="/bitetap-og.png"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            className="image-in-card"
+            alt="Banner of the Bitetap app"
+          />
+
+          <Container>
+            <Heading as="h3" size="lg" color="white">
+              Card with image
+            </Heading>
+            <Text
+              color="white"
+              css={{
+                opacity: ".9",
+              }}
+            >
+              Try clicking this interactive card
+            </Text>
+            <Text
+              color="white"
+              css={{
+                opacity: ".9",
+              }}
+            >
+              Lorem ipsum
+            </Text>
+          </Container>
+        </Card>
       </Container>
     </Container>
   );

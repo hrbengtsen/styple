@@ -7,7 +7,7 @@ export const Button = styled("button", {
   textAlign: "center",
   whiteSpace: "nowrap",
   verticalAlign: "middle",
-  border: "0",
+  border: "none",
   cursor: "pointer",
 
   transition: "$color, $bgColor, $transform, $border, $boxShadow",

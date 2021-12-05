@@ -23,3 +23,5 @@ export { Text } from "./components/Text";
 export { Button } from "./components/Button";
 export { NavItem } from "./components/NavItem";
 export { NavLinkItem } from "./components/NavLinkItem";
+
+export { Card } from "./components/Card";
