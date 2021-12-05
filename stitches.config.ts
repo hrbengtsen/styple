@@ -263,7 +263,7 @@ export const darkTheme = createTheme("dark-theme", {
     // Element based colors
     headingLight: "#F4F4F6",
     headingNormal: "#C2C7CA",
-    headingDark: "#78787C",
+    headingDark: "#858589",
 
     textLight: "$headingLight",
     textNormal: "$headingNormal",
@@ -273,7 +273,7 @@ export const darkTheme = createTheme("dark-theme", {
     bgNormal: "#131314",
     bgDark: "#000000",
 
-    buttonLight: "#78787C",
+    buttonLight: "#858589",
     buttonNormal: "#242426",
     buttonDark: "#202022",
 
@@ -319,7 +319,7 @@ export const cozyTheme = createTheme("cozy-theme", {
     bgNormal: "#FDF9E2",
     bgDark: "#EDE1CA",
 
-    buttonLight: "#78787C",
+    buttonLight: "#858589",
     buttonNormal: "#FCEDA2",
     buttonDark: "#F3E49C",
 
@@ -355,7 +355,7 @@ export const deepTheme = createTheme("deep-theme", {
     // Element based colors
     headingLight: "#F4F4F6",
     headingNormal: "#C2C7CA",
-    headingDark: "#78787C",
+    headingDark: "#858589",
 
     textLight: "$headingLight",
     textNormal: "$headingNormal",

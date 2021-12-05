@@ -14,8 +14,25 @@ export const NavItem = styled("a", {
     pointerEvents: "none",
   },
 
-  // make/change variants (copied from button) to fit a navitem, make navigation variants with .active class, when on navitem's page
   variants: {
+    active: {
+      bold: {
+        "&.active": {
+          fontWeight: "$bold",
+        },
+      },
+      color: {
+        "&.active": {
+          color: "$textLight",
+        },
+      },
+      both: {
+        "&.active": {
+          fontWeight: "$bold",
+          color: "$textLight",
+        },
+      },
+    },
     size: {
       sm: {
         py: "$xs",
@@ -71,6 +88,7 @@ export const NavItem = styled("a", {
       true: {},
     },
     outline: {
+      // Border (outline) color is in compound variants
       true: {
         bg: "transparent",
         "&:hover": {
@@ -81,6 +99,17 @@ export const NavItem = styled("a", {
         },
         borderStyle: "solid",
         borderWidth: "$md",
+      },
+    },
+    ghost: {
+      true: {
+        bg: "transparent",
+        "&:hover": {
+          bg: "transparent",
+        },
+        "&:focus": {
+          bg: "transparent",
+        },
       },
     },
     variant: {
@@ -148,6 +177,7 @@ export const NavItem = styled("a", {
     },
   },
   compoundVariants: [
+    // Variant + transparent compounds
     {
       variant: "primary",
       transparent: "true",
@@ -204,6 +234,7 @@ export const NavItem = styled("a", {
         },
       },
     },
+    // Variant + outline compounds
     {
       variant: "primary",
       outline: "true",
@@ -301,6 +332,103 @@ export const NavItem = styled("a", {
         },
       },
     },
+    // Variant + ghost compounds
+    {
+      variant: "primary",
+      ghost: "true",
+      css: {
+        color: "$primaryNormal",
+        bg: "transparent",
+        "&:hover": {
+          color: "$primaryLight",
+          bg: "transparent",
+
+          // Fix primary color text being inaccessible in cozy
+          [`.${cozyTheme} &`]: {
+            color: "$textLight",
+          },
+        },
+        "&:focus": {
+          color: "$primaryLight",
+          bg: "transparent",
+
+          // Fix primary color text being inaccessible in cozy
+          [`.${cozyTheme} &`]: {
+            color: "$textLight",
+          },
+          boxShadow: "none",
+        },
+      },
+    },
+    {
+      variant: "accent",
+      ghost: "true",
+      css: {
+        color: "$accentNormal",
+        bg: "transparent",
+        "&:hover": {
+          color: "$accentLight",
+          bg: "transparent",
+        },
+        "&:focus": {
+          color: "$accentLight",
+          bg: "transparent",
+          boxShadow: "none",
+        },
+      },
+    },
+    {
+      variant: "danger",
+      ghost: "true",
+      css: {
+        color: "$dangerNormal",
+        bg: "transparent",
+        "&:hover": {
+          color: "$dangerLight",
+          bg: "transparent",
+        },
+        "&:focus": {
+          color: "$dangerLight",
+          bg: "transparent",
+          boxShadow: "none",
+        },
+      },
+    },
+    {
+      variant: "success",
+      ghost: "true",
+      css: {
+        color: "$successNormal",
+        bg: "transparent",
+        "&:hover": {
+          color: "$successLight",
+          bg: "transparent",
+        },
+        "&:focus": {
+          color: "$successLight",
+          bg: "transparent",
+          boxShadow: "none",
+        },
+      },
+    },
+    {
+      variant: "normal",
+      ghost: "true",
+      css: {
+        color: "$textNormal",
+        bg: "transparent",
+        "&:hover": {
+          color: "$textLight",
+          bg: "transparent",
+        },
+        "&:focus": {
+          color: "$textLight",
+          bg: "transparent",
+          boxShadow: "none",
+        },
+      },
+    },
+    // Size + pill compounds
     {
       size: "sm",
       pill: "true",
@@ -329,5 +457,6 @@ export const NavItem = styled("a", {
   defaultVariants: {
     variant: "normal",
     size: "md",
+    active: "color",
   },
 });

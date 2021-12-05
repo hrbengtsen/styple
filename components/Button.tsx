@@ -73,6 +73,7 @@ export const Button = styled("button", {
       true: {},
     },
     outline: {
+      // Border (outline) color is in compound variants
       true: {
         bg: "transparent",
         "&:hover": {
@@ -83,6 +84,17 @@ export const Button = styled("button", {
         },
         borderStyle: "solid",
         borderWidth: "$md",
+      },
+    },
+    ghost: {
+      true: {
+        bg: "transparent",
+        "&:hover": {
+          bg: "transparent",
+        },
+        "&:focus": {
+          bg: "transparent",
+        },
       },
     },
     variant: {
@@ -150,6 +162,7 @@ export const Button = styled("button", {
     },
   },
   compoundVariants: [
+    // Variant + transparent compounds
     {
       variant: "primary",
       transparent: "true",
@@ -206,6 +219,7 @@ export const Button = styled("button", {
         },
       },
     },
+    // Variant + outline compounds
     {
       variant: "primary",
       outline: "true",
@@ -303,6 +317,103 @@ export const Button = styled("button", {
         },
       },
     },
+    // Variant + ghost compounds
+    {
+      variant: "primary",
+      ghost: "true",
+      css: {
+        color: "$primaryNormal",
+        bg: "transparent",
+        "&:hover": {
+          color: "$primaryLight",
+          bg: "transparent",
+
+          // Fix primary color text being inaccessible in cozy
+          [`.${cozyTheme} &`]: {
+            color: "$textLight",
+          },
+        },
+        "&:focus": {
+          color: "$primaryLight",
+          bg: "transparent",
+
+          // Fix primary color text being inaccessible in cozy
+          [`.${cozyTheme} &`]: {
+            color: "$textLight",
+          },
+          boxShadow: "none",
+        },
+      },
+    },
+    {
+      variant: "accent",
+      ghost: "true",
+      css: {
+        color: "$accentNormal",
+        bg: "transparent",
+        "&:hover": {
+          color: "$accentLight",
+          bg: "transparent",
+        },
+        "&:focus": {
+          color: "$accentLight",
+          bg: "transparent",
+          boxShadow: "none",
+        },
+      },
+    },
+    {
+      variant: "danger",
+      ghost: "true",
+      css: {
+        color: "$dangerNormal",
+        bg: "transparent",
+        "&:hover": {
+          color: "$dangerLight",
+          bg: "transparent",
+        },
+        "&:focus": {
+          color: "$dangerLight",
+          bg: "transparent",
+          boxShadow: "none",
+        },
+      },
+    },
+    {
+      variant: "success",
+      ghost: "true",
+      css: {
+        color: "$successNormal",
+        bg: "transparent",
+        "&:hover": {
+          color: "$successLight",
+          bg: "transparent",
+        },
+        "&:focus": {
+          color: "$successLight",
+          bg: "transparent",
+          boxShadow: "none",
+        },
+      },
+    },
+    {
+      variant: "normal",
+      ghost: "true",
+      css: {
+        color: "$textNormal",
+        bg: "transparent",
+        "&:hover": {
+          color: "$textLight",
+          bg: "transparent",
+        },
+        "&:focus": {
+          color: "$textLight",
+          bg: "transparent",
+          boxShadow: "none",
+        },
+      },
+    },
+    // Size + pill compounds
     {
       size: "sm",
       pill: "true",

@@ -1,5 +1,6 @@
 import { Container, Heading, Text, Button, NavLinkItem } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
+import { Plus } from "lucide-react";
 
 export default function Home() {
   return (
@@ -14,33 +15,41 @@ export default function Home() {
     >
       <ThemeButton />
       {/*--------------- HEADING ---------------*/}
-      <Heading
-        size="max"
+      <Container
         css={{
-          fontWeight: "$black",
-          color: "$textLight",
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
         }}
       >
-        styple lorem ipsum
-      </Heading>
-      <Heading
-        size="max"
-        css={{
-          fontWeight: "$black",
-          color: "$textNormal",
-        }}
-      >
-        styple lorem ipsum
-      </Heading>
-      <Heading
-        size="max"
-        css={{
-          fontWeight: "$black",
-          color: "$textDark",
-        }}
-      >
-        styple lorem ipsum
-      </Heading>
+        <Text>Testing heading component.</Text>
+        <Heading
+          css={{
+            fontWeight: "$black",
+            color: "$textLight",
+          }}
+        >
+          styple lorem ipsum
+        </Heading>
+        <Heading
+          as="h2"
+          css={{
+            fontWeight: "$black",
+            color: "$textNormal",
+          }}
+        >
+          styple lorem ipsum
+        </Heading>
+        <Heading
+          as="h3"
+          css={{
+            fontWeight: "$black",
+            color: "$textDark",
+          }}
+        >
+          styple lorem ipsum
+        </Heading>
+      </Container>
 
       {/*--------------- TEXT ---------------*/}
       <Container
@@ -88,6 +97,10 @@ export default function Home() {
           <Button tactile>Tactile button</Button>
           <Button pill>Pill button</Button>
           <Button outline>Outline button</Button>
+          <Button ghost>Ghost button</Button>
+          <Button ghost>
+            <Plus style={{ verticalAlign: "middle" }} />
+          </Button>
           <Button size="sm">Small button</Button>
           <Button size="md">Medium button</Button>
           <Button size="lg">Large button</Button>
@@ -95,6 +108,9 @@ export default function Home() {
           <Button variant="primary">Primary</Button>
           <Button variant="primary" outline>
             Primary outline
+          </Button>
+          <Button variant="primary" ghost>
+            Primary ghost
           </Button>
           <Button variant="primary" transparent>
             Primary transparent
@@ -104,6 +120,9 @@ export default function Home() {
           <Button variant="accent" outline>
             Accent outline
           </Button>
+          <Button variant="accent" ghost>
+            Accent ghost
+          </Button>
           <Button variant="accent" transparent>
             Accent transparent
           </Button>
@@ -112,6 +131,9 @@ export default function Home() {
           <Button variant="danger" outline>
             Danger outline
           </Button>
+          <Button variant="danger" ghost>
+            Danger ghost
+          </Button>
           <Button variant="danger" transparent>
             Danger transparent
           </Button>
@@ -119,6 +141,9 @@ export default function Home() {
           <Button variant="success">Success</Button>
           <Button variant="success" outline>
             Success outline
+          </Button>
+          <Button variant="success" ghost>
+            Success ghost
           </Button>
           <Button variant="success" transparent>
             Success transparent
@@ -135,8 +160,8 @@ export default function Home() {
         }}
       >
         <Text>
-          Testing NavItem/NavLinkItem (with next Link) components (it has all
-          button variants + the following).
+          Testing Nav(Link)Item (with Nextjs Link) components. They have all
+          button variants + active variant.
         </Text>
         <Container
           css={{
@@ -146,8 +171,57 @@ export default function Home() {
             alignItems: "center",
           }}
         >
-          To-do (new variants): Icon link, Icon link with text, Link in navbar,
-          Link in text, Card link
+          <Container
+            css={{
+              display: "flex",
+              gap: "$md",
+              justifyContent: "center",
+            }}
+          >
+            <NavLinkItem ghost href="/">
+              Home (color, default)
+            </NavLinkItem>
+            <NavLinkItem ghost href="/test">
+              Link (color, default)
+            </NavLinkItem>
+            <NavLinkItem ghost href="https://www.bitetap.com/">
+              Ext. Link
+            </NavLinkItem>
+          </Container>
+          <Container
+            css={{
+              display: "flex",
+              gap: "$md",
+              justifyContent: "center",
+            }}
+          >
+            <NavLinkItem active="bold" ghost href="/">
+              Home (bold)
+            </NavLinkItem>
+            <NavLinkItem active="bold" ghost href="/test">
+              Link (bold)
+            </NavLinkItem>
+            <NavLinkItem active="bold" ghost href="https://www.bitetap.com/">
+              Ext. Link
+            </NavLinkItem>
+          </Container>
+          <Container
+            css={{
+              display: "flex",
+              gap: "$md",
+              justifyContent: "center",
+            }}
+          >
+            <NavLinkItem active="both" ghost href="/">
+              Home (both)
+            </NavLinkItem>
+            <NavLinkItem active="both" ghost href="/test">
+              Link (both)
+            </NavLinkItem>
+            <NavLinkItem active="both" ghost href="https://www.bitetap.com/">
+              Ext. Link
+            </NavLinkItem>
+          </Container>
         </Container>
       </Container>
     </Container>

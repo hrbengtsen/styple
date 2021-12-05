@@ -24,6 +24,8 @@ function App({ Component, pageProps }) {
           deep: deepTheme.className,
           cozy: cozyTheme.className,
         }}
+        enableSystem
+        enableColorScheme
         defaultTheme="system"
       >
         <Component {...pageProps} />
