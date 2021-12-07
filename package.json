@@ -20,6 +20,7 @@
     "react-dom": "17.0.2"
   },
   "dependencies": {
+    "@radix-ui/react-avatar": "^0.1.1",
     "@radix-ui/react-id": "^0.1.1",
     "@stitches/react": "^1.2.6",
     "lucide-react": "^0.16.19"

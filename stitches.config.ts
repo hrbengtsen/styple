@@ -82,12 +82,12 @@ export const {
     sizes: {
       xs: "8px",
       sm: "16px",
-      md: "32px",
-      lg: "64px",
-      xl: "128px",
-      xxl: "256px",
-      xxxl: "512px",
-      xxxxl: "768px",
+      md: "24px",
+      lg: "32px",
+      xl: "48px",
+      xxl: "64px",
+      xxxl: "128px",
+      xxxxl: "576px",
       max: "1200px",
     },
     fontSizes: {
@@ -144,6 +144,7 @@ export const {
       transform: "transform 0.2s ease-in-out",
       border: "border 0.2s ease-in-out",
       boxShadow: "box-shadow 0.2s ease-in-out",
+      opacity: "opacity 0.2s ease-in-out",
     },
   },
   media: {

@@ -1,4 +1,15 @@
-import { Container, Heading, Text, Button, NavLinkItem, Card } from "..";
+import {
+  Container,
+  Heading,
+  Text,
+  Button,
+  NavLinkItem,
+  Card,
+  Spinner,
+  Avatar,
+  AvatarGroup,
+  AvatarGroupItem,
+} from "..";
 import { ThemeButton } from "../custom/ThemeButton";
 import { Plus } from "lucide-react";
 import Image from "next/image";
@@ -23,7 +34,7 @@ export default function Home() {
           gap: "$md",
         }}
       >
-        <Text>Testing heading component.</Text>
+        <Text>Heading component.</Text>
         <Heading
           css={{
             fontWeight: "$black",
@@ -60,7 +71,7 @@ export default function Home() {
           gap: "$md",
         }}
       >
-        <Text>Testing text component.</Text>
+        <Text>Text component.</Text>
         <Container>
           <Text size="md" color="primary">
             Primary colored text
@@ -85,7 +96,7 @@ export default function Home() {
           gap: "$md",
         }}
       >
-        <Text>Testing Button component.</Text>
+        <Text>Button component.</Text>
         <Container
           css={{
             display: "flex",
@@ -161,8 +172,8 @@ export default function Home() {
         }}
       >
         <Text>
-          Testing Nav(Link)Item (with Nextjs Link) components. They have all
-          button variants + active variant.
+          Nav(Link)Item (with Nextjs Link) components. They have all button
+          variants + active variant.
         </Text>
         <Container
           css={{
@@ -226,7 +237,7 @@ export default function Home() {
         </Container>
       </Container>
 
-      {/*--------------- NAV ITEM ---------------*/}
+      {/*--------------- CARD ---------------*/}
       <Container
         css={{
           display: "flex",
@@ -234,7 +245,7 @@ export default function Home() {
           gap: "$md",
         }}
       >
-        <Text>Testing Card component.</Text>
+        <Text>Card component.</Text>
         <Card css={{ p: "$lg", gap: "$sm", bg: "$bgDark" }}>
           <Heading as="h3" size="lg">
             This is a card component
@@ -252,6 +263,7 @@ export default function Home() {
           as="a"
           href="#"
           interactive
+          elavateOnDark
           css={{ p: "$lg", gap: "$sm", bg: "$bgLight" }}
         >
           <Heading as="h3" size="lg">
@@ -311,6 +323,53 @@ export default function Home() {
             </Text>
           </Container>
         </Card>
+      </Container>
+
+      {/*--------------- SPINNER ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+        }}
+      >
+        <Text>Spinner component.</Text>
+        <Spinner />
+      </Container>
+
+      {/*--------------- AVATAR ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+        }}
+      >
+        <Text>Avatar component.</Text>
+        <Avatar fallback="M" />
+        <Avatar fallback="M" size="md" />
+        <Avatar fallback="M" size="lg" />
+        <Avatar fallback="M" size="xl" />
+        <Avatar src="/founder.webp" fallback="M" />
+        <Avatar src="/founder.webp" fallback="M" size="md" />
+        <Avatar src="/founder.webp" fallback="M" size="lg" />
+        <Avatar src="/founder.webp" fallback="M" size="xl" />
+        <Avatar src="/founder.webp" fallback="M" size="md" inactive />
+
+        <AvatarGroup>
+          <AvatarGroupItem>
+            <Avatar src="/founder.webp" fallback="M" size="md" />
+          </AvatarGroupItem>
+          <AvatarGroupItem>
+            <Avatar src="/founder.webp" fallback="M" size="md" />
+          </AvatarGroupItem>
+          <AvatarGroupItem>
+            <Avatar src="/founder.webp" fallback="M" size="md" />
+          </AvatarGroupItem>
+          <AvatarGroupItem>
+            <Avatar src="/founder.webp" fallback="M" size="md" />
+          </AvatarGroupItem>
+        </AvatarGroup>
       </Container>
     </Container>
   );

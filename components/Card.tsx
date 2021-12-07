@@ -1,4 +1,4 @@
-import { styled } from "../stitches.config";
+import { darkTheme, deepTheme, styled } from "../stitches.config";
 
 export const Card = styled("div", {
   backgroundColor: "$bgNormal",
@@ -21,12 +21,34 @@ export const Card = styled("div", {
           transform: "translateY(-2px)",
           boxShadow: "$md",
         },
-        "&:focus": {
-          boxShadow: "$md, 0 0 0 0.1rem $colors$buttonLight",
-        },
         "&:active": {
           transform: "translateY(0)",
-          boxShadow: "$sm, 0 0 0 0.1rem $colors$buttonLight",
+          boxShadow: "$sm",
+        },
+      },
+    },
+    elavateOnDark: {
+      true: {
+        [`.${darkTheme} &, .${deepTheme} &`]: {
+          "&::before": {
+            content: "",
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            backgroundColor: "white",
+            top: "0",
+            left: "0",
+            borderRadius: "inherit",
+
+            opacity: "0",
+            transition: "$opacity",
+          },
+          "&:hover::before, &:focus::before": {
+            opacity: "0.03",
+          },
+          "&:active::before": {
+            opacity: "0.01",
+          },
         },
       },
     },
