@@ -8,6 +8,7 @@ import {
   Spinner,
   Avatar,
   AvatarGroup,
+  Separator,
 } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
 import { Plus } from "lucide-react";
@@ -20,7 +21,7 @@ export default function Home() {
         display: "flex",
         alignItems: "center",
         flexDirection: "column",
-        gap: "$xl",
+        gap: "$xxxl",
         py: "$xl",
       }}
     >
@@ -258,6 +259,19 @@ export default function Home() {
           </Text>
           <Button>Button in Card</Button>
         </Card>
+        <Card active css={{ p: "$lg", gap: "$sm", bg: "$bgDark" }}>
+          <Heading as="h3" size="lg">
+            Active card component
+          </Heading>
+          <Text
+            css={{
+              color: "$textDark",
+            }}
+          >
+            Lorem ipsum
+          </Text>
+          <Button>Button in Card</Button>
+        </Card>
         <Card
           as="a"
           href="#"
@@ -381,6 +395,22 @@ export default function Home() {
           <Avatar src="/founder.webp" fallback="M" />
           <Avatar src="/founder.webp" fallback="M" />
         </AvatarGroup>
+      </Container>
+      {/*--------------- AVATAR ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start",
+          gap: "$md",
+        }}
+      >
+        <Text>Separator component.</Text>
+        <Separator />
+        <Separator size="md" />
+        <Separator size="sm" />
+        <Separator orientation="vertical" size="md" />
+        <Separator orientation="vertical" size="sm" />
       </Container>
     </Container>
   );

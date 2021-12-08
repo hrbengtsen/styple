@@ -13,6 +13,11 @@ export const Card = styled("div", {
   borderRadius: "$xl",
 
   variants: {
+    active: {
+      true: {
+        boxShadow: "$sm",
+      },
+    },
     interactive: {
       true: {
         transition: "$transform, $bgColor, $boxShadow",

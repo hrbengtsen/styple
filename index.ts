@@ -16,6 +16,7 @@ export { DesignSystemProvider } from "./components/DesignSystemProvider";
 
 export { Container } from "./components/Container";
 export { Spacer } from "./components/Spacer";
+export { Separator } from "./components/Separator";
 
 export { Heading } from "./components/Heading";
 export { Text } from "./components/Text";

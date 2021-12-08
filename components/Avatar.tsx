@@ -1,6 +1,6 @@
 import { darkTheme, deepTheme, styled } from "../stitches.config";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
-import React, { Children, forwardRef } from "react";
+import React from "react";
 import { VariantProps } from "@stitches/react";
 
 const StyledAvatar = styled(AvatarPrimitive.Root, {
@@ -139,7 +139,7 @@ export const AvatarGroup = React.forwardRef<
   React.ElementRef<typeof StyledAvatarGroup>,
   AvatarGroupProps
 >(({ limit, num, children, ...props }, forwardedRef) => {
-  const childrenAsArray = Children.toArray(children);
+  const childrenAsArray = React.Children.toArray(children);
   const childrenLimit = limit ? limit : childrenAsArray.length;
   const childrenToShow = childrenAsArray.slice(0, childrenLimit);
 
@@ -152,7 +152,7 @@ export const AvatarGroup = React.forwardRef<
       {limit || num ? (
         <>
           <StyledAvatarGroupNumber>+{childrenLeft}</StyledAvatarGroupNumber>
-          {Children.map(childrenToShow, (child) => child)}
+          {React.Children.map(childrenToShow, (child) => child)}
         </>
       ) : (
         children
