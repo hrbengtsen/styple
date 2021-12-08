@@ -1,6 +1,6 @@
 import { darkTheme, deepTheme, styled } from "../stitches.config";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
-import React from "react";
+import React, { Children, forwardRef } from "react";
 import { VariantProps } from "@stitches/react";
 
 const StyledAvatar = styled(AvatarPrimitive.Root, {
@@ -43,14 +43,38 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
         opacity: ".5",
       },
     },
-    interactive: {}, // Clickable like button (maybe tooltip?)
+    interactive: {
+      true: {
+        "&::after": {
+          content: '""',
+          position: "absolute",
+          top: "0",
+          right: "0",
+          bottom: "0",
+          left: "0",
+          backgroundColor: "rgba(0,0,0,.08)",
+          opacity: "0",
+          transition: "opacity 75ms linear",
+        },
+        "&:hover": {
+          "&::after": {
+            opacity: "1",
+          },
+        },
+        '&[data-state="open"]': {
+          "&::after": {
+            backgroundColor: "rgba(0,0,0,.12)",
+            opacity: "1",
+          },
+        },
+      },
+    },
   },
   defaultVariants: {
     size: "sm",
   },
 });
 
-// Swap out the as={Image} with actual styles in here to not be Nextjs dependent
 const StyledImage = styled(AvatarPrimitive.Image, {
   objectFit: "cover",
   height: "100%",
@@ -106,15 +130,52 @@ export const Avatar = React.forwardRef<
   );
 });
 
-export const AvatarGroupItem = styled("div", {
-  boxShadow: "0 0 0 2px $colors$textLight",
-  borderRadius: "50%",
+type AvatarGroupProps = React.ComponentProps<typeof StyledAvatarGroup> & {
+  limit?: number;
+  num?: number;
+};
+
+export const AvatarGroup = React.forwardRef<
+  React.ElementRef<typeof StyledAvatarGroup>,
+  AvatarGroupProps
+>(({ limit, num, children, ...props }, forwardedRef) => {
+  const childrenAsArray = Children.toArray(children);
+  const childrenLimit = limit ? limit : childrenAsArray.length;
+  const childrenToShow = childrenAsArray.slice(0, childrenLimit);
+
+  const childrenLeft = num
+    ? num
+    : childrenAsArray.length - childrenToShow.length;
+
+  return (
+    <StyledAvatarGroup ref={forwardedRef} {...props}>
+      {limit || num ? (
+        <>
+          <StyledAvatarGroupNumber>+{childrenLeft}</StyledAvatarGroupNumber>
+          {Children.map(childrenToShow, (child) => child)}
+        </>
+      ) : (
+        children
+      )}
+    </StyledAvatarGroup>
+  );
 });
 
-export const AvatarGroup = styled("div", {
+const StyledAvatarGroup = styled("div", {
   display: "flex",
   flexDirection: "row-reverse",
-  [`& ${AvatarGroupItem}:nth-child(n+2)`]: {
-    marginRight: "-$sm",
+  alignItems: "center",
+  justifyContent: "flex-end",
+  [`& ${StyledAvatar}:nth-child(n+2)`]: {
+    marginRight: "-$md",
   },
+  [`& ${StyledAvatar}`]: {
+    boxShadow: "0 0 0 2px $colors$textNormal",
+  },
+});
+
+const StyledAvatarGroupNumber = styled("span", {
+  fontSize: "$xs",
+  color: "$textNormal",
+  pl: "18px",
 });

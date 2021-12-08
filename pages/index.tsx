@@ -8,7 +8,6 @@ import {
   Spinner,
   Avatar,
   AvatarGroup,
-  AvatarGroupItem,
 } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
 import { Plus } from "lucide-react";
@@ -342,6 +341,7 @@ export default function Home() {
         css={{
           display: "flex",
           flexDirection: "column",
+          alignItems: "flex-start",
           gap: "$md",
         }}
       >
@@ -355,20 +355,31 @@ export default function Home() {
         <Avatar src="/founder.webp" fallback="M" size="lg" />
         <Avatar src="/founder.webp" fallback="M" size="xl" />
         <Avatar src="/founder.webp" fallback="M" size="md" inactive />
+        <Button
+          ghost
+          css={{
+            p: "0",
+          }}
+        >
+          <Avatar src="/founder.webp" fallback="M" size="md" interactive />
+        </Button>
 
         <AvatarGroup>
-          <AvatarGroupItem>
-            <Avatar src="/founder.webp" fallback="M" size="md" />
-          </AvatarGroupItem>
-          <AvatarGroupItem>
-            <Avatar src="/founder.webp" fallback="M" size="md" />
-          </AvatarGroupItem>
-          <AvatarGroupItem>
-            <Avatar src="/founder.webp" fallback="M" size="md" />
-          </AvatarGroupItem>
-          <AvatarGroupItem>
-            <Avatar src="/founder.webp" fallback="M" size="md" />
-          </AvatarGroupItem>
+          <Avatar src="/founder.webp" fallback="M" size="lg" />
+          <Avatar src="/founder.webp" fallback="M" size="lg" />
+          <Avatar src="/founder.webp" fallback="M" size="lg" />
+          <Avatar src="/founder.webp" fallback="M" size="lg" />
+        </AvatarGroup>
+        <AvatarGroup limit={2}>
+          <Avatar src="/founder.webp" fallback="M" size="lg" />
+          <Avatar src="/founder.webp" fallback="M" size="lg" />
+          <Avatar src="/founder.webp" fallback="M" size="lg" />
+          <Avatar src="/founder.webp" fallback="M" size="lg" />
+        </AvatarGroup>
+        <AvatarGroup num={183}>
+          <Avatar src="/founder.webp" fallback="M" />
+          <Avatar src="/founder.webp" fallback="M" />
+          <Avatar src="/founder.webp" fallback="M" />
         </AvatarGroup>
       </Container>
     </Container>
