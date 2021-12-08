@@ -28,4 +28,5 @@ export { NavLinkItem } from "./components/NavLinkItem";
 export { Card } from "./components/Card";
 
 export { Spinner } from "./components/Spinner";
+export { Badge } from "./components/Badge";
 export { Avatar, AvatarGroup } from "./components/Avatar";

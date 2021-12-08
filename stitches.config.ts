@@ -250,6 +250,7 @@ export const globalStyles = globalCss({
   },
   "html, body, #__next": {
     height: "100%",
+    "-webkit-tap-highlight-color": "transparent",
   },
   a: {
     color: "inherit",

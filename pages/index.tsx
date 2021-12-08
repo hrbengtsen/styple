@@ -9,6 +9,7 @@ import {
   Avatar,
   AvatarGroup,
   Separator,
+  Badge,
 } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
 import { Plus } from "lucide-react";
@@ -103,6 +104,7 @@ export default function Home() {
             flexDirection: "column",
             gap: "$md",
             alignItems: "center",
+            justifyContent: "center",
           }}
         >
           <Button move>Move button</Button>
@@ -396,12 +398,12 @@ export default function Home() {
           <Avatar src="/founder.webp" fallback="M" />
         </AvatarGroup>
       </Container>
-      {/*--------------- AVATAR ---------------*/}
+
+      {/*--------------- SEPARATOR ---------------*/}
       <Container
         css={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "flex-start",
           gap: "$md",
         }}
       >
@@ -411,6 +413,30 @@ export default function Home() {
         <Separator size="sm" />
         <Separator orientation="vertical" size="md" />
         <Separator orientation="vertical" size="sm" />
+      </Container>
+
+      {/*--------------- BADGE ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Badge component.</Text>
+        <Badge>Small</Badge>
+        <Badge size="md">Medium</Badge>
+        <Badge variant="primary">Primary</Badge>
+        <Badge variant="accent">Accent</Badge>
+        <Badge variant="danger">Danger</Badge>
+        <Badge variant="success">Success</Badge>
+        <Badge as="button" interactive>
+          Interactive
+        </Badge>
+        <Badge as="button" disabled>
+          Disabled
+        </Badge>
       </Container>
     </Container>
   );
