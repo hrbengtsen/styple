@@ -10,8 +10,11 @@ import {
   AvatarGroup,
   Separator,
   Badge,
+  TextField,
+  TextArea,
 } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
+import { Searchbar } from "../custom/Searchbar";
 import { Plus } from "lucide-react";
 import Image from "next/image";
 
@@ -174,8 +177,8 @@ export default function Home() {
         }}
       >
         <Text>
-          Nav(Link)Item (with Nextjs Link) components. They have all button
-          variants + active variant.
+          NavItem (with Nextjs Link) components. They have all button variants +
+          active variant.
         </Text>
         <Container
           css={{
@@ -409,9 +412,9 @@ export default function Home() {
       >
         <Text>Separator component.</Text>
         <Separator />
-        <Separator size="md" />
+        <Separator size="lg" />
         <Separator size="sm" />
-        <Separator orientation="vertical" size="md" />
+        <Separator orientation="vertical" size="lg" />
         <Separator orientation="vertical" size="sm" />
       </Container>
 
@@ -426,17 +429,242 @@ export default function Home() {
       >
         <Text>Badge component.</Text>
         <Badge>Small</Badge>
-        <Badge size="md">Medium</Badge>
+        <Badge size="lg">Large</Badge>
         <Badge variant="primary">Primary</Badge>
         <Badge variant="accent">Accent</Badge>
         <Badge variant="danger">Danger</Badge>
         <Badge variant="success">Success</Badge>
-        <Badge as="button" interactive>
+        <Badge as="a" href="#" interactive>
           Interactive
         </Badge>
         <Badge as="button" disabled>
           Disabled
         </Badge>
+      </Container>
+
+      {/*--------------- TEXT FIELD ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>TextField component.</Text>
+        <TextField placeholder="Default textfield" />
+        <TextField size="lg" placeholder="Large textfield" />
+        <TextField size="lg" placeholder="Disabled textfield" disabled />
+        <TextField size="lg" placeholder="Ghost textfield" variant="ghost" />
+        <TextField size="lg" placeholder="Invalid textfield" state="invalid" />
+        <TextField size="lg" placeholder="Valid textfield" state="valid" />
+      </Container>
+
+      {/*--------------- SEARCH FIELD ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>SearchField component (uses TextField).</Text>
+        <Searchbar />
+      </Container>
+
+      {/*--------------- TEXT AREA ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>TextArea component.</Text>
+        <TextArea placeholder="Default textarea" />
+        <TextArea variant="ghost" placeholder="Ghost textarea" />
+      </Container>
+
+      {/*--------------- CHECKBOX ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Checkbox component.</Text>
+      </Container>
+
+      {/*--------------- RADIO ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Radio component.</Text>
+      </Container>
+
+      {/*--------------- SLIDER ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Slider component.</Text>
+      </Container>
+
+      {/*--------------- TOGGLE ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Toggle component.</Text>
+      </Container>
+
+      {/*--------------- SELECT ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Select component.</Text>
+      </Container>
+
+      {/*--------------- DIALOG ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Dialog and AlertDialog components.</Text>
+      </Container>
+
+      {/*--------------- SHEET ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Sheet component.</Text>
+      </Container>
+
+      {/*--------------- DROPDOWN ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Dropdown component.</Text>
+      </Container>
+
+      {/*--------------- ACCORDION ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Accordion component.</Text>
+      </Container>
+
+      {/*--------------- TABS ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Tabs component.</Text>
+      </Container>
+
+      {/*--------------- SKELETON ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Skeleton component.</Text>
+      </Container>
+
+      {/*--------------- Status ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Status component.</Text>
+      </Container>
+
+      {/*--------------- POPOVER ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Popover component.</Text>
+      </Container>
+
+      {/*--------------- SECTION ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Section component.</Text>
+      </Container>
+
+      {/*--------------- CODE ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Code component.</Text>
       </Container>
     </Container>
   );

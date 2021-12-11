@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { DesignSystemProvider } from "../components/DesignSystemProvider";
 import {
   globalStyles,
   darkTheme,
@@ -7,11 +6,12 @@ import {
   deepTheme,
 } from "../stitches.config";
 import { ThemeProvider } from "next-themes";
+import { AppProps } from "next/app";
 
-function App({ Component, pageProps }) {
+function App({ Component, pageProps }: AppProps) {
   globalStyles();
   return (
-    <DesignSystemProvider>
+    <>
       <Head>
         <title>styple design system</title>
       </Head>
@@ -30,7 +30,7 @@ function App({ Component, pageProps }) {
       >
         <Component {...pageProps} />
       </ThemeProvider>
-    </DesignSystemProvider>
+    </>
   );
 }
 

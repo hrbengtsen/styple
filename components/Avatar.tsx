@@ -177,5 +177,5 @@ const StyledAvatarGroup = styled("div", {
 const StyledAvatarGroupNumber = styled("span", {
   fontSize: "$xs",
   color: "$textNormal",
-  pl: "18px",
+  pl: "$lg",
 });

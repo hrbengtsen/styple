@@ -13,7 +13,7 @@ export const Button = styled("button", {
   transition: "$color, $bgColor, $transform, $border, $boxShadow",
 
   "&:disabled": {
-    opacity: "0.6",
+    opacity: "0.5",
     pointerEvents: "none",
   },
 

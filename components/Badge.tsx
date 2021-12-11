@@ -17,7 +17,7 @@ export const Badge = styled("span", {
   transition: "$color, $bgColor, $boxShadow",
 
   "&:disabled": {
-    opacity: "0.6",
+    opacity: "0.5",
     pointerEvents: "none",
   },
 
@@ -31,9 +31,9 @@ export const Badge = styled("span", {
         px: "$sm",
         height: "$md",
       },
-      md: {
+      lg: {
         fontSize: "$sm",
-        px: "$sm",
+        px: "$md",
         height: "$lg",
       },
     },
@@ -71,9 +71,6 @@ export const Badge = styled("span", {
       success: {
         bg: "$successNormalA",
         color: "$successNormal",
-        "&:hover": {
-          bg: "$successLightA",
-        },
         "&:focus": {
           bg: "$successLightA",
           boxShadow: "0 0 0 0.1rem $colors$successLight",
@@ -89,6 +86,53 @@ export const Badge = styled("span", {
       },
     },
   },
+  compoundVariants: [
+    {
+      interactive: true,
+      variant: "primary",
+      css: {
+        "&:hover": {
+          bg: "$primaryDark",
+        },
+      },
+    },
+    {
+      interactive: true,
+      variant: "accent",
+      css: {
+        "&:hover": {
+          bg: "$accentDark",
+        },
+      },
+    },
+    {
+      interactive: true,
+      variant: "danger",
+      css: {
+        "&:hover": {
+          bg: "$dangerDark",
+        },
+      },
+    },
+    {
+      interactive: true,
+      variant: "success",
+      css: {
+        "&:hover": {
+          bg: "$successDark",
+        },
+      },
+    },
+    {
+      interactive: true,
+      variant: "normal",
+      css: {
+        "&:hover": {
+          bg: "$buttonDark",
+        },
+      },
+    },
+  ],
   defaultVariants: {
     size: "sm",
     variant: "normal",

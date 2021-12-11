@@ -12,8 +12,6 @@ export {
 } from "./stitches.config";
 
 // Components
-export { DesignSystemProvider } from "./components/DesignSystemProvider";
-
 export { Container } from "./components/Container";
 export { Spacer } from "./components/Spacer";
 export { Separator } from "./components/Separator";
@@ -30,3 +28,7 @@ export { Card } from "./components/Card";
 export { Spinner } from "./components/Spinner";
 export { Badge } from "./components/Badge";
 export { Avatar, AvatarGroup } from "./components/Avatar";
+
+export { TextField } from "./components/TextField";
+export { SearchField } from "./components/SearchField";
+export { TextArea } from "./components/TextArea";

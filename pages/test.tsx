@@ -22,10 +22,6 @@ export default function Test() {
           gap: "$md",
         }}
       >
-        <Text>
-          Testing Nav(Link)Item (with Nextjs Link) components. They have all
-          button variants + active variant.
-        </Text>
         <Container
           css={{
             display: "flex",

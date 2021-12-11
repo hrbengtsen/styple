@@ -247,6 +247,7 @@ export const globalStyles = globalCss({
     lineHeight: "$normal",
     letterSpacing: "$normal",
     bg: "$bgNormal",
+    "-webkit-font-smoothing": "antialiased",
   },
   "html, body, #__next": {
     height: "100%",
