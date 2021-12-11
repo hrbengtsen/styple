@@ -21,7 +21,10 @@
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^0.1.2",
-    "@radix-ui/react-id": "^0.1.3",
+    "@radix-ui/react-checkbox": "^0.1.3",
+    "@radix-ui/react-id": "^0.1.1",
+    "@radix-ui/react-label": "^0.1.3",
+    "@radix-ui/react-radio-group": "^0.1.3",
     "@radix-ui/react-separator": "^0.1.2",
     "@stitches/react": "^1.2.6",
     "lucide-react": "^0.16.20"

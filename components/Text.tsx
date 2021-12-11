@@ -1,6 +1,6 @@
 import { styled } from "../stitches.config";
 
-export const Text = styled("p", {
+export const textStyles = {
   // Reset
   m: "0",
   fontWeight: "$reg",
@@ -66,4 +66,8 @@ export const Text = styled("p", {
     size: "sm",
     color: "text",
   },
+};
+
+export const Text = styled("p", {
+  ...textStyles,
 });

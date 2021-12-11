@@ -12,12 +12,14 @@ export {
 } from "./stitches.config";
 
 // Components
+export { DesignSystemProvider } from "./components/DesignSystemProvider";
+
 export { Container } from "./components/Container";
 export { Spacer } from "./components/Spacer";
 export { Separator } from "./components/Separator";
 
 export { Heading } from "./components/Heading";
-export { Text } from "./components/Text";
+export { Text, textStyles } from "./components/Text";
 
 export { Button } from "./components/Button";
 export { NavItem } from "./components/NavItem";
@@ -32,3 +34,6 @@ export { Avatar, AvatarGroup } from "./components/Avatar";
 export { TextField } from "./components/TextField";
 export { SearchField } from "./components/SearchField";
 export { TextArea } from "./components/TextArea";
+export { Label } from "./components/Label";
+export { Checkbox } from "./components/Checkbox";
+export { Radio, RadioGroup } from "./components/Radio";

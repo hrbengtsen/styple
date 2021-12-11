@@ -12,6 +12,10 @@ import {
   Badge,
   TextField,
   TextArea,
+  Label,
+  Checkbox,
+  Radio,
+  RadioGroup,
 } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
 import { Searchbar } from "../custom/Searchbar";
@@ -487,6 +491,26 @@ export default function Home() {
         <TextArea variant="ghost" placeholder="Ghost textarea" />
       </Container>
 
+      {/*--------------- LABEL ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Label component.</Text>
+        <Container>
+          <Label htmlFor="labelInput">Test label</Label>
+          <TextField
+            id="labelInput"
+            size="lg"
+            placeholder="Textfield with label"
+          />
+        </Container>
+      </Container>
+
       {/*--------------- CHECKBOX ---------------*/}
       <Container
         css={{
@@ -497,6 +521,7 @@ export default function Home() {
         }}
       >
         <Text>Checkbox component.</Text>
+        <Checkbox />
       </Container>
 
       {/*--------------- RADIO ---------------*/}
@@ -509,6 +534,15 @@ export default function Home() {
         }}
       >
         <Text>Radio component.</Text>
+        <RadioGroup defaultValue="1">
+          <Radio
+            value="1"
+            css={{
+              mr: "$sm",
+            }}
+          />
+          <Radio value="2" />
+        </RadioGroup>
       </Container>
 
       {/*--------------- SLIDER ---------------*/}
@@ -593,6 +627,18 @@ export default function Home() {
         }}
       >
         <Text>Accordion component.</Text>
+      </Container>
+
+      {/*--------------- COLLAPSIBLE ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Collapsible component.</Text>
       </Container>
 
       {/*--------------- TABS ---------------*/}
