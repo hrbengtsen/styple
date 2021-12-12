@@ -6,6 +6,12 @@ import { Check } from "lucide-react";
 const StyledCheckbox = styled(CheckboxPrimitive.Root, {
   all: "unset",
   boxSizing: "border-box",
+  "&::before": {
+    boxSizing: "border-box",
+  },
+  "&::after": {
+    boxSizing: "border-box",
+  },
 
   width: "20px",
   height: "20px",

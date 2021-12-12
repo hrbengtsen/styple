@@ -13,7 +13,6 @@ export const {
   config,
 } = createStitches({
   theme: {
-    // improve light theme to make it less bland
     colors: {
       // Element based colors
       headingLight: "#131314",
@@ -26,7 +25,7 @@ export const {
 
       bgLight: "#FFFFFF",
       bgNormal: "#FBFCFC",
-      bgDark: "#F5F6F6",
+      bgDark: "#f1f1f1",
 
       buttonLight: "#c9cacd",
       buttonNormal: "#E0E1E4",
@@ -369,7 +368,7 @@ export const deepTheme = createTheme("deep-theme", {
 
     bgLight: "#171629",
     bgNormal: "#0b0a1e",
-    bgDark: "#060612",
+    bgDark: "#04040e",
 
     buttonLight: "#4e4e5c",
     buttonNormal: "#383848",

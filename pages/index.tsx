@@ -17,6 +17,8 @@ import {
   Radio,
   RadioGroup,
   Slider,
+  Switch,
+  Toggle,
 } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
 import { Searchbar } from "../custom/Searchbar";
@@ -570,6 +572,7 @@ export default function Home() {
         }}
       >
         <Text>Switch component.</Text>
+        <Switch />
       </Container>
 
       {/*--------------- TOGGLE ---------------*/}
@@ -582,6 +585,7 @@ export default function Home() {
         }}
       >
         <Text>Toggle component.</Text>
+        <Toggle>B</Toggle>
       </Container>
 
       {/*--------------- SELECT ---------------*/}
