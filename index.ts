@@ -37,3 +37,4 @@ export { TextArea } from "./components/TextArea";
 export { Label } from "./components/Label";
 export { Checkbox } from "./components/Checkbox";
 export { Radio, RadioGroup } from "./components/Radio";
+export { Slider } from "./components/Slider";

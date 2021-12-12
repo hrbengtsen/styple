@@ -16,6 +16,7 @@ import {
   Checkbox,
   Radio,
   RadioGroup,
+  Slider,
 } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
 import { Searchbar } from "../custom/Searchbar";
@@ -555,6 +556,20 @@ export default function Home() {
         }}
       >
         <Text>Slider component.</Text>
+        <Slider defaultValue={[50]} max={100} step={1} />
+        <Slider orientation="vertical" defaultValue={[50]} max={100} step={1} />
+      </Container>
+
+      {/*--------------- SWITCH ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Switch component.</Text>
       </Container>
 
       {/*--------------- TOGGLE ---------------*/}
