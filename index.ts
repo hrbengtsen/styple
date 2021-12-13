@@ -40,3 +40,4 @@ export { Radio, RadioGroup } from "./components/Radio";
 export { Slider } from "./components/Slider";
 export { Switch } from "./components/Switch";
 export { Toggle } from "./components/Toggle";
+export { Select } from "./components/Select";

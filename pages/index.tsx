@@ -19,6 +19,7 @@ import {
   Slider,
   Switch,
   Toggle,
+  Select,
 } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
 import { Searchbar } from "../custom/Searchbar";
@@ -598,6 +599,16 @@ export default function Home() {
         }}
       >
         <Text>Select component.</Text>
+        <Select>
+          <option>Select 1</option>
+          <option>Select 2</option>
+          <option>Select 3</option>
+        </Select>
+        <Select size="lg">
+          <option>Select 1</option>
+          <option>Select 2</option>
+          <option>Select 3</option>
+        </Select>
       </Container>
 
       {/*--------------- DIALOG ---------------*/}
