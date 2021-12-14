@@ -29,6 +29,10 @@ import {
   AlertDialogTrigger,
   AlertDialogAction,
   AlertDialogCancel,
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
 } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
 import { Searchbar } from "../custom/Searchbar";
@@ -663,7 +667,7 @@ export default function Home() {
             >
               <DialogClose asChild>
                 <Button transparent variant="success">
-                  Close modal
+                  Close dialog
                 </Button>
               </DialogClose>
             </Container>
@@ -721,6 +725,41 @@ export default function Home() {
         }}
       >
         <Text>Sheet component.</Text>
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button>Open sheet</Button>
+          </SheetTrigger>
+          <SheetContent
+            aria-labelledby="sheet-heading"
+            aria-describedby="sheet-desc"
+          >
+            <Heading id="sheet-heading" as="h4" css={{ mb: "$md" }}>
+              Sheet Heading
+            </Heading>
+            <Text id="sheet-desc" css={{ lineHeight: "25px" }}>
+              This is just a bunch of random lorem ipsum sheet description text.
+              There's more of it: This is just a bunch of random lorem ipsum
+              sheet description text. There's more of it: This is just a bunch
+              of random lorem ipsum sheet description text. There's more of it:
+              This is just a bunch of random lorem ipsum sheet description text.
+              There's more of it: This is just a bunch of random lorem ipsum
+              sheet description text. There's no more of it.
+            </Text>
+            <Container
+              css={{
+                display: "flex",
+                justifyContent: "flex-end",
+                marginTop: "$lg",
+              }}
+            >
+              <SheetClose asChild>
+                <Button transparent variant="success">
+                  Close sheet
+                </Button>
+              </SheetClose>
+            </Container>
+          </SheetContent>
+        </Sheet>
       </Container>
 
       {/*--------------- DROPDOWN ---------------*/}

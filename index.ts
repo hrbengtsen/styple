@@ -53,3 +53,9 @@ export {
   AlertDialogAction,
   AlertDialogCancel,
 } from "./components/AlertDialog";
+export {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from "./components/Sheet";
