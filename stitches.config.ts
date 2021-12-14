@@ -152,7 +152,6 @@ export const {
     bp3: "(min-width: 992px)",
     bp4: "(min-width: 1200px)",
     motion: "(prefers-reduced-motion)",
-    hover: "(any-hover: hover)",
   },
   utils: {
     // Margin utils

@@ -20,6 +20,15 @@ import {
   Switch,
   Toggle,
   Select,
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+  DialogClose,
+  AlertDialog,
+  AlertDialogContent,
+  AlertDialogTrigger,
+  AlertDialogAction,
+  AlertDialogCancel,
 } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
 import { Searchbar } from "../custom/Searchbar";
@@ -124,6 +133,10 @@ export default function Home() {
           <Button outline>Outline button</Button>
           <Button ghost>Ghost button</Button>
           <Button ghost>
+            <Plus style={{ verticalAlign: "middle" }} />
+          </Button>
+          <Button highlight>Highlight button</Button>
+          <Button highlight size="circle">
             <Plus style={{ verticalAlign: "middle" }} />
           </Button>
           <Button size="sm">Small button</Button>
@@ -621,6 +634,81 @@ export default function Home() {
         }}
       >
         <Text>Dialog and AlertDialog components.</Text>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button>Open dialog</Button>
+          </DialogTrigger>
+          <DialogContent
+            aria-labelledby="dialog-heading"
+            aria-describedby="dialog-desc"
+          >
+            <Heading id="dialog-heading" as="h4" css={{ mb: "$md" }}>
+              Dialog Heading
+            </Heading>
+            <Text id="dialog-desc" css={{ lineHeight: "25px" }}>
+              This is just a bunch of random lorem ipsum dialog description
+              text. There's more of it: This is just a bunch of random lorem
+              ipsum dialog description text. There's more of it: This is just a
+              bunch of random lorem ipsum dialog description text. There's more
+              of it: This is just a bunch of random lorem ipsum dialog
+              description text. There's more of it: This is just a bunch of
+              random lorem ipsum dialog description text. There's no more of it.
+            </Text>
+            <Container
+              css={{
+                display: "flex",
+                justifyContent: "flex-end",
+                marginTop: "$lg",
+              }}
+            >
+              <DialogClose asChild>
+                <Button transparent variant="success">
+                  Close modal
+                </Button>
+              </DialogClose>
+            </Container>
+          </DialogContent>
+        </Dialog>
+        <AlertDialog>
+          <AlertDialogTrigger asChild>
+            <Button>Open alertdialog</Button>
+          </AlertDialogTrigger>
+          <AlertDialogContent
+            aria-labelledby="alertdialog-heading"
+            aria-describedby="alertdialog-desc"
+          >
+            <Heading id="alertdialog-heading" as="h4" css={{ mb: "$md" }}>
+              AlertDialog Heading
+            </Heading>
+            <Text id="alertdialog-desc" css={{ lineHeight: "25px" }}>
+              This is just a bunch of random lorem ipsum alertdialog description
+              text. There's more of it: This is just a bunch of random lorem
+              ipsum alertdialog description text. There's more of it: This is
+              just a bunch of random lorem ipsum alertdialog description text.
+              There's more of it: This is just a bunch of random lorem ipsum
+              alertdialog description text. There's more of it: This is just a
+              bunch of random lorem ipsum alertdialog description text. There's
+              no more of it.
+            </Text>
+            <Container
+              css={{
+                display: "flex",
+                justifyContent: "flex-end",
+                marginTop: "$lg",
+                gap: "$md",
+              }}
+            >
+              <AlertDialogCancel asChild>
+                <Button highlight>Cancel</Button>
+              </AlertDialogCancel>
+              <AlertDialogAction asChild>
+                <Button transparent variant="success">
+                  Save changes
+                </Button>
+              </AlertDialogAction>
+            </Container>
+          </AlertDialogContent>
+        </AlertDialog>
       </Container>
 
       {/*--------------- SHEET ---------------*/}

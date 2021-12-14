@@ -12,8 +12,6 @@ export {
 } from "./stitches.config";
 
 // Components
-export { DesignSystemProvider } from "./components/DesignSystemProvider";
-
 export { Container } from "./components/Container";
 export { Spacer } from "./components/Spacer";
 export { Separator } from "./components/Separator";
@@ -41,3 +39,17 @@ export { Slider } from "./components/Slider";
 export { Switch } from "./components/Switch";
 export { Toggle } from "./components/Toggle";
 export { Select } from "./components/Select";
+
+export {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+  DialogClose,
+} from "./components/Dialog";
+export {
+  AlertDialog,
+  AlertDialogContent,
+  AlertDialogTrigger,
+  AlertDialogAction,
+  AlertDialogCancel,
+} from "./components/AlertDialog";

@@ -54,8 +54,8 @@ export const NavItem = styled("a", {
       },
       circle: {
         p: "$sm",
-        width: "48px",
-        height: "48px",
+        width: "40px",
+        height: "40px",
         borderRadius: "$round",
       },
     },
@@ -109,6 +109,17 @@ export const NavItem = styled("a", {
         },
         "&:focus": {
           bg: "transparent",
+        },
+      },
+    },
+    highlight: {
+      true: {
+        bg: "transparent",
+        "&:hover": {
+          bg: "$bgDark",
+        },
+        "&:focus": {
+          bg: "$bgDark",
         },
       },
     },

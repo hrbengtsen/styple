@@ -47,9 +47,9 @@ export function ThemeButton() {
   return (
     hasMounted && (
       <Button
-        style={{
+        css={{
           position: "fixed",
-          zIndex: 999,
+          zIndex: "$1",
           right: 8,
           top: 8,
         }}

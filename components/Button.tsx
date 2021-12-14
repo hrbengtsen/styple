@@ -39,8 +39,8 @@ export const Button = styled("button", {
       },
       circle: {
         p: "$sm",
-        width: "48px",
-        height: "48px",
+        width: "40px",
+        height: "40px",
         borderRadius: "$round",
       },
     },
@@ -94,6 +94,17 @@ export const Button = styled("button", {
         },
         "&:focus": {
           bg: "transparent",
+        },
+      },
+    },
+    highlight: {
+      true: {
+        bg: "transparent",
+        "&:hover": {
+          bg: "$bgDark",
+        },
+        "&:focus": {
+          bg: "$bgDark",
         },
       },
     },
