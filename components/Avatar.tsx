@@ -22,20 +22,16 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
   variants: {
     size: {
       sm: {
-        width: "$md",
-        height: "$md",
+        size: "$md",
       },
       md: {
-        width: "$lg",
-        height: "$lg",
+        size: "$lg",
       },
       lg: {
-        width: "$xl",
-        height: "$xl",
+        size: "$xl",
       },
       xl: {
-        width: "$xxl",
-        height: "$xxl",
+        size: "$xxl",
       },
     },
     inactive: {

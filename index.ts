@@ -59,3 +59,6 @@ export {
   SheetTrigger,
   SheetClose,
 } from "./components/Sheet";
+
+export { Status } from "./components/Status";
+export { Skeleton } from "./components/Skeleton";

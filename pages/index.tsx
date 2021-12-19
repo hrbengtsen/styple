@@ -33,6 +33,8 @@ import {
   SheetContent,
   SheetTrigger,
   SheetClose,
+  Status,
+  Skeleton,
 } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
 import { Searchbar } from "../custom/Searchbar";
@@ -820,6 +822,37 @@ export default function Home() {
         }}
       >
         <Text>Skeleton component.</Text>
+        <Container
+          css={{
+            display: "flex",
+            gap: "$md",
+          }}
+        >
+          <Skeleton variant="avatarSm" />
+          <Skeleton variant="avatarMd" />
+          <Skeleton variant="avatarLg" />
+          <Skeleton variant="avatarXl" />
+        </Container>
+        <Skeleton
+          variant="title"
+          css={{
+            width: "100%",
+          }}
+        />
+        <Skeleton
+          variant="heading"
+          css={{
+            width: "100%",
+          }}
+        />
+        <Skeleton
+          css={{
+            width: "100%",
+          }}
+        />
+        <Skeleton variant="buttonSm" />
+        <Skeleton variant="buttonLg" />
+        <Skeleton variant="card" />
       </Container>
 
       {/*--------------- Status ---------------*/}
@@ -832,6 +865,33 @@ export default function Home() {
         }}
       >
         <Text>Status component.</Text>
+        <Container
+          css={{
+            display: "flex",
+            gap: "$md",
+          }}
+        >
+          <Container>
+            <Status />
+            <Status size="lg" />
+          </Container>
+          <Container>
+            <Status variant="primary" />
+            <Status size="lg" variant="primary" />
+          </Container>
+          <Container>
+            <Status variant="accent" />
+            <Status size="lg" variant="accent" />
+          </Container>
+          <Container>
+            <Status variant="danger" />
+            <Status size="lg" variant="danger" />
+          </Container>
+          <Container>
+            <Status variant="success" />
+            <Status size="lg" variant="success" />
+          </Container>
+        </Container>
       </Container>
 
       {/*--------------- POPOVER ---------------*/}
