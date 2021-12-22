@@ -7,8 +7,6 @@ export const Toggle = styled(TogglePrimitive.Root, {
   bg: "transparent",
   color: "$textNormal",
   borderRadius: "$lg",
-  width: "$md",
-  height: "$md",
   transition: "$bgColor, $boxShadow",
 
   "&:hover": {
@@ -23,5 +21,19 @@ export const Toggle = styled(TogglePrimitive.Root, {
     "&:hover": {
       bg: "$buttonDark",
     },
+  },
+
+  variants: {
+    size: {
+      sm: {
+        size: "$md",
+      },
+      lg: {
+        size: "$lg",
+      },
+    },
+  },
+  defaultVariants: {
+    size: "sm",
   },
 });

@@ -605,7 +605,29 @@ export default function Home() {
         }}
       >
         <Text>Toggle component.</Text>
-        <Toggle>B</Toggle>
+        <Container
+          css={{
+            display: "flex",
+            gap: "$xs",
+          }}
+        >
+          <Toggle
+            css={{
+              fontWeight: "$bold",
+            }}
+          >
+            B
+          </Toggle>
+          <Toggle>I</Toggle>
+          <Toggle
+            css={{
+              textDecoration: "underline",
+            }}
+          >
+            U
+          </Toggle>
+        </Container>
+        <Toggle size="lg">L</Toggle>
       </Container>
 
       {/*--------------- SELECT ---------------*/}

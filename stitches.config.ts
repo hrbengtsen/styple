@@ -12,11 +12,20 @@ export const {
   createTheme,
   config,
 } = createStitches({
+  /*
+    Note on themes:
+
+    100: light on light/cozy themes, dark on dark/deep
+    200: normal on all themes
+    300: dark on light/cozy themes, light on dark/deep themes
+
+    - Mikkel
+  */
   theme: {
     colors: {
       // Element based colors
       headingLight: "#131314",
-      headingNormal: "#242426",
+      headingNormal: "#3B3B3E",
       headingDark: "#6c6c6f",
 
       textLight: "$headingLight",
@@ -28,8 +37,8 @@ export const {
       bgDark: "#f1f1f1",
 
       buttonLight: "#c9cacd",
-      buttonNormal: "#E0E1E4",
-      buttonDark: "#e9eaec",
+      buttonNormal: "#E9EAEC",
+      buttonDark: "#E0E1E4",
 
       // Semantic colors
       primaryLight: "$headingLight",
@@ -123,12 +132,9 @@ export const {
       xl: "8px",
     },
     shadows: {
-      sm:
-        "0px 2px 8px -2px rgba(22, 23, 24, 0.35), 0px 2px 5px -3px rgba(22, 23, 24, 0.2)",
-      md:
-        "0px 5px 16px -5px rgba(22, 23, 24, 0.35), 0px 5px 10px -7px rgba(22, 23, 24, 0.2)",
-      lg:
-        "0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)",
+      sm: "0px 2px 8px -2px rgba(22, 23, 24, 0.35), 0px 2px 5px -3px rgba(22, 23, 24, 0.2)",
+      md: "0px 5px 16px -5px rgba(22, 23, 24, 0.35), 0px 5px 10px -7px rgba(22, 23, 24, 0.2)",
+      lg: "0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)",
     },
     zIndices: {
       1: "100",
@@ -273,13 +279,13 @@ export const darkTheme = createTheme("dark-theme", {
     textNormal: "$headingNormal",
     textDark: "$headingDark",
 
-    bgLight: "#1C1C1D",
+    bgLight: "#000000",
     bgNormal: "#131314",
-    bgDark: "#000000",
+    bgDark: "#1C1C1D",
 
     buttonLight: "#545455",
     buttonNormal: "#3f3f40",
-    buttonDark: "#2A2A2B",
+    buttonDark: "#353536",
 
     // Semantic colors
     primaryLight: "#FFFFFF",
@@ -325,12 +331,12 @@ export const cozyTheme = createTheme("cozy-theme", {
 
     buttonLight: "#858589",
     buttonNormal: "#FCEDA2",
-    buttonDark: "#F3E49C",
+    buttonDark: "#F8E99F",
 
     // Semantic colors
-    primaryLight: "#FDDA3B",
-    primaryNormal: "#FDD523",
-    primaryDark: "#ffcc33",
+    primaryLight: "#FFDD75",
+    primaryNormal: "#FFD146",
+    primaryDark: "#FAC832",
     primaryLightA: "rgba(253, 213, 35, 0.16)",
     primaryNormalA: "rgba(253, 213, 35, 0.12)",
 
@@ -367,7 +373,7 @@ export const deepTheme = createTheme("deep-theme", {
 
     bgLight: "#171629",
     bgNormal: "#0b0a1e",
-    bgDark: "#04040e",
+    bgDark: "#171629", // 04040e
 
     buttonLight: "#4e4e5c",
     buttonNormal: "#383848",

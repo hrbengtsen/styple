@@ -33,7 +33,14 @@ export const Card = styled("div", {
       },
     },
     elavateOnDark: {
-      true: {
+      true: {},
+    },
+  },
+  compoundVariants: [
+    {
+      interactive: "true",
+      elavateOnDark: "true",
+      css: {
         [`.${darkTheme} &, .${deepTheme} &`]: {
           "&::before": {
             content: "",
@@ -49,13 +56,13 @@ export const Card = styled("div", {
             transition: "$opacity",
           },
           "&:hover::before, &:focus::before": {
-            opacity: "0.03",
+            opacity: "0.04",
           },
           "&:active::before": {
-            opacity: "0.01",
+            opacity: "0.02",
           },
         },
       },
     },
-  },
+  ],
 });

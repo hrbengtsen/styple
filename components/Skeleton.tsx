@@ -58,7 +58,7 @@ export const Skeleton = styled("div", {
         borderRadius: "$xl",
       },
       card: {
-        height: "186px",
+        height: "192px",
         width: "320px",
         borderRadius: "$xl",
       },

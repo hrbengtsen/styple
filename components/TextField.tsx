@@ -1,4 +1,4 @@
-import { styled } from "../stitches.config";
+import { darkTheme, deepTheme, styled } from "../stitches.config";
 
 export const TextField = styled("input", {
   // Reset
@@ -9,6 +9,9 @@ export const TextField = styled("input", {
   width: "100%",
 
   bg: "$bgDark",
+  [`.${darkTheme} &, .${deepTheme} &`]: {
+    bg: "$bgLight",
+  },
   color: "$textNormal",
   transition: "$bgColor, $boxShadow",
 
@@ -44,8 +47,15 @@ export const TextField = styled("input", {
     variant: {
       ghost: {
         bg: "transparent",
+        // Need to fix previous dark/deep bg override (kinda bad)
+        [`.${darkTheme} &, .${deepTheme} &`]: {
+          bg: "transparent",
+        },
         "&:hover": {
           bg: "$bgDark",
+          [`.${darkTheme} &, .${deepTheme} &`]: {
+            bg: "$bgLight",
+          },
         },
       },
     },

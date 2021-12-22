@@ -1,5 +1,5 @@
 import React from "react";
-import { styled, CSS } from "../stitches.config";
+import { styled, CSS, darkTheme, deepTheme } from "../stitches.config";
 import * as SliderPrimitive from "@radix-ui/react-slider";
 
 const SliderTrack = styled(SliderPrimitive.Track, {
@@ -34,10 +34,18 @@ const SliderThumb = styled(SliderPrimitive.Thumb, {
   width: "$sm",
   height: "$sm",
   outline: "none",
-  bg: "$textNormal",
+  bg: "$bgLight",
+  [`.${darkTheme} &, .${deepTheme} &`]: {
+    bg: "$textNormal",
+  },
   borderRadius: "$round",
   boxShadow: "rgba(0, 0, 0, 0.3) 0px 0px 1px, rgba(0, 0, 0, 0.2) 0px 1px 2px",
-  "&:hover": { bg: "$textLight" },
+  "&:hover": {
+    bg: "white",
+    [`.${darkTheme} &, .${deepTheme} &`]: {
+      bg: "$textLight",
+    },
+  },
 
   "&::after": {
     content: "",
@@ -46,6 +54,7 @@ const SliderThumb = styled(SliderPrimitive.Thumb, {
     right: 0,
     bottom: 0,
     left: 0,
+    zIndex: "-1",
     bg: "rgba(0, 0, 0, 0.1)",
     transform: "scale(1)",
     borderRadius: "$round",
