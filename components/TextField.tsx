@@ -8,16 +8,13 @@ export const TextField = styled("input", {
   fontFamily: "inherit",
   width: "100%",
 
-  bg: "$bgDark",
-  [`.${darkTheme} &, .${deepTheme} &`]: {
-    bg: "$bgLight",
-  },
-  color: "$textNormal",
+  bg: "$bg300",
+  color: "$text200",
   transition: "$bgColor, $boxShadow",
 
   "&::placeholder": {
-    color: "$textNormal",
-    opacity: ".6",
+    color: "$text200",
+    opacity: ".7",
   },
 
   "&:disabled": {
@@ -26,7 +23,7 @@ export const TextField = styled("input", {
   },
 
   "&:focus": {
-    boxShadow: "0 0 0 0.1rem $colors$buttonLight",
+    boxShadow: "0 0 0 0.1rem $colors$button100",
   },
 
   variants: {
@@ -47,24 +44,17 @@ export const TextField = styled("input", {
     variant: {
       ghost: {
         bg: "transparent",
-        // Need to fix previous dark/deep bg override (kinda bad)
-        [`.${darkTheme} &, .${deepTheme} &`]: {
-          bg: "transparent",
-        },
         "&:hover": {
-          bg: "$bgDark",
-          [`.${darkTheme} &, .${deepTheme} &`]: {
-            bg: "$bgLight",
-          },
+          bg: "$bg300",
         },
       },
     },
     state: {
       valid: {
-        boxShadow: "0 0 0 0.1rem $colors$successLight",
+        boxShadow: "0 0 0 0.1rem $colors$success100",
       },
       invalid: {
-        boxShadow: "0 0 0 0.1rem $colors$dangerLight",
+        boxShadow: "0 0 0 0.1rem $colors$danger100",
       },
     },
   },

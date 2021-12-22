@@ -1,7 +1,7 @@
 import { darkTheme, deepTheme, styled } from "../stitches.config";
 
 export const Card = styled("div", {
-  backgroundColor: "$bgNormal",
+  backgroundColor: "$bg200",
   position: "relative",
   border: "none",
 

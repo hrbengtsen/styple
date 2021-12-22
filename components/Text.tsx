@@ -37,22 +37,22 @@ export const textStyles = css({
     },
     color: {
       primary: {
-        color: "$primaryNormal",
+        color: "$primary200",
       },
       accent: {
-        color: "$accentNormal",
+        color: "$accent200",
       },
       danger: {
-        color: "$dangerNormal",
+        color: "$danger200",
       },
       success: {
-        color: "$successNormal",
+        color: "$success200",
       },
       text: {
-        color: "$textNormal",
+        color: "$text200",
       },
       heading: {
-        color: "$headingNormal",
+        color: "$heading200",
       },
       white: {
         color: "#FFFFFF",

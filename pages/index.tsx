@@ -65,7 +65,7 @@ export default function Home() {
         <Heading
           css={{
             fontWeight: "$black",
-            color: "$textLight",
+            color: "$text100",
           }}
         >
           styple lorem ipsum
@@ -74,7 +74,7 @@ export default function Home() {
           as="h2"
           css={{
             fontWeight: "$black",
-            color: "$textNormal",
+            color: "$text200",
           }}
         >
           styple lorem ipsum
@@ -83,7 +83,7 @@ export default function Home() {
           as="h3"
           css={{
             fontWeight: "$black",
-            color: "$textDark",
+            color: "$text300",
           }}
         >
           styple lorem ipsum
@@ -278,26 +278,26 @@ export default function Home() {
         }}
       >
         <Text>Card component.</Text>
-        <Card css={{ p: "$lg", gap: "$sm", bg: "$bgDark" }}>
+        <Card css={{ p: "$lg", gap: "$sm", bg: "$bg100" }}>
           <Heading as="h3" size="lg">
             This is a card component
           </Heading>
           <Text
             css={{
-              color: "$textDark",
+              color: "$text300",
             }}
           >
             Lorem ipsum
           </Text>
           <Button>Button in Card</Button>
         </Card>
-        <Card active css={{ p: "$lg", gap: "$sm", bg: "$bgDark" }}>
+        <Card active css={{ p: "$lg", gap: "$sm", bg: "$bg100" }}>
           <Heading as="h3" size="lg">
             Active card component
           </Heading>
           <Text
             css={{
-              color: "$textDark",
+              color: "$text300",
             }}
           >
             Lorem ipsum
@@ -309,21 +309,21 @@ export default function Home() {
           href="#"
           interactive
           elavateOnDark
-          css={{ p: "$lg", gap: "$sm", bg: "$bgLight" }}
+          css={{ p: "$lg", gap: "$sm", bg: "$bg300" }}
         >
           <Heading as="h3" size="lg">
             Interactive card variant
           </Heading>
           <Text
             css={{
-              color: "$textDark",
+              color: "$text300",
             }}
           >
             Try clicking this interactive card
           </Text>
           <Text
             css={{
-              color: "$textDark",
+              color: "$text300",
             }}
           >
             Lorem ipsum

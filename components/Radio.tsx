@@ -13,10 +13,10 @@ const StyledRadio = styled(RadioGroupPrimitive.Item, {
   width: "20px",
   height: "20px",
   borderRadius: "$round",
-  bg: "$bgDark",
+  bg: "$bg300",
   "&:focus": {
     outline: "none",
-    boxShadow: "0 0 0 0.1rem $colors$buttonLight",
+    boxShadow: "0 0 0 0.1rem $colors$button100",
   },
   transition: "box-shadow 75ms ease-in-out",
 });
@@ -33,7 +33,7 @@ const StyledIndicator = styled(RadioGroupPrimitive.Indicator, {
     width: "$xs",
     height: "$xs",
     borderRadius: "$round",
-    bg: "$textNormal",
+    bg: "$text200",
   },
 });
 

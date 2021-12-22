@@ -5,21 +5,21 @@ export const Toggle = styled(TogglePrimitive.Root, {
   // Reset
   border: "none",
   bg: "transparent",
-  color: "$textNormal",
+  color: "$text200",
   borderRadius: "$lg",
   transition: "$bgColor, $boxShadow",
 
   "&:hover": {
-    bg: "$bgDark",
+    bg: "$bg300",
   },
   "&:focus": {
-    boxShadow: "0 0 0 0.1rem $colors$buttonLight",
+    boxShadow: "0 0 0 0.1rem $colors$button100",
   },
 
   '&[data-state="on"]': {
-    bg: "$buttonNormal",
+    bg: "$button200",
     "&:hover": {
-      bg: "$buttonDark",
+      bg: "$button300",
     },
   },
 

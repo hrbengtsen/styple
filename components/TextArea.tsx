@@ -9,8 +9,8 @@ export const TextArea = styled("textarea", {
   resize: "none",
 
   minHeight: "112px",
-  bg: "$bgDark",
-  color: "$textNormal",
+  bg: "$bg300",
+  color: "$text200",
   transition: "$bgColor, $boxShadow",
   borderRadius: "$xl",
   p: "$sm",
@@ -18,8 +18,8 @@ export const TextArea = styled("textarea", {
   lineHeight: "$normal",
 
   "&::placeholder": {
-    color: "$textNormal",
-    opacity: ".6",
+    color: "$text200",
+    opacity: ".7",
   },
 
   "&:disabled": {
@@ -28,7 +28,7 @@ export const TextArea = styled("textarea", {
   },
 
   "&:focus": {
-    boxShadow: "0 0 0 0.1rem $colors$buttonLight",
+    boxShadow: "0 0 0 0.1rem $colors$button100",
   },
 
   variants: {
@@ -36,16 +36,16 @@ export const TextArea = styled("textarea", {
       ghost: {
         bg: "transparent",
         "&:hover": {
-          bg: "$bgDark",
+          bg: "$bg300",
         },
       },
     },
     state: {
       valid: {
-        boxShadow: "0 0 0 0.1rem $colors$successLight",
+        boxShadow: "0 0 0 0.1rem $colors$success100",
       },
       invalid: {
-        boxShadow: "0 0 0 0.1rem $colors$dangerLight",
+        boxShadow: "0 0 0 0.1rem $colors$danger100",
       },
     },
   },

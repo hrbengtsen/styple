@@ -16,10 +16,10 @@ const StyledCheckbox = styled(CheckboxPrimitive.Root, {
   width: "20px",
   height: "20px",
   borderRadius: "$lg",
-  bg: "$bgDark",
+  bg: "$bg300",
   "&:focus": {
     outline: "none",
-    boxShadow: "0 0 0 0.1rem $colors$buttonLight",
+    boxShadow: "0 0 0 0.1rem $colors$button100",
   },
   transition: "box-shadow 75ms ease-in-out",
 });
@@ -30,7 +30,7 @@ const StyledIndicator = styled(CheckboxPrimitive.Indicator, {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  color: "$textNormal",
+  color: "$text200",
 });
 
 type CheckboxProps = React.ComponentProps<typeof StyledCheckbox> & {

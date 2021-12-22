@@ -4,13 +4,13 @@ import { ChevronDown } from "lucide-react";
 
 const SelectWrapper = styled("div", {
   position: "relative",
-  backgroundColor: "$bgDark",
-  color: "$textNormal",
+  backgroundColor: "$bg300",
+  color: "$text200",
 
   transition: "$boxShadow",
 
   "&:focus-within": {
-    boxShadow: "0 0 0 0.1rem $colors$buttonLight",
+    boxShadow: "0 0 0 0.1rem $colors$button100",
   },
 
   variants: {

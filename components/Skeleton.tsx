@@ -9,7 +9,7 @@ export const Skeleton = styled("div", {
   position: "relative",
   overflow: "hidden",
 
-  bg: "$bgDark",
+  bg: "$bg300",
   borderRadius: "inherit",
   animationName: `${pulse}`,
   animationDuration: ".75s",

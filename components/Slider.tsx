@@ -6,7 +6,7 @@ const SliderTrack = styled(SliderPrimitive.Track, {
   position: "relative",
   borderRadius: "$pill",
   flexGrow: 1,
-  bg: "$bgDark",
+  bg: "$bg300",
   '&[data-orientation="horizontal"]': {
     height: 3,
   },
@@ -18,7 +18,7 @@ const SliderTrack = styled(SliderPrimitive.Track, {
 
 const SliderRange = styled(SliderPrimitive.Range, {
   position: "absolute",
-  bg: "$buttonLight",
+  bg: "$button100",
   borderRadius: "inherit",
   '&[data-orientation="horizontal"]': {
     height: "100%",
@@ -34,16 +34,18 @@ const SliderThumb = styled(SliderPrimitive.Thumb, {
   width: "$sm",
   height: "$sm",
   outline: "none",
-  bg: "$bgLight",
+  bg: "$bg100",
+  // Make thumb light colors on dark themes
   [`.${darkTheme} &, .${deepTheme} &`]: {
-    bg: "$textNormal",
+    bg: "$text200",
   },
   borderRadius: "$round",
   boxShadow: "rgba(0, 0, 0, 0.3) 0px 0px 1px, rgba(0, 0, 0, 0.2) 0px 1px 2px",
   "&:hover": {
     bg: "white",
+    // Make thumb light colors on dark themes
     [`.${darkTheme} &, .${deepTheme} &`]: {
-      bg: "$textLight",
+      bg: "$text100",
     },
   },
 

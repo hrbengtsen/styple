@@ -14,19 +14,19 @@ export const Status = styled("div", {
     },
     variant: {
       normal: {
-        bg: "$buttonNormal",
+        bg: "$button200",
       },
       primary: {
-        bg: "$primaryNormal",
+        bg: "$primary200",
       },
       accent: {
-        bg: "$accentNormal",
+        bg: "$accent200",
       },
       danger: {
-        bg: "$dangerNormal",
+        bg: "$danger200",
       },
       success: {
-        bg: "$successNormal",
+        bg: "$success200",
       },
     },
   },

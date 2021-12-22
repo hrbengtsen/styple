@@ -7,9 +7,10 @@ const StyledThumb = styled(SwitchPrimitive.Thumb, {
 
   width: "$sm",
   height: "$sm",
-  bg: "$bgLight",
+  bg: "$bg100",
+  // Make thumb light colors on dark themes
   [`.${darkTheme} &, .${deepTheme} &`]: {
-    bg: "$textNormal",
+    bg: "$text200",
   },
   borderRadius: "$round",
   boxShadow: "rgba(0, 0, 0, 0.3) 0px 0px 1px, rgba(0, 0, 0, 0.2) 0px 1px 2px",
@@ -21,8 +22,9 @@ const StyledThumb = styled(SwitchPrimitive.Thumb, {
   '&[data-state="checked"]': {
     transform: "translateX(7px)",
     bg: "white",
+    // Make thumb light colors on dark themes
     [`.${darkTheme} &, .${deepTheme} &`]: {
-      bg: "$textLight",
+      bg: "$text100",
     },
   },
 });
@@ -41,7 +43,7 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
   alignItems: "center",
   justifyContent: "center",
   position: "relative",
-  bg: "$bgDark",
+  bg: "$bg300",
   borderRadius: "$pill",
 
   width: "34px",
@@ -49,12 +51,12 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
   transition: "$bgColor, $boxShadow",
 
   "&:focus": {
-    boxShadow: "0 0 0 0.1rem $colors$buttonLight",
+    boxShadow: "0 0 0 0.1rem $colors$button100",
   },
   '&[data-state="checked"]': {
-    bg: "$successNormal",
+    bg: "$success200",
     "&:focus": {
-      boxShadow: "0 0 0 0.1rem $colors$successLight",
+      boxShadow: "0 0 0 0.1rem $colors$success100",
     },
   },
 });
