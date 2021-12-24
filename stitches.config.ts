@@ -344,7 +344,7 @@ export const cozyTheme = createTheme("cozy-theme", {
     bg200: "#FDF9E2",
     bg300: "#F5EDD6",
 
-    button100: "#858589",
+    button100: "#858589", // perhaps make the same as one of the text colors?
     button200: "#FCEDA2",
     button300: "#F8E99F",
 

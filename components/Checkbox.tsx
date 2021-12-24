@@ -16,12 +16,13 @@ const StyledCheckbox = styled(CheckboxPrimitive.Root, {
   width: "20px",
   height: "20px",
   borderRadius: "$lg",
-  bg: "$bg300",
-  "&:focus": {
+  bg: "$bg200",
+  boxShadow: "inset 0 0 0 1px $colors$button100",
+  "&:hover, &:focus": {
     outline: "none",
-    boxShadow: "0 0 0 0.1rem $colors$button100",
+    boxShadow: "inset 0 0 0 0.1rem $colors$button100",
   },
-  transition: "box-shadow 75ms ease-in-out",
+  transition: "$boxShadow",
 });
 
 const StyledIndicator = styled(CheckboxPrimitive.Indicator, {

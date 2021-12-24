@@ -278,7 +278,7 @@ export default function Home() {
         }}
       >
         <Text>Card component.</Text>
-        <Card css={{ p: "$lg", gap: "$sm", bg: "$bg100" }}>
+        <Card css={{ p: "$lg", gap: "$sm", bg: "$bg300" }}>
           <Heading as="h3" size="lg">
             This is a card component
           </Heading>
@@ -682,6 +682,8 @@ export default function Home() {
               description text. There's more of it: This is just a bunch of
               random lorem ipsum dialog description text. There's no more of it.
             </Text>
+            <TextArea placeholder="Default textarea" />
+            <Switch />
             <Container
               css={{
                 display: "flex",

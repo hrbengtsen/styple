@@ -1,5 +1,11 @@
 import React from "react";
-import { styled, CSS, darkTheme, deepTheme } from "../stitches.config";
+import {
+  styled,
+  CSS,
+  darkTheme,
+  deepTheme,
+  cozyTheme,
+} from "../stitches.config";
 import * as SwitchPrimitive from "@radix-ui/react-switch";
 
 const StyledThumb = styled(SwitchPrimitive.Thumb, {
@@ -43,7 +49,12 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
   alignItems: "center",
   justifyContent: "center",
   position: "relative",
-  bg: "$bg300",
+  bg: "$button200",
+
+  [`.${cozyTheme} &`]: {
+    bg: "$button100",
+  },
+
   borderRadius: "$pill",
 
   width: "34px",
