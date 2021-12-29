@@ -56,7 +56,7 @@ export const Card = styled("div", {
             transition: "$opacity",
           },
           "&:hover::before, &:focus::before": {
-            opacity: "0.04",
+            opacity: "0.03",
           },
           "&:active::before": {
             opacity: "0.02",

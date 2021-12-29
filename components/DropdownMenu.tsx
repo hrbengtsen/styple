@@ -45,7 +45,7 @@ export const DropdownMenuLabel = styled(
   DropdownMenuPrimitive.Label,
   baseItemCss,
   {
-    color: "$textNormal",
+    color: "$text200",
     fontWeight: "$semibold",
   }
 );
@@ -54,19 +54,19 @@ export const DropdownMenuItem = styled(
   baseItemCss,
   {
     position: "relative",
-    color: "$textNormal",
+    color: "$text200",
     "&[data-disabled]": { opacity: "0.5" },
 
     "&:focus": {
       outline: "none",
-      bg: "$bgDark",
+      bg: "$bg300",
     },
   }
 );
 export const DropdownMenuSeparator = styled(DropdownMenuPrimitive.Separator, {
   height: 1,
   my: "$sm",
-  bg: "$textNormal",
+  bg: "$text200",
   opacity: ".3",
 });
 
@@ -75,12 +75,12 @@ const StyledDropdownMenuCheckboxItem = styled(
   baseItemCss,
   {
     position: "relative",
-    color: "$textNormal",
-    "&[data-disabled]": { opacity: "0.5" },
+    color: "$text200",
+    "&[data-disabled]": { opacity: "0.6" },
 
     "&:focus": {
       outline: "none",
-      bg: "$bgDark",
+      bg: "$bg300",
     },
   }
 );
@@ -93,7 +93,6 @@ type DropdownMenuCheckboxItemProps = Omit<
   onChange?: (bool: boolean) => void;
 };
 
-// todo: commit dropdown and merge with changes from laptop
 export const DropdownMenuCheckboxItem = React.forwardRef<
   React.ElementRef<typeof StyledDropdownMenuCheckboxItem>,
   DropdownMenuCheckboxItemProps

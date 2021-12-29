@@ -1,4 +1,4 @@
-import { darkTheme, deepTheme, styled } from "../stitches.config";
+import { styled } from "../stitches.config";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import React from "react";
 import { VariantProps } from "@stitches/react";

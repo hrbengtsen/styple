@@ -21,7 +21,7 @@ export const {
     200: normal
     300: dark (light on dark/deep for bg)
 
-    I prefer semantic names (light, normal, dark), but they cause too many issues and need component specific style overrides (therefore 100-300).
+    I prefer semantic names (light, normal, dark), but they cause too many issues and need more component specific style overrides (therefore 100-300).
 
     The caveat is the reversed order for text colors on light themes and bg colors on dark themes.
 
@@ -30,6 +30,8 @@ export const {
     I don't find knowing if 100 is dark or light for custom styles must of an issue, since its only reversed in 2 cases and the scale is only 3 variants.
 
     - Mikkel
+
+    TODO: be more consistent with cursor pointer on buttons/non-buttons
   */
   theme: {
     colors: {
@@ -144,9 +146,12 @@ export const {
       xl: "8px",
     },
     shadows: {
-      sm: "0px 2px 8px -2px rgba(22, 23, 24, 0.35), 0px 2px 5px -3px rgba(22, 23, 24, 0.2)",
-      md: "0px 5px 16px -5px rgba(22, 23, 24, 0.35), 0px 5px 10px -7px rgba(22, 23, 24, 0.2)",
-      lg: "0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)",
+      sm:
+        "0px 2px 8px -2px rgba(22, 23, 24, 0.35), 0px 2px 5px -3px rgba(22, 23, 24, 0.2)",
+      md:
+        "0px 5px 16px -5px rgba(22, 23, 24, 0.35), 0px 5px 10px -7px rgba(22, 23, 24, 0.2)",
+      lg:
+        "0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)",
     },
     zIndices: {
       1: "100",
@@ -294,7 +299,7 @@ export const darkTheme = createTheme("dark-theme", {
     // Reversed color order
     bg100: "#000000", // dark
     bg200: "#131314", // normal
-    bg300: "#1E1E1F", // light
+    bg300: "#1E1E1F", // light 212122 1E1E1F
 
     button100: "#545455",
     button200: "#3f3f40",

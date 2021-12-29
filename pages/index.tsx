@@ -158,6 +158,7 @@ export default function Home() {
           <Button size="sm">Small button</Button>
           <Button size="md">Medium button</Button>
           <Button size="lg">Large button</Button>
+          <Button disabled>Disabled button</Button>
 
           <Button variant="primary">Primary</Button>
           <Button variant="primary" outline>
@@ -813,8 +814,12 @@ export default function Home() {
             <Button>Dropdown</Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="start">
-            <DropdownMenuItem>Item 1</DropdownMenuItem>
-            <DropdownMenuItem>Item 2</DropdownMenuItem>
+            <DropdownMenuItem css={{ color: "$text100" }}>
+              Item 1
+            </DropdownMenuItem>
+            <DropdownMenuItem css={{ color: "$text300" }}>
+              Item 2
+            </DropdownMenuItem>
             <DropdownMenuCheckboxItem>Checkbox</DropdownMenuCheckboxItem>
             <DropdownMenuSeparator />
             <DropdownMenuLabel>Menu label</DropdownMenuLabel>
@@ -831,6 +836,18 @@ export default function Home() {
             <DropdownMenuItem disabled>Disabled item</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
+      </Container>
+
+      {/*--------------- COMBOBOX ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Combobox component.</Text>
       </Container>
 
       {/*--------------- HOVERCARD ---------------*/}
@@ -973,18 +990,6 @@ export default function Home() {
         }}
       >
         <Text>Tooltip component.</Text>
-      </Container>
-
-      {/*--------------- SECTION ---------------*/}
-      <Container
-        css={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "$md",
-          alignItems: "flex-start",
-        }}
-      >
-        <Text>Section component.</Text>
       </Container>
 
       {/*--------------- CODE ---------------*/}

@@ -41,6 +41,7 @@ const SliderThumb = styled(SliderPrimitive.Thumb, {
   },
   borderRadius: "$round",
   boxShadow: "rgba(0, 0, 0, 0.3) 0px 0px 1px, rgba(0, 0, 0, 0.2) 0px 1px 2px",
+  transition: "$bgColor",
   "&:hover": {
     bg: "white",
     // Make thumb light colors on dark themes
