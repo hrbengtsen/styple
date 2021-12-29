@@ -12,30 +12,23 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
   userSelect: "none",
   borderRadius: "50%",
 
-  bg: "$bgDark",
-  [`.${darkTheme} &, .${deepTheme} &`]: {
-    bg: "$bgLight",
-  },
+  bg: "$bg300",
 
   position: "relative",
 
   variants: {
     size: {
       sm: {
-        width: "$md",
-        height: "$md",
+        size: "$md",
       },
       md: {
-        width: "$lg",
-        height: "$lg",
+        size: "$lg",
       },
       lg: {
-        width: "$xl",
-        height: "$xl",
+        size: "$xl",
       },
       xl: {
-        width: "$xxl",
-        height: "$xxl",
+        size: "$xxl",
       },
     },
     inactive: {
@@ -82,7 +75,7 @@ const StyledImage = styled(AvatarPrimitive.Image, {
 });
 
 const StyledFallback = styled(AvatarPrimitive.Fallback, {
-  color: "$textNormal",
+  color: "$text200",
   fontWeight: "$bold",
   textTransform: "uppercase",
 
@@ -170,12 +163,12 @@ const StyledAvatarGroup = styled("div", {
     marginRight: "-$md",
   },
   [`& ${StyledAvatar}`]: {
-    boxShadow: "0 0 0 2px $colors$textNormal",
+    boxShadow: "0 0 0 2px $colors$text200",
   },
 });
 
 const StyledAvatarGroupNumber = styled("span", {
   fontSize: "$xs",
-  color: "$textNormal",
+  color: "$text200",
   pl: "$lg",
 });

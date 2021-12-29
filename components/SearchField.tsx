@@ -16,7 +16,7 @@ export const SearchField = React.forwardRef<
     <Container css={{ position: "relative" }}>
       <Container
         css={{
-          color: "$textNormal",
+          color: "$text200",
           position: "absolute",
           top: "0",
           left: "0",

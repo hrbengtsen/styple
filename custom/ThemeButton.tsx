@@ -5,11 +5,11 @@ import { Sun, Moon, Coffee, MountainSnow } from "lucide-react";
 import { useHasMounted } from "../lib/hooks/useHasMounted";
 
 export function ThemeButton() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const hasMounted = useHasMounted();
 
   function changeTheme() {
-    switch (theme) {
+    switch (resolvedTheme) {
       case "light":
         setTheme("dark");
         break;
@@ -29,7 +29,7 @@ export function ThemeButton() {
   }
 
   function getThemeIcon() {
-    switch (theme) {
+    switch (resolvedTheme) {
       case "light":
         return <Sun style={{ verticalAlign: "middle" }} />;
 

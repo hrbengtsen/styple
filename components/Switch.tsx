@@ -1,5 +1,11 @@
 import React from "react";
-import { styled, CSS } from "../stitches.config";
+import {
+  styled,
+  CSS,
+  darkTheme,
+  deepTheme,
+  cozyTheme,
+} from "../stitches.config";
 import * as SwitchPrimitive from "@radix-ui/react-switch";
 
 const StyledThumb = styled(SwitchPrimitive.Thumb, {
@@ -7,17 +13,25 @@ const StyledThumb = styled(SwitchPrimitive.Thumb, {
 
   width: "$sm",
   height: "$sm",
-  bg: "$textNormal",
+  bg: "$bg100",
+  // Make thumb light colors on dark themes
+  [`.${darkTheme} &, .${deepTheme} &`]: {
+    bg: "$text200",
+  },
   borderRadius: "$round",
   boxShadow: "rgba(0, 0, 0, 0.3) 0px 0px 1px, rgba(0, 0, 0, 0.2) 0px 1px 2px",
-  transition: "transform 100ms linear, $bgColor",
+  transition: "transform 75ms linear, $bgColor",
 
   transform: "translateX(-7px)",
   willChange: "transform",
 
   '&[data-state="checked"]': {
     transform: "translateX(7px)",
-    bg: "$textLight",
+    bg: "white",
+    // Make thumb light colors on dark themes
+    [`.${darkTheme} &, .${deepTheme} &`]: {
+      bg: "$text100",
+    },
   },
 });
 
@@ -35,7 +49,12 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
   alignItems: "center",
   justifyContent: "center",
   position: "relative",
-  bg: "$bgDark",
+  bg: "$button200",
+
+  [`.${cozyTheme} &`]: {
+    bg: "$button100",
+  },
+
   borderRadius: "$pill",
 
   width: "34px",
@@ -43,12 +62,12 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
   transition: "$bgColor, $boxShadow",
 
   "&:focus": {
-    boxShadow: "0 0 0 0.1rem $colors$buttonLight",
+    boxShadow: "0 0 0 0.1rem $colors$button100",
   },
   '&[data-state="checked"]': {
-    bg: "$buttonLight",
+    bg: "$success200",
     "&:focus": {
-      boxShadow: "0 0 0 0.1rem $colors$textLight",
+      boxShadow: "0 0 0 0.1rem $colors$success100",
     },
   },
 });

@@ -2,7 +2,7 @@ import React from "react";
 import { styled, css, keyframes, CSS } from "../stitches.config";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { panelStyles } from "./Panel";
-import { Container, Switch } from "..";
+import { Switch } from "..";
 
 export const DropdownMenu = DropdownMenuPrimitive.Root;
 export const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;

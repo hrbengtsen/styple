@@ -101,73 +101,73 @@ export const Button = styled("button", {
       true: {
         bg: "transparent",
         "&:hover": {
-          bg: "$bgDark",
+          bg: "$bg300",
         },
         "&:focus": {
-          bg: "$bgDark",
+          bg: "$bg300",
         },
       },
     },
     variant: {
       primary: {
-        bg: "$primaryNormal",
-        color: "$bgNormal",
+        bg: "$primary200",
+        color: "$bg200",
 
         // Fix primary color text being inaccessible in cozy
         [`.${cozyTheme} &`]: {
-          color: "$textNormal",
+          color: "$text200",
         },
 
         "&:hover": {
-          bg: "$primaryDark",
+          bg: "$primary300",
         },
         "&:focus": {
-          bg: "$primaryDark",
-          boxShadow: "0 0 0 0.1rem $colors$primaryLight",
+          bg: "$primary300",
+          boxShadow: "0 0 0 0.1rem $colors$primary100",
         },
       },
       accent: {
-        bg: "$accentNormal",
-        color: "$bgNormal",
+        bg: "$accent200",
+        color: "$bg200",
         "&:hover": {
-          bg: "$accentDark",
+          bg: "$accent300",
         },
         "&:focus": {
-          bg: "$accentDark",
-          boxShadow: "0 0 0 0.1rem $colors$accentLight",
+          bg: "$accent300",
+          boxShadow: "0 0 0 0.1rem $colors$accent100",
         },
       },
       danger: {
-        bg: "$dangerNormal",
-        color: "$bgNormal",
+        bg: "$danger200",
+        color: "$bg200",
         "&:hover": {
-          bg: "$dangerDark",
+          bg: "$danger300",
         },
         "&:focus": {
-          bg: "$dangerDark",
-          boxShadow: "0 0 0 0.1rem $colors$dangerLight",
+          bg: "$danger300",
+          boxShadow: "0 0 0 0.1rem $colors$danger100",
         },
       },
       success: {
-        bg: "$successNormal",
-        color: "$bgNormal",
+        bg: "$success200",
+        color: "$bg200",
         "&:hover": {
-          bg: "$successDark",
+          bg: "$success300",
         },
         "&:focus": {
-          bg: "$successDark",
-          boxShadow: "0 0 0 0.1rem $colors$successLight",
+          bg: "$success300",
+          boxShadow: "0 0 0 0.1rem $colors$success100",
         },
       },
       normal: {
-        bg: "$buttonNormal",
-        color: "$textNormal",
+        bg: "$button200",
+        color: "$text200",
         "&:hover": {
-          bg: "$buttonDark",
+          bg: "$button300",
         },
         "&:focus": {
-          bg: "$buttonDark",
-          boxShadow: "0 0 0 0.1rem $colors$buttonLight",
+          bg: "$button300",
+          boxShadow: "0 0 0 0.1rem $colors$button100",
         },
       },
     },
@@ -178,13 +178,13 @@ export const Button = styled("button", {
       variant: "primary",
       transparent: "true",
       css: {
-        bg: "$primaryNormalA",
-        color: "$primaryNormal",
+        bg: "$primary200A",
+        color: "$primary200",
         "&:hover": {
-          bg: "$primaryLightA",
+          bg: "$primary100A",
         },
         "&:focus": {
-          bg: "$primaryLightA",
+          bg: "$primary100A",
         },
       },
     },
@@ -192,13 +192,13 @@ export const Button = styled("button", {
       variant: "accent",
       transparent: "true",
       css: {
-        bg: "$accentNormalA",
-        color: "$accentNormal",
+        bg: "$accent200A",
+        color: "$accent200",
         "&:hover": {
-          bg: "$accentLightA",
+          bg: "$accent100A",
         },
         "&:focus": {
-          bg: "$accentLightA",
+          bg: "$accent100A",
         },
       },
     },
@@ -206,13 +206,13 @@ export const Button = styled("button", {
       variant: "danger",
       transparent: "true",
       css: {
-        bg: "$dangerNormalA",
-        color: "$dangerNormal",
+        bg: "$danger200A",
+        color: "$danger200",
         "&:hover": {
-          bg: "$dangerLightA",
+          bg: "$danger100A",
         },
         "&:focus": {
-          bg: "$dangerLightA",
+          bg: "$danger100A",
         },
       },
     },
@@ -220,13 +220,13 @@ export const Button = styled("button", {
       variant: "success",
       transparent: "true",
       css: {
-        bg: "$successNormalA",
-        color: "$successNormal",
+        bg: "$success200A",
+        color: "$success200",
         "&:hover": {
-          bg: "$successLightA",
+          bg: "$success100A",
         },
         "&:focus": {
-          bg: "$successLightA",
+          bg: "$success100A",
         },
       },
     },
@@ -236,24 +236,24 @@ export const Button = styled("button", {
       outline: "true",
       css: {
         bg: "transparent",
-        borderColor: "$primaryLight",
-        color: "$primaryNormal",
+        borderColor: "$primary100",
+        color: "$primary200",
         "&:hover": {
-          color: "$primaryLight",
+          color: "$primary100",
 
           // Fix primary color text being inaccessible in cozy
           [`.${cozyTheme} &`]: {
-            color: "$textLight",
+            color: "$text100",
           },
 
           bg: "transparent",
         },
         "&:focus": {
-          color: "$primaryLight",
+          color: "$primary100",
 
           // Fix primary color text being inaccessible in cozy
           [`.${cozyTheme} &`]: {
-            color: "$textLight",
+            color: "$text100",
           },
 
           bg: "transparent",
@@ -265,14 +265,14 @@ export const Button = styled("button", {
       outline: "true",
       css: {
         bg: "transparent",
-        borderColor: "$accentLight",
-        color: "$accentNormal",
+        borderColor: "$accent100",
+        color: "$accent200",
         "&:hover": {
-          color: "$accentLight",
+          color: "$accent100",
           bg: "transparent",
         },
         "&:focus": {
-          color: "$accentLight",
+          color: "$accent100",
           bg: "transparent",
         },
       },
@@ -282,14 +282,14 @@ export const Button = styled("button", {
       outline: "true",
       css: {
         bg: "transparent",
-        borderColor: "$dangerLight",
-        color: "$dangerNormal",
+        borderColor: "$danger100",
+        color: "$danger200",
         "&:hover": {
-          color: "$dangerLight",
+          color: "$danger100",
           bg: "transparent",
         },
         "&:focus": {
-          color: "$dangerLight",
+          color: "$danger100",
           bg: "transparent",
         },
       },
@@ -299,14 +299,14 @@ export const Button = styled("button", {
       outline: "true",
       css: {
         bg: "transparent",
-        borderColor: "$successLight",
-        color: "$successNormal",
+        borderColor: "$success100",
+        color: "$success200",
         "&:hover": {
-          color: "$successLight",
+          color: "$success100",
           bg: "transparent",
         },
         "&:focus": {
-          color: "$successLight",
+          color: "$success100",
           bg: "transparent",
         },
       },
@@ -316,14 +316,14 @@ export const Button = styled("button", {
       outline: "true",
       css: {
         bg: "transparent",
-        borderColor: "$buttonLight",
-        color: "$textNormal",
+        borderColor: "$button100",
+        color: "$text200",
         "&:hover": {
-          color: "$textLight",
+          color: "$text100",
           bg: "transparent",
         },
         "&:focus": {
-          color: "$textLight",
+          color: "$text100",
           bg: "transparent",
         },
       },
@@ -333,24 +333,24 @@ export const Button = styled("button", {
       variant: "primary",
       ghost: "true",
       css: {
-        color: "$primaryNormal",
+        color: "$primary200",
         bg: "transparent",
         "&:hover": {
-          color: "$primaryLight",
+          color: "$primary100",
           bg: "transparent",
 
           // Fix primary color text being inaccessible in cozy
           [`.${cozyTheme} &`]: {
-            color: "$textLight",
+            color: "$text100",
           },
         },
         "&:focus": {
-          color: "$primaryLight",
+          color: "$primary100",
           bg: "transparent",
 
           // Fix primary color text being inaccessible in cozy
           [`.${cozyTheme} &`]: {
-            color: "$textLight",
+            color: "$text100",
           },
           boxShadow: "none",
         },
@@ -360,14 +360,14 @@ export const Button = styled("button", {
       variant: "accent",
       ghost: "true",
       css: {
-        color: "$accentNormal",
+        color: "$accent200",
         bg: "transparent",
         "&:hover": {
-          color: "$accentLight",
+          color: "$accent100",
           bg: "transparent",
         },
         "&:focus": {
-          color: "$accentLight",
+          color: "$accent100",
           bg: "transparent",
           boxShadow: "none",
         },
@@ -377,14 +377,14 @@ export const Button = styled("button", {
       variant: "danger",
       ghost: "true",
       css: {
-        color: "$dangerNormal",
+        color: "$danger200",
         bg: "transparent",
         "&:hover": {
-          color: "$dangerLight",
+          color: "$danger100",
           bg: "transparent",
         },
         "&:focus": {
-          color: "$dangerLight",
+          color: "$danger100",
           bg: "transparent",
           boxShadow: "none",
         },
@@ -394,14 +394,14 @@ export const Button = styled("button", {
       variant: "success",
       ghost: "true",
       css: {
-        color: "$successNormal",
+        color: "$success200",
         bg: "transparent",
         "&:hover": {
-          color: "$successLight",
+          color: "$success100",
           bg: "transparent",
         },
         "&:focus": {
-          color: "$successLight",
+          color: "$success100",
           bg: "transparent",
           boxShadow: "none",
         },
@@ -411,14 +411,14 @@ export const Button = styled("button", {
       variant: "normal",
       ghost: "true",
       css: {
-        color: "$textNormal",
+        color: "$text200",
         bg: "transparent",
         "&:hover": {
-          color: "$textLight",
+          color: "$text100",
           bg: "transparent",
         },
         "&:focus": {
-          color: "$textLight",
+          color: "$text100",
           bg: "transparent",
           boxShadow: "none",
         },

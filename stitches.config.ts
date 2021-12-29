@@ -12,49 +12,70 @@ export const {
   createTheme,
   config,
 } = createStitches({
+  /*
+    Note on themes:
+
+    I use a simple scale (with a caveat!):
+
+    100: light (dark on light/cozy for text)
+    200: normal
+    300: dark (light on dark/deep for bg)
+
+    I prefer semantic names (light, normal, dark), but they cause too many issues and need component specific style overrides (therefore 100-300).
+
+    The caveat is the reversed order for text colors on light themes and bg colors on dark themes.
+
+    They should prob. be changed to function the same (hover "gives" light on dark themes and "shadows" on light themes), but I have settled on this for now.
+
+    I don't find knowing if 100 is dark or light for custom styles must of an issue, since its only reversed in 2 cases and the scale is only 3 variants.
+
+    - Mikkel
+  */
   theme: {
     colors: {
       // Element based colors
-      headingLight: "#131314",
-      headingNormal: "#242426",
-      headingDark: "#6c6c6f",
 
-      textLight: "$headingLight",
-      textNormal: "$headingNormal",
-      textDark: "$headingDark",
+      // Reversed color order
+      heading100: "#131314", // dark
+      heading200: "#3B3B3E", // normal
+      heading300: "#6c6c6f", // light
 
-      bgLight: "#FFFFFF",
-      bgNormal: "#FBFCFC",
-      bgDark: "#f1f1f1",
+      text100: "$heading100",
+      text200: "$heading200",
+      text300: "$heading300",
 
-      buttonLight: "#c9cacd",
-      buttonNormal: "#E0E1E4",
-      buttonDark: "#e9eaec",
+      bg100: "#FFFFFF",
+      bg200: "#FBFCFC",
+      bg300: "#f1f1f1",
+
+      button100: "#c9cacd",
+      button200: "#E9EAEC",
+      button300: "#E0E1E4",
 
       // Semantic colors
-      primaryLight: "$headingLight",
-      primaryNormal: "$headingNormal",
-      primaryDark: "$headingDark",
-      primaryLightA: "rgba(194, 199, 202, 0.16)",
-      primaryNormalA: "rgba(194, 199, 202, 0.12)",
+      primary100: "$heading100",
+      primary200: "$heading200",
+      primary300: "$heading300",
+      primary100A: "rgba(194, 199, 202, 0.16)",
+      primary200A: "rgba(194, 199, 202, 0.12)",
 
-      accentLight: "#3c87b2",
-      accentNormal: "#347399",
-      accentDark: "#2b607f",
-      accentLightA: "rgba(52, 115, 153, 0.10)",
-      accentNormalA: "rgba(52, 115, 153, 0.06)",
+      accent100: "#3c87b2",
+      accent200: "#347399",
+      accent300: "#2b607f",
+      accent100A: "rgba(52, 115, 153, 0.10)",
+      accent200A: "rgba(52, 115, 153, 0.06)",
 
-      dangerLight: "#b24343",
-      dangerNormal: "#993a3a",
-      dangerDark: "#7f3030",
-      dangerLightA: "rgba(153, 58, 58, 0.10)",
-      dangerNormalA: "rgba(153, 58, 58, 0.06)",
+      danger100: "#b24343",
+      danger200: "#993a3a",
+      danger300: "#7f3030",
+      danger100A: "rgba(153, 58, 58, 0.10)",
+      danger200A: "rgba(153, 58, 58, 0.06)",
 
-      successLight: "#3e946b",
-      successNormal: "#357f5b",
-      successDark: "#2c6a4c",
-      successLightA: "rgba(62, 148, 107, 0.10)",
-      successNormalA: "rgba(62, 148, 107, 0.06)",
+      success100: "#3e946b",
+      success200: "#357f5b",
+      success300: "#2c6a4c",
+      success100A: "rgba(62, 148, 107, 0.10)",
+      success200A: "rgba(62, 148, 107, 0.06)",
     },
     fonts: {
       inter:
@@ -123,12 +144,9 @@ export const {
       xl: "8px",
     },
     shadows: {
-      sm:
-        "0px 2px 8px -2px rgba(22, 23, 24, 0.35), 0px 2px 5px -3px rgba(22, 23, 24, 0.2)",
-      md:
-        "0px 5px 16px -5px rgba(22, 23, 24, 0.35), 0px 5px 10px -7px rgba(22, 23, 24, 0.2)",
-      lg:
-        "0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)",
+      sm: "0px 2px 8px -2px rgba(22, 23, 24, 0.35), 0px 2px 5px -3px rgba(22, 23, 24, 0.2)",
+      md: "0px 5px 16px -5px rgba(22, 23, 24, 0.35), 0px 5px 10px -7px rgba(22, 23, 24, 0.2)",
+      lg: "0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)",
     },
     zIndices: {
       1: "100",
@@ -244,7 +262,7 @@ export const globalStyles = globalCss({
     fontFamily: "$inter",
     lineHeight: "$normal",
     letterSpacing: "$normal",
-    bg: "$bgNormal",
+    bg: "$bg200",
     "-webkit-font-smoothing": "antialiased",
   },
   "html, body, #__next": {
@@ -265,137 +283,141 @@ export const globalStyles = globalCss({
 export const darkTheme = createTheme("dark-theme", {
   colors: {
     // Element based colors
-    headingLight: "#F4F4F6",
-    headingNormal: "#C2C7CA",
-    headingDark: "#858589",
+    heading100: "#F4F4F6",
+    heading200: "#C2C7CA",
+    heading300: "#858589",
 
-    textLight: "$headingLight",
-    textNormal: "$headingNormal",
-    textDark: "$headingDark",
+    text100: "$heading100",
+    text200: "$heading200",
+    text300: "$heading300",
 
-    bgLight: "#1C1C1D",
-    bgNormal: "#131314",
-    bgDark: "#000000",
+    // Reversed color order
+    bg100: "#000000", // dark
+    bg200: "#131314", // normal
+    bg300: "#1E1E1F", // light
 
-    buttonLight: "#545455",
-    buttonNormal: "#3f3f40",
-    buttonDark: "#2A2A2B",
+    button100: "#545455",
+    button200: "#3f3f40",
+    button300: "#353536",
 
     // Semantic colors
-    primaryLight: "#FFFFFF",
-    primaryNormal: "#F4F4F6",
-    primaryDark: "#C2C7CA",
-    primaryLightA: "rgba(194, 199, 202, 0.16)",
-    primaryNormalA: "rgba(194, 199, 202, 0.12)",
+    primary100: "#FFFFFF",
+    primary200: "#F4F4F6",
+    primary300: "#C2C7CA",
+    primary100A: "rgba(194, 199, 202, 0.16)",
+    primary200A: "rgba(194, 199, 202, 0.12)",
 
-    accentLight: "#89d3ff",
-    accentNormal: "#57c1ff",
-    accentDark: "#4eade5",
-    accentLightA: "rgba(87, 193, 255, 0.16)",
-    accentNormalA: "rgba(87, 193, 255, 0.12)",
+    accent100: "#89d3ff",
+    accent200: "#57c1ff",
+    accent300: "#4eade5",
+    accent100A: "rgba(87, 193, 255, 0.16)",
+    accent200A: "rgba(87, 193, 255, 0.12)",
 
-    dangerLight: "#ff9090",
-    dangerNormal: "#ff6161",
-    dangerDark: "#e55757",
-    dangerLightA: "rgba(255, 97, 97, 0.16)",
-    dangerNormalA: "rgba(255, 97, 97, 0.12)",
+    danger100: "#ff9090",
+    danger200: "#ff6161",
+    danger300: "#e55757",
+    danger100A: "rgba(255, 97, 97, 0.16)",
+    danger200A: "rgba(255, 97, 97, 0.12)",
 
-    successLight: "#8ae0b7",
-    successNormal: "#59d499",
-    successDark: "#50be89",
-    successLightA: "rgba(89, 212, 153, 0.16)",
-    successNormalA: "rgba(89, 212, 153, 0.12)",
+    success100: "#8ae0b7",
+    success200: "#59d499",
+    success300: "#50be89",
+    success100A: "rgba(89, 212, 153, 0.16)",
+    success200A: "rgba(89, 212, 153, 0.12)",
   },
 });
 
 export const cozyTheme = createTheme("cozy-theme", {
   colors: {
     // Element based colors
-    headingLight: "#4f4230",
-    headingNormal: "#63533c",
-    headingDark: "#756957",
 
-    textLight: "$headingLight",
-    textNormal: "$headingNormal",
-    textDark: "$headingDark",
+    // Reversed color order
+    heading100: "#4f4230", // dark
+    heading200: "#63533c", // normal
+    heading300: "#756957", // light
 
-    bgLight: "#FEFCEE",
-    bgNormal: "#FDF9E2",
-    bgDark: "#F5EDD6",
+    text100: "$heading100",
+    text200: "$heading200",
+    text300: "$heading300",
 
-    buttonLight: "#858589",
-    buttonNormal: "#FCEDA2",
-    buttonDark: "#F3E49C",
+    bg100: "#FEFCEE",
+    bg200: "#FDF9E2",
+    bg300: "#F5EDD6",
+
+    button100: "#858589", // perhaps make the same as one of the text colors?
+    button200: "#FCEDA2",
+    button300: "#F8E99F",
 
     // Semantic colors
-    primaryLight: "#FDDA3B",
-    primaryNormal: "#FDD523",
-    primaryDark: "#ffcc33",
-    primaryLightA: "rgba(253, 213, 35, 0.16)",
-    primaryNormalA: "rgba(253, 213, 35, 0.12)",
+    primary100: "#FFDD75",
+    primary200: "#FFD146",
+    primary300: "#FAC832",
+    primary100A: "rgba(253, 213, 35, 0.16)",
+    primary200A: "rgba(253, 213, 35, 0.12)",
 
-    accentLight: "#308e85",
-    accentNormal: "#2b7e76",
-    accentDark: "#256e67",
-    accentLightA: "rgba(43, 126, 118, 0.09)",
-    accentNormalA: "rgba(43, 126, 118, 0.05)",
+    accent100: "#308e85",
+    accent200: "#2b7e76",
+    accent300: "#256e67",
+    accent100A: "rgba(43, 126, 118, 0.09)",
+    accent200A: "rgba(43, 126, 118, 0.05)",
 
-    dangerLight: "#d95444",
-    dangerNormal: "#c14b3c",
-    dangerDark: "#a94135",
-    dangerLightA: "rgba(193, 75, 60, 0.08)",
-    dangerNormalA: "rgba(193, 75, 60, 0.04)",
+    danger100: "#d95444",
+    danger200: "#c14b3c",
+    danger300: "#a94135",
+    danger100A: "rgba(193, 75, 60, 0.08)",
+    danger200A: "rgba(193, 75, 60, 0.04)",
 
-    successLight: "$accentLight",
-    successNormal: "$accentNormal",
-    successDark: "$accentDark",
-    successLightA: "$accentLightA",
-    successNormalA: "$accentNormalA",
+    success100: "$accent100",
+    success200: "$accent200",
+    success300: "$accent300",
+    success100A: "$accent100A",
+    success200A: "$accent200A",
   },
 });
 
 export const deepTheme = createTheme("deep-theme", {
   colors: {
     // Element based colors
-    headingLight: "#F4F4F6",
-    headingNormal: "#C2C7CA",
-    headingDark: "#858589",
+    heading100: "#F4F4F6",
+    heading200: "#C2C7CA",
+    heading300: "#858589",
 
-    textLight: "$headingLight",
-    textNormal: "$headingNormal",
-    textDark: "$headingDark",
+    text100: "$heading100",
+    text200: "$heading200",
+    text300: "$heading300",
 
-    bgLight: "#171629",
-    bgNormal: "#0b0a1e",
-    bgDark: "#04040e",
+    // Reversed color order
+    bg100: "#080716", // dark
+    bg200: "#0b0a1e", // normal
+    bg300: "#1B1A2D", // light
 
-    buttonLight: "#4e4e5c",
-    buttonNormal: "#383848",
-    buttonDark: "#232234",
+    button100: "#4e4e5c",
+    button200: "#383848",
+    button300: "#2E2D3E",
 
     // Semantic colors
-    primaryLight: "#ec5d94",
-    primaryNormal: "#ea4c89",
-    primaryDark: "#d2447b",
-    primaryLightA: "rgba(234, 76, 137, 0.09)",
-    primaryNormalA: "rgba(234, 76, 137, 0.05)",
+    primary100: "#ec5d94",
+    primary200: "#ea4c89",
+    primary300: "#d2447b",
+    primary100A: "rgba(234, 76, 137, 0.09)",
+    primary200A: "rgba(234, 76, 137, 0.05)",
 
-    accentLight: "#5dbec5",
-    accentNormal: "#4bb7bf",
-    accentDark: "#43a4ab",
-    accentLightA: "rgba(75, 183, 191, 0.09)",
-    accentNormalA: "rgba(75, 183, 191, 0.05)",
+    accent100: "#5dbec5",
+    accent200: "#4bb7bf",
+    accent300: "#43a4ab",
+    accent100A: "rgba(75, 183, 191, 0.09)",
+    accent200A: "rgba(75, 183, 191, 0.05)",
 
-    dangerLight: "#ff9090",
-    dangerNormal: "#ff6161",
-    dangerDark: "#e55757",
-    dangerLightA: "rgba(255, 97, 97, 0.09)",
-    dangerNormalA: "rgba(255, 97, 97, 0.05)",
+    danger100: "#ff9090",
+    danger200: "#ff6161",
+    danger300: "#e55757",
+    danger100A: "rgba(255, 97, 97, 0.09)",
+    danger200A: "rgba(255, 97, 97, 0.05)",
 
-    successLight: "#8ae0b7",
-    successNormal: "#59d499",
-    successDark: "#50be89",
-    successLightA: "rgba(89, 212, 153, 0.09)",
-    successNormalA: "rgba(89, 212, 153, 0.05)",
+    success100: "#8ae0b7",
+    success200: "#59d499",
+    success300: "#50be89",
+    success100A: "rgba(89, 212, 153, 0.09)",
+    success200A: "rgba(89, 212, 153, 0.05)",
   },
 });

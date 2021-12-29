@@ -39,49 +39,49 @@ export const Badge = styled("span", {
     },
     variant: {
       primary: {
-        bg: "$primaryNormalA",
-        color: "$primaryNormal",
+        bg: "$primary200A",
+        color: "$primary200",
 
         // Fix primary color text being inaccessible in cozy
         [`.${cozyTheme} &`]: {
-          color: "$textNormal",
+          color: "$text200",
         },
 
         "&:focus": {
-          bg: "$primaryLightA",
-          boxShadow: "0 0 0 0.1rem $colors$primaryLight",
+          bg: "$primary100A",
+          boxShadow: "0 0 0 0.1rem $colors$primary100",
         },
       },
       accent: {
-        bg: "$accentNormalA",
-        color: "$accentNormal",
+        bg: "$accent200A",
+        color: "$accent200",
         "&:focus": {
-          bg: "$accentLightA",
-          boxShadow: "0 0 0 0.1rem $colors$accentLight",
+          bg: "$accent100A",
+          boxShadow: "0 0 0 0.1rem $colors$accent100",
         },
       },
       danger: {
-        bg: "$dangerNormalA",
-        color: "$dangerNormal",
+        bg: "$danger200A",
+        color: "$danger200",
         "&:focus": {
-          bg: "$dangerLightA",
-          boxShadow: "0 0 0 0.1rem $colors$dangerLight",
+          bg: "$danger100A",
+          boxShadow: "0 0 0 0.1rem $colors$danger100",
         },
       },
       success: {
-        bg: "$successNormalA",
-        color: "$successNormal",
+        bg: "$success200A",
+        color: "$success200",
         "&:focus": {
-          bg: "$successLightA",
-          boxShadow: "0 0 0 0.1rem $colors$successLight",
+          bg: "$success100A",
+          boxShadow: "0 0 0 0.1rem $colors$success100",
         },
       },
       normal: {
-        bg: "$buttonNormal",
-        color: "$textNormal",
+        bg: "$button200",
+        color: "$text200",
         "&:focus": {
-          bg: "$buttonDark",
-          boxShadow: "0 0 0 0.1rem $colors$buttonLight",
+          bg: "$button300",
+          boxShadow: "0 0 0 0.1rem $colors$button100",
         },
       },
     },
@@ -92,7 +92,7 @@ export const Badge = styled("span", {
       variant: "primary",
       css: {
         "&:hover": {
-          bg: "$primaryDark",
+          bg: "$primary300",
         },
       },
     },
@@ -101,7 +101,7 @@ export const Badge = styled("span", {
       variant: "accent",
       css: {
         "&:hover": {
-          bg: "$accentDark",
+          bg: "$accent300",
         },
       },
     },
@@ -110,7 +110,7 @@ export const Badge = styled("span", {
       variant: "danger",
       css: {
         "&:hover": {
-          bg: "$dangerDark",
+          bg: "$danger300",
         },
       },
     },
@@ -119,7 +119,7 @@ export const Badge = styled("span", {
       variant: "success",
       css: {
         "&:hover": {
-          bg: "$successDark",
+          bg: "$success300",
         },
       },
     },
@@ -128,7 +128,7 @@ export const Badge = styled("span", {
       variant: "normal",
       css: {
         "&:hover": {
-          bg: "$buttonDark",
+          bg: "$button300",
         },
       },
     },

@@ -2,7 +2,7 @@ import { styled } from "../stitches.config";
 import * as SeparatorPrimitive from "@radix-ui/react-separator";
 
 const StyledSeparator = styled(SeparatorPrimitive.Root, {
-  bg: "$textNormal",
+  bg: "$text200",
   opacity: ".3",
 
   variants: {

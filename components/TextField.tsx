@@ -1,4 +1,4 @@
-import { styled } from "../stitches.config";
+import { darkTheme, deepTheme, styled } from "../stitches.config";
 
 export const TextField = styled("input", {
   // Reset
@@ -8,12 +8,14 @@ export const TextField = styled("input", {
   fontFamily: "inherit",
   width: "100%",
 
-  bg: "$bgDark",
-  color: "$textNormal",
+  bg: "$bg200",
+  color: "$text200",
   transition: "$bgColor, $boxShadow",
 
+  boxShadow: "inset 0 0 0 1px $colors$button100",
+
   "&::placeholder": {
-    color: "$textNormal",
+    color: "$text200",
     opacity: ".6",
   },
 
@@ -22,8 +24,8 @@ export const TextField = styled("input", {
     pointerEvents: "none",
   },
 
-  "&:focus": {
-    boxShadow: "0 0 0 0.1rem $colors$buttonLight",
+  "&:hover, &:focus": {
+    boxShadow: "inset 0 0 0 0.1rem $colors$button100",
   },
 
   variants: {
@@ -43,18 +45,15 @@ export const TextField = styled("input", {
     },
     variant: {
       ghost: {
-        bg: "transparent",
-        "&:hover": {
-          bg: "$bgDark",
-        },
+        boxShadow: "none",
       },
     },
     state: {
       valid: {
-        boxShadow: "0 0 0 0.1rem $colors$successLight",
+        boxShadow: "inset 0 0 0 0.1rem $colors$success100",
       },
       invalid: {
-        boxShadow: "0 0 0 0.1rem $colors$dangerLight",
+        boxShadow: "inset 0 0 0 0.1rem $colors$danger100",
       },
     },
   },

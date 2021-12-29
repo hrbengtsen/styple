@@ -12,10 +12,10 @@ export const contentFadeIn = keyframes({
 });
 
 export const panelStyles = css({
-  bg: "$bgNormal",
+  bg: "$bg200",
 
   [`.${darkTheme} &, .${deepTheme} &`]: {
-    bg: "$bgLight",
+    bg: "$bg300",
   },
 
   borderRadius: "$xl",

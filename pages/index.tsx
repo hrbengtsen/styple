@@ -40,6 +40,8 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuCheckboxItem,
+  Status,
+  Skeleton,
 } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
 import { Searchbar } from "../custom/Searchbar";
@@ -73,7 +75,7 @@ export default function Home() {
         <Heading
           css={{
             fontWeight: "$black",
-            color: "$textLight",
+            color: "$text100",
           }}
         >
           styple lorem ipsum
@@ -82,7 +84,7 @@ export default function Home() {
           as="h2"
           css={{
             fontWeight: "$black",
-            color: "$textNormal",
+            color: "$text200",
           }}
         >
           styple lorem ipsum
@@ -91,7 +93,7 @@ export default function Home() {
           as="h3"
           css={{
             fontWeight: "$black",
-            color: "$textDark",
+            color: "$text300",
           }}
         >
           styple lorem ipsum
@@ -286,26 +288,26 @@ export default function Home() {
         }}
       >
         <Text>Card component.</Text>
-        <Card css={{ p: "$lg", gap: "$sm", bg: "$bgDark" }}>
+        <Card css={{ p: "$lg", gap: "$sm", bg: "$bg300" }}>
           <Heading as="h3" size="lg">
             This is a card component
           </Heading>
           <Text
             css={{
-              color: "$textDark",
+              color: "$text300",
             }}
           >
             Lorem ipsum
           </Text>
           <Button>Button in Card</Button>
         </Card>
-        <Card active css={{ p: "$lg", gap: "$sm", bg: "$bgDark" }}>
+        <Card active css={{ p: "$lg", gap: "$sm", bg: "$bg100" }}>
           <Heading as="h3" size="lg">
             Active card component
           </Heading>
           <Text
             css={{
-              color: "$textDark",
+              color: "$text300",
             }}
           >
             Lorem ipsum
@@ -317,21 +319,21 @@ export default function Home() {
           href="#"
           interactive
           elavateOnDark
-          css={{ p: "$lg", gap: "$sm", bg: "$bgLight" }}
+          css={{ p: "$lg", gap: "$sm", bg: "$bg300" }}
         >
           <Heading as="h3" size="lg">
             Interactive card variant
           </Heading>
           <Text
             css={{
-              color: "$textDark",
+              color: "$text300",
             }}
           >
             Try clicking this interactive card
           </Text>
           <Text
             css={{
-              color: "$textDark",
+              color: "$text300",
             }}
           >
             Lorem ipsum
@@ -613,7 +615,29 @@ export default function Home() {
         }}
       >
         <Text>Toggle component.</Text>
-        <Toggle>B</Toggle>
+        <Container
+          css={{
+            display: "flex",
+            gap: "$xs",
+          }}
+        >
+          <Toggle
+            css={{
+              fontWeight: "$bold",
+            }}
+          >
+            B
+          </Toggle>
+          <Toggle>I</Toggle>
+          <Toggle
+            css={{
+              textDecoration: "underline",
+            }}
+          >
+            U
+          </Toggle>
+        </Container>
+        <Toggle size="lg">L</Toggle>
       </Container>
 
       {/*--------------- SELECT ---------------*/}
@@ -668,6 +692,8 @@ export default function Home() {
               description text. There's more of it: This is just a bunch of
               random lorem ipsum dialog description text. There's no more of it.
             </Text>
+            <TextArea placeholder="Default textarea" />
+            <Switch />
             <Container
               css={{
                 display: "flex",
@@ -865,6 +891,37 @@ export default function Home() {
         }}
       >
         <Text>Skeleton component.</Text>
+        <Container
+          css={{
+            display: "flex",
+            gap: "$md",
+          }}
+        >
+          <Skeleton variant="avatarSm" />
+          <Skeleton variant="avatarMd" />
+          <Skeleton variant="avatarLg" />
+          <Skeleton variant="avatarXl" />
+        </Container>
+        <Skeleton
+          variant="title"
+          css={{
+            width: "100%",
+          }}
+        />
+        <Skeleton
+          variant="heading"
+          css={{
+            width: "100%",
+          }}
+        />
+        <Skeleton
+          css={{
+            width: "100%",
+          }}
+        />
+        <Skeleton variant="buttonSm" />
+        <Skeleton variant="buttonLg" />
+        <Skeleton variant="card" />
       </Container>
 
       {/*--------------- Status ---------------*/}
@@ -877,6 +934,33 @@ export default function Home() {
         }}
       >
         <Text>Status component.</Text>
+        <Container
+          css={{
+            display: "flex",
+            gap: "$md",
+          }}
+        >
+          <Container>
+            <Status />
+            <Status size="lg" />
+          </Container>
+          <Container>
+            <Status variant="primary" />
+            <Status size="lg" variant="primary" />
+          </Container>
+          <Container>
+            <Status variant="accent" />
+            <Status size="lg" variant="accent" />
+          </Container>
+          <Container>
+            <Status variant="danger" />
+            <Status size="lg" variant="danger" />
+          </Container>
+          <Container>
+            <Status variant="success" />
+            <Status size="lg" variant="success" />
+          </Container>
+        </Container>
       </Container>
 
       {/*--------------- TOOLTIP ---------------*/}
