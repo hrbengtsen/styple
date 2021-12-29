@@ -4,7 +4,7 @@ import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
 import { overlayStyles } from "./Overlay";
 import { panelStyles } from "./Panel";
-import { Button, Container } from "..";
+import { Button } from "..";
 
 const fadeIn = keyframes({
   from: { opacity: "0" },

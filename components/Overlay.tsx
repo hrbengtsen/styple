@@ -6,7 +6,7 @@ const overlayFadeIn = keyframes({
 });
 
 export const overlayStyles = css({
-  backgroundColor: "rgba(0, 0, 0, .4)",
+  backgroundColor: "rgba(0, 0, 0, .25)",
   zIndex: "$4",
   animation: `${overlayFadeIn} .15s ease-out`,
   "@motion": {

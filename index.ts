@@ -59,3 +59,14 @@ export {
   SheetTrigger,
   SheetClose,
 } from "./components/Sheet";
+
+export {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuGroup,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuCheckboxItem,
+} from "./components/DropdownMenu";

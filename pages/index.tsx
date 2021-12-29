@@ -33,13 +33,23 @@ import {
   SheetContent,
   SheetTrigger,
   SheetClose,
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuCheckboxItem,
 } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
 import { Searchbar } from "../custom/Searchbar";
-import { Plus } from "lucide-react";
+import { Plus, Trash2, Link } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <Container
       css={{
@@ -772,6 +782,41 @@ export default function Home() {
         }}
       >
         <Text>Dropdown component.</Text>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button>Dropdown</Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="start">
+            <DropdownMenuItem>Item 1</DropdownMenuItem>
+            <DropdownMenuItem>Item 2</DropdownMenuItem>
+            <DropdownMenuCheckboxItem>Checkbox</DropdownMenuCheckboxItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuLabel>Menu label</DropdownMenuLabel>
+            <DropdownMenuItem
+              onSelect={(e) => {
+                router.push("/test");
+              }}
+            >
+              <Link size="16" style={{ marginRight: "8px" }} /> Link item
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Trash2 size="16" style={{ marginRight: "8px" }} /> Action item
+            </DropdownMenuItem>
+            <DropdownMenuItem disabled>Disabled item</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </Container>
+
+      {/*--------------- HOVERCARD ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>HoverCard component.</Text>
       </Container>
 
       {/*--------------- ACCORDION ---------------*/}
@@ -834,7 +879,7 @@ export default function Home() {
         <Text>Status component.</Text>
       </Container>
 
-      {/*--------------- POPOVER ---------------*/}
+      {/*--------------- TOOLTIP ---------------*/}
       <Container
         css={{
           display: "flex",
@@ -843,7 +888,7 @@ export default function Home() {
           alignItems: "flex-start",
         }}
       >
-        <Text>Popover component.</Text>
+        <Text>Tooltip component.</Text>
       </Container>
 
       {/*--------------- SECTION ---------------*/}
