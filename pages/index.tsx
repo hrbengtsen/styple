@@ -42,6 +42,7 @@ import {
   DropdownMenuCheckboxItem,
   Status,
   Skeleton,
+  Code,
 } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
 import { Searchbar } from "../custom/Searchbar";
@@ -1002,6 +1003,11 @@ export default function Home() {
         }}
       >
         <Text>Code component.</Text>
+        <Text>
+          This is a text block with some code:{" "}
+          <Code>console.log("Styple")</Code> in between the rest of the text
+          block.
+        </Text>
       </Container>
     </Container>
   );
