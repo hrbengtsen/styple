@@ -43,10 +43,11 @@ import {
   Status,
   Skeleton,
   Code,
+  Tooltip,
 } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
 import { Searchbar } from "../custom/Searchbar";
-import { Plus, Trash2, Link } from "lucide-react";
+import { Plus, Trash2, Link, GripVertical } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
@@ -991,6 +992,22 @@ export default function Home() {
         }}
       >
         <Text>Tooltip component.</Text>
+        <Tooltip content="Tooltip content">
+          <Button highlight size="circle">
+            <Plus style={{ verticalAlign: "middle" }} />
+          </Button>
+        </Tooltip>
+        <Tooltip
+          content={
+            <>
+              <b>Drag</b> to move <br /> <b>Click</b> to open menu
+            </>
+          }
+        >
+          <Button highlight css={{ p: "0", borderRadius: "$md" }}>
+            <GripVertical style={{ verticalAlign: "middle" }} />
+          </Button>
+        </Tooltip>
       </Container>
 
       {/*--------------- CODE ---------------*/}

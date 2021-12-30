@@ -7,6 +7,7 @@ import {
 } from "../stitches.config";
 import { ThemeProvider } from "next-themes";
 import { AppProps } from "next/app";
+import { TooltipProvider } from "..";
 
 function App({ Component, pageProps }: AppProps) {
   globalStyles();
@@ -28,7 +29,9 @@ function App({ Component, pageProps }: AppProps) {
         enableColorScheme
         defaultTheme="system"
       >
-        <Component {...pageProps} />
+        <TooltipProvider delayDuration={500}>
+          <Component {...pageProps} />
+        </TooltipProvider>
       </ThemeProvider>
     </>
   );

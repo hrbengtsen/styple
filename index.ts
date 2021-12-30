@@ -74,3 +74,5 @@ export {
 export { Status } from "./components/Status";
 export { Skeleton } from "./components/Skeleton";
 export { Code } from "./components/Code";
+
+export { Tooltip, TooltipProvider } from "./components/Tooltip";
