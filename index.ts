@@ -76,3 +76,4 @@ export { Skeleton } from "./components/Skeleton";
 export { Code } from "./components/Code";
 
 export { Tooltip, TooltipProvider } from "./components/Tooltip";
+export { Tabs, TabsList, TabsTrigger, TabsContent } from "./components/Tabs";

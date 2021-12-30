@@ -44,6 +44,10 @@ import {
   Skeleton,
   Code,
   Tooltip,
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
 } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
 import { Searchbar } from "../custom/Searchbar";
@@ -852,18 +856,6 @@ export default function Home() {
         <Text>Combobox component.</Text>
       </Container>
 
-      {/*--------------- HOVERCARD ---------------*/}
-      <Container
-        css={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "$md",
-          alignItems: "flex-start",
-        }}
-      >
-        <Text>HoverCard component.</Text>
-      </Container>
-
       {/*--------------- ACCORDION ---------------*/}
       <Container
         css={{
@@ -898,6 +890,18 @@ export default function Home() {
         }}
       >
         <Text>Tabs component.</Text>
+        <Tabs defaultValue="tab1">
+          <TabsList>
+            <TabsTrigger value="tab1">Account</TabsTrigger>
+            <TabsTrigger value="tab2">Settings</TabsTrigger>
+          </TabsList>
+          <TabsContent value="tab1">
+            <Text>Account tab content is here</Text>
+          </TabsContent>
+          <TabsContent value="tab2">
+            <Text>Settings tab content is here</Text>
+          </TabsContent>
+        </Tabs>
       </Container>
 
       {/*--------------- SKELETON ---------------*/}
@@ -1025,6 +1029,32 @@ export default function Home() {
           <Code>console.log("Styple")</Code> in between the rest of the text
           block.
         </Text>
+      </Container>
+
+      <Separator />
+
+      {/*--------------- GRADIENTS ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Gradients.</Text>
+      </Container>
+
+      {/*--------------- CODE SNIPPETS ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Code snippets.</Text>
       </Container>
     </Container>
   );
