@@ -3,6 +3,7 @@ import { Button } from "../components/Button";
 import { useTheme } from "next-themes";
 import { Sun, Moon, Coffee, MountainSnow } from "lucide-react";
 import { useHasMounted } from "../lib/hooks/useHasMounted";
+import { Tooltip } from "..";
 
 export function ThemeButton() {
   const { resolvedTheme, setTheme } = useTheme();
@@ -46,18 +47,26 @@ export function ThemeButton() {
 
   return (
     hasMounted && (
-      <Button
-        css={{
-          position: "fixed",
-          zIndex: "$1",
-          right: 8,
-          top: 8,
-        }}
-        size="circle"
-        onClick={() => changeTheme()}
+      <Tooltip
+        content={
+          <>
+            Change <b>theme</b>
+          </>
+        }
       >
-        {getThemeIcon()}
-      </Button>
+        <Button
+          css={{
+            position: "fixed",
+            zIndex: "$1",
+            right: 8,
+            top: 8,
+          }}
+          size="circle"
+          onClick={() => changeTheme()}
+        >
+          {getThemeIcon()}
+        </Button>
+      </Tooltip>
     )
   );
 }

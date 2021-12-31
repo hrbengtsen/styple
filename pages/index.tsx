@@ -48,6 +48,10 @@ import {
   TabsList,
   TabsTrigger,
   TabsContent,
+  Accordion,
+  AccordionItem,
+  AccordionContent,
+  AccordionTrigger,
 } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
 import { Searchbar } from "../custom/Searchbar";
@@ -866,6 +870,65 @@ export default function Home() {
         }}
       >
         <Text>Accordion component.</Text>
+        <Accordion
+          type="single"
+          css={{
+            minWidth: "$xxxxl",
+            maxWidth: "$xxxxl",
+          }}
+        >
+          <AccordionItem value="accordion-one">
+            <AccordionTrigger>
+              <Text>Accordion one</Text>
+            </AccordionTrigger>
+            <AccordionContent>
+              <Text>
+                This is just a bunch of random lorem ipsum sheet description
+                text. There's more of it: This is just a bunch of random lorem
+                ipsum sheet description text. There's more of it: This is just a
+                bunch of random lorem ipsum sheet description text. There's more
+                of it: This is just a bunch of random lorem ipsum sheet
+                description text. There's more of it: This is just a bunch of
+                random lorem ipsum sheet description text. There's no more of
+                it.
+              </Text>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="accordion-two">
+            <AccordionTrigger>
+              <Text>Accordion one</Text>
+            </AccordionTrigger>
+            <AccordionContent>
+              <Text>
+                This is just a bunch of random lorem ipsum sheet description
+                text. There's more of it: This is just a bunch of random lorem
+                ipsum sheet description text. There's more of it: This is just a
+                bunch of random lorem ipsum sheet description text. There's more
+                of it: This is just a bunch of random lorem ipsum sheet
+                description text. There's more of it: This is just a bunch of
+                random lorem ipsum sheet description text. There's no more of
+                it.
+              </Text>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="accordion-three">
+            <AccordionTrigger>
+              <Text>Accordion one</Text>
+            </AccordionTrigger>
+            <AccordionContent>
+              <Text>
+                This is just a bunch of random lorem ipsum sheet description
+                text. There's more of it: This is just a bunch of random lorem
+                ipsum sheet description text. There's more of it: This is just a
+                bunch of random lorem ipsum sheet description text. There's more
+                of it: This is just a bunch of random lorem ipsum sheet
+                description text. There's more of it: This is just a bunch of
+                random lorem ipsum sheet description text. There's no more of
+                it.
+              </Text>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </Container>
 
       {/*--------------- COLLAPSIBLE ---------------*/}
@@ -1054,7 +1117,7 @@ export default function Home() {
           alignItems: "flex-start",
         }}
       >
-        <Text>Code snippets.</Text>
+        <Text>Code snippets and hooks.</Text>
       </Container>
     </Container>
   );

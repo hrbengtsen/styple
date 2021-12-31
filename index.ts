@@ -77,3 +77,9 @@ export { Code } from "./components/Code";
 
 export { Tooltip, TooltipProvider } from "./components/Tooltip";
 export { Tabs, TabsList, TabsTrigger, TabsContent } from "./components/Tabs";
+export {
+  Accordion,
+  AccordionItem,
+  AccordionContent,
+  AccordionTrigger,
+} from "./components/Accordion";
