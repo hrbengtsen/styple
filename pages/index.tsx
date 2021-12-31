@@ -882,7 +882,7 @@ export default function Home() {
               <Text>Accordion one</Text>
             </AccordionTrigger>
             <AccordionContent>
-              <Text>
+              <Text css={{ p: "$sm" }}>
                 This is just a bunch of random lorem ipsum sheet description
                 text. There's more of it: This is just a bunch of random lorem
                 ipsum sheet description text. There's more of it: This is just a
@@ -899,7 +899,7 @@ export default function Home() {
               <Text>Accordion one</Text>
             </AccordionTrigger>
             <AccordionContent>
-              <Text>
+              <Text css={{ p: "$sm" }}>
                 This is just a bunch of random lorem ipsum sheet description
                 text. There's more of it: This is just a bunch of random lorem
                 ipsum sheet description text. There's more of it: This is just a
@@ -916,7 +916,7 @@ export default function Home() {
               <Text>Accordion one</Text>
             </AccordionTrigger>
             <AccordionContent>
-              <Text>
+              <Text css={{ p: "$sm" }}>
                 This is just a bunch of random lorem ipsum sheet description
                 text. There's more of it: This is just a bunch of random lorem
                 ipsum sheet description text. There's more of it: This is just a

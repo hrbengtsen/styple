@@ -1,8 +1,18 @@
 import React from "react";
-import { styled, CSS } from "../stitches.config";
+import { styled, CSS, keyframes } from "../stitches.config";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { ChevronDown } from "lucide-react";
 import { Separator } from "..";
+
+const slideDown = keyframes({
+  from: { height: 0 },
+  to: { height: "var(--radix-accordion-content-height)" },
+});
+
+const slideUp = keyframes({
+  from: { height: "var(--radix-accordion-content-height)" },
+  to: { height: 0 },
+});
 
 const StyledAccordion = styled(AccordionPrimitive.Root, {});
 
@@ -30,7 +40,14 @@ const AccordionHeader = styled(AccordionPrimitive.Header, {
 });
 
 export const AccordionContent = styled(AccordionPrimitive.Content, {
-  p: "$sm",
+  overflow: "hidden",
+
+  '&[data-state="open"]': {
+    animation: `${slideDown} 200ms cubic-bezier(0.87, 0, 0.13, 1)`,
+  },
+  '&[data-state="closed"]': {
+    animation: `${slideUp} 200ms cubic-bezier(0.87, 0, 0.13, 1)`,
+  },
 });
 
 const StyledTrigger = styled(AccordionPrimitive.Trigger, {
