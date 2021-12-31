@@ -44,6 +44,7 @@ import {
   Skeleton,
   Code,
   Tooltip,
+  Popover,
   Tabs,
   TabsList,
   TabsTrigger,
@@ -1077,6 +1078,34 @@ export default function Home() {
         </Tooltip>
       </Container>
 
+      {/*--------------- POPOVER ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Popover component.</Text>
+        <Popover content="Popover content">
+          <Button highlight size="circle">
+            <Plus style={{ verticalAlign: "middle" }} />
+          </Button>
+        </Popover>
+        <Popover
+          content={
+            <>
+              <b>Drag</b> to move <br /> <b>Click</b> to open menu
+            </>
+          }
+        >
+          <Button highlight css={{ p: "0", borderRadius: "$md" }}>
+            <GripVertical style={{ verticalAlign: "middle" }} />
+          </Button>
+        </Popover>
+      </Container>
+
       {/*--------------- CODE ---------------*/}
       <Container
         css={{
@@ -1092,6 +1121,30 @@ export default function Home() {
           <Code>console.log("Styple")</Code> in between the rest of the text
           block.
         </Text>
+      </Container>
+
+      {/*--------------- CODE BLOCK ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Codeblock component.</Text>
+      </Container>
+
+      {/*--------------- TABLE ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>Table component.</Text>
       </Container>
 
       <Separator />
