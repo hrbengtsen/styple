@@ -85,3 +85,5 @@ export {
   AccordionContent,
   AccordionTrigger,
 } from "./components/Accordion";
+
+export { Table, Thead, Tbody, Tfoot, Td, Th, Tr } from "./components/Table";

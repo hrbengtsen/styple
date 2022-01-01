@@ -53,6 +53,13 @@ import {
   AccordionItem,
   AccordionContent,
   AccordionTrigger,
+  Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Td,
+  Th,
+  Tr,
 } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
 import { Searchbar } from "../custom/Searchbar";
@@ -1123,18 +1130,6 @@ export default function Home() {
         </Text>
       </Container>
 
-      {/*--------------- CODE BLOCK ---------------*/}
-      <Container
-        css={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "$md",
-          alignItems: "flex-start",
-        }}
-      >
-        <Text>Codeblock component.</Text>
-      </Container>
-
       {/*--------------- TABLE ---------------*/}
       <Container
         css={{
@@ -1145,6 +1140,61 @@ export default function Home() {
         }}
       >
         <Text>Table component.</Text>
+        <Table
+          css={{
+            maxWidth: "$xxxxl",
+          }}
+        >
+          <Thead>
+            <Tr>
+              <Th>Prop</Th>
+              <Td>Type</Td>
+              <Td>Default</Td>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <Tr>
+              <Th>
+                <Code>defaultOpen</Code>
+              </Th>
+              <Td>
+                <Code color="normal">boolean</Code>
+              </Td>
+              <Td>-</Td>
+            </Tr>
+            <Tr>
+              <Th>
+                <Code>open</Code>
+              </Th>
+              <Td>
+                <Code color="normal">boolean</Code>
+              </Td>
+              <Td>-</Td>
+            </Tr>
+            <Tr>
+              <Th>
+                <Code>onOpenChange</Code>
+              </Th>
+              <Td>
+                <Code color="normal">boolean</Code>
+              </Td>
+              <Td>-</Td>
+            </Tr>
+          </Tbody>
+          <Tfoot>
+            <Tr>
+              <Th>
+                <Code>modal</Code>
+              </Th>
+              <Td>
+                <Code color="normal">boolean</Code>
+              </Td>
+              <Td>
+                <Code color="normal">true</Code>
+              </Td>
+            </Tr>
+          </Tfoot>
+        </Table>
       </Container>
 
       <Separator />
