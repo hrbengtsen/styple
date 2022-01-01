@@ -865,7 +865,12 @@ export default function Home() {
           alignItems: "flex-start",
         }}
       >
-        <Text>Combobox component.</Text>
+        <Text>
+          Combobox component (Searchbox with list of options that change and
+          sets focus depending on query, can also just select options from list
+          with mouse. 2 variants: one triggered like a dropdown and one like a
+          dialog).
+        </Text>
       </Container>
 
       {/*--------------- ACCORDION ---------------*/}
@@ -904,7 +909,7 @@ export default function Home() {
           </AccordionItem>
           <AccordionItem value="accordion-two">
             <AccordionTrigger>
-              <Text>Accordion one</Text>
+              <Text>Accordion two</Text>
             </AccordionTrigger>
             <AccordionContent>
               <Text css={{ p: "$sm" }}>
@@ -921,7 +926,7 @@ export default function Home() {
           </AccordionItem>
           <AccordionItem value="accordion-three">
             <AccordionTrigger>
-              <Text>Accordion one</Text>
+              <Text>Accordion three</Text>
             </AccordionTrigger>
             <AccordionContent>
               <Text css={{ p: "$sm" }}>
@@ -949,6 +954,22 @@ export default function Home() {
         }}
       >
         <Text>Collapsible component.</Text>
+      </Container>
+
+      {/*--------------- BURGER NAVIGATION ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+          alignItems: "flex-start",
+        }}
+      >
+        <Text>
+          Burger navigation component (Note: display some user content and then
+          at a provided breakpoint turn into burger with fullpage animating
+          overlay).
+        </Text>
       </Container>
 
       {/*--------------- TABS ---------------*/}

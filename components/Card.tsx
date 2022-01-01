@@ -1,7 +1,7 @@
 import { darkTheme, deepTheme, styled } from "../stitches.config";
 
 export const Card = styled("div", {
-  backgroundColor: "$bg200",
+  bg: "$bg200",
   position: "relative",
   border: "none",
 
@@ -41,26 +41,8 @@ export const Card = styled("div", {
       interactive: "true",
       elavateOnDark: "true",
       css: {
-        [`.${darkTheme} &, .${deepTheme} &`]: {
-          "&::before": {
-            content: "",
-            position: "absolute",
-            width: "100%",
-            height: "100%",
-            backgroundColor: "white",
-            top: "0",
-            left: "0",
-            borderRadius: "inherit",
-
-            opacity: "0",
-            transition: "$opacity",
-          },
-          "&:hover::before, &:focus::before": {
-            opacity: "0.03",
-          },
-          "&:active::before": {
-            opacity: "0.02",
-          },
+        "&:hover, &:focus": {
+          bg: "$bgElavated",
         },
       },
     },

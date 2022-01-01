@@ -1,4 +1,4 @@
-import { styled } from "../stitches.config";
+import { cozyTheme, styled } from "../stitches.config";
 
 export const Table = styled("table", {
   width: "100%",
@@ -20,7 +20,12 @@ export const Th = styled("th", {
   fontSize: "$sm",
   color: "$text300",
   py: "$sm",
-  borderBottom: "1px solid $button100",
+
+  borderBottom: `1px solid $button200`,
+  [`.${cozyTheme} &`]: {
+    borderBottom: `1px solid $bg300`,
+  },
+
   variants: {
     align: {
       start: {
@@ -41,7 +46,12 @@ export const Th = styled("th", {
 
 export const Td = styled("td", {
   py: "$sm",
-  borderBottom: "1px solid $button100",
+
+  borderBottom: "1px solid $button200",
+  [`.${cozyTheme} &`]: {
+    borderBottom: `1px solid $bg300`,
+  },
+
   fontSize: "$sm",
   color: "$text300",
   variants: {

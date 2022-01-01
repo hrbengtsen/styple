@@ -1,30 +1,13 @@
 import React from "react";
-import { styled, darkTheme, deepTheme } from "../stitches.config";
+import { styled } from "../stitches.config";
 import * as PopoverPrimitive from "@radix-ui/react-Popover";
 import { Text } from "..";
 
 const PopoverContent = styled(PopoverPrimitive.Content, {
   borderRadius: "$lg",
-  bg: "$bg300",
+  bg: "$bgElavated",
   boxShadow: "$sm",
   p: "$sm",
-
-  [`.${darkTheme} &, .${deepTheme} &`]: {
-    "&::before": {
-      content: "",
-      position: "absolute",
-      width: "100%",
-      height: "100%",
-      backgroundColor: "white",
-      top: "0",
-      left: "0",
-      borderRadius: "inherit",
-
-      opacity: "0.03",
-      transition: "$opacity",
-      pointerEvents: "none",
-    },
-  },
 });
 
 type PopoverProps = React.ComponentProps<typeof PopoverPrimitive.Root> &

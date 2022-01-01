@@ -23,7 +23,12 @@ const StyledContent = styled(DialogPrimitive.Content, panelStyles, {
   transform: "translate(-50%, -50%)",
 
   maxWidth: "$xxxxl",
-  minWidth: "320px",
+
+  minWidth: "90%",
+  "@bp1": {
+    minWidth: "320px",
+  },
+
   maxHeight: "90vh",
   overflowY: "auto",
 

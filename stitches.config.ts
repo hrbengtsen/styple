@@ -49,6 +49,7 @@ export const {
       bg100: "#FFFFFF",
       bg200: "#FBFCFC",
       bg300: "#f1f1f1",
+      bgElavated: "#FBFCFC", // color for "elavated" bg on panels (for dark modes)
 
       button100: "#c9cacd",
       button200: "#E9EAEC",
@@ -299,7 +300,8 @@ export const darkTheme = createTheme("dark-theme", {
     // Reversed color order
     bg100: "#000000", // dark
     bg200: "#131314", // normal
-    bg300: "#1E1E1F", // light 212122 1E1E1F
+    bg300: "#1E1E1F", // light
+    bgElavated: "#242425", // color for "elavated" bg on panels (for dark modes)
 
     button100: "#545455",
     button200: "#3f3f40",
@@ -348,6 +350,7 @@ export const cozyTheme = createTheme("cozy-theme", {
     bg100: "#FEFCEE",
     bg200: "#FDF9E2",
     bg300: "#F5EDD6",
+    bgElavated: "#FDF9E2", // color for "elavated" bg on panels (for dark modes)
 
     button100: "#858589", // perhaps make the same as one of the text colors?
     button200: "#FCEDA2",
@@ -395,6 +398,7 @@ export const deepTheme = createTheme("deep-theme", {
     bg100: "#080716", // dark
     bg200: "#0b0a1e", // normal
     bg300: "#1B1A2D", // light
+    bgElavated: "#212033", // color for "elavated" bg on panels (for dark modes)
 
     button100: "#4e4e5c",
     button200: "#383848",

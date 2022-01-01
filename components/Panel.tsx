@@ -12,26 +12,7 @@ export const contentFadeIn = keyframes({
 });
 
 export const panelStyles = css({
-  bg: "$bg200",
-
-  [`.${darkTheme} &, .${deepTheme} &`]: {
-    bg: "$bg300",
-
-    "&::before": {
-      content: "",
-      position: "absolute",
-      width: "100%",
-      height: "100%",
-      backgroundColor: "white",
-      top: "0",
-      left: "0",
-      borderRadius: "inherit",
-
-      opacity: "0.03",
-      transition: "$opacity",
-      pointerEvents: "none",
-    },
-  },
+  bg: "$bgElavated",
 
   borderRadius: "$xl",
   boxShadow: "$lg",
