@@ -27,11 +27,11 @@ export const {
 
     They should prob. be changed to function the same (hover "gives" light on dark themes and "shadows" on light themes), but I have settled on this for now.
 
-    I don't find knowing if 100 is dark or light for custom styles must of an issue, since its only reversed in 2 cases and the scale is only 3 variants.
-
     - Mikkel
 
-    TODO: be more consistent with cursor pointer on buttons/non-buttons
+    TODO: add element color transparent variants 100A-200A
+    TODO: expose Title and Description from Dialog, AlertDialog & Sheet
+    TODO: shadow button variant
   */
   theme: {
     colors: {

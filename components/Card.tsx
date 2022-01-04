@@ -41,8 +41,10 @@ export const Card = styled("div", {
       interactive: "true",
       elavateOnDark: "true",
       css: {
-        "&:hover, &:focus": {
-          bg: "$bgElavated",
+        [`.${darkTheme} &, .${deepTheme} &`]: {
+          "&:hover, &:focus": {
+            bg: "$bgElavated",
+          },
         },
       },
     },

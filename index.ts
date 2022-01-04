@@ -87,3 +87,5 @@ export {
 } from "./components/Accordion";
 
 export { Table, Thead, Tbody, Tfoot, Td, Th, Tr } from "./components/Table";
+
+export { CollapsibleNavbar, SheetNavbar } from "./components/Navbar";

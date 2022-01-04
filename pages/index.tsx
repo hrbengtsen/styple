@@ -60,15 +60,34 @@ import {
   Td,
   Th,
   Tr,
+  CollapsibleNavbar,
+  SheetNavbar,
+  keyframes,
 } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
 import { Searchbar } from "../custom/Searchbar";
 import { Plus, Trash2, Link, GripVertical } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useState } from "react";
+
+// Keyframes for navbar examples
+const slideRight = keyframes({
+  from: { transform: "translateX(-32px)", opacity: 0 },
+  to: { transform: "translateX(0)", opacity: 1, visibility: "visible" },
+});
+const openNav = keyframes({
+  from: { height: 0, opacity: 0 },
+  to: { height: "var(--radix-collapsible-content-height)", opacity: 1 },
+});
+const closeNav = keyframes({
+  from: { height: "var(--radix-collapsible-content-height)", opacity: 1 },
+  to: { height: 0, opacity: 0 },
+});
 
 export default function Home() {
   const router = useRouter();
+  const [fullpageNavState, setFullpageNavState] = useState<boolean>(false);
 
   return (
     <Container
@@ -886,8 +905,7 @@ export default function Home() {
         <Accordion
           type="single"
           css={{
-            minWidth: "$xxxxl",
-            maxWidth: "$xxxxl",
+            width: "320px",
           }}
         >
           <AccordionItem value="accordion-one">
@@ -956,20 +974,240 @@ export default function Home() {
         <Text>Collapsible component.</Text>
       </Container>
 
-      {/*--------------- BURGER NAVIGATION ---------------*/}
+      {/*--------------- NAVIGATION ---------------*/}
       <Container
         css={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "$md",
-          alignItems: "flex-start",
+          width: "100%",
         }}
       >
-        <Text>
-          Burger navigation component (Note: display some user content and then
-          at a provided breakpoint turn into burger with fullpage animating
-          overlay).
-        </Text>
+        <Container
+          css={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "$md",
+            alignItems: "flex-start",
+            maxWidth: "$xxxxl",
+            mx: "auto",
+          }}
+        >
+          <Text>Navigation components.</Text>
+          <Container
+            css={{
+              width: "100%",
+              bg: "$bg300",
+              //backdropFilter: "blur(2px)",
+            }}
+          >
+            <CollapsibleNavbar
+              css={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                p: "$md",
+                height: "$xl",
+              }}
+              brand={<Text>Basic collapsible navbar</Text>}
+              content={
+                <Container
+                  css={{
+                    display: "flex",
+                  }}
+                >
+                  <NavLinkItem ghost href="/">
+                    Link 1
+                  </NavLinkItem>
+                  <NavLinkItem ghost href="/test">
+                    Link 2
+                  </NavLinkItem>
+                  <NavLinkItem ghost href="https://www.bitetap.com/">
+                    Link 3
+                  </NavLinkItem>
+                </Container>
+              }
+              mobileContent={
+                <Container
+                  css={{
+                    display: "flex",
+                    "@bp2": {
+                      display: "none",
+                    },
+                    flexDirection: "column",
+                    width: "100%",
+                    '&[data-state="open"]': {
+                      animation: `${openNav} 125ms ease-out`,
+                    },
+                    '&[data-state="closed"]': {
+                      animation: `${closeNav} 125ms ease-out`,
+                    },
+                  }}
+                >
+                  <NavLinkItem ghost href="/">
+                    Link 1
+                  </NavLinkItem>
+                  <NavLinkItem ghost href="/test">
+                    Link 2
+                  </NavLinkItem>
+                  <NavLinkItem ghost href="https://www.bitetap.com/">
+                    Link 3
+                  </NavLinkItem>
+                </Container>
+              }
+            />
+          </Container>
+          <Container
+            css={{
+              width: "100%",
+              bg: "$bg300",
+            }}
+          >
+            <CollapsibleNavbar
+              css={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                p: "$md",
+                height: "$xl",
+              }}
+              brand={<Text>Fullpage collapsible navbar</Text>}
+              content={
+                <Container
+                  css={{
+                    display: "flex",
+                  }}
+                >
+                  <NavLinkItem ghost href="/">
+                    Link 1
+                  </NavLinkItem>
+                  <NavLinkItem ghost href="/test">
+                    Link 2
+                  </NavLinkItem>
+                  <NavLinkItem ghost href="https://www.bitetap.com/">
+                    Link 3
+                  </NavLinkItem>
+                </Container>
+              }
+              mobileContent={
+                <Container
+                  css={{
+                    display: "flex",
+                    "@bp2": {
+                      display: "none",
+                    },
+                    flexDirection: "column",
+                    position: "fixed",
+                    bg: "$bg300",
+                    zIndex: "$max",
+                    top: "0",
+                    left: "0",
+                    width: "100%",
+                    height: "100%",
+                  }}
+                >
+                  <Button
+                    onClick={() => setFullpageNavState(!fullpageNavState)}
+                  >
+                    Close
+                  </Button>
+                  <NavLinkItem
+                    ghost
+                    href="/"
+                    css={{
+                      animation: `${slideRight} 200ms cubic-bezier(0.87, 0, 0.13, 1)`,
+                      animationFillMode: "forwards",
+                      willChange: "transform",
+                      visibility: "hidden",
+                    }}
+                  >
+                    Link 1
+                  </NavLinkItem>
+                  <NavLinkItem
+                    ghost
+                    href="/test"
+                    css={{
+                      animation: `${slideRight} 200ms cubic-bezier(0.87, 0, 0.13, 1)`,
+                      animationDelay: "75ms",
+                      animationFillMode: "forwards",
+                      willChange: "transform",
+                      visibility: "hidden",
+                    }}
+                  >
+                    Link 2
+                  </NavLinkItem>
+                  <NavLinkItem
+                    ghost
+                    href="https://www.bitetap.com/"
+                    css={{
+                      animation: `${slideRight} 200ms cubic-bezier(0.87, 0, 0.13, 1)`,
+                      animationDelay: "150ms",
+                      animationFillMode: "forwards",
+                      willChange: "transform",
+                      visibility: "hidden",
+                    }}
+                  >
+                    Link 3
+                  </NavLinkItem>
+                </Container>
+              }
+              open={fullpageNavState}
+              onOpenChange={(open) => {
+                if (open && typeof document !== "undefined") {
+                  document.body.style.overflowY = "hidden";
+                } else if (typeof document !== "undefined") {
+                  document.body.style.overflowY = "auto";
+                }
+
+                setFullpageNavState(open);
+              }}
+            />
+          </Container>
+          <Container
+            css={{
+              width: "100%",
+              bg: "$bg300",
+            }}
+          >
+            <SheetNavbar
+              css={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                p: "$md",
+                height: "$xl",
+              }}
+              brand={<Text>Sheet navbar</Text>}
+              content={
+                <Container
+                  css={{
+                    display: "flex",
+                  }}
+                >
+                  <NavLinkItem ghost href="/">
+                    Link 1
+                  </NavLinkItem>
+                  <NavLinkItem ghost href="/test">
+                    Link 2
+                  </NavLinkItem>
+                  <NavLinkItem ghost href="https://www.bitetap.com/">
+                    Link 3
+                  </NavLinkItem>
+                </Container>
+              }
+              mobileContent={
+                <>
+                  <NavLinkItem ghost href="/">
+                    Link 1
+                  </NavLinkItem>
+                  <NavLinkItem ghost href="/test">
+                    Link 2
+                  </NavLinkItem>
+                  <NavLinkItem ghost href="https://www.bitetap.com/">
+                    Link 3
+                  </NavLinkItem>
+                </>
+              }
+            />
+          </Container>
+        </Container>
       </Container>
 
       {/*--------------- TABS ---------------*/}
