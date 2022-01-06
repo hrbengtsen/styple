@@ -63,10 +63,11 @@ import {
   CollapsibleNavbar,
   SheetNavbar,
   keyframes,
+  Link,
 } from "..";
 import { ThemeButton } from "../custom/ThemeButton";
 import { Searchbar } from "../custom/Searchbar";
-import { Plus, Trash2, Link, GripVertical } from "lucide-react";
+import { Plus, Trash2, Link as LinkIcon, GripVertical } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -315,6 +316,25 @@ export default function Home() {
             </NavLinkItem>
           </Container>
         </Container>
+      </Container>
+
+      {/*--------------- LINK ---------------*/}
+      <Container
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "$md",
+        }}
+      >
+        <Text>Link (with Nextjs Link) component.</Text>
+        <Text>
+          This is a text paragraph with some{" "}
+          <Link variant="color" href="#">
+            links like this
+          </Link>
+          . There are a couple different variants for{" "}
+          <Link href="#">these links</Link> that you see here. That is all.
+        </Text>
       </Container>
 
       {/*--------------- CARD ---------------*/}
@@ -865,7 +885,7 @@ export default function Home() {
                 router.push("/test");
               }}
             >
-              <Link size="16" style={{ marginRight: "8px" }} /> Link item
+              <LinkIcon size="16" style={{ marginRight: "8px" }} /> Link item
             </DropdownMenuItem>
             <DropdownMenuItem>
               <Trash2 size="16" style={{ marginRight: "8px" }} /> Action item
@@ -1273,7 +1293,10 @@ export default function Home() {
           }}
         />
         <Skeleton variant="buttonSm" />
+        <Skeleton variant="buttonMd" />
         <Skeleton variant="buttonLg" />
+        <Skeleton variant="badgeSm" />
+        <Skeleton variant="badgeLg" />
         <Skeleton variant="card" />
       </Container>
 
@@ -1467,19 +1490,139 @@ export default function Home() {
           alignItems: "flex-start",
         }}
       >
-        <Text>Gradients.</Text>
-      </Container>
-
-      {/*--------------- CODE SNIPPETS ---------------*/}
-      <Container
-        css={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "$md",
-          alignItems: "flex-start",
-        }}
-      >
-        <Text>Code snippets and hooks.</Text>
+        <Text>Gradient examples.</Text>
+        <Container
+          css={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "$xxl",
+          }}
+        >
+          <Button
+            css={{
+              position: "relative",
+              "&::before": {
+                content: "",
+                position: "absolute",
+                top: "4px",
+                bottom: "0px",
+                left: "4px",
+                right: "4px",
+                zIndex: "-1",
+                opacity: "0.6",
+                filter: "blur(16px)",
+                background:
+                  "conic-gradient(from 90deg at 50% 50%, #1f005c, #5b0060, #870160, #ac255e, #ca485c, #e16b5c, #f39060, #ffb56b)",
+                borderRadius: "$md",
+              },
+            }}
+          >
+            Button pseudo gradient
+          </Button>
+          <Button
+            css={{
+              boxShadow:
+                "0 0 0 2px rgba(255, 255, 255, 0.25), -16px 0 32px -16px #870160, 0 0 32px -16px #ac255e, 16px 0 32px -16px #ffb56b",
+            }}
+          >
+            Button shadow gradient
+          </Button>
+          <Card
+            as="a"
+            href="#"
+            interactive
+            css={{
+              p: "$xs",
+              gap: "$sm",
+              background:
+                "linear-gradient(to right, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)",
+            }}
+          >
+            <Container
+              css={{
+                bg: "$bg300",
+                p: "$lg",
+                borderRadius: "$lg",
+              }}
+            >
+              <Heading as="h3" size="lg">
+                Gradient card
+              </Heading>
+              <Text
+                css={{
+                  color: "$text300",
+                }}
+              >
+                Try clicking this interactive card
+              </Text>
+              <Text
+                css={{
+                  color: "$text300",
+                }}
+              >
+                Lorem ipsum
+              </Text>
+            </Container>
+          </Card>
+          <Container
+            css={{
+              display: "flex",
+              flexWrap: "wrap",
+              maxWidth: "calc(256px + $xs)",
+              gap: "$xs",
+            }}
+          >
+            <Container
+              css={{
+                width: "$xxxl",
+                height: "$xxl",
+                borderRadius: "$xxl",
+                background:
+                  "linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)",
+              }}
+            />
+            <Container
+              css={{
+                width: "$xxxl",
+                height: "$xxl",
+                borderRadius: "$xxl",
+                background: "linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)",
+              }}
+            />
+            <Container
+              css={{
+                width: "$xxxl",
+                height: "$xxl",
+                borderRadius: "$xxl",
+                background: "linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%)",
+              }}
+            />
+            <Container
+              css={{
+                width: "$xxxl",
+                height: "$xxl",
+                borderRadius: "$xxl",
+                background: "linear-gradient(120deg, #f6d365 0%, #fda085 100%)",
+              }}
+            />
+            <Container
+              css={{
+                width: "$xxxl",
+                height: "$xxl",
+                borderRadius: "$xxl",
+                background: "linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)",
+              }}
+            />
+            <Container
+              css={{
+                width: "$xxxl",
+                height: "$xxl",
+                borderRadius: "$xxl",
+                background: "linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)",
+              }}
+            />
+          </Container>
+        </Container>
       </Container>
     </Container>
   );

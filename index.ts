@@ -22,6 +22,7 @@ export { Text, textStyles } from "./components/Text";
 export { Button } from "./components/Button";
 export { NavItem } from "./components/NavItem";
 export { NavLinkItem } from "./components/NavLinkItem";
+export { Link } from "./components/Link";
 
 export { Card } from "./components/Card";
 
@@ -45,6 +46,8 @@ export {
   DialogContent,
   DialogTrigger,
   DialogClose,
+  DialogTitle,
+  DialogDescription,
 } from "./components/Dialog";
 export {
   AlertDialog,
@@ -52,12 +55,16 @@ export {
   AlertDialogTrigger,
   AlertDialogAction,
   AlertDialogCancel,
+  AlertDialogTitle,
+  AlertDialogDescription,
 } from "./components/AlertDialog";
 export {
   Sheet,
   SheetContent,
   SheetTrigger,
   SheetClose,
+  SheetTitle,
+  SheetDescription,
 } from "./components/Sheet";
 
 export {

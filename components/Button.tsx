@@ -178,13 +178,13 @@ export const Button = styled("button", {
       variant: "primary",
       transparent: "true",
       css: {
-        bg: "$primary200A",
+        bg: "$primary100A",
         color: "$primary200",
         "&:hover": {
-          bg: "$primary100A",
+          bg: "$primary200A",
         },
         "&:focus": {
-          bg: "$primary100A",
+          bg: "$primary200A",
         },
       },
     },
@@ -192,13 +192,13 @@ export const Button = styled("button", {
       variant: "accent",
       transparent: "true",
       css: {
-        bg: "$accent200A",
+        bg: "$accent100A",
         color: "$accent200",
         "&:hover": {
-          bg: "$accent100A",
+          bg: "$accent200A",
         },
         "&:focus": {
-          bg: "$accent100A",
+          bg: "$accent200A",
         },
       },
     },
@@ -206,13 +206,13 @@ export const Button = styled("button", {
       variant: "danger",
       transparent: "true",
       css: {
-        bg: "$danger200A",
+        bg: "$danger100A",
         color: "$danger200",
         "&:hover": {
-          bg: "$danger100A",
+          bg: "$danger200A",
         },
         "&:focus": {
-          bg: "$danger100A",
+          bg: "$danger200A",
         },
       },
     },
@@ -220,13 +220,13 @@ export const Button = styled("button", {
       variant: "success",
       transparent: "true",
       css: {
-        bg: "$success200A",
+        bg: "$success100A",
         color: "$success200",
         "&:hover": {
-          bg: "$success100A",
+          bg: "$success200A",
         },
         "&:focus": {
-          bg: "$success100A",
+          bg: "$success200A",
         },
       },
     },

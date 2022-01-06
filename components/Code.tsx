@@ -5,6 +5,7 @@ export const Code = styled("code", {
   fontSize: "max($xs, 85%)",
   whiteSpace: "nowrap",
   p: "2px 3px",
+  borderRadius: "$xs",
 
   variants: {
     color: {

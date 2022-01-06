@@ -32,7 +32,7 @@ const SelectWrapper = styled("div", {
 
 const StyledSelect = styled("select", {
   appearance: "none",
-  backgroundColor: "transparent",
+  bg: "transparent",
   border: "none",
   borderRadius: "inherit",
   color: "inherit",

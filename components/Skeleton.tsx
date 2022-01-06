@@ -36,26 +36,41 @@ export const Skeleton = styled("div", {
         borderRadius: "$round",
       },
       text: {
-        height: "$sm",
-        borderRadius: "$sm",
+        height: "$md",
+        borderRadius: "$md",
       },
       heading: {
-        height: "$lg",
+        height: "60px",
         borderRadius: "$lg",
       },
       title: {
-        height: "$xl",
+        height: "72px",
         borderRadius: "$lg",
       },
       buttonSm: {
         height: "$lg",
-        width: "112px",
+        width: "$xxxl",
         borderRadius: "$lg",
       },
-      buttonLg: {
+      buttonMd: {
         height: "40px",
-        width: "112px",
+        width: "$xxxl",
         borderRadius: "$xl",
+      },
+      buttonLg: {
+        height: "46px",
+        width: "$xxxl",
+        borderRadius: "$xxl",
+      },
+      badgeSm: {
+        height: "$md",
+        width: "$xxl",
+        borderRadius: "$pill",
+      },
+      badgeLg: {
+        height: "$lg",
+        width: "$xxl",
+        borderRadius: "$pill",
       },
       card: {
         height: "192px",

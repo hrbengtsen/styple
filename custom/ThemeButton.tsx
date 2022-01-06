@@ -32,16 +32,16 @@ export function ThemeButton() {
   function getThemeIcon() {
     switch (resolvedTheme) {
       case "light":
-        return <Sun style={{ verticalAlign: "middle" }} />;
+        return <Sun size="20" style={{ verticalAlign: "middle" }} />;
 
       case "dark":
-        return <Moon style={{ verticalAlign: "middle" }} />;
+        return <Moon size="20" style={{ verticalAlign: "middle" }} />;
 
       case "deep":
-        return <MountainSnow style={{ verticalAlign: "middle" }} />;
+        return <MountainSnow size="20" style={{ verticalAlign: "middle" }} />;
 
       case "cozy":
-        return <Coffee style={{ verticalAlign: "middle" }} />;
+        return <Coffee size="20" style={{ verticalAlign: "middle" }} />;
     }
   }
 

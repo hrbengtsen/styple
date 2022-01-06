@@ -21,17 +21,14 @@ export const {
     200: normal
     300: dark (light on dark/deep for bg)
 
-    I prefer semantic names (light, normal, dark), but they cause too many issues and need more component specific style overrides (therefore 100-300).
-
-    The caveat is the reversed order for text colors on light themes and bg colors on dark themes.
+    The caveat is the reversed order for text colors on light themes and bg colors on dark themes. Also the scale is only 100-200 (light/darker) for semantic transparent colors.
 
     They should prob. be changed to function the same (hover "gives" light on dark themes and "shadows" on light themes), but I have settled on this for now.
 
     - Mikkel
 
     TODO: add element color transparent variants 100A-200A
-    TODO: expose Title and Description from Dialog, AlertDialog & Sheet
-    TODO: shadow button variant
+    TODO: combobox
   */
   theme: {
     colors: {
@@ -59,26 +56,26 @@ export const {
       primary100: "$heading100",
       primary200: "$heading200",
       primary300: "$heading300",
-      primary100A: "rgba(194, 199, 202, 0.16)",
-      primary200A: "rgba(194, 199, 202, 0.12)",
+      primary100A: "rgba(194, 199, 202, 0.12)",
+      primary200A: "rgba(194, 199, 202, 0.16)",
 
       accent100: "#3c87b2",
       accent200: "#347399",
       accent300: "#2b607f",
-      accent100A: "rgba(52, 115, 153, 0.10)",
-      accent200A: "rgba(52, 115, 153, 0.06)",
+      accent100A: "rgba(52, 115, 153, 0.06)",
+      accent200A: "rgba(52, 115, 153, 0.10)",
 
       danger100: "#b24343",
       danger200: "#993a3a",
       danger300: "#7f3030",
-      danger100A: "rgba(153, 58, 58, 0.10)",
-      danger200A: "rgba(153, 58, 58, 0.06)",
+      danger100A: "rgba(153, 58, 58, 0.06)",
+      danger200A: "rgba(153, 58, 58, 0.10)",
 
       success100: "#3e946b",
       success200: "#357f5b",
       success300: "#2c6a4c",
-      success100A: "rgba(62, 148, 107, 0.10)",
-      success200A: "rgba(62, 148, 107, 0.06)",
+      success100A: "rgba(62, 148, 107, 0.06)",
+      success200A: "rgba(62, 148, 107, 0.10)",
     },
     fonts: {
       inter:
@@ -311,26 +308,26 @@ export const darkTheme = createTheme("dark-theme", {
     primary100: "#FFFFFF",
     primary200: "#F4F4F6",
     primary300: "#C2C7CA",
-    primary100A: "rgba(194, 199, 202, 0.16)",
-    primary200A: "rgba(194, 199, 202, 0.12)",
+    primary100A: "rgba(194, 199, 202, 0.12)",
+    primary200A: "rgba(194, 199, 202, 0.16)",
 
     accent100: "#89d3ff",
     accent200: "#57c1ff",
     accent300: "#4eade5",
-    accent100A: "rgba(87, 193, 255, 0.16)",
-    accent200A: "rgba(87, 193, 255, 0.12)",
+    accent100A: "rgba(87, 193, 255, 0.12)",
+    accent200A: "rgba(87, 193, 255, 0.16)",
 
     danger100: "#ff9090",
     danger200: "#ff6161",
     danger300: "#e55757",
-    danger100A: "rgba(255, 97, 97, 0.16)",
-    danger200A: "rgba(255, 97, 97, 0.12)",
+    danger100A: "rgba(255, 97, 97, 0.12)",
+    danger200A: "rgba(255, 97, 97, 0.16)",
 
     success100: "#8ae0b7",
     success200: "#59d499",
     success300: "#50be89",
-    success100A: "rgba(89, 212, 153, 0.16)",
-    success200A: "rgba(89, 212, 153, 0.12)",
+    success100A: "rgba(89, 212, 153, 0.12)",
+    success200A: "rgba(89, 212, 153, 0.16)",
   },
 });
 
@@ -360,20 +357,20 @@ export const cozyTheme = createTheme("cozy-theme", {
     primary100: "#FFDD75",
     primary200: "#FFD146",
     primary300: "#FAC832",
-    primary100A: "rgba(253, 213, 35, 0.16)",
-    primary200A: "rgba(253, 213, 35, 0.12)",
+    primary100A: "rgba(253, 213, 35, 0.12)",
+    primary200A: "rgba(253, 213, 35, 0.16)",
 
     accent100: "#308e85",
     accent200: "#2b7e76",
     accent300: "#256e67",
-    accent100A: "rgba(43, 126, 118, 0.09)",
-    accent200A: "rgba(43, 126, 118, 0.05)",
+    accent100A: "rgba(43, 126, 118, 0.05)",
+    accent200A: "rgba(43, 126, 118, 0.09)",
 
     danger100: "#d95444",
     danger200: "#c14b3c",
     danger300: "#a94135",
-    danger100A: "rgba(193, 75, 60, 0.08)",
-    danger200A: "rgba(193, 75, 60, 0.04)",
+    danger100A: "rgba(193, 75, 60, 0.04)",
+    danger200A: "rgba(193, 75, 60, 0.08)",
 
     success100: "$accent100",
     success200: "$accent200",
@@ -408,25 +405,25 @@ export const deepTheme = createTheme("deep-theme", {
     primary100: "#ec5d94",
     primary200: "#ea4c89",
     primary300: "#d2447b",
-    primary100A: "rgba(234, 76, 137, 0.09)",
-    primary200A: "rgba(234, 76, 137, 0.05)",
+    primary100A: "rgba(234, 76, 137, 0.05)",
+    primary200A: "rgba(234, 76, 137, 0.09)",
 
     accent100: "#5dbec5",
     accent200: "#4bb7bf",
     accent300: "#43a4ab",
-    accent100A: "rgba(75, 183, 191, 0.09)",
-    accent200A: "rgba(75, 183, 191, 0.05)",
+    accent100A: "rgba(75, 183, 191, 0.05)",
+    accent200A: "rgba(75, 183, 191, 0.09)",
 
     danger100: "#ff9090",
     danger200: "#ff6161",
     danger300: "#e55757",
-    danger100A: "rgba(255, 97, 97, 0.09)",
-    danger200A: "rgba(255, 97, 97, 0.05)",
+    danger100A: "rgba(255, 97, 97, 0.05)",
+    danger200A: "rgba(255, 97, 97, 0.09)",
 
     success100: "#8ae0b7",
     success200: "#59d499",
     success300: "#50be89",
-    success100A: "rgba(89, 212, 153, 0.09)",
-    success200A: "rgba(89, 212, 153, 0.05)",
+    success100A: "rgba(89, 212, 153, 0.05)",
+    success200A: "rgba(89, 212, 153, 0.09)",
   },
 });

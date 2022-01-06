@@ -66,3 +66,5 @@ export const AlertDialogContent = React.forwardRef<
 export const AlertDialogTrigger = AlertDialogPrimitive.Trigger;
 export const AlertDialogAction = AlertDialogPrimitive.Action;
 export const AlertDialogCancel = AlertDialogPrimitive.Cancel;
+export const AlertDialogTitle = AlertDialogPrimitive.Title;
+export const AlertDialogDescription = AlertDialogPrimitive.Description;
