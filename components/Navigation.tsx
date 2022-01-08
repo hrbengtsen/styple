@@ -84,7 +84,7 @@ const Burger = React.forwardRef<
 ));
 
 // General collapsible navbar with custom animated Burger
-type CollapsibleNavbarProps = React.ComponentProps<typeof Container> & {
+type NavbarProps = React.ComponentProps<typeof Container> & {
   css?: CSS;
   open?: boolean;
   onOpenChange?: (bool: boolean) => void;
@@ -93,9 +93,9 @@ type CollapsibleNavbarProps = React.ComponentProps<typeof Container> & {
   mobileContent: React.ReactNode;
 };
 
-export const CollapsibleNavbar = React.forwardRef<
+export const Navbar = React.forwardRef<
   React.ElementRef<typeof StyledBurger>,
-  CollapsibleNavbarProps
+  NavbarProps
 >(
   (
     { open, onOpenChange, brand, content, mobileContent, ...props },
@@ -142,8 +142,8 @@ export const CollapsibleNavbar = React.forwardRef<
   }
 );
 
-// More specific navbar as a Sheet
-type SheetNavbarProps = React.ComponentProps<typeof Container> & {
+// Sidebar
+type SidebarProps = React.ComponentProps<typeof Container> & {
   css?: CSS;
   brand?: React.ReactNode;
   content: React.ReactNode;
@@ -151,9 +151,9 @@ type SheetNavbarProps = React.ComponentProps<typeof Container> & {
   side?: "bottom" | "left" | "right" | "top";
 };
 
-export const SheetNavbar = React.forwardRef<
+export const Sidebar = React.forwardRef<
   React.ElementRef<typeof Button>,
-  SheetNavbarProps
+  SidebarProps
 >(
   (
     { brand, content, mobileContent, side = "right", ...props },

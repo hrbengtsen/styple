@@ -51,9 +51,6 @@ export const textStyles = css({
       text: {
         color: "$text200",
       },
-      heading: {
-        color: "$heading200",
-      },
       white: {
         color: "#FFFFFF",
       },

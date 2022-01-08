@@ -33,9 +33,6 @@ const Rotating = styled("div", {
       text: {
         color: "$text200",
       },
-      heading: {
-        color: "$heading200",
-      },
       white: {
         color: "#FFFFFF",
       },

@@ -51,19 +51,19 @@ const StyledChevronDown = styled(ChevronDown, {
   display: "inline",
 
   variants: {
-    size: {
+    sizeOffset: {
       sm: {
-        top: "4px",
-        right: "4px",
+        top: "6px",
+        right: "6px",
       },
       lg: {
-        top: "7px",
-        right: "4px",
+        top: "10px",
+        right: "6px",
       },
     },
   },
   defaultVariants: {
-    size: "sm",
+    sizeOffset: "sm",
   },
 });
 
@@ -77,6 +77,6 @@ export const Select = React.forwardRef<
 >(({ size, css, ...props }, forwardedRef) => (
   <SelectWrapper css={css} size={size}>
     <StyledSelect ref={forwardedRef} {...props} />
-    <StyledChevronDown size={size} />
+    <StyledChevronDown sizeOffset={size} size="20" />
   </SelectWrapper>
 ));

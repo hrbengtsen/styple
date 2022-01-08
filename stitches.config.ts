@@ -26,36 +26,35 @@ export const {
     They should prob. be changed to function the same (hover "gives" light on dark themes and "shadows" on light themes), but I have settled on this for now.
 
     - Mikkel
-
-    TODO: add element color transparent variants 100A-200A
-    TODO: combobox
   */
   theme: {
     colors: {
       // Element based colors
 
       // Reversed color order
-      heading100: "#131314", // dark
-      heading200: "#3B3B3E", // normal
-      heading300: "#6c6c6f", // light
-
-      text100: "$heading100",
-      text200: "$heading200",
-      text300: "$heading300",
+      text100: "#131314", // dark
+      text200: "#3B3B3E", // normal
+      text300: "#6c6c6f", // light
 
       bg100: "#FFFFFF",
       bg200: "#FBFCFC",
       bg300: "#f1f1f1",
+      bg100A: "#FFFFFFBF", // BF = ~75% alpha (#rrggbbaa)
+      bg200A: "#FBFCFCBF",
+      bg300A: "#f1f1f1BF",
       bgElavated: "#FBFCFC", // color for "elavated" bg on panels (for dark modes)
 
       button100: "#c9cacd",
       button200: "#E9EAEC",
       button300: "#E0E1E4",
+      button100A: "#c9cacdBF",
+      button200A: "#E9EAECBF",
+      button300A: "#E0E1E4BF",
 
       // Semantic colors
-      primary100: "$heading100",
-      primary200: "$heading200",
-      primary300: "$heading300",
+      primary100: "$text100",
+      primary200: "$text200",
+      primary300: "$text300",
       primary100A: "rgba(194, 199, 202, 0.12)",
       primary200A: "rgba(194, 199, 202, 0.16)",
 
@@ -286,28 +285,30 @@ export const globalStyles = globalCss({
 export const darkTheme = createTheme("dark-theme", {
   colors: {
     // Element based colors
-    heading100: "#F4F4F6",
-    heading200: "#C2C7CA",
-    heading300: "#858589",
-
-    text100: "$heading100",
-    text200: "$heading200",
-    text300: "$heading300",
+    text100: "#F4F4F6",
+    text200: "#C2C7CA",
+    text300: "#858589",
 
     // Reversed color order
     bg100: "#000000", // dark
     bg200: "#131314", // normal
     bg300: "#1E1E1F", // light
+    bg100A: "#000000BF",
+    bg200A: "#131314BF",
+    bg300A: "#1E1E1FBF",
     bgElavated: "#242425", // color for "elavated" bg on panels (for dark modes)
 
     button100: "#545455",
     button200: "#3f3f40",
     button300: "#353536",
+    button100A: "#545455",
+    button200A: "#3f3f40",
+    button300A: "#353536",
 
     // Semantic colors
     primary100: "#FFFFFF",
-    primary200: "#F4F4F6",
-    primary300: "#C2C7CA",
+    primary200: "$text100",
+    primary300: "$text200",
     primary100A: "rgba(194, 199, 202, 0.12)",
     primary200A: "rgba(194, 199, 202, 0.16)",
 
@@ -336,22 +337,24 @@ export const cozyTheme = createTheme("cozy-theme", {
     // Element based colors
 
     // Reversed color order
-    heading100: "#4f4230", // dark
-    heading200: "#63533c", // normal
-    heading300: "#756957", // light
-
-    text100: "$heading100",
-    text200: "$heading200",
-    text300: "$heading300",
+    text100: "#4f4230", // dark
+    text200: "#63533c", // normal
+    text300: "#756957", // light
 
     bg100: "#FEFCEE",
     bg200: "#FDF9E2",
     bg300: "#F5EDD6",
+    bg100A: "#FEFCEEBF",
+    bg200A: "#FDF9E2BF",
+    bg300A: "#F5EDD6",
     bgElavated: "#FDF9E2", // color for "elavated" bg on panels (for dark modes)
 
     button100: "#858589", // perhaps make the same as one of the text colors?
     button200: "#FCEDA2",
     button300: "#F8E99F",
+    button100A: "#858589BF",
+    button200A: "#FCEDA2BF",
+    button300A: "#F8E99FBF",
 
     // Semantic colors
     primary100: "#FFDD75",
@@ -383,23 +386,25 @@ export const cozyTheme = createTheme("cozy-theme", {
 export const deepTheme = createTheme("deep-theme", {
   colors: {
     // Element based colors
-    heading100: "#F4F4F6",
-    heading200: "#C2C7CA",
-    heading300: "#858589",
-
-    text100: "$heading100",
-    text200: "$heading200",
-    text300: "$heading300",
+    text100: "#F4F4F6",
+    text200: "#C2C7CA",
+    text300: "#858589",
 
     // Reversed color order
     bg100: "#080716", // dark
     bg200: "#0b0a1e", // normal
     bg300: "#1B1A2D", // light
+    bg100A: "#080716BF",
+    bg200A: "#0b0a1eBF",
+    bg300A: "#1B1A2DBF",
     bgElavated: "#212033", // color for "elavated" bg on panels (for dark modes)
 
     button100: "#4e4e5c",
     button200: "#383848",
     button300: "#2E2D3E",
+    button100A: "#4e4e5cBF",
+    button200A: "#383848BF",
+    button300A: "#2E2D3EBF",
 
     // Semantic colors
     primary100: "#ec5d94",

@@ -60,8 +60,8 @@ import {
   Td,
   Th,
   Tr,
-  CollapsibleNavbar,
-  SheetNavbar,
+  Navbar,
+  Sidebar,
   keyframes,
   Link,
 } from "..";
@@ -84,6 +84,10 @@ const openNav = keyframes({
 const closeNav = keyframes({
   from: { height: "var(--radix-collapsible-content-height)", opacity: 1 },
   to: { height: 0, opacity: 0 },
+});
+const openFullNav = keyframes({
+  from: { opacity: 0 },
+  to: { opacity: 1 },
 });
 
 export default function Home() {
@@ -1015,10 +1019,9 @@ export default function Home() {
             css={{
               width: "100%",
               bg: "$bg300",
-              //backdropFilter: "blur(2px)",
             }}
           >
-            <CollapsibleNavbar
+            <Navbar
               css={{
                 display: "flex",
                 alignItems: "center",
@@ -1026,7 +1029,7 @@ export default function Home() {
                 p: "$md",
                 height: "$xl",
               }}
-              brand={<Text>Basic collapsible navbar</Text>}
+              brand={<Text>Basic navbar</Text>}
               content={
                 <Container
                   css={{
@@ -1080,7 +1083,7 @@ export default function Home() {
               bg: "$bg300",
             }}
           >
-            <CollapsibleNavbar
+            <Navbar
               css={{
                 display: "flex",
                 alignItems: "center",
@@ -1088,7 +1091,7 @@ export default function Home() {
                 p: "$md",
                 height: "$xl",
               }}
-              brand={<Text>Fullpage collapsible navbar</Text>}
+              brand={<Text>Fullpage navbar</Text>}
               content={
                 <Container
                   css={{
@@ -1115,7 +1118,9 @@ export default function Home() {
                     },
                     flexDirection: "column",
                     position: "fixed",
-                    bg: "$bg300",
+                    bg: "$bg300A",
+                    backdropFilter: "blur(16px)",
+                    animation: `${openFullNav} 200ms cubic-bezier(0.87, 0, 0.13, 1)`,
                     zIndex: "$max",
                     top: "0",
                     left: "0",
@@ -1186,7 +1191,7 @@ export default function Home() {
               bg: "$bg300",
             }}
           >
-            <SheetNavbar
+            <Sidebar
               css={{
                 display: "flex",
                 alignItems: "center",
@@ -1194,7 +1199,7 @@ export default function Home() {
                 p: "$md",
                 height: "$xl",
               }}
-              brand={<Text>Sheet navbar</Text>}
+              brand={<Text>Sidebar (like navbar + sheet here)</Text>}
               content={
                 <Container
                   css={{
