@@ -12,7 +12,7 @@ export {
 } from "./stitches.config";
 
 // Components
-export { Container } from "./components/Container";
+export { Container, Flex, Grid, Section } from "./components/Containers";
 export { Spacer } from "./components/Spacer";
 export { Separator } from "./components/Separator";
 

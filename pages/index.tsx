@@ -1,5 +1,7 @@
 import {
   Container,
+  Flex,
+  Grid,
   Heading,
   Text,
   Button,
@@ -95,9 +97,8 @@ export default function Home() {
   const [fullpageNavState, setFullpageNavState] = useState<boolean>(false);
 
   return (
-    <Container
+    <Flex
       css={{
-        display: "flex",
         alignItems: "center",
         flexDirection: "column",
         gap: "$xxxl",
@@ -106,9 +107,8 @@ export default function Home() {
     >
       <ThemeButton />
       {/*--------------- HEADING ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
         }}
@@ -140,12 +140,11 @@ export default function Home() {
         >
           styple lorem ipsum
         </Heading>
-      </Container>
+      </Flex>
 
       {/*--------------- TEXT ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
         }}
@@ -165,20 +164,18 @@ export default function Home() {
             Success colored text
           </Text>
         </Container>
-      </Container>
+      </Flex>
 
       {/*--------------- BUTTON ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
         }}
       >
         <Text>Button component.</Text>
-        <Container
+        <Flex
           css={{
-            display: "flex",
             flexDirection: "column",
             gap: "$md",
             alignItems: "center",
@@ -245,13 +242,12 @@ export default function Home() {
           <Button variant="success" transparent>
             Success transparent
           </Button>
-        </Container>
-      </Container>
+        </Flex>
+      </Flex>
 
       {/*--------------- NAV ITEM ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
         }}
@@ -260,17 +256,15 @@ export default function Home() {
           NavItem (with Nextjs Link) components. They have all button variants +
           active variant.
         </Text>
-        <Container
+        <Flex
           css={{
-            display: "flex",
             flexDirection: "column",
             gap: "$md",
             alignItems: "center",
           }}
         >
-          <Container
+          <Flex
             css={{
-              display: "flex",
               gap: "$md",
               justifyContent: "center",
             }}
@@ -284,10 +278,9 @@ export default function Home() {
             <NavLinkItem ghost href="https://www.bitetap.com/">
               Ext. Link
             </NavLinkItem>
-          </Container>
-          <Container
+          </Flex>
+          <Flex
             css={{
-              display: "flex",
               gap: "$md",
               justifyContent: "center",
             }}
@@ -301,10 +294,9 @@ export default function Home() {
             <NavLinkItem active="bold" ghost href="https://www.bitetap.com/">
               Ext. Link
             </NavLinkItem>
-          </Container>
-          <Container
+          </Flex>
+          <Flex
             css={{
-              display: "flex",
               gap: "$md",
               justifyContent: "center",
             }}
@@ -318,14 +310,13 @@ export default function Home() {
             <NavLinkItem active="both" ghost href="https://www.bitetap.com/">
               Ext. Link
             </NavLinkItem>
-          </Container>
-        </Container>
-      </Container>
+          </Flex>
+        </Flex>
+      </Flex>
 
       {/*--------------- LINK ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
         }}
@@ -339,12 +330,11 @@ export default function Home() {
           . There are a couple different variants for{" "}
           <Link href="#">these links</Link> that you see here. That is all.
         </Text>
-      </Container>
+      </Flex>
 
       {/*--------------- CARD ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
         }}
@@ -440,24 +430,22 @@ export default function Home() {
             </Text>
           </Container>
         </Card>
-      </Container>
+      </Flex>
 
       {/*--------------- SPINNER ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
         }}
       >
         <Text>Spinner component.</Text>
         <Spinner />
-      </Container>
+      </Flex>
 
       {/*--------------- AVATAR ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           alignItems: "flex-start",
           gap: "$md",
@@ -499,12 +487,11 @@ export default function Home() {
           <Avatar src="/founder.webp" fallback="M" />
           <Avatar src="/founder.webp" fallback="M" />
         </AvatarGroup>
-      </Container>
+      </Flex>
 
       {/*--------------- SEPARATOR ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
         }}
@@ -515,12 +502,11 @@ export default function Home() {
         <Separator size="sm" />
         <Separator orientation="vertical" size="lg" />
         <Separator orientation="vertical" size="sm" />
-      </Container>
+      </Flex>
 
       {/*--------------- BADGE ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
@@ -539,12 +525,11 @@ export default function Home() {
         <Badge as="button" disabled>
           Disabled
         </Badge>
-      </Container>
+      </Flex>
 
       {/*--------------- TEXT FIELD ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
@@ -557,12 +542,11 @@ export default function Home() {
         <TextField size="lg" placeholder="Ghost textfield" variant="ghost" />
         <TextField size="lg" placeholder="Invalid textfield" state="invalid" />
         <TextField size="lg" placeholder="Valid textfield" state="valid" />
-      </Container>
+      </Flex>
 
       {/*--------------- SEARCH FIELD ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
@@ -570,12 +554,11 @@ export default function Home() {
       >
         <Text>SearchField component (uses TextField).</Text>
         <Searchbar />
-      </Container>
+      </Flex>
 
       {/*--------------- TEXT AREA ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
@@ -584,12 +567,11 @@ export default function Home() {
         <Text>TextArea component.</Text>
         <TextArea placeholder="Default textarea" />
         <TextArea variant="ghost" placeholder="Ghost textarea" />
-      </Container>
+      </Flex>
 
       {/*--------------- LABEL ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
@@ -604,12 +586,11 @@ export default function Home() {
             placeholder="Textfield with label"
           />
         </Container>
-      </Container>
+      </Flex>
 
       {/*--------------- CHECKBOX ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
@@ -617,12 +598,11 @@ export default function Home() {
       >
         <Text>Checkbox component.</Text>
         <Checkbox />
-      </Container>
+      </Flex>
 
       {/*--------------- RADIO ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
@@ -638,12 +618,11 @@ export default function Home() {
           />
           <Radio value="2" />
         </RadioGroup>
-      </Container>
+      </Flex>
 
       {/*--------------- SLIDER ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
@@ -652,12 +631,11 @@ export default function Home() {
         <Text>Slider component.</Text>
         <Slider defaultValue={[50]} max={100} step={1} />
         <Slider orientation="vertical" defaultValue={[50]} max={100} step={1} />
-      </Container>
+      </Flex>
 
       {/*--------------- SWITCH ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
@@ -665,21 +643,19 @@ export default function Home() {
       >
         <Text>Switch component.</Text>
         <Switch />
-      </Container>
+      </Flex>
 
       {/*--------------- TOGGLE ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
         }}
       >
         <Text>Toggle component.</Text>
-        <Container
+        <Flex
           css={{
-            display: "flex",
             gap: "$xs",
           }}
         >
@@ -698,14 +674,13 @@ export default function Home() {
           >
             U
           </Toggle>
-        </Container>
+        </Flex>
         <Toggle size="lg">L</Toggle>
-      </Container>
+      </Flex>
 
       {/*--------------- SELECT ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
@@ -722,12 +697,11 @@ export default function Home() {
           <option>Select 2</option>
           <option>Select 3</option>
         </Select>
-      </Container>
+      </Flex>
 
       {/*--------------- DIALOG ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
@@ -756,9 +730,8 @@ export default function Home() {
             </Text>
             <TextArea placeholder="Default textarea" />
             <Switch />
-            <Container
+            <Flex
               css={{
-                display: "flex",
                 justifyContent: "flex-end",
                 marginTop: "$lg",
               }}
@@ -768,7 +741,7 @@ export default function Home() {
                   Close dialog
                 </Button>
               </DialogClose>
-            </Container>
+            </Flex>
           </DialogContent>
         </Dialog>
         <AlertDialog>
@@ -792,9 +765,8 @@ export default function Home() {
               bunch of random lorem ipsum alertdialog description text. There's
               no more of it.
             </Text>
-            <Container
+            <Flex
               css={{
-                display: "flex",
                 justifyContent: "flex-end",
                 marginTop: "$lg",
                 gap: "$md",
@@ -808,15 +780,14 @@ export default function Home() {
                   Save changes
                 </Button>
               </AlertDialogAction>
-            </Container>
+            </Flex>
           </AlertDialogContent>
         </AlertDialog>
-      </Container>
+      </Flex>
 
       {/*--------------- SHEET ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
@@ -843,9 +814,8 @@ export default function Home() {
               There's more of it: This is just a bunch of random lorem ipsum
               sheet description text. There's no more of it.
             </Text>
-            <Container
+            <Flex
               css={{
-                display: "flex",
                 justifyContent: "flex-end",
                 marginTop: "$lg",
               }}
@@ -855,15 +825,14 @@ export default function Home() {
                   Close sheet
                 </Button>
               </SheetClose>
-            </Container>
+            </Flex>
           </SheetContent>
         </Sheet>
-      </Container>
+      </Flex>
 
       {/*--------------- DROPDOWN ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
@@ -897,29 +866,25 @@ export default function Home() {
             <DropdownMenuItem disabled>Disabled item</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-      </Container>
+      </Flex>
 
       {/*--------------- COMBOBOX ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
         }}
       >
         <Text>
-          Combobox component (Searchbox with list of options that change and
-          sets focus depending on query, can also just select options from list
-          with mouse. 2 variants: one triggered like a dropdown and one like a
-          dialog).
+          Combobox component (should have example with one like a
+          dropdown/select and one which opens like a dialog).
         </Text>
-      </Container>
+      </Flex>
 
       {/*--------------- ACCORDION ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
@@ -984,19 +949,18 @@ export default function Home() {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
-      </Container>
+      </Flex>
 
       {/*--------------- COLLAPSIBLE ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
         }}
       >
         <Text>Collapsible component.</Text>
-      </Container>
+      </Flex>
 
       {/*--------------- NAVIGATION ---------------*/}
       <Container
@@ -1004,9 +968,8 @@ export default function Home() {
           width: "100%",
         }}
       >
-        <Container
+        <Flex
           css={{
-            display: "flex",
             flexDirection: "column",
             gap: "$md",
             alignItems: "flex-start",
@@ -1031,11 +994,7 @@ export default function Home() {
               }}
               brand={<Text>Basic navbar</Text>}
               content={
-                <Container
-                  css={{
-                    display: "flex",
-                  }}
-                >
+                <Flex>
                   <NavLinkItem ghost href="/">
                     Link 1
                   </NavLinkItem>
@@ -1045,12 +1004,11 @@ export default function Home() {
                   <NavLinkItem ghost href="https://www.bitetap.com/">
                     Link 3
                   </NavLinkItem>
-                </Container>
+                </Flex>
               }
               mobileContent={
-                <Container
+                <Flex
                   css={{
-                    display: "flex",
                     "@bp2": {
                       display: "none",
                     },
@@ -1073,7 +1031,7 @@ export default function Home() {
                   <NavLinkItem ghost href="https://www.bitetap.com/">
                     Link 3
                   </NavLinkItem>
-                </Container>
+                </Flex>
               }
             />
           </Container>
@@ -1093,11 +1051,7 @@ export default function Home() {
               }}
               brand={<Text>Fullpage navbar</Text>}
               content={
-                <Container
-                  css={{
-                    display: "flex",
-                  }}
-                >
+                <Flex>
                   <NavLinkItem ghost href="/">
                     Link 1
                   </NavLinkItem>
@@ -1107,12 +1061,11 @@ export default function Home() {
                   <NavLinkItem ghost href="https://www.bitetap.com/">
                     Link 3
                   </NavLinkItem>
-                </Container>
+                </Flex>
               }
               mobileContent={
-                <Container
+                <Flex
                   css={{
-                    display: "flex",
                     "@bp2": {
                       display: "none",
                     },
@@ -1171,7 +1124,7 @@ export default function Home() {
                   >
                     Link 3
                   </NavLinkItem>
-                </Container>
+                </Flex>
               }
               open={fullpageNavState}
               onOpenChange={(open) => {
@@ -1201,11 +1154,7 @@ export default function Home() {
               }}
               brand={<Text>Sidebar (like navbar + sheet here)</Text>}
               content={
-                <Container
-                  css={{
-                    display: "flex",
-                  }}
-                >
+                <Flex>
                   <NavLinkItem ghost href="/">
                     Link 1
                   </NavLinkItem>
@@ -1215,7 +1164,7 @@ export default function Home() {
                   <NavLinkItem ghost href="https://www.bitetap.com/">
                     Link 3
                   </NavLinkItem>
-                </Container>
+                </Flex>
               }
               mobileContent={
                 <>
@@ -1232,13 +1181,12 @@ export default function Home() {
               }
             />
           </Container>
-        </Container>
+        </Flex>
       </Container>
 
       {/*--------------- TABS ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
@@ -1257,21 +1205,19 @@ export default function Home() {
             <Text>Settings tab content is here</Text>
           </TabsContent>
         </Tabs>
-      </Container>
+      </Flex>
 
       {/*--------------- SKELETON ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
         }}
       >
         <Text>Skeleton component.</Text>
-        <Container
+        <Flex
           css={{
-            display: "flex",
             gap: "$md",
           }}
         >
@@ -1279,7 +1225,7 @@ export default function Home() {
           <Skeleton variant="avatarMd" />
           <Skeleton variant="avatarLg" />
           <Skeleton variant="avatarXl" />
-        </Container>
+        </Flex>
         <Skeleton
           variant="title"
           css={{
@@ -1303,21 +1249,19 @@ export default function Home() {
         <Skeleton variant="badgeSm" />
         <Skeleton variant="badgeLg" />
         <Skeleton variant="card" />
-      </Container>
+      </Flex>
 
       {/*--------------- Status ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
         }}
       >
         <Text>Status component.</Text>
-        <Container
+        <Flex
           css={{
-            display: "flex",
             gap: "$md",
           }}
         >
@@ -1341,13 +1285,12 @@ export default function Home() {
             <Status variant="success" />
             <Status size="lg" variant="success" />
           </Container>
-        </Container>
-      </Container>
+        </Flex>
+      </Flex>
 
       {/*--------------- TOOLTIP ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
@@ -1370,12 +1313,11 @@ export default function Home() {
             <GripVertical style={{ verticalAlign: "middle" }} />
           </Button>
         </Tooltip>
-      </Container>
+      </Flex>
 
       {/*--------------- POPOVER ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
@@ -1398,12 +1340,11 @@ export default function Home() {
             <GripVertical style={{ verticalAlign: "middle" }} />
           </Button>
         </Popover>
-      </Container>
+      </Flex>
 
       {/*--------------- CODE ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
@@ -1415,12 +1356,11 @@ export default function Home() {
           <Code>console.log("Styple")</Code> in between the rest of the text
           block.
         </Text>
-      </Container>
+      </Flex>
 
       {/*--------------- TABLE ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
@@ -1482,23 +1422,21 @@ export default function Home() {
             </Tr>
           </Tfoot>
         </Table>
-      </Container>
+      </Flex>
 
       <Separator />
 
       {/*--------------- GRADIENTS ---------------*/}
-      <Container
+      <Flex
         css={{
-          display: "flex",
           flexDirection: "column",
           gap: "$md",
           alignItems: "flex-start",
         }}
       >
         <Text>Gradient examples.</Text>
-        <Container
+        <Flex
           css={{
-            display: "flex",
             flexDirection: "column",
             gap: "$xxl",
           }}
@@ -1569,11 +1507,10 @@ export default function Home() {
               </Text>
             </Container>
           </Card>
-          <Container
+          <Grid
             css={{
-              display: "flex",
-              flexWrap: "wrap",
               maxWidth: "calc(256px + $xs)",
+              gridTemplateColumns: "1fr 1fr",
               gap: "$xs",
             }}
           >
@@ -1626,9 +1563,9 @@ export default function Home() {
                 background: "linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)",
               }}
             />
-          </Container>
-        </Container>
-      </Container>
-    </Container>
+          </Grid>
+        </Flex>
+      </Flex>
+    </Flex>
   );
 }

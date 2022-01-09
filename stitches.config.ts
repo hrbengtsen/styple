@@ -21,7 +21,7 @@ export const {
     200: normal
     300: dark (light on dark/deep for bg)
 
-    The caveat is the reversed order for text colors on light themes and bg colors on dark themes. Also the scale is only 100-200 (light/darker) for semantic transparent colors.
+    The caveat is the reversed order for text colors on light themes and bg colors on dark themes. Also the scale is only 100-200 (light/darker) for semantic alpha colors.
 
     They should prob. be changed to function the same (hover "gives" light on dark themes and "shadows" on light themes), but I have settled on this for now.
 
