@@ -424,6 +424,20 @@ export const Button = styled("button", {
         },
       },
     },
+    // Variant + highlight compounds
+    {
+      variant: "normal",
+      highlight: "true",
+      css: {
+        bg: "transparent",
+        "&:hover": {
+          bg: "$bg300",
+        },
+        "&:focus": {
+          bg: "$bg300",
+        },
+      },
+    },
     // Size + pill compounds
     {
       size: "sm",

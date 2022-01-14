@@ -48,6 +48,9 @@ export const textStyles = css({
       success: {
         color: "$success200",
       },
+      heading: {
+        color: "$text100",
+      },
       text: {
         color: "$text200",
       },

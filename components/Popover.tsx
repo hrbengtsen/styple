@@ -31,7 +31,7 @@ export const Popover = ({
   >
     <PopoverPrimitive.Trigger asChild>{children}</PopoverPrimitive.Trigger>
 
-    <PopoverContent side="bottom" align="center" sideOffset={5} {...props}>
+    <PopoverContent side="bottom" align="center" sideOffset={4} {...props}>
       <Text
         size="xs"
         css={{

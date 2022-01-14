@@ -61,7 +61,7 @@ export const Tooltip = ({
   >
     <TooltipPrimitive.Trigger asChild>{children}</TooltipPrimitive.Trigger>
 
-    <TooltipContent side="bottom" align="center" sideOffset={5} {...props}>
+    <TooltipContent side="bottom" align="center" sideOffset={4} {...props}>
       <Text
         size="xs"
         css={{

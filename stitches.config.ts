@@ -15,7 +15,7 @@ export const {
   /*
     Note on themes:
 
-    I use a simple scale (with a caveat!):
+    The default scale is:
 
     100: light (dark on light/cozy for text)
     200: normal

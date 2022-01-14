@@ -8,6 +8,7 @@ import {
 import { ThemeProvider } from "next-themes";
 import { AppProps } from "next/app";
 import { TooltipProvider } from "..";
+import { Layout } from "../custom/Layout";
 
 function App({ Component, pageProps }: AppProps) {
   globalStyles();
@@ -29,8 +30,10 @@ function App({ Component, pageProps }: AppProps) {
         enableColorScheme
         defaultTheme="system"
       >
-        <TooltipProvider delayDuration={500}>
-          <Component {...pageProps} />
+        <TooltipProvider delayDuration={600}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </TooltipProvider>
       </ThemeProvider>
     </>

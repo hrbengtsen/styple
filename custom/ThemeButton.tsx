@@ -32,16 +32,23 @@ export function ThemeButton() {
   function getThemeIcon() {
     switch (resolvedTheme) {
       case "light":
-        return <Sun size="20" style={{ verticalAlign: "middle" }} />;
+        return <Sun size="20" style={{ position: "relative", top: "2px" }} />;
 
       case "dark":
-        return <Moon size="20" style={{ verticalAlign: "middle" }} />;
+        return <Moon size="20" style={{ position: "relative", top: "2px" }} />;
 
       case "deep":
-        return <MountainSnow size="20" style={{ verticalAlign: "middle" }} />;
+        return (
+          <MountainSnow
+            size="20"
+            style={{ position: "relative", top: "2px" }}
+          />
+        );
 
       case "cozy":
-        return <Coffee size="20" style={{ verticalAlign: "middle" }} />;
+        return (
+          <Coffee size="20" style={{ position: "relative", top: "2px" }} />
+        );
     }
   }
 
@@ -55,14 +62,16 @@ export function ThemeButton() {
         }
       >
         <Button
-          css={{
-            position: "fixed",
-            zIndex: "$1",
-            right: 8,
-            top: 8,
-          }}
           size="circle"
+          ghost
           onClick={() => changeTheme()}
+          css={{
+            transition: "transform 200ms ease-in-out",
+            willChange: "transform",
+            "&:hover": {
+              transform: "rotate(12deg)",
+            },
+          }}
         >
           {getThemeIcon()}
         </Button>
