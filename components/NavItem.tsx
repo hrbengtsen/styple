@@ -49,7 +49,7 @@ export const NavItem = styled("a", {
       lg: {
         py: "$sm",
         px: "$lg",
-        borderRadius: "$xxl",
+        borderRadius: "$2xl",
         fontSize: "$md",
       },
       circle: {

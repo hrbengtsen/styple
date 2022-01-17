@@ -28,7 +28,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
         size: "$xl",
       },
       xl: {
-        size: "$xxl",
+        size: "$2xl",
       },
     },
     inactive: {

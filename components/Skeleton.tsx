@@ -32,7 +32,7 @@ export const Skeleton = styled("div", {
         borderRadius: "$round",
       },
       avatarXl: {
-        size: "$xxl",
+        size: "$2xl",
         borderRadius: "$round",
       },
       text: {
@@ -49,27 +49,27 @@ export const Skeleton = styled("div", {
       },
       buttonSm: {
         height: "$lg",
-        width: "$xxxl",
+        width: "$3xl",
         borderRadius: "$lg",
       },
       buttonMd: {
         height: "40px",
-        width: "$xxxl",
+        width: "$3xl",
         borderRadius: "$xl",
       },
       buttonLg: {
         height: "46px",
-        width: "$xxxl",
-        borderRadius: "$xxl",
+        width: "$3xl",
+        borderRadius: "$2xl",
       },
       badgeSm: {
         height: "$md",
-        width: "$xxl",
+        width: "$2xl",
         borderRadius: "$pill",
       },
       badgeLg: {
         height: "$lg",
-        width: "$xxl",
+        width: "$2xl",
         borderRadius: "$pill",
       },
       card: {

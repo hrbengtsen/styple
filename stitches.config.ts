@@ -1,6 +1,143 @@
 import { createStitches } from "@stitches/react";
 import type * as Stitches from "@stitches/react";
-import { normalize } from "./lib/normalize";
+
+// Default (light) theme
+const defaultTheme = {
+  colors: {
+    // Element based colors
+
+    // Reversed color order
+    text100: "#131314", // dark
+    text200: "#3B3B3E", // normal
+    text300: "#6c6c6f", // light
+
+    bg100: "#FFFFFF",
+    bg200: "#FBFCFC",
+    bg300: "#f1f1f1",
+    bg100A: "#FFFFFFBF", // BF = ~75% alpha (#rrggbbaa)
+    bg200A: "#FBFCFCBF",
+    bg300A: "#f1f1f1BF",
+    bgElavated: "#FBFCFC", // color for "elavated" bg on panels (for dark modes)
+
+    button100: "#c9cacd",
+    button200: "#E9EAEC",
+    button300: "#E0E1E4",
+    button100A: "#c9cacdBF",
+    button200A: "#E9EAECBF",
+    button300A: "#E0E1E4BF",
+
+    // Semantic colors
+    primary100: "$text100",
+    primary200: "$text200",
+    primary300: "$text300",
+    primary100A: "rgba(194, 199, 202, 0.12)",
+    primary200A: "rgba(194, 199, 202, 0.16)",
+
+    accent100: "#3c87b2",
+    accent200: "#347399",
+    accent300: "#2b607f",
+    accent100A: "rgba(52, 115, 153, 0.06)",
+    accent200A: "rgba(52, 115, 153, 0.10)",
+
+    danger100: "#b24343",
+    danger200: "#993a3a",
+    danger300: "#7f3030",
+    danger100A: "rgba(153, 58, 58, 0.06)",
+    danger200A: "rgba(153, 58, 58, 0.10)",
+
+    success100: "#3e946b",
+    success200: "#357f5b",
+    success300: "#2c6a4c",
+    success100A: "rgba(62, 148, 107, 0.06)",
+    success200A: "rgba(62, 148, 107, 0.10)",
+  },
+  fonts: {
+    inter:
+      "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
+    mono: "Söhne Mono, menlo, monospace",
+  },
+  fontWeights: {
+    reg: 400,
+    semibold: 500,
+    bold: 700,
+    black: 900,
+  },
+  space: {
+    xs: "4px",
+    sm: "8px",
+    md: "12px",
+    lg: "16px",
+    xl: "24px",
+    "2xl": "32px",
+    "3xl": "48px",
+    "4xl": "64px",
+    max: "128px",
+  },
+  sizes: {
+    xs: "8px",
+    sm: "16px",
+    md: "24px",
+    lg: "32px",
+    xl: "48px",
+    "2xl": "64px",
+    "3xl": "128px",
+    "4xl": "576px",
+    max: "1200px",
+  },
+  fontSizes: {
+    xs: "14px",
+    sm: "16px",
+    md: "20px",
+    lg: "24px",
+    xl: "32px",
+    "2xl": "40px",
+    "3xl": "48px",
+    "4xl": "64px",
+    max: "72px",
+  },
+  radii: {
+    xs: "2px",
+    sm: "4px",
+    md: "6px",
+    lg: "8px",
+    xl: "12px",
+    "2xl": "16px",
+    round: "50%",
+    pill: "9999px",
+  },
+  lineHeights: {
+    normal: "1.5",
+  },
+  letterSpacings: {
+    normal: "normal",
+  },
+  borderWidths: {
+    sm: "1px",
+    md: "2px",
+    lg: "4px",
+    xl: "8px",
+  },
+  shadows: {
+    sm: "0px 2px 8px -2px rgba(22, 23, 24, 0.35), 0px 2px 5px -3px rgba(22, 23, 24, 0.2)",
+    md: "0px 5px 16px -5px rgba(22, 23, 24, 0.35), 0px 5px 10px -7px rgba(22, 23, 24, 0.2)",
+    lg: "0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)",
+  },
+  zIndices: {
+    1: "100",
+    2: "200",
+    3: "300",
+    4: "400",
+    max: "999",
+  },
+  transitions: {
+    color: "color 0.2s ease-in-out",
+    bgColor: "background-color 0.2s ease-in-out",
+    transform: "transform 0.2s ease-in-out",
+    border: "border 0.2s ease-in-out",
+    boxShadow: "box-shadow 0.2s ease-in-out",
+    opacity: "opacity 0.2s ease-in-out",
+  },
+};
 
 export const {
   styled,
@@ -12,160 +149,7 @@ export const {
   createTheme,
   config,
 } = createStitches({
-  /*
-    Note on themes:
-
-    The default scale is:
-
-    100: light (dark on light/cozy for text)
-    200: normal
-    300: dark (light on dark/deep for bg)
-
-    The caveat is the reversed order for text colors on light themes and bg colors on dark themes. Also the scale is only 100-200 (light/darker) for semantic alpha colors.
-
-    They should prob. be changed to function the same (hover "gives" light on dark themes and "shadows" on light themes), but I have settled on this for now.
-
-    - Mikkel
-  */
-  theme: {
-    colors: {
-      // Element based colors
-
-      // Reversed color order
-      text100: "#131314", // dark
-      text200: "#3B3B3E", // normal
-      text300: "#6c6c6f", // light
-
-      bg100: "#FFFFFF",
-      bg200: "#FBFCFC",
-      bg300: "#f1f1f1",
-      bg100A: "#FFFFFFBF", // BF = ~75% alpha (#rrggbbaa)
-      bg200A: "#FBFCFCBF",
-      bg300A: "#f1f1f1BF",
-      bgElavated: "#FBFCFC", // color for "elavated" bg on panels (for dark modes)
-
-      button100: "#c9cacd",
-      button200: "#E9EAEC",
-      button300: "#E0E1E4",
-      button100A: "#c9cacdBF",
-      button200A: "#E9EAECBF",
-      button300A: "#E0E1E4BF",
-
-      // Semantic colors
-      primary100: "$text100",
-      primary200: "$text200",
-      primary300: "$text300",
-      primary100A: "rgba(194, 199, 202, 0.12)",
-      primary200A: "rgba(194, 199, 202, 0.16)",
-
-      accent100: "#3c87b2",
-      accent200: "#347399",
-      accent300: "#2b607f",
-      accent100A: "rgba(52, 115, 153, 0.06)",
-      accent200A: "rgba(52, 115, 153, 0.10)",
-
-      danger100: "#b24343",
-      danger200: "#993a3a",
-      danger300: "#7f3030",
-      danger100A: "rgba(153, 58, 58, 0.06)",
-      danger200A: "rgba(153, 58, 58, 0.10)",
-
-      success100: "#3e946b",
-      success200: "#357f5b",
-      success300: "#2c6a4c",
-      success100A: "rgba(62, 148, 107, 0.06)",
-      success200A: "rgba(62, 148, 107, 0.10)",
-    },
-    fonts: {
-      inter:
-        "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
-      mono: "Söhne Mono, menlo, monospace",
-    },
-    fontWeights: {
-      reg: 400,
-      semibold: 500,
-      bold: 700,
-      black: 900,
-    },
-    space: {
-      xs: "4px",
-      sm: "8px",
-      md: "12px",
-      lg: "16px",
-      xl: "24px",
-      xxl: "32px",
-      xxxl: "48px",
-      xxxxl: "64px",
-      max: "128px",
-    },
-    sizes: {
-      xs: "8px",
-      sm: "16px",
-      md: "24px",
-      lg: "32px",
-      xl: "48px",
-      xxl: "64px",
-      xxxl: "128px",
-      xxxxl: "576px",
-      max: "1200px",
-    },
-    fontSizes: {
-      xs: "14px",
-      sm: "16px",
-      md: "20px",
-      lg: "24px",
-      xl: "32px",
-      xxl: "40px",
-      xxxl: "48px",
-      xxxxl: "64px",
-      max: "72px",
-    },
-    radii: {
-      xs: "2px",
-      sm: "4px",
-      md: "6px",
-      lg: "8px",
-      xl: "12px",
-      xxl: "16px",
-      round: "50%",
-      pill: "9999px",
-    },
-    lineHeights: {
-      normal: "1.5",
-    },
-    letterSpacings: {
-      normal: "normal",
-    },
-    borderWidths: {
-      sm: "1px",
-      md: "2px",
-      lg: "4px",
-      xl: "8px",
-    },
-    shadows: {
-      sm:
-        "0px 2px 8px -2px rgba(22, 23, 24, 0.35), 0px 2px 5px -3px rgba(22, 23, 24, 0.2)",
-      md:
-        "0px 5px 16px -5px rgba(22, 23, 24, 0.35), 0px 5px 10px -7px rgba(22, 23, 24, 0.2)",
-      lg:
-        "0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)",
-    },
-    zIndices: {
-      1: "100",
-      2: "200",
-      3: "300",
-      4: "400",
-      max: "999",
-    },
-    transitions: {
-      color: "color 0.2s ease-in-out",
-      bgColor: "background-color 0.2s ease-in-out",
-      transform: "transform 0.2s ease-in-out",
-      border: "border 0.2s ease-in-out",
-      boxShadow: "box-shadow 0.2s ease-in-out",
-      opacity: "opacity 0.2s ease-in-out",
-    },
-  },
+  theme: defaultTheme,
   media: {
     bp1: "(min-width: 576px)",
     bp2: "(min-width: 768px)",
@@ -233,6 +217,10 @@ export const {
       minWidth: value,
       minHeight: value,
     }),
+    maxSize: (value: Stitches.PropertyValue<"maxWidth">) => ({
+      maxWidth: value,
+      maxHeight: value,
+    }),
 
     // Shorthand util for backgroundColor
     bg: (value: Stitches.PropertyValue<"backgroundColor">) => ({
@@ -244,11 +232,13 @@ export const {
 export type { VariantProps } from "@stitches/react";
 export type CSS = Stitches.CSS<typeof config>;
 
-// Re-do eventually with inspo from: https://www.joshwcomeau.com/css/custom-css-reset/
+// Default global styles (see https://www.joshwcomeau.com/css/custom-css-reset/)
 export const globalStyles = globalCss({
-  ...normalize,
   "*, *::before, *::after": {
     boxSizing: "border-box",
+  },
+  "*": {
+    m: 0,
   },
   "@font-face": {
     fontFamily: "Inter",
@@ -260,21 +250,34 @@ export const globalStyles = globalCss({
       "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",
   },
   body: {
-    m: "0",
     fontFamily: "$inter",
     lineHeight: "$normal",
     letterSpacing: "$normal",
-    bg: "$bg200",
+    bg: "$bg200", // should be removed?
     "-webkit-font-smoothing": "antialiased",
   },
   "html, body, #__next": {
     height: "100%",
     "-webkit-tap-highlight-color": "transparent",
   },
+  "input, button, textarea, select": {
+    font: "inherit",
+  },
   a: {
     color: "inherit",
     textDecoration: "none",
   },
+  "img, picture, video, canvas, svg": {
+    display: "block",
+    maxWidth: "100%",
+  },
+  "p, h1, h2, h3, h4, h5, h6": {
+    overflowWrap: "break-word",
+  },
+  "#root, #__next": {
+    isolation: "isolate",
+  },
+
   ".image-in-card": {
     borderRadius: "$xl",
     zIndex: "-1",

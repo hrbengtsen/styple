@@ -34,7 +34,7 @@ export const SearchField = React.forwardRef<
         onKeyPress={(e) => keyPressed(e)}
         ref={forwardedRef}
         css={{
-          px: "$xxl",
+          px: "$2xl",
         }}
         {...props}
       />

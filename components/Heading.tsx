@@ -25,9 +25,9 @@ export const Heading = React.forwardRef<
   const { as = DEFAULT_TAG, ...rest } = props;
 
   const textSize: Record<HeadingTypeVariants, TextSizeVariants["size"]> = {
-    h1: { "@initial": "xxxl", "@bp2": "xxxxl" },
-    h2: { "@initial": "xxl", "@bp2": "xxxl" },
-    h3: { "@initial": "xl", "@bp2": "xxl" },
+    h1: { "@initial": "3xl", "@bp2": "4xl" },
+    h2: { "@initial": "2xl", "@bp2": "3xl" },
+    h3: { "@initial": "xl", "@bp2": "2xl" },
     h4: { "@initial": "lg", "@bp2": "xl" },
   };
 

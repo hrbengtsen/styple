@@ -8,7 +8,7 @@ export function NpmCopy() {
   return (
     <Flex
       css={{
-        mt: "$xxxxl",
+        mt: "$4xl",
         justifyContent: "center",
       }}
     >

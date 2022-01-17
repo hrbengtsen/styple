@@ -17,10 +17,10 @@ export const Section = styled(Container, {
   variants: {
     size: {
       sm: {
-        py: "$xxl",
+        py: "$2xl",
       },
       md: {
-        py: "$xxxxl",
+        py: "$4xl",
       },
       lg: {
         py: "$max",

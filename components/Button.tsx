@@ -34,7 +34,7 @@ export const Button = styled("button", {
       lg: {
         py: "$sm",
         px: "$lg",
-        borderRadius: "$xxl",
+        borderRadius: "$2xl",
         fontSize: "$md",
       },
       circle: {

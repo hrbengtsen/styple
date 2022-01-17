@@ -19,11 +19,11 @@ export const Spacer = styled(Container, {
       xl: {
         minSize: "$xl",
       },
-      xxl: {
-        minSize: "$xxl",
+      "2xl": {
+        minSize: "$2xl",
       },
-      xxxl: {
-        minSize: "$xxxl",
+      "3xl": {
+        minSize: "$3xl",
       },
     },
     fill: {

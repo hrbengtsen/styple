@@ -100,7 +100,7 @@ export default function Test() {
       css={{
         alignItems: "center",
         flexDirection: "column",
-        gap: "$xxxl",
+        gap: "$3xl",
         py: "$xl",
       }}
     >
@@ -971,7 +971,7 @@ export default function Test() {
             flexDirection: "column",
             gap: "$md",
             alignItems: "flex-start",
-            maxWidth: "$xxxxl",
+            maxWidth: "$4xl",
             mx: "auto",
           }}
         >
@@ -1367,7 +1367,7 @@ export default function Test() {
         <Text>Table component.</Text>
         <Table
           css={{
-            maxWidth: "$xxxxl",
+            maxWidth: "$4xl",
           }}
         >
           <Thead>
@@ -1436,7 +1436,7 @@ export default function Test() {
         <Flex
           css={{
             flexDirection: "column",
-            gap: "$xxl",
+            gap: "$2xl",
           }}
         >
           <Button
@@ -1507,57 +1507,45 @@ export default function Test() {
           </Card>
           <Grid
             css={{
-              maxWidth: "calc(256px + $xs)",
               gridTemplateColumns: "1fr 1fr",
+              gridAutoRows: "64px",
               gap: "$xs",
             }}
           >
             <Container
               css={{
-                width: "$xxxl",
-                height: "$xxl",
-                borderRadius: "$xxl",
+                borderRadius: "$2xl",
                 background:
                   "linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)",
               }}
             />
             <Container
               css={{
-                width: "$xxxl",
-                height: "$xxl",
-                borderRadius: "$xxl",
+                borderRadius: "$2xl",
                 background: "linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)",
               }}
             />
             <Container
               css={{
-                width: "$xxxl",
-                height: "$xxl",
-                borderRadius: "$xxl",
+                borderRadius: "$2xl",
                 background: "linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%)",
               }}
             />
             <Container
               css={{
-                width: "$xxxl",
-                height: "$xxl",
-                borderRadius: "$xxl",
+                borderRadius: "$2xl",
                 background: "linear-gradient(120deg, #f6d365 0%, #fda085 100%)",
               }}
             />
             <Container
               css={{
-                width: "$xxxl",
-                height: "$xxl",
-                borderRadius: "$xxl",
+                borderRadius: "$2xl",
                 background: "linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)",
               }}
             />
             <Container
               css={{
-                width: "$xxxl",
-                height: "$xxl",
-                borderRadius: "$xxl",
+                borderRadius: "$2xl",
                 background: "linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)",
               }}
             />

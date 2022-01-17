@@ -22,14 +22,14 @@ export const textStyles = css({
       xl: {
         fontSize: "$xl",
       },
-      xxl: {
-        fontSize: "$xxl",
+      "2xl": {
+        fontSize: "$2xl",
       },
-      xxxl: {
-        fontSize: "$xxxl",
+      "3xl": {
+        fontSize: "$3xl",
       },
-      xxxxl: {
-        fontSize: "$xxxxl",
+      "4xl": {
+        fontSize: "$4xl",
       },
       max: {
         fontSize: "$max",

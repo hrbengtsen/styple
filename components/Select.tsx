@@ -41,7 +41,7 @@ const StyledSelect = styled("select", {
   height: "100%",
   lineHeight: "1",
   pl: "$sm",
-  pr: "$xxl",
+  pr: "$2xl",
   py: "$sm",
 });
 

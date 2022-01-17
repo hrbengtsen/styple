@@ -37,7 +37,7 @@ export function Layout({
             alignItems: "center",
             justifyContent: "space-between",
             p: "$lg",
-            height: "$xxl",
+            height: "$2xl",
             maxWidth: "$max",
             mx: "auto",
           }}
@@ -279,7 +279,7 @@ export function Layout({
       </Container>
       <Container
         css={{
-          pt: "$xxxxl",
+          pt: "$4xl",
         }}
       >
         {children}

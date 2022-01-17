@@ -72,7 +72,7 @@ export default function Home() {
             flexDirection: "column",
             gap: "$lg",
             height: "300px",
-            borderRadius: "$xxl",
+            borderRadius: "$2xl",
             background:
               "linear-gradient(45deg, #ff9a9e80 0%, #fad0c4 99%, #fad0c4 100%)",
             p: "$xl",
@@ -124,15 +124,15 @@ export default function Home() {
             "@bp2": {
               gridTemplateColumns: "1fr 1fr",
             },
-            gap: "$xxl",
-            pt: "$xxl",
+            gap: "$2xl",
+            pt: "$2xl",
           }}
         >
           <Flex
             css={{
               flexDirection: "column",
               gap: "$lg",
-              borderRadius: "$xxl",
+              borderRadius: "$2xl",
               background: "linear-gradient(to top, #a18cd1 0%, #fbc2eb80 100%)",
               p: "$xl",
               position: "relative",
@@ -179,7 +179,7 @@ export default function Home() {
             css={{
               flexDirection: "column",
               gap: "$lg",
-              borderRadius: "$xxl",
+              borderRadius: "$2xl",
               background: "linear-gradient(120deg, #84fab080 0%, #8fd3f4 100%)",
               p: "$xl",
               position: "relative",
