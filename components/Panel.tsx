@@ -1,10 +1,4 @@
-import {
-  css,
-  darkTheme,
-  deepTheme,
-  styled,
-  keyframes,
-} from "../stitches.config";
+import { css, styled, keyframes } from "../stitches.config";
 
 export const contentFadeIn = keyframes({
   "0%": { opacity: 0, transform: "translate(-50%, -48%) scale(.9)" },
@@ -12,7 +6,7 @@ export const contentFadeIn = keyframes({
 });
 
 export const panelStyles = css({
-  bg: "$bgElavated",
+  bg: "$bg200E",
 
   borderRadius: "$xl",
   boxShadow: "$lg",

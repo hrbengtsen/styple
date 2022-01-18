@@ -42,11 +42,6 @@ export const Badge = styled("span", {
         bg: "$primary200A",
         color: "$primary200",
 
-        // Fix primary color text being inaccessible in cozy
-        [`.${cozyTheme} &`]: {
-          color: "$text200",
-        },
-
         "&:focus": {
           bg: "$primary100A",
           boxShadow: "0 0 0 0.1rem $colors$primary100",

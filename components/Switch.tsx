@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  styled,
-  CSS,
-  darkTheme,
-  deepTheme,
-  cozyTheme,
-} from "../stitches.config";
+import { styled, CSS } from "../stitches.config";
 import * as SwitchPrimitive from "@radix-ui/react-switch";
 
 const StyledThumb = styled(SwitchPrimitive.Thumb, {
@@ -13,11 +7,7 @@ const StyledThumb = styled(SwitchPrimitive.Thumb, {
 
   width: "$sm",
   height: "$sm",
-  bg: "$bg100",
-  // Make thumb light colors on dark themes
-  [`.${darkTheme} &, .${deepTheme} &`]: {
-    bg: "$text200",
-  },
+  bg: "$text200",
   borderRadius: "$round",
   boxShadow: "rgba(0, 0, 0, 0.3) 0px 0px 1px, rgba(0, 0, 0, 0.2) 0px 1px 2px",
   transition: "transform 75ms linear, $bgColor",
@@ -28,10 +18,6 @@ const StyledThumb = styled(SwitchPrimitive.Thumb, {
   '&[data-state="checked"]': {
     transform: "translateX(7px)",
     bg: "white",
-    // Make thumb light colors on dark themes
-    [`.${darkTheme} &, .${deepTheme} &`]: {
-      bg: "$text100",
-    },
   },
 });
 
@@ -50,10 +36,6 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
   justifyContent: "center",
   position: "relative",
   bg: "$button200",
-
-  [`.${cozyTheme} &`]: {
-    bg: "$button100",
-  },
 
   borderRadius: "$pill",
 

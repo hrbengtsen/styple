@@ -21,10 +21,7 @@ export const Th = styled("th", {
   color: "$text300",
   py: "$sm",
 
-  borderBottom: `1px solid $button200`,
-  [`.${cozyTheme} &`]: {
-    borderBottom: `1px solid $bg300`,
-  },
+  borderBottom: `1px solid $button100A`,
 
   variants: {
     align: {
@@ -47,10 +44,7 @@ export const Th = styled("th", {
 export const Td = styled("td", {
   py: "$sm",
 
-  borderBottom: "1px solid $button200",
-  [`.${cozyTheme} &`]: {
-    borderBottom: `1px solid $bg300`,
-  },
+  borderBottom: "1px solid $button100A",
 
   fontSize: "$sm",
   color: "$text300",

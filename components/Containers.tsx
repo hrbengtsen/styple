@@ -17,16 +17,28 @@ export const Section = styled(Container, {
   variants: {
     size: {
       sm: {
-        py: "$2xl",
+        py: "$xl",
+        "@bp2": {
+          py: "$2xl",
+        },
       },
       md: {
-        py: "$4xl",
+        py: "$3xl",
+        "@bp2": {
+          py: "$4xl",
+        },
       },
       lg: {
-        py: "$max",
+        py: "$4xl",
+        "@bp2": {
+          py: "$max",
+        },
       },
       xl: {
-        py: "256px",
+        py: "$max",
+        "@bp2": {
+          py: "256px",
+        },
       },
     },
   },

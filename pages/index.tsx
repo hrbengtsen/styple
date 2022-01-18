@@ -6,12 +6,12 @@ import {
   Grid,
   Text,
   Flex,
-  Button,
-  Code,
-  Tooltip,
+  Card,
+  Badge,
 } from "..";
 import { PersonStanding, Brush, Code2 } from "lucide-react";
-import { NpmCopy } from "../custom/NpmCopy";
+import { CodeCopy } from "../custom/CodeCopy";
+import NextLink from "next/link";
 
 export default function Home() {
   return (
@@ -49,7 +49,7 @@ export default function Home() {
           <Link href="https://www.radix-ui.com/">Radix-UI</Link> with attention
           to detail.
         </Heading>
-        <NpmCopy />
+        <CodeCopy />
       </Section>
       <Section
         size="lg"
@@ -96,8 +96,7 @@ export default function Home() {
             }}
           >
             The web should be accessible for all. Styple follows WCAG standards
-            as best it can through Radix components and colors with proper
-            contrast.
+            as best it can through Radix components and accessible themes.
           </Text>
           <Container
             css={{
@@ -221,6 +220,66 @@ export default function Home() {
             >
               <Code2 size="32" />
             </Container>
+          </Flex>
+        </Grid>
+      </Section>
+
+      <Section
+        size="lg"
+        css={{
+          maxWidth: "$max",
+          mx: "auto",
+        }}
+      >
+        <Text css={{ fontWeight: "$semibold" }}>More styple tools</Text>
+        <Heading
+          as="h3"
+          size="xl"
+          css={{
+            pb: "$lg",
+          }}
+        >
+          Other Packages
+        </Heading>
+        <Grid
+          css={{
+            gridTemplateColumns: "1fr",
+            gridAutoRows: "200px",
+            "@bp2": {
+              gridTemplateColumns: "1fr 1fr",
+            },
+            gap: "$2xl",
+          }}
+        >
+          <Card css={{ p: "$xl", gap: "$lg", bg: "$bg300" }}>
+            <Text
+              size="lg"
+              color="heading"
+              css={{
+                fontWeight: "$semibold",
+                display: "flex",
+                alignItems: "center",
+                gap: "$md",
+              }}
+            >
+              @styple/hooks <Badge variant="primary">Coming soon</Badge>
+            </Text>
+            <Text>A set of useful React hooks.</Text>
+          </Card>
+          <Flex
+            css={{
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Text
+              size="lg"
+              css={{
+                fontWeight: "$semibold",
+              }}
+            >
+              More projects to come...
+            </Text>
           </Flex>
         </Grid>
       </Section>

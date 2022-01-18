@@ -8,12 +8,8 @@
   "unpkg": "dist/index.umd.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "ds-build": "microbundle --jsx React.createElement",
-    "ds-dev": "microbundle watch --jsx React.createElement"
+    "build": "microbundle --jsx React.createElement",
+    "dev": "microbundle watch --jsx React.createElement"
   },
   "peerDependencies": {
     "react": "17.0.2",
@@ -38,15 +34,5 @@
     "@radix-ui/react-tooltip": "^0.1.6",
     "@stitches/react": "^1.2.6",
     "lucide-react": "^0.16.20"
-  },
-  "devDependencies": {
-    "@types/react": "^17.0.37",
-    "mdx-bundler": "^8.0.1",
-    "microbundle": "^0.14.2",
-    "next": "^12.0.8",
-    "next-themes": "^0.0.15",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "typescript": "^4.5.3"
   }
 }

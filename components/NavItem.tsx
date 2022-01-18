@@ -1,4 +1,4 @@
-import { cozyTheme, styled } from "../stitches.config";
+import { styled } from "../stitches.config";
 
 export const NavItem = styled("a", {
   // Reset
@@ -128,11 +128,6 @@ export const NavItem = styled("a", {
         bg: "$primary200",
         color: "$bg200",
 
-        // Fix primary color text being inaccessible in cozy
-        [`.${cozyTheme} &`]: {
-          color: "$text200",
-        },
-
         "&:hover": {
           bg: "$primary300",
         },
@@ -255,22 +250,10 @@ export const NavItem = styled("a", {
         color: "$primary200",
         "&:hover": {
           color: "$primary100",
-
-          // Fix primary color text being inaccessible in cozy
-          [`.${cozyTheme} &`]: {
-            color: "$text100",
-          },
-
           bg: "transparent",
         },
         "&:focus": {
           color: "$primary100",
-
-          // Fix primary color text being inaccessible in cozy
-          [`.${cozyTheme} &`]: {
-            color: "$text100",
-          },
-
           bg: "transparent",
         },
       },
@@ -353,20 +336,10 @@ export const NavItem = styled("a", {
         "&:hover": {
           color: "$primary100",
           bg: "transparent",
-
-          // Fix primary color text being inaccessible in cozy
-          [`.${cozyTheme} &`]: {
-            color: "$text100",
-          },
         },
         "&:focus": {
           color: "$primary100",
           bg: "transparent",
-
-          // Fix primary color text being inaccessible in cozy
-          [`.${cozyTheme} &`]: {
-            color: "$text100",
-          },
           boxShadow: "none",
         },
       },

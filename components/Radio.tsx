@@ -31,8 +31,7 @@ const StyledIndicator = styled(RadioGroupPrimitive.Indicator, {
   "&::after": {
     content: "",
     display: "block",
-    width: "$xs",
-    height: "$xs",
+    size: "$xs",
     borderRadius: "$round",
     bg: "$text200",
   },

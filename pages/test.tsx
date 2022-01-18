@@ -268,10 +268,10 @@ export default function Test() {
             }}
           >
             <NavLinkItem ghost href="/test">
-              Home (color, default)
+              Test (color, default)
             </NavLinkItem>
             <NavLinkItem ghost href="/test2">
-              Link (color, default)
+              Test2 (color, default)
             </NavLinkItem>
             <NavLinkItem ghost href="https://www.bitetap.com/">
               Ext. Link
@@ -284,10 +284,10 @@ export default function Test() {
             }}
           >
             <NavLinkItem active="bold" ghost href="/test">
-              Home (bold)
+              Test (bold)
             </NavLinkItem>
             <NavLinkItem active="bold" ghost href="/test2">
-              Link (bold)
+              Test2 (bold)
             </NavLinkItem>
             <NavLinkItem active="bold" ghost href="https://www.bitetap.com/">
               Ext. Link
@@ -300,10 +300,10 @@ export default function Test() {
             }}
           >
             <NavLinkItem active="both" ghost href="/test">
-              Home (both)
+              Test (both)
             </NavLinkItem>
             <NavLinkItem active="both" ghost href="/test2">
-              Link (both)
+              Test2 (both)
             </NavLinkItem>
             <NavLinkItem active="both" ghost href="https://www.bitetap.com/">
               Ext. Link
@@ -368,7 +368,6 @@ export default function Test() {
           as="a"
           href="#"
           interactive
-          elavateOnDark
           css={{ p: "$lg", gap: "$sm", bg: "$bg300" }}
         >
           <Heading as="h3" size="lg">
@@ -867,6 +866,8 @@ export default function Test() {
       </Flex>
 
       {/*--------------- COMBOBOX ---------------*/}
+      {/* (should have example with one like a
+          dropdown/select and one which opens like a dialog) */}
       <Flex
         css={{
           flexDirection: "column",
@@ -874,9 +875,12 @@ export default function Test() {
           alignItems: "flex-start",
         }}
       >
-        <Text>
-          Combobox component (should have example with one like a
-          dropdown/select and one which opens like a dialog).
+        <Text
+          css={{
+            opacity: ".7",
+          }}
+        >
+          Combobox component. <Badge variant="primary">Coming soon</Badge>
         </Text>
       </Flex>
 
@@ -957,7 +961,13 @@ export default function Test() {
           alignItems: "flex-start",
         }}
       >
-        <Text>Collapsible component.</Text>
+        <Text
+          css={{
+            opacity: ".7",
+          }}
+        >
+          Collapsible component. <Badge variant="primary">Coming soon</Badge>
+        </Text>
       </Flex>
 
       {/*--------------- NAVIGATION ---------------*/}
@@ -975,7 +985,7 @@ export default function Test() {
             mx: "auto",
           }}
         >
-          <Text>Navigation components.</Text>
+          <Text>Navigation components (try resizing screen).</Text>
           <Container
             css={{
               width: "100%",

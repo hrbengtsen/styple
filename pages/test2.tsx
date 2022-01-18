@@ -1,5 +1,4 @@
 import { Container, Heading, NavLinkItem } from "..";
-import { ThemeButton } from "../custom/ThemeButton";
 
 export default function Test2() {
   return (
@@ -12,7 +11,6 @@ export default function Test2() {
         py: "$xl",
       }}
     >
-      <ThemeButton />
       <Heading>A different page</Heading>
       {/*--------------- NAV ITEM ---------------*/}
       <Container
@@ -37,11 +35,11 @@ export default function Test2() {
               justifyContent: "center",
             }}
           >
-            <NavLinkItem ghost href="/">
-              Home (color, default)
-            </NavLinkItem>
             <NavLinkItem ghost href="/test">
-              Link (color, default)
+              Test (color, default)
+            </NavLinkItem>
+            <NavLinkItem ghost href="/test2">
+              Test2 (color, default)
             </NavLinkItem>
             <NavLinkItem ghost href="https://www.bitetap.com/">
               Ext. Link
@@ -54,11 +52,11 @@ export default function Test2() {
               justifyContent: "center",
             }}
           >
-            <NavLinkItem active="bold" ghost href="/">
-              Home (bold)
-            </NavLinkItem>
             <NavLinkItem active="bold" ghost href="/test">
-              Link (bold)
+              Test (bold)
+            </NavLinkItem>
+            <NavLinkItem active="bold" ghost href="/test2">
+              Test2 (bold)
             </NavLinkItem>
             <NavLinkItem active="bold" ghost href="https://www.bitetap.com/">
               Ext. Link
@@ -71,11 +69,11 @@ export default function Test2() {
               justifyContent: "center",
             }}
           >
-            <NavLinkItem active="both" ghost href="/">
-              Home (both)
-            </NavLinkItem>
             <NavLinkItem active="both" ghost href="/test">
-              Link (both)
+              Test (both)
+            </NavLinkItem>
+            <NavLinkItem active="both" ghost href="/test2">
+              Test2 (both)
             </NavLinkItem>
             <NavLinkItem active="both" ghost href="https://www.bitetap.com/">
               Ext. Link

@@ -5,19 +5,19 @@ import type * as Stitches from "@stitches/react";
 const defaultTheme = {
   colors: {
     // Element based colors
-
-    // Reversed color order
-    text100: "#131314", // dark
-    text200: "#3B3B3E", // normal
-    text300: "#6c6c6f", // light
+    text100: "#131314",
+    text200: "#3B3B3E",
+    text300: "#6c6c6f",
 
     bg100: "#FFFFFF",
     bg200: "#FBFCFC",
     bg300: "#f1f1f1",
-    bg100A: "#FFFFFFBF", // BF = ~75% alpha (#rrggbbaa)
+    bg100A: "#FFFFFFBF", // Alpha (transparent) colors, BF = ~75% alpha (#rrggbbaa)
     bg200A: "#FBFCFCBF",
     bg300A: "#f1f1f1BF",
-    bgElavated: "#FBFCFC", // color for "elavated" bg on panels (for dark modes)
+    bg100E: "#FFFFFF", // Elavation colors (mostly used for panels on dark modes)
+    bg200E: "#FBFCFC",
+    bg300E: "#f1f1f1",
 
     button100: "#c9cacd",
     button200: "#E9EAEC",
@@ -118,9 +118,12 @@ const defaultTheme = {
     xl: "8px",
   },
   shadows: {
-    sm: "0px 2px 8px -2px rgba(22, 23, 24, 0.35), 0px 2px 5px -3px rgba(22, 23, 24, 0.2)",
-    md: "0px 5px 16px -5px rgba(22, 23, 24, 0.35), 0px 5px 10px -7px rgba(22, 23, 24, 0.2)",
-    lg: "0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)",
+    sm:
+      "0px 2px 8px -2px rgba(22, 23, 24, 0.35), 0px 2px 5px -3px rgba(22, 23, 24, 0.2)",
+    md:
+      "0px 5px 16px -5px rgba(22, 23, 24, 0.35), 0px 5px 10px -7px rgba(22, 23, 24, 0.2)",
+    lg:
+      "0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)",
   },
   zIndices: {
     1: "100",
@@ -232,7 +235,7 @@ export const {
 export type { VariantProps } from "@stitches/react";
 export type CSS = Stitches.CSS<typeof config>;
 
-// Default global styles (see https://www.joshwcomeau.com/css/custom-css-reset/)
+// Default global styles (based on https://www.joshwcomeau.com/css/custom-css-reset/)
 export const globalStyles = globalCss({
   "*, *::before, *::after": {
     boxSizing: "border-box",
@@ -267,7 +270,7 @@ export const globalStyles = globalCss({
     color: "inherit",
     textDecoration: "none",
   },
-  "img, picture, video, canvas, svg": {
+  "img, picture, video, canvas": {
     display: "block",
     maxWidth: "100%",
   },
@@ -292,14 +295,15 @@ export const darkTheme = createTheme("dark-theme", {
     text200: "#C2C7CA",
     text300: "#858589",
 
-    // Reversed color order
-    bg100: "#000000", // dark
-    bg200: "#131314", // normal
-    bg300: "#1E1E1F", // light
+    bg100: "#000000",
+    bg200: "#131314",
+    bg300: "#1E1E1F",
     bg100A: "#000000BF",
     bg200A: "#131314BF",
     bg300A: "#1E1E1FBF",
-    bgElavated: "#242425", // color for "elavated" bg on panels (for dark modes)
+    bg100E: "#242425",
+    bg200E: "#242425",
+    bg300E: "#242425",
 
     button100: "#545455",
     button200: "#3f3f40",
@@ -332,106 +336,5 @@ export const darkTheme = createTheme("dark-theme", {
     success300: "#50be89",
     success100A: "rgba(89, 212, 153, 0.12)",
     success200A: "rgba(89, 212, 153, 0.16)",
-  },
-});
-
-export const cozyTheme = createTheme("cozy-theme", {
-  colors: {
-    // Element based colors
-
-    // Reversed color order
-    text100: "#4f4230", // dark
-    text200: "#63533c", // normal
-    text300: "#756957", // light
-
-    bg100: "#FEFCEE",
-    bg200: "#FDF9E2",
-    bg300: "#F5EDD6",
-    bg100A: "#FEFCEEBF",
-    bg200A: "#FDF9E2BF",
-    bg300A: "#F5EDD6",
-    bgElavated: "#FDF9E2", // color for "elavated" bg on panels (for dark modes)
-
-    button100: "#858589", // perhaps make the same as one of the text colors?
-    button200: "#FCEDA2",
-    button300: "#F8E99F",
-    button100A: "#858589BF",
-    button200A: "#FCEDA2BF",
-    button300A: "#F8E99FBF",
-
-    // Semantic colors
-    primary100: "#FFDD75",
-    primary200: "#FFD146",
-    primary300: "#FAC832",
-    primary100A: "rgba(253, 213, 35, 0.12)",
-    primary200A: "rgba(253, 213, 35, 0.16)",
-
-    accent100: "#308e85",
-    accent200: "#2b7e76",
-    accent300: "#256e67",
-    accent100A: "rgba(43, 126, 118, 0.05)",
-    accent200A: "rgba(43, 126, 118, 0.09)",
-
-    danger100: "#d95444",
-    danger200: "#c14b3c",
-    danger300: "#a94135",
-    danger100A: "rgba(193, 75, 60, 0.04)",
-    danger200A: "rgba(193, 75, 60, 0.08)",
-
-    success100: "$accent100",
-    success200: "$accent200",
-    success300: "$accent300",
-    success100A: "$accent100A",
-    success200A: "$accent200A",
-  },
-});
-
-export const deepTheme = createTheme("deep-theme", {
-  colors: {
-    // Element based colors
-    text100: "#F4F4F6",
-    text200: "#C2C7CA",
-    text300: "#858589",
-
-    // Reversed color order
-    bg100: "#080716", // dark
-    bg200: "#0b0a1e", // normal
-    bg300: "#1B1A2D", // light
-    bg100A: "#080716BF",
-    bg200A: "#0b0a1eBF",
-    bg300A: "#1B1A2DBF",
-    bgElavated: "#212033", // color for "elavated" bg on panels (for dark modes)
-
-    button100: "#4e4e5c",
-    button200: "#383848",
-    button300: "#2E2D3E",
-    button100A: "#4e4e5cBF",
-    button200A: "#383848BF",
-    button300A: "#2E2D3EBF",
-
-    // Semantic colors
-    primary100: "#ec5d94",
-    primary200: "#ea4c89",
-    primary300: "#d2447b",
-    primary100A: "rgba(234, 76, 137, 0.05)",
-    primary200A: "rgba(234, 76, 137, 0.09)",
-
-    accent100: "#5dbec5",
-    accent200: "#4bb7bf",
-    accent300: "#43a4ab",
-    accent100A: "rgba(75, 183, 191, 0.05)",
-    accent200A: "rgba(75, 183, 191, 0.09)",
-
-    danger100: "#ff9090",
-    danger200: "#ff6161",
-    danger300: "#e55757",
-    danger100A: "rgba(255, 97, 97, 0.05)",
-    danger200A: "rgba(255, 97, 97, 0.09)",
-
-    success100: "#8ae0b7",
-    success200: "#59d499",
-    success300: "#50be89",
-    success100A: "rgba(89, 212, 153, 0.05)",
-    success200A: "rgba(89, 212, 153, 0.09)",
   },
 });

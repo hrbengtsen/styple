@@ -5,7 +5,7 @@ import { Text } from "..";
 
 const PopoverContent = styled(PopoverPrimitive.Content, {
   borderRadius: "$lg",
-  bg: "$bgElavated",
+  bg: "$bg200E",
   boxShadow: "$sm",
   p: "$sm",
 });

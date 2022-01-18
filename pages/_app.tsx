@@ -1,10 +1,6 @@
 import Head from "next/head";
-import {
-  globalStyles,
-  darkTheme,
-  cozyTheme,
-  deepTheme,
-} from "../stitches.config";
+import { globalStyles, darkTheme } from "../stitches.config";
+import { cozyTheme, deepTheme } from "../lib/customThemes";
 import { ThemeProvider } from "next-themes";
 import { AppProps } from "next/app";
 import { TooltipProvider } from "..";

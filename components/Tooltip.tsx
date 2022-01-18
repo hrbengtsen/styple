@@ -25,7 +25,7 @@ const slideLeftAndFade = keyframes({
 
 const TooltipContent = styled(TooltipPrimitive.Content, {
   borderRadius: "$lg",
-  bg: "$bgElavated",
+  bg: "$bg200E",
   boxShadow: "$sm",
   p: "$sm",
 

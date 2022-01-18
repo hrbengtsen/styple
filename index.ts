@@ -8,7 +8,8 @@ export {
   globalCss,
   keyframes,
   config,
-  globalStyles, // Default styple globalStyles with normalize.css
+  globalStyles,
+  darkTheme,
 } from "./stitches.config";
 
 // Components

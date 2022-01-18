@@ -120,7 +120,7 @@ export function Layout({
             >
               {router.pathname == "/" ? (
                 <NavLinkItem ghost href="/test">
-                  See components{" "}
+                  Explore components{" "}
                   <Container
                     as="span"
                     css={{
@@ -205,7 +205,7 @@ export function Layout({
                     pl: "0",
                   }}
                 >
-                  See components{" "}
+                  Explore components{" "}
                   <Container
                     as="span"
                     css={{
