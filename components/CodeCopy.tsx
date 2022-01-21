@@ -1,10 +1,13 @@
-import { Flex, Button, Code, Tooltip, Text } from "..";
-import { Copy } from "lucide-react";
-import { useState } from "react";
+import { Flex, Button, Code, Tooltip, Text } from "../packages/design-system";
+import { useCopy } from "../packages/hooks/src/useCopy";
 
 export function CodeCopy() {
-  const [npmCopy, setNpmCopy] = useState<boolean>(false);
-  const [starterCopy, setStarterCopy] = useState<boolean>(false);
+  const { text: npmText, copy: copyNpm, copied: npmCopied } = useCopy(
+    "npm i @styple/design-system"
+  );
+  const { copy: copyStarter, copied: starterCopied } = useCopy(
+    "npx create-next-app [project-name] -e https://github.com..."
+  );
 
   return (
     <Flex
@@ -26,17 +29,15 @@ export function CodeCopy() {
             maxHeight: "40px",
           }}
           onClick={() => {
-            navigator.clipboard.writeText("npm i @styple/design-system");
-            setNpmCopy(true);
-            setTimeout(() => setNpmCopy(false), 2000);
+            copyNpm();
           }}
           highlight
         >
-          {npmCopy ? (
+          {npmCopied ? (
             "Copied!"
           ) : (
             <>
-              <Code>npm i @styple/design-system</Code>
+              <Code>{npmText}</Code>
             </>
           )}
         </Button>
@@ -56,15 +57,11 @@ export function CodeCopy() {
             maxHeight: "40px",
           }}
           onClick={() => {
-            navigator.clipboard.writeText(
-              "npx create-next-app [project-name] -e https://github.com..."
-            );
-            setStarterCopy(true);
-            setTimeout(() => setStarterCopy(false), 2000);
+            copyStarter();
           }}
           highlight
         >
-          {starterCopy ? (
+          {starterCopied ? (
             "Copied!"
           ) : (
             <>

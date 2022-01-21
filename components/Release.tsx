@@ -1,4 +1,4 @@
-import { Badge, Text } from "..";
+import { Badge, Text } from "../packages/design-system";
 
 type ReleaseType = React.ComponentProps<typeof Badge> & {
   name: string;

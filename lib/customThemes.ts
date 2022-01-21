@@ -1,4 +1,4 @@
-import { createTheme } from "..";
+import { createTheme } from "../packages/design-system";
 
 export const cozyTheme = createTheme("cozy-theme", {
   colors: {

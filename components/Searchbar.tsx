@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SearchField } from "..";
+import { SearchField } from "../packages/design-system";
 
 // Boilerplate component of how to implement SearchField
 export const Searchbar = () => {

@@ -1,13 +1,13 @@
 import React from "react";
-import { Button } from "../components/Button";
+import { Button } from "../packages/design-system/components/Button";
 import { useTheme } from "next-themes";
 import { Sun, Moon, Coffee, MountainSnow } from "lucide-react";
-import { useHasMounted } from "../lib/hooks/useHasMounted";
-import { Tooltip } from "..";
+import { useMounted } from "../packages/hooks/src/useMounted";
+import { Tooltip } from "../packages/design-system";
 
 export function ThemeButton() {
   const { resolvedTheme, setTheme } = useTheme();
-  const hasMounted = useHasMounted();
+  const mounted = useMounted();
 
   function changeTheme() {
     switch (resolvedTheme) {
@@ -53,7 +53,7 @@ export function ThemeButton() {
   }
 
   return (
-    hasMounted && (
+    mounted && (
       <Tooltip
         content={
           <>

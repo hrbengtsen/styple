@@ -7,11 +7,12 @@ import {
   Code,
   Link,
   Separator,
-} from "..";
-import { Release } from "../custom/Release";
+} from "../packages/design-system";
+import { Release } from "../components/Release";
 import { Frontmatter, getFileBySlug } from "../lib/mdx";
 import { getMDXComponent } from "mdx-bundler/client";
 import { useMemo } from "react";
+import CodeBlock from "../components/CodeBlock";
 
 const components = {
   Container,
@@ -43,7 +44,14 @@ const components = {
     </Link>
   ),
   hr: (props) => <Separator size="lg" {...props} />,
-  code: ({ children, ...props }) => <Code {...props}>{children}</Code>,
+  code: ({ children, className, ...props }) => {
+    const isInlineCode = !className;
+    return isInlineCode ? (
+      <Code {...props}>{children}</Code>
+    ) : (
+      <CodeBlock className={className} children={children} {...props} />
+    );
+  },
   strong: ({ children, ...props }) => (
     <Text
       css={{ display: "inline", fontSize: "inherit", fontWeight: "$semibold" }}

@@ -8,9 +8,9 @@ import {
   Flex,
   Card,
   Badge,
-} from "..";
+} from "../packages/design-system";
 import { PersonStanding, Brush, Code2 } from "lucide-react";
-import { CodeCopy } from "../custom/CodeCopy";
+import { CodeCopy } from "../components/CodeCopy";
 import NextLink from "next/link";
 
 export default function Home() {
@@ -231,7 +231,7 @@ export default function Home() {
           mx: "auto",
         }}
       >
-        <Text css={{ fontWeight: "$semibold" }}>More styple tools</Text>
+        <Text css={{ fontWeight: "$semibold" }}>All styple tools</Text>
         <Heading
           as="h3"
           size="xl"
@@ -239,33 +239,63 @@ export default function Home() {
             pb: "$lg",
           }}
         >
-          Other Packages
+          Packages
         </Heading>
         <Grid
           css={{
             gridTemplateColumns: "1fr",
             gridAutoRows: "200px",
             "@bp2": {
-              gridTemplateColumns: "1fr 1fr",
+              gridTemplateColumns: "1fr 1fr 1fr",
             },
             gap: "$2xl",
           }}
         >
-          <Card css={{ p: "$xl", gap: "$lg", bg: "$bg300" }}>
-            <Text
-              size="lg"
-              color="heading"
-              css={{
-                fontWeight: "$semibold",
-                display: "flex",
-                alignItems: "center",
-                gap: "$md",
-              }}
+          <NextLink href="/components" passHref>
+            <Card
+              as="a"
+              interactive
+              css={{ p: "$xl", gap: "$lg", bg: "$bg300" }}
             >
-              @styple/hooks <Badge variant="primary">Coming soon</Badge>
-            </Text>
-            <Text>A set of useful React hooks.</Text>
-          </Card>
+              <Text
+                size="lg"
+                color="heading"
+                css={{
+                  fontWeight: "$semibold",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "$md",
+                }}
+              >
+                @styple/design-system
+              </Text>
+              <Text>
+                The main Styple package containing the full design-system with
+                components, default themes and more.
+              </Text>
+            </Card>
+          </NextLink>
+          <NextLink href="/hooks" passHref>
+            <Card
+              as="a"
+              interactive
+              css={{ p: "$xl", gap: "$lg", bg: "$bg300" }}
+            >
+              <Text
+                size="lg"
+                color="heading"
+                css={{
+                  fontWeight: "$semibold",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "$md",
+                }}
+              >
+                @styple/hooks
+              </Text>
+              <Text>A set of useful general-purpose React hooks.</Text>
+            </Card>
+          </NextLink>
           <Flex
             css={{
               alignItems: "center",
@@ -273,26 +303,15 @@ export default function Home() {
             }}
           >
             <Text
-              size="lg"
+              size="md"
               css={{
                 fontWeight: "$semibold",
               }}
             >
-              More projects to come...
+              More to come...
             </Text>
           </Flex>
         </Grid>
-      </Section>
-      <Section
-        css={{
-          textAlign: "center",
-        }}
-      >
-        <Text>
-          Created, maintained and used by{" "}
-          <Link href="https://www.mikkelbengtsen.com/">Mikkel</Link>
-        </Text>
-        <Text>Made with ✨ and 💻 in Denmark</Text>
       </Section>
     </Container>
   );

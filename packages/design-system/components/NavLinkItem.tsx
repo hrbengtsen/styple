@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { NavItem } from "../";
+import { NavItem } from "..";
 import React from "react";
 import { UrlObject } from "url";
 
