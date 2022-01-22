@@ -2,7 +2,6 @@ import React from "react";
 import {
   Container,
   Heading,
-  Section,
   Text,
   Badge,
   Code,
@@ -10,9 +9,8 @@ import {
   Separator,
 } from "../packages/design-system";
 import { Release } from "../components/Release";
-import { Pre } from "../components/Pre";
 import { Preview } from "../components/Preview";
-import rangeParser from "parse-numeric-range";
+import { CodeBlock, CodeBlockLink, CodeHighlight } from "./Codeblock";
 
 export const components = {
   Container,
@@ -45,75 +43,24 @@ export const components = {
     </Link>
   ),
   hr: (props) => <Separator size="lg" {...props} />,
-  pre: ({ children, line, outline }) => (
-    <Pre
-      data-highlights-lines={line ? true : false}
-      outline={outline}
-      css={{ my: "$lg" }}
-    >
-      {children}
-    </Pre>
-  ),
-  code: ({ children, className, id, ...props }) => {
+  pre: ({ children }) => <>{children}</>,
+  code: ({ children, className, id, line, outline, ...props }) => {
     const isInlineCode = !className;
     return isInlineCode ? (
       <Code {...props}>{children}</Code>
     ) : (
-      <code children={children} className={className} id={id} />
+      <CodeBlock
+        children={children}
+        className={className}
+        id={id}
+        line={line}
+        outline={outline}
+        {...props}
+      />
     );
   },
-  RegisterLink: ({ id, index, href }) => {
-    const isExternal = href.startsWith("http");
-
-    React.useEffect(() => {
-      const codeBlock = document.getElementById(id);
-      if (!codeBlock) return;
-
-      const allHighlightWords = codeBlock.querySelectorAll(".highlight-word");
-      const target = allHighlightWords[index - 1];
-      if (!target) return;
-
-      target.replaceWith(
-        Object.assign(document.createElement("a"), {
-          href,
-          innerHTML: target.innerHTML,
-          className: target.className,
-          ...(isExternal ? { target: "_blank", rel: "noopener" } : {}),
-        })
-      );
-    }, []);
-
-    return null;
-  },
-  H: ({ id, index, ...props }) => {
-    const triggerRef = React.useRef<HTMLElement>(null);
-
-    React.useEffect(() => {
-      const trigger = triggerRef.current;
-
-      const codeBlock = document.getElementById(id);
-      if (!codeBlock) return;
-
-      const allHighlightWords = codeBlock.querySelectorAll(".highlight-word");
-      const targetIndex = rangeParser(index).map((i) => i - 1);
-      if (Math.max(...targetIndex) >= allHighlightWords.length) return;
-
-      const addClass = () =>
-        targetIndex.forEach((i) => allHighlightWords[i].classList.add("on"));
-      const removeClass = () =>
-        targetIndex.forEach((i) => allHighlightWords[i].classList.remove("on"));
-
-      trigger.addEventListener("mouseenter", addClass);
-      trigger.addEventListener("mouseleave", removeClass);
-
-      return () => {
-        trigger.removeEventListener("mouseenter", addClass);
-        trigger.removeEventListener("mouseleave", removeClass);
-      };
-    }, []);
-
-    return <Code ref={triggerRef} css={{ cursor: "default" }} {...props} />;
-  },
+  CodeBlockLink,
+  CodeHighlight,
   strong: ({ children, ...props }) => (
     <Text
       css={{ display: "inline", fontSize: "inherit", fontWeight: "$semibold" }}
