@@ -12,78 +12,7 @@ import { Release } from "../components/Release";
 import { Frontmatter, getFileBySlug } from "../lib/mdx";
 import { getMDXComponent } from "mdx-bundler/client";
 import { useMemo } from "react";
-import CodeBlock from "../components/CodeBlock";
-
-const components = {
-  Container,
-  Badge,
-  Release,
-  h1: ({ children, ...props }) => (
-    <Heading size="3xl" css={{ mb: "$md" }} {...props}>
-      {children}
-    </Heading>
-  ),
-  h2: ({ children, ...props }) => (
-    <Heading as="h2" css={{ mb: "$md" }} size="2xl" {...props}>
-      {children}
-    </Heading>
-  ),
-  h3: ({ children, ...props }) => (
-    <Heading as="h3" size="xl" css={{ mb: "$md" }} {...props}>
-      {children}
-    </Heading>
-  ),
-  p: ({ children, ...props }) => (
-    <Text css={{ mb: "$lg" }} {...props}>
-      {children}
-    </Text>
-  ),
-  a: ({ children, href, ...props }) => (
-    <Link href={href} {...props}>
-      {children}
-    </Link>
-  ),
-  hr: (props) => <Separator size="lg" {...props} />,
-  code: ({ children, className, ...props }) => {
-    const isInlineCode = !className;
-    return isInlineCode ? (
-      <Code {...props}>{children}</Code>
-    ) : (
-      <CodeBlock className={className} children={children} {...props} />
-    );
-  },
-  strong: ({ children, ...props }) => (
-    <Text
-      css={{ display: "inline", fontSize: "inherit", fontWeight: "$semibold" }}
-      {...props}
-    >
-      {children}
-    </Text>
-  ),
-  ul: ({ children, ...props }) => (
-    <Container
-      {...props}
-      css={{
-        pl: "1.15em",
-        mb: "$lg",
-        color: "$text200",
-      }}
-      as="ul"
-    >
-      {children}
-    </Container>
-  ),
-  ol: ({ children, ...props }) => (
-    <Container {...props} css={{ mb: "$lg", color: "$text200" }} as="ol">
-      {children}
-    </Container>
-  ),
-  li: ({ children, ...props }) => (
-    <li>
-      <Text {...props}>{children}</Text>
-    </li>
-  ),
-};
+import { components } from "../components/MDXComponents";
 
 type ReleasesType = {
   frontmatter: Frontmatter;
@@ -126,6 +55,6 @@ export default function Releases({ frontmatter, code }: ReleasesType) {
 export async function getStaticProps() {
   const { frontmatter, code } = await getFileBySlug("overview", "releases");
   return {
-    props: { frontmatter, code },
+    props: { frontmatter: JSON.parse(JSON.stringify(frontmatter)), code },
   };
 }

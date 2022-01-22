@@ -11,7 +11,7 @@ export const Code = styled("code", {
     color: {
       accent: {
         color: "$accent200",
-        bg: "$accent200A",
+        bg: "$accent100A",
       },
       normal: {
         color: "$text200",

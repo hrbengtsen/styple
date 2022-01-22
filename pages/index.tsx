@@ -244,7 +244,7 @@ export default function Home() {
         <Grid
           css={{
             gridTemplateColumns: "1fr",
-            gridAutoRows: "200px",
+            gridAutoRows: "1fr",
             "@bp2": {
               gridTemplateColumns: "1fr 1fr 1fr",
             },
@@ -270,8 +270,8 @@ export default function Home() {
                 @styple/design-system
               </Text>
               <Text>
-                The main Styple package containing the full design-system with
-                components, default themes and more.
+                The core package and full design-system with components, default
+                themes and more.
               </Text>
             </Card>
           </NextLink>

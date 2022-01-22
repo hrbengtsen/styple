@@ -2,7 +2,7 @@
   <img alt="Styple hero image" src="public/styple-og.png">
 </a>
 
-## **styple**
+# **styple**
 
 ### **An accessible design system for React.**
 
