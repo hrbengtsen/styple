@@ -1,4 +1,4 @@
-<a href="https://styple.com/">
+<a href="https://styple.dev/">
   <img alt="Styple hero image" src="public/styple-og.png">
 </a>
 
