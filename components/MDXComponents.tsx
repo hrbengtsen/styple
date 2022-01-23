@@ -50,13 +50,14 @@ export const components = {
       <Code {...props}>{children}</Code>
     ) : (
       <CodeBlock
-        children={children}
         className={className}
         id={id}
         line={line}
         outline={outline}
         {...props}
-      />
+      >
+        {children}
+      </CodeBlock>
     );
   },
   CodeBlockLink,

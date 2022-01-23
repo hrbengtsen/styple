@@ -1,4 +1,4 @@
-import { cozyTheme, styled } from "../stitches.config";
+import { styled } from "../stitches.config";
 
 export const Badge = styled("span", {
   display: "inline-flex",

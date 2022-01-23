@@ -6,7 +6,7 @@ import { useCopy } from "../packages/hooks";
 import { Copy, CheckCircle2 } from "lucide-react";
 
 // MDX codeblock
-export const CodeBlock = ({ className, children, id, line, outline }) => {
+export const CodeBlock = ({ className, id, line, outline, ...props }) => {
   const [code, setCode] = React.useState(undefined);
   const preRef = React.useRef(null);
   const { copy: copyCode, copied: codeCopied } = useCopy(code);
@@ -31,7 +31,9 @@ export const CodeBlock = ({ className, children, id, line, outline }) => {
         outline={outline}
         css={{ my: "$lg" }}
       >
-        <code children={children} className={className} id={id} />
+        <code className={className} id={id}>
+          {props.children}
+        </code>
       </Pre>
       <Button
         size="circle"
@@ -81,7 +83,7 @@ export const CodeBlockLink = ({ id, index, href }) => {
         ...(isExternal ? { target: "_blank", rel: "noopener" } : {}),
       })
     );
-  }, []);
+  }, [href, id, index, isExternal]);
 
   return null;
 };
@@ -112,7 +114,7 @@ export const CodeHighlight = ({ id, index, ...props }) => {
       trigger.removeEventListener("mouseenter", addClass);
       trigger.removeEventListener("mouseleave", removeClass);
     };
-  }, []);
+  }, [id, index]);
 
   return <Code ref={triggerRef} css={{ cursor: "default" }} {...props} />;
 };
