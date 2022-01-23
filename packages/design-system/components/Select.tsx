@@ -43,6 +43,14 @@ const StyledSelect = styled("select", {
   pl: "$sm",
   pr: "$2xl",
   py: "$sm",
+
+  // Fixes size type-error
+  variants: {
+    size: {
+      sm: {},
+      lg: {},
+    },
+  },
 });
 
 const StyledChevronDown = styled(ChevronDown, {
