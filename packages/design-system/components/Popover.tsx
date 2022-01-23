@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "../stitches.config";
-import * as PopoverPrimitive from "@radix-ui/react-Popover";
+import * as PopoverPrimitive from "@radix-ui/react-popover";
 import { Text } from "..";
 
 const PopoverContent = styled(PopoverPrimitive.Content, {
