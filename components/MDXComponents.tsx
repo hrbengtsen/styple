@@ -1,39 +1,28 @@
 import React from "react";
-import {
-  Container,
-  Heading,
-  Text,
-  Badge,
-  Code,
-  Link,
-  Separator,
-  Button,
-} from "../packages/design-system";
+import * as SDS from "../packages/design-system";
 import { Release } from "../components/Release";
 import { Preview } from "../components/Preview";
 import { CodeBlock, CodeBlockLink, CodeHighlight } from "./Codeblock";
 import { Coffee } from "lucide-react";
 
 export const components = {
-  Container,
-  Badge,
-  Button,
+  ...SDS,
   Release,
   Preview,
   Coffee,
   h1: ({ children, ...props }) => (
-    <Heading size="2xl" css={{ mb: "$md", mt: "$3xl" }} {...props}>
+    <SDS.Heading size="2xl" css={{ mb: "$md", mt: "$3xl" }} {...props}>
       {children}
-    </Heading>
+    </SDS.Heading>
   ),
   h2: ({ children, ...props }) => (
-    <Heading as="h2" css={{ mb: "$md", mt: "$3xl" }} size="xl" {...props}>
+    <SDS.Heading as="h2" css={{ mb: "$md", mt: "$3xl" }} size="xl" {...props}>
       {children}
-    </Heading>
+    </SDS.Heading>
   ),
   h3: ({ children, id, ...props }) => (
-    <Container css={{ mb: "$sm", mt: "$3xl" }}>
-      <Heading
+    <SDS.Container css={{ mb: "$sm", mt: "$3xl" }}>
+      <SDS.Heading
         as="h3"
         size="lg"
         // Hack to fix jump from quicknav moving heading under the fixed header
@@ -46,12 +35,12 @@ export const components = {
         data-heading="1"
       >
         {children}
-      </Heading>
-    </Container>
+      </SDS.Heading>
+    </SDS.Container>
   ),
   h4: ({ children, id, ...props }) => (
-    <Container css={{ mb: "$xs", mt: "$2xl" }}>
-      <Heading
+    <SDS.Container css={{ mb: "$xs", mt: "$2xl" }}>
+      <SDS.Heading
         as="h4"
         size="md"
         // Hack to fix jump from quicknav moving heading under the fixed header
@@ -61,11 +50,11 @@ export const components = {
         data-heading="2"
       >
         {children}
-      </Heading>
-    </Container>
+      </SDS.Heading>
+    </SDS.Container>
   ),
   blockquote: ({ children, ...props }) => (
-    <Container
+    <SDS.Container
       css={{
         px: "$lg",
         py: "$md",
@@ -83,24 +72,24 @@ export const components = {
       {...props}
     >
       {children}
-    </Container>
+    </SDS.Container>
   ),
   p: ({ children, ...props }) => (
-    <Text css={{ mb: "$lg" }} {...props}>
+    <SDS.Text css={{ mb: "$lg" }} {...props}>
       {children}
-    </Text>
+    </SDS.Text>
   ),
   a: ({ children, href, ...props }) => (
-    <Link href={href} {...props}>
+    <SDS.Link href={href} {...props}>
       {children}
-    </Link>
+    </SDS.Link>
   ),
-  hr: (props) => <Separator size="lg" {...props} />,
+  hr: (props) => <SDS.Separator size="lg" {...props} />,
   pre: ({ children }) => <>{children}</>,
   code: ({ children, className, id, line, outline, ...props }) => {
     const isInlineCode = !className;
     return isInlineCode ? (
-      <Code {...props}>{children}</Code>
+      <SDS.Code {...props}>{children}</SDS.Code>
     ) : (
       <CodeBlock
         className={className}
@@ -116,15 +105,15 @@ export const components = {
   CodeBlockLink,
   CodeHighlight,
   strong: ({ children, ...props }) => (
-    <Text
+    <SDS.Text
       css={{ display: "inline", fontSize: "inherit", fontWeight: "$semibold" }}
       {...props}
     >
       {children}
-    </Text>
+    </SDS.Text>
   ),
   ul: ({ children, ...props }) => (
-    <Container
+    <SDS.Container
       {...props}
       css={{
         pl: "1.15em",
@@ -134,16 +123,16 @@ export const components = {
       as="ul"
     >
       {children}
-    </Container>
+    </SDS.Container>
   ),
   ol: ({ children, ...props }) => (
-    <Container {...props} css={{ mb: "$lg", color: "$text200" }} as="ol">
+    <SDS.Container {...props} css={{ mb: "$lg", color: "$text200" }} as="ol">
       {children}
-    </Container>
+    </SDS.Container>
   ),
   li: ({ children, ...props }) => (
     <li>
-      <Text {...props}>{children}</Text>
+      <SDS.Text {...props}>{children}</SDS.Text>
     </li>
   ),
 };

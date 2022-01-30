@@ -1,0 +1,100 @@
+---
+title: Accordion
+description: Vertically stacked headings that each reveal a section.
+---
+
+### Example
+
+<Preview>
+  <Accordion
+    type="single"
+    css={{
+      width: "320px",
+    }}
+  >
+    <AccordionItem value="accordion-one">
+      <AccordionTrigger>
+        <Text>Accordion one</Text>
+      </AccordionTrigger>
+      <AccordionContent>
+        <Text css={{ p: "$sm" }}>A section of content one.</Text>
+      </AccordionContent>
+    </AccordionItem>
+    <AccordionItem value="accordion-two">
+      <AccordionTrigger>
+        <Text>Accordion two</Text>
+      </AccordionTrigger>
+      <AccordionContent>
+        <Text css={{ p: "$sm" }}>A section of content two.</Text>
+      </AccordionContent>
+    </AccordionItem>
+  </Accordion>
+</Preview>
+
+```tsx outline=true
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@styple/design-system";
+
+<Accordion type="single">
+  <AccordionItem value="accordion-one">
+    <AccordionTrigger>
+      <Text>Accordion one</Text>
+    </AccordionTrigger>
+    <AccordionContent>
+      <Text css={{ p: "$sm" }}>A section of content one.</Text>
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="accordion-two">
+    <AccordionTrigger>
+      <Text>Accordion two</Text>
+    </AccordionTrigger>
+    <AccordionContent>
+      <Text css={{ p: "$sm" }}>A section of content two.</Text>
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
+
+### API Reference
+
+See [Radix-UI Accordion (v0.1.5)](https://www.radix-ui.com/docs/primitives/components/accordion) for details. This only covers **Styple** abstractions.
+
+#### Accordion
+
+Acts as `Accordion.Root`. What differs is that `collapsible` is set to true when `type = single` and the `css` prop from Stitches is available as its a styled component.
+
+#### AccordionItem 
+
+A styled component wrapper for `Accordion.Item`.
+
+#### AccordionTrigger
+
+A styled abstraction combining `Accordion.Header` and `Accordion.Trigger`. Provides custom props: 
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>noSeparator</Code>
+      </Th>
+      <Td>
+        <Code color="normal">boolean</Code>
+      </Td>
+      <Td>
+        <Code color="normal">false</Code>
+      </Td>
+      <Td><Text>Should each heading/trigger have a `<hr />` separator.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>
+
+#### AccordionContent
+
+A styled component wrapper for `Accordion.Content`.

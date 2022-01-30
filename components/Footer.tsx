@@ -8,10 +8,10 @@ export const Footer = () => (
     size="md"
     as="footer"
   >
-    <Text>
+    <Text css={{ color: "$text300" }}>
       Created, maintained and used by{" "}
       <Link href="https://www.mikkelbengtsen.com/">Mikkel</Link>
     </Text>
-    <Text>Made with ✨ and 💻 in Denmark</Text>
+    <Text css={{ color: "$text300" }}>Made with ✨ and 💻 in Denmark</Text>
   </Section>
 );
