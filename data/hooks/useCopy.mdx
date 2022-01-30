@@ -1,0 +1,39 @@
+---
+title: useCopy
+description: Hook to copy content to clipboard.
+---
+
+Install all hooks via:
+
+```bash 
+npm install @styple/hooks
+```
+
+or copy the source:
+
+```ts line=3-22
+import { useState, useEffect } from "react";
+
+export function useCopy(text: string, delay = 2000) {
+  const [copied, setCopied] = useState<boolean>(false);
+
+  const copy = () => {
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+  };
+
+  useEffect(() => {
+    if (copied) {
+      const timeout = setTimeout(() => {
+        setCopied(false);
+      }, delay);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [delay, copied]);
+
+  return { text, copy, copied };
+}
+```
+
+---

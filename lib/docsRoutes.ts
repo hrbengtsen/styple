@@ -16,7 +16,14 @@ export const docsRoutes = [
 
   {
     label: "Hooks",
-    pages: [{ title: "useMounted", slug: "docs/hooks/useMounted" }],
+    pages: [
+      { title: "useMounted", slug: "docs/hooks/useMounted" },
+      { title: "useInterval", slug: "docs/hooks/useInterval" },
+      { title: "useActiveElement", slug: "docs/hooks/useActiveElement" },
+      { title: "useOnScreen", slug: "docs/hooks/useOnScreen" },
+      { title: "useDebounce", slug: "docs/hooks/useDebounce" },
+      { title: "useCopy", slug: "docs/hooks/useCopy" },
+    ],
   },
 ];
 

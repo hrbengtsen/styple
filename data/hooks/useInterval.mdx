@@ -1,0 +1,53 @@
+---
+title: useInterval
+description: Hook to start an interval for a callback.
+---
+
+Install all hooks via:
+
+```bash 
+npm install @styple/hooks
+```
+
+or copy the source:
+
+```ts line=3-36
+import { useEffect, useRef, useState, useCallback } from "react";
+
+export const useInterval = (
+  callback: () => void,
+  delay: number,
+  dependency: any = null
+): (() => void) => {
+  const savedCallback = useRef<() => void>();
+  const intervalId = useRef(null);
+  const [currentDelay, setDelay] = useState<number>(delay);
+
+  const toggleRunning = useCallback(
+    () => setDelay((currentDelay) => (currentDelay === null ? delay : null)),
+    [delay]
+  );
+
+  // Remember the latest callback.
+  useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  // Set up the interval.
+  useEffect(() => {
+    function tick() {
+      savedCallback.current();
+    }
+
+    if (intervalId.current) clearInterval(intervalId.current);
+
+    if (currentDelay !== null) intervalId.current = setInterval(tick, delay);
+
+    return () => clearInterval(intervalId.current);
+  }, [currentDelay, dependency, delay]);
+
+  return toggleRunning;
+};
+```
+
+---

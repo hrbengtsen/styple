@@ -1,0 +1,41 @@
+---
+title: useActiveElement
+description: Hook to get active (focused) element.
+---
+
+Install all hooks via:
+
+```bash 
+npm install @styple/hooks
+```
+
+or copy the source:
+
+```ts line=3-24
+import { useState, useEffect } from "react";
+
+export const useActiveElement = () => {
+  const [activeElement, setActiveElement] = useState<Element>(null);
+
+  const handleFocusIn = () => {
+    setActiveElement(document.activeElement);
+  };
+
+  const handleFocusOut = () => {
+    setActiveElement(null);
+  };
+
+  useEffect(() => {
+    document.addEventListener("focusin", handleFocusIn);
+    document.addEventListener("focusout", handleFocusOut);
+    return () => {
+      document.removeEventListener("focusin", handleFocusIn);
+      document.removeEventListener("focusout", handleFocusOut);
+    };
+  }, []);
+
+  return activeElement;
+};
+```
+
+---

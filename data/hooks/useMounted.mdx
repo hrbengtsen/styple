@@ -1,0 +1,28 @@
+---
+title: useMounted
+description: Hook to get mounted state of component.
+---
+
+Install all hooks via:
+
+```bash 
+npm install @styple/hooks
+```
+
+or copy the source:
+
+```ts line=3-11
+import { useEffect, useState } from "react";
+
+export const useMounted = () => {
+  const [mounted, setMounted] = useState<boolean>(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  return mounted;
+};
+```
+
+---
