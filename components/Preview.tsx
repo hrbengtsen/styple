@@ -9,8 +9,10 @@ export const Preview = ({ css, ...props }) => (
       display: "flex",
       alignItems: "flex-start",
       justifyContent: "center",
-      py: "$2xl",
-      borderRadius: "$xl",
+      py: "$lg",
+      borderTopLeftRadius: "$xl",
+      borderTopRightRadius: "$xl",
+      boxShadow: "inset 0 0 0 1px $colors$button100",
       ...css,
     }}
   />

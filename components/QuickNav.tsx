@@ -3,14 +3,14 @@ import { RemoveScroll } from "react-remove-scroll";
 import { useEffect, useState } from "react";
 
 export const QuickNav = () => {
-  const [components, setComponents] = useState<HTMLParagraphElement[]>([]);
+  const [headings, setHeadings] = useState<HTMLParagraphElement[]>([]);
 
   useEffect(() => {
-    const comps: HTMLParagraphElement[] = Array.from(
-      document.querySelectorAll("[data-component]")
+    const headingElements: HTMLParagraphElement[] = Array.from(
+      document.querySelectorAll("[data-heading]")
     );
 
-    setComponents(comps);
+    setHeadings(headingElements);
   }, []);
 
   return (
@@ -21,12 +21,12 @@ export const QuickNav = () => {
         display: "none",
         "@bp4": {
           display: "block",
-          width: 150,
+          width: 200,
           bg: "$bg200A",
           zIndex: 1,
           position: "fixed",
           right: 0,
-          top: "$4xl",
+          top: "$max",
         },
       }}
     >
@@ -38,10 +38,17 @@ export const QuickNav = () => {
           m: 0,
         }}
       >
-        {components.map(({ id, innerText }) => (
+        {headings.map(({ id, innerText, dataset }) => (
           <Container as="li" key={id}>
-            <Link href={`#${id}`} css={{ fontSize: "$xs" }}>
-              {innerText.split(" ")[0]}
+            <Link
+              href={`#${id}`}
+              css={{
+                fontSize: "$xs",
+                // Indent heading if it has data-heading="2"
+                ml: `${dataset["heading"] === "2" ? "$md" : 0}`,
+              }}
+            >
+              {innerText}
             </Link>
           </Container>
         ))}

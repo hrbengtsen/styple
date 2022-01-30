@@ -8,9 +8,14 @@ import { ThemeProvider } from "next-themes";
 import { AppProps } from "next/app";
 import { TooltipProvider } from "../packages/design-system";
 import { Layout } from "../components/Layout";
+import { useRouter } from "next/router";
 
 function App({ Component, pageProps }: AppProps) {
   globalStyles();
+
+  const router = useRouter();
+  const isDocs = router.pathname.includes("/docs");
+
   return (
     <>
       <Head>
@@ -30,7 +35,7 @@ function App({ Component, pageProps }: AppProps) {
         defaultTheme="system"
       >
         <TooltipProvider delayDuration={600}>
-          <Layout>
+          <Layout isDocs={isDocs}>
             <Component {...pageProps} />
           </Layout>
         </TooltipProvider>

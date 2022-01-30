@@ -1,0 +1,67 @@
+---
+title: Getting started
+description: A guide to get you started with Styple.
+---
+
+> Using Styple requires familiarity with [React](https://reactjs.org/) and CSS-in-JS framework [Stitches](https://stitches.dev/), as its the underlying styling method used in the design system.
+
+### 1. Install the library
+
+Styple can be installed through npm. It includes the entire design system with all components, light and dark themes and React-based icons from [lucide](https://lucide.dev/).
+
+```bash
+npm install @styple/design-system
+```
+
+### 2. Usage
+
+After installing you can pretty much just start importing and using components. The only thing left is to wrap your app with the `TooltipProvider` and optionally apply Styple's global-styles:
+
+<CodeBlockLink id="usage" index="1" href="https://nextjs.org/" />
+
+```tsx id=usage
+// Example with __Next.js__. Wrap in a similiar way with any React app at the root
+import { globalStyles, TooltipProvider } from "@styple/design-system"
+import { AppProps } from "next/app";
+
+function App({ Component, pageProps }: AppProps) {
+  globalStyles(); // Optional
+
+  return (
+    <TooltipProvider>
+      <Component {...pageProps} />
+    </TooltipProvider>
+  );
+}
+
+export default App;
+```
+
+Example usage of a component with an icon:
+
+<Preview>
+  <Button>Example Button <Coffee size="20" style={{ verticalAlign: "middle" }} /></Button>
+</Preview>
+
+```tsx outline=true
+// Imports
+import { Button } from "@styple/design-system";
+import { Coffee } from "lucide-react";
+
+// Somewhere in your file
+<Button>
+  Example Button <Coffee size="20" style={{ verticalAlign: "middle" }} />
+</Button>
+```
+
+### Additional packages
+
+#### @styple/hooks
+
+Styple also has other useful packages. First of which is a set of general-purpose hooks.
+
+```bash
+npm install @styple/hooks
+```
+
+---

@@ -29,7 +29,14 @@ export const CodeBlock = ({ className, id, line, outline, ...props }) => {
         ref={preRef}
         data-highlights-lines={line ? true : false}
         outline={outline}
-        css={{ my: "$lg" }}
+        css={{
+          my: "$lg",
+          "[data-preview] + div > &": {
+            mt: "-1px",
+            borderTopLeftRadius: 0,
+            borderTopRightRadius: 0,
+          },
+        }}
       >
         <code className={className} id={id}>
           {props.children}

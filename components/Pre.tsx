@@ -27,7 +27,8 @@ export const Pre = styled("pre", {
   borderRadius: "$xl",
 
   "& > code": { display: "block" },
-  "& > code > div, & > code > div > span": { maxHeight: "21px" }, // fixes some lines having double height
+  // fixes some lines having double height due to plain-text token at the end of line
+  "& > code > div > span:last-child": { whiteSpace: "initial" },
 
   ".token.parameter": {
     color: "$$text",

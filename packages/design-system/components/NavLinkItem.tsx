@@ -15,7 +15,7 @@ export const NavLinkItem = React.forwardRef<
   NavLinkItemProps
 >(({ href, children, ...props }, forwardedRef) => {
   const { asPath } = useRouter();
-  const isActive = asPath === href;
+  const isActive = asPath.split("#")[0] === href;
 
   return (
     <Link href={href} passHref>

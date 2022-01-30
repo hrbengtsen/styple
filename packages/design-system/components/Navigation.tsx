@@ -4,6 +4,8 @@ import { CSS, styled } from "../stitches.config";
 import * as Collapsible from "@radix-ui/react-collapsible";
 import { Menu } from "lucide-react";
 
+import type * as Stitches from "@stitches/react";
+
 const StyledBurger = styled("button", {
   display: "block",
   size: "$md",
@@ -149,6 +151,8 @@ type SidebarProps = React.ComponentProps<typeof Container> & {
   content: React.ReactNode;
   mobileContent: React.ReactNode;
   side?: "bottom" | "left" | "right" | "top";
+  bp?: "@bp1" | "@bp2" | "@bp3" | "@bp4";
+  icon?: React.ReactNode;
 };
 
 export const Sidebar = React.forwardRef<
@@ -156,7 +160,15 @@ export const Sidebar = React.forwardRef<
   SidebarProps
 >(
   (
-    { brand, content, mobileContent, side = "right", ...props },
+    {
+      brand,
+      content,
+      mobileContent,
+      side = "right",
+      bp = "@bp2",
+      icon,
+      ...props
+    },
     forwardedRef
   ) => {
     return (
@@ -166,8 +178,10 @@ export const Sidebar = React.forwardRef<
           <Container
             css={{
               display: "none",
-              "@bp2": {
+              [bp]: {
                 display: "flex",
+                width: "100%",
+                height: "100%",
               },
             }}
           >
@@ -178,13 +192,13 @@ export const Sidebar = React.forwardRef<
               ghost
               ref={forwardedRef}
               css={{
-                "@bp2": {
+                [bp]: {
                   display: "none",
                 },
                 p: "$sm",
               }}
             >
-              <Menu style={{ verticalAlign: "middle" }} />
+              {icon ? icon : <Menu style={{ verticalAlign: "middle" }} />}
             </Button>
           </SheetTrigger>
         </Container>

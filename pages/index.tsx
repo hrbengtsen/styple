@@ -7,7 +7,6 @@ import {
   Text,
   Flex,
   Card,
-  Badge,
 } from "../packages/design-system";
 import { PersonStanding, Brush, Code2 } from "lucide-react";
 import { CodeCopy } from "../components/CodeCopy";
@@ -239,7 +238,7 @@ export default function Home() {
             pb: "$lg",
           }}
         >
-          Packages
+          More than a design system
         </Heading>
         <Grid
           css={{
@@ -251,7 +250,7 @@ export default function Home() {
             gap: "$2xl",
           }}
         >
-          <NextLink href="/components" passHref>
+          <NextLink href="/docs/overview/getting-started" passHref>
             <Card
               as="a"
               interactive
@@ -271,11 +270,11 @@ export default function Home() {
               </Text>
               <Text>
                 The core package and full design-system with components, default
-                themes and more.
+                themes and icons.
               </Text>
             </Card>
           </NextLink>
-          <NextLink href="/hooks" passHref>
+          <NextLink href="/docs/overview/getting-started" passHref>
             <Card
               as="a"
               interactive
