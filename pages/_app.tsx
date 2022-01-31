@@ -19,7 +19,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>styple design system</title>
+        <title>styple</title>
       </Head>
       <ThemeProvider
         disableTransitionOnChange
