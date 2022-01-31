@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Script from "next/script";
 import {
   globalStyles,
   darkTheme,
@@ -21,6 +22,11 @@ function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>styple</title>
       </Head>
+      <Script
+        defer
+        data-domain="styple.dev"
+        src="https://plausible.io/js/plausible.js"
+      />
       <ThemeProvider
         disableTransitionOnChange
         attribute="class"
