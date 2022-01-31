@@ -37,11 +37,7 @@ export default function DocsComponents({ frontmatter, code }: DocsType) {
           {frontmatter.description}
         </Heading>
       </Section>
-      <Component
-        components={{
-          ...components,
-        }}
-      />
+      <Component components={components as any} />
       <QuickNav
         // Add quicknav here instead of in Layout, to make it re-render with new headings when changing doc through this key
         key={frontmatter.slug}
