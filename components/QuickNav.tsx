@@ -1,4 +1,4 @@
-import { Container, Link } from "../packages/design-system";
+import { Container, Link, Text } from "../packages/design-system";
 import { RemoveScroll } from "react-remove-scroll";
 import { useEffect, useState } from "react";
 
@@ -30,6 +30,9 @@ export const QuickNav = () => {
         },
       }}
     >
+      <Text color="heading" css={{ fontWeight: "$bold" }}>
+        Contents
+      </Text>
       <Container
         as="ul"
         css={{

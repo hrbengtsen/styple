@@ -19,6 +19,7 @@ export const docsRoutes = [
       { title: "Button", slug: "docs/components/button" },
       { title: "Card", slug: "docs/components/card" },
       { title: "Checkbox", slug: "docs/components/checkbox" },
+      { title: "Code", slug: "docs/components/code" },
     ],
   },
 

@@ -1,0 +1,73 @@
+---
+title: Code
+description: Control which enables user to toggle checked/unchecked.
+---
+
+### Examples
+
+<Preview>
+  <Flex
+    css={{
+      flexDirection: "column",
+      alignItems: "center",
+      gap: "$md"
+    }}
+  >
+    <Text>Text with code <Code>console.log("styple")</Code> in between.</Text>
+    <Text>Text with code <Code color="normal">console.log("styple")</Code> in between.</Text>
+  </Flex>
+</Preview>
+
+```tsx outline=true
+import { Code } from "@styple/design-system";
+
+<Flex
+  css={{
+    flexDirection: "column",
+    alignItems: "center",
+    gap: "$md"
+  }}
+>
+  <Text>Text with code <Code>console.log("styple")</Code> in between.</Text>
+  <Text>Text with code <Code color="normal">console.log("styple")</Code> in between.</Text>
+</Flex>
+```
+
+### API Reference
+
+#### Code
+
+A styled component with props:
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>color</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+        <Popover content={
+          <Code color="normal">"accent" | "normal"</Code>
+        }>
+          <Button highlight size="circle" css={{
+            size: "24px",
+            p: 0,
+            ml: "$xs",
+            lineHeight: 0
+          }}><Info size={16} style={{ verticalAlign: "middle" }} /></Button>
+        </Popover>
+      </Td>
+      <Td><Code color="normal">"accent"</Code></Td>
+      <Td><Text>Color variant.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>
