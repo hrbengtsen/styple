@@ -4,8 +4,6 @@ import { CSS, styled } from "../stitches.config";
 import * as Collapsible from "@radix-ui/react-collapsible";
 import { Menu } from "lucide-react";
 
-import type * as Stitches from "@stitches/react";
-
 const StyledBurger = styled("button", {
   display: "block",
   size: "$md",
@@ -196,6 +194,7 @@ export const Sidebar = React.forwardRef<
                   display: "none",
                 },
                 p: "$sm",
+                width: "100%",
               }}
             >
               {icon ? icon : <Menu style={{ verticalAlign: "middle" }} />}

@@ -106,6 +106,7 @@ export const components = {
   CodeHighlight,
   strong: ({ children, ...props }) => (
     <SDS.Text
+      as="span"
       css={{ display: "inline", fontSize: "inherit", fontWeight: "$semibold" }}
       {...props}
     >
