@@ -11,7 +11,10 @@ export const docsRoutes = [
 
   {
     label: "Components",
-    pages: [{ title: "Accordion", slug: "docs/components/accordion" }],
+    pages: [
+      { title: "Accordion", slug: "docs/components/accordion" },
+      { title: "AlertDialog", slug: "docs/components/alertdialog" },
+    ],
   },
 
   {

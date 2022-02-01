@@ -1,0 +1,84 @@
+---
+title: AlertDialog
+description: Modal which interrupts the user with important unskippable content.
+---
+
+### Example
+
+<Preview>
+  <AlertDialog>
+    <AlertDialogTrigger asChild>
+      <Button>Open alertdialog</Button>
+    </AlertDialogTrigger>
+    <AlertDialogContent
+      aria-labelledby="alertdialog-heading"
+      aria-describedby="alertdialog-desc"
+    >
+      <Heading id="alertdialog-heading" as="h4" css={{ mb: "$md" }}>Example Heading</Heading>
+      <Text id="alertdialog-desc" css={{ lineHeight: "25px" }}>Lorem ipsum example description text.</Text>
+      <Flex
+        css={{
+          justifyContent: "flex-end",
+          marginTop: "$lg",
+          gap: "$md",
+        }}
+      >
+        <AlertDialogCancel asChild>
+          <Button highlight>Cancel</Button>
+        </AlertDialogCancel>
+        <AlertDialogAction asChild>
+          <Button transparent variant="success">Save changes</Button>
+        </AlertDialogAction>
+      </Flex>
+    </AlertDialogContent>
+  </AlertDialog>
+</Preview>
+
+```tsx outline=true
+import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogCancel, AlertDialogAction } from "@styple/design-system";
+
+<AlertDialog>
+  <AlertDialogTrigger asChild>
+    <Button>Open alertdialog</Button>
+  </AlertDialogTrigger>
+  <AlertDialogContent
+    aria-labelledby="alertdialog-heading"
+    aria-describedby="alertdialog-desc"
+  >
+    <Heading id="alertdialog-heading" as="h4" css={{ mb: "$md" }}>Example Heading</Heading>
+    <Text id="alertdialog-desc" css={{ lineHeight: "25px" }}>Lorem ipsum example description text.</Text>
+    <Flex
+      css={{
+        justifyContent: "flex-end",
+        marginTop: "$lg",
+        gap: "$md",
+      }}
+    >
+      <AlertDialogCancel asChild>
+        <Button highlight>Cancel</Button>
+      </AlertDialogCancel>
+      <AlertDialogAction asChild>
+        <Button transparent variant="success">Save changes</Button>
+      </AlertDialogAction>
+    </Flex>
+  </AlertDialogContent>
+</AlertDialog>
+```
+
+### API Reference
+
+See [Radix-UI AlertDialog (v0.1.4)](https://www.radix-ui.com/docs/primitives/components/alert-dialog) for details. This only covers **styple** abstractions.
+
+#### AlertDialog
+
+A styled component wrapper for `AlertDialog.Root`.
+
+#### AlertDialogContent
+
+A styled abstraction combining `AlertDialog.Overlay` and `AlertDialog.Content`.
+
+#### Others
+
+The rest of the components (except `AlertDialog.Portal`) of the primitive are exported by **styple** with no changes. Aria-labels can be used as an alternative to `AlertDialog.Title` and `AlertDialog.Description` as in the example above.
+
+---
