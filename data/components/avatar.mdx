@@ -1,0 +1,246 @@
+---
+title: Avatar
+description: Image with a fallback for representing profiles and users.
+---
+
+### Example
+
+<Preview>
+  <Flex
+    css={{
+      flexDirection: "column",
+      alignItems: "flex-start",
+      gap: "$md",
+    }}
+  >
+    <Flex css={{ gap: "$sm" }}>
+      <Avatar fallback="M" />
+      <Avatar fallback="M" size="md" />
+      <Avatar fallback="M" size="lg" />
+      <Avatar fallback="M" size="xl" />
+    </Flex>
+    
+    <Flex css={{ gap: "$sm" }}>
+      <Avatar src="/founder.webp" fallback="M" />
+      <Avatar src="/founder.webp" fallback="M" size="md" />
+      <Avatar src="/founder.webp" fallback="M" size="lg" />
+      <Avatar src="/founder.webp" fallback="M" size="xl" />
+    </Flex>
+
+    <Flex css={{ gap: "$sm" }}>
+      <Avatar src="/founder.webp" fallback="M" size="md" inactive />
+      <Button
+        ghost
+        css={{
+          p: "0",
+        }}
+      >
+        <Avatar src="/founder.webp" fallback="M" size="md" interactive />
+      </Button>
+    </Flex>
+
+    <AvatarGroup>
+      <Avatar src="/founder.webp" fallback="M" size="lg" />
+      <Avatar src="/founder.webp" fallback="M" size="lg" />
+      <Avatar src="/founder.webp" fallback="M" size="lg" />
+      <Avatar src="/founder.webp" fallback="M" size="lg" />
+    </AvatarGroup>
+    <AvatarGroup limit={2}>
+      <Avatar src="/founder.webp" fallback="M" size="lg" />
+      <Avatar src="/founder.webp" fallback="M" size="lg" />
+      <Avatar src="/founder.webp" fallback="M" size="lg" />
+      <Avatar src="/founder.webp" fallback="M" size="lg" />
+    </AvatarGroup>
+    <AvatarGroup num={183}>
+      <Avatar src="/founder.webp" fallback="M" />
+      <Avatar src="/founder.webp" fallback="M" />
+      <Avatar src="/founder.webp" fallback="M" />
+    </AvatarGroup>
+  </Flex>
+</Preview>
+
+```tsx outline=true
+import { Avatar, AvatarGroup } from "@styple/design-system";
+
+<Flex
+  css={{
+    flexDirection: "column",
+    alignItems: "flex-start",
+    gap: "$md",
+  }}
+>
+  <Flex css={{ gap: "$sm" }}>
+    <Avatar fallback="M" />
+    <Avatar fallback="M" size="md" />
+    <Avatar fallback="M" size="lg" />
+    <Avatar fallback="M" size="xl" />
+  </Flex>
+  
+  <Flex css={{ gap: "$sm" }}>
+    <Avatar src="/founder.webp" fallback="M" />
+    <Avatar src="/founder.webp" fallback="M" size="md" />
+    <Avatar src="/founder.webp" fallback="M" size="lg" />
+    <Avatar src="/founder.webp" fallback="M" size="xl" />
+  </Flex>
+
+  <Flex css={{ gap: "$sm" }}>
+    <Avatar src="/founder.webp" fallback="M" size="md" inactive />
+    <Button
+      ghost
+      css={{
+        p: "0",
+      }}
+    >
+      <Avatar src="/founder.webp" fallback="M" size="md" interactive />
+    </Button>
+  </Flex>
+
+  <AvatarGroup>
+    <Avatar src="/founder.webp" fallback="M" size="lg" />
+    <Avatar src="/founder.webp" fallback="M" size="lg" />
+    <Avatar src="/founder.webp" fallback="M" size="lg" />
+    <Avatar src="/founder.webp" fallback="M" size="lg" />
+  </AvatarGroup>
+  <AvatarGroup limit={2}>
+    <Avatar src="/founder.webp" fallback="M" size="lg" />
+    <Avatar src="/founder.webp" fallback="M" size="lg" />
+    <Avatar src="/founder.webp" fallback="M" size="lg" />
+    <Avatar src="/founder.webp" fallback="M" size="lg" />
+  </AvatarGroup>
+  <AvatarGroup num={183}>
+    <Avatar src="/founder.webp" fallback="M" />
+    <Avatar src="/founder.webp" fallback="M" />
+    <Avatar src="/founder.webp" fallback="M" />
+  </AvatarGroup>
+</Flex>
+```
+
+### API Reference
+
+See [Radix-UI Avatar (v0.1.2)](https://www.radix-ui.com/docs/primitives/components/avatar) for details. This only covers **styple** abstractions.
+
+#### Avatar
+
+A styled abstraction for `Avatar.Root`, `Avatar.Image`, `Avatar.Fallback`. Custom props:
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>size</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+        <Popover content={
+          <Code color="normal">"sm" | "md" | "lg" | "xl"</Code>
+        }>
+          <Button highlight size="circle" css={{
+            size: "24px",
+            p: 0,
+            ml: "$xs",
+            lineHeight: 0
+          }}><Info size={16} style={{ verticalAlign: "middle" }} /></Button>
+        </Popover>
+      </Td>
+      <Td><Code color="normal">"sm"</Code></Td>
+      <Td><Text>Size variant.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>inactive</Code>
+      </Th>
+      <Td>
+        <Code color="normal">boolean</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Inactive variant.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>interactive</Code>
+      </Th>
+      <Td>
+        <Code color="normal">boolean</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Interactive variant.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>alt</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Image alt.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>src</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Image source.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>fallback</Code>
+      </Th>
+      <Td>
+        <Code color="normal">ReactNode</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Fallback element if image doesn't render.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>
+
+#### AvatarGroup
+
+A styled div for grouping multiple avatars. Custom props: 
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>limit</Code>
+      </Th>
+      <Td>
+        <Code color="normal">number</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Limit the display of avatars within group and show hidden with a number.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>num</Code>
+      </Th>
+      <Td>
+        <Code color="normal">number</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Display a custom number next to group.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>
+
+---

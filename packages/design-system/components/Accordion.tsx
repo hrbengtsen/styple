@@ -44,9 +44,15 @@ export const AccordionContent = styled(AccordionPrimitive.Content, {
 
   '&[data-state="open"]': {
     animation: `${slideDown} 200ms cubic-bezier(0.87, 0, 0.13, 1)`,
+    "@motion": {
+      animation: "none",
+    },
   },
   '&[data-state="closed"]': {
     animation: `${slideUp} 200ms cubic-bezier(0.87, 0, 0.13, 1)`,
+    "@motion": {
+      animation: "none",
+    },
   },
 });
 
@@ -79,6 +85,9 @@ const StyledTrigger = styled(AccordionPrimitive.Trigger, {
 
   svg: {
     transition: "transform 200ms cubic-bezier(0.65, 0, 0.35, 1)",
+    "@motion": {
+      transition: "none",
+    },
   },
 
   '&[data-state="open"]': {

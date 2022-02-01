@@ -3,13 +3,14 @@ import * as SDS from "../packages/design-system";
 import { Release } from "../components/Release";
 import { Preview } from "../components/Preview";
 import { CodeBlock, CodeBlockLink, CodeHighlight } from "./Codeblock";
-import { Coffee } from "lucide-react";
+import { Coffee, Info } from "lucide-react";
 
 export const components = {
   ...SDS,
   Release,
   Preview,
   Coffee,
+  Info,
   h1: ({ children, ...props }) => (
     <SDS.Heading size="2xl" css={{ mb: "$md", mt: "$3xl" }} {...props}>
       {children}

@@ -45,7 +45,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
           right: "0",
           bottom: "0",
           left: "0",
-          backgroundColor: "rgba(0,0,0,.08)",
+          backgroundColor: "rgba(0,0,0,.1)",
           opacity: "0",
           transition: "opacity 75ms linear",
         },
@@ -54,9 +54,10 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
             opacity: "1",
           },
         },
+        // For avatars within tooltips, etc.
         '&[data-state="open"]': {
           "&::after": {
-            backgroundColor: "rgba(0,0,0,.12)",
+            backgroundColor: "rgba(0,0,0,.15)",
             opacity: "1",
           },
         },
