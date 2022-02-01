@@ -1,0 +1,229 @@
+---
+title: Button
+description: Enables the user to perform an action.
+---
+
+### Examples
+
+<Preview>
+  <Flex
+    css={{
+      flexDirection: "column",
+      alignItems: "center",
+      gap: "$md",
+    }}
+  >
+    <Button move>Move button</Button>
+    <Button tactile>Tactile button</Button>
+    <Button pill>Pill button</Button>
+    <Button outline>Outline button</Button>
+    <Button ghost>Ghost button</Button>
+    <Button ghost><Plus style={{ verticalAlign: "middle" }} /></Button>
+    <Button highlight>Highlight button</Button>
+    <Button highlight size="circle"><Plus style={{ verticalAlign: "middle" }} /></Button>
+    <Button size="sm">Small button</Button>
+    <Button size="md">Medium button</Button>
+    <Button size="lg">Large button</Button>
+    <Button disabled>Disabled button</Button>
+
+    <Button variant="primary">Primary</Button>
+    <Button variant="primary" outline>Primary outline</Button>
+    <Button variant="primary" ghost>Primary ghost</Button>
+    <Button variant="primary" transparent>Primary transparent</Button>
+
+    <Button variant="accent">Accent</Button>
+    <Button variant="accent" outline>Accent outline</Button>
+    <Button variant="accent" ghost>Accent ghost</Button>
+    <Button variant="accent" transparent>Accent transparent</Button>
+
+    <Button variant="danger">Danger</Button>
+    <Button variant="danger" outline>Danger outline</Button>
+    <Button variant="danger" ghost>Danger ghost</Button>
+    <Button variant="danger" transparent>Danger transparent</Button>
+
+    <Button variant="success">Success</Button>
+    <Button variant="success" outline>Success outline</Button>
+    <Button variant="success" ghost>Success ghost</Button>
+    <Button variant="success" transparent>Success transparent</Button>
+  </Flex>
+</Preview>
+
+```tsx outline=true
+import { Button } from "@styple/design-system";
+
+<Flex
+  css={{
+    flexDirection: "column",
+    alignItems: "center",
+    gap: "$md",
+  }}
+>
+  <Button move>Move button</Button>
+  <Button tactile>Tactile button</Button>
+  <Button pill>Pill button</Button>
+  <Button outline>Outline button</Button>
+  <Button ghost>Ghost button</Button>
+  <Button ghost>
+    <Plus style={{ verticalAlign: "middle" }} />
+  </Button>
+  <Button highlight>Highlight button</Button>
+  <Button highlight size="circle">
+    <Plus style={{ verticalAlign: "middle" }} />
+  </Button>
+  <Button size="sm">Small button</Button>
+  <Button size="md">Medium button</Button>
+  <Button size="lg">Large button</Button>
+  <Button disabled>Disabled button</Button>
+
+  <Button variant="primary">Primary</Button>
+  <Button variant="primary" outline>Primary outline</Button>
+  <Button variant="primary" ghost>Primary ghost</Button>
+  <Button variant="primary" transparent>Primary transparent</Button>
+
+  <Button variant="accent">Accent</Button>
+  <Button variant="accent" outline>Accent outline</Button>
+  <Button variant="accent" ghost>Accent ghost</Button>
+  <Button variant="accent" transparent>Accent transparent</Button>
+
+  <Button variant="danger">Danger</Button>
+  <Button variant="danger" outline>Danger outline</Button>
+  <Button variant="danger" ghost>Danger ghost</Button>
+  <Button variant="danger" transparent>Danger transparent</Button>
+
+  <Button variant="success">Success</Button>
+  <Button variant="success" outline>Success outline</Button>
+  <Button variant="success" ghost>Success ghost</Button>
+  <Button variant="success" transparent>Success transparent</Button>
+</Flex>
+```
+
+### API Reference
+
+#### Button
+
+A styled component with props:
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>size</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+        <Popover content={
+          <Code color="normal">"sm" | "md" | "lg" | "circle"</Code>
+        }>
+          <Button highlight size="circle" css={{
+            size: "24px",
+            p: 0,
+            ml: "$xs",
+            lineHeight: 0
+          }}><Info size={16} style={{ verticalAlign: "middle" }} /></Button>
+        </Popover>
+      </Td>
+      <Td><Code color="normal">"sm"</Code></Td>
+      <Td><Text>Size variant.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>move</Code>
+      </Th>
+      <Td>
+        <Code color="normal">boolean</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Move variant.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>tactile</Code>
+      </Th>
+      <Td>
+        <Code color="normal">boolean</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Tactile variant.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>transparent</Code>
+      </Th>
+      <Td>
+        <Code color="normal">boolean</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Transparent variant.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>pill</Code>
+      </Th>
+      <Td>
+        <Code color="normal">boolean</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Pill variant.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>outline</Code>
+      </Th>
+      <Td>
+        <Code color="normal">boolean</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Outline variant.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>ghost</Code>
+      </Th>
+      <Td>
+        <Code color="normal">boolean</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Ghost variant.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>highlight</Code>
+      </Th>
+      <Td>
+        <Code color="normal">boolean</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Highlight variant.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>variant</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+        <Popover content={
+          <Code color="normal">"primary" | "accent" | "danger" | "success" | "normal"</Code>
+        }>
+          <Button highlight size="circle" css={{
+            size: "24px",
+            p: 0,
+            ml: "$xs",
+            lineHeight: 0
+          }}><Info size={16} style={{ verticalAlign: "middle" }} /></Button>
+        </Popover>
+      </Td>
+      <Td><Code color="normal">"normal"</Code></Td>
+      <Td><Text>Main variant.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>
+
+---

@@ -16,6 +16,7 @@ export const docsRoutes = [
       { title: "AlertDialog", slug: "docs/components/alertdialog" },
       { title: "Avatar", slug: "docs/components/avatar" },
       { title: "Badge", slug: "docs/components/badge" },
+      { title: "Button", slug: "docs/components/button" },
     ],
   },
 
