@@ -17,6 +17,7 @@ export const docsRoutes = [
       { title: "Avatar", slug: "docs/components/avatar" },
       { title: "Badge", slug: "docs/components/badge" },
       { title: "Button", slug: "docs/components/button" },
+      { title: "Card", slug: "docs/components/card" },
     ],
   },
 

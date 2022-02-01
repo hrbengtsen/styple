@@ -1,0 +1,210 @@
+---
+title: Card
+description: Container for content surrounding a specific thing.
+---
+
+### Examples
+
+<Preview>
+  <Flex
+    css={{
+      flexDirection: "column",
+      gap: "$md",
+    }}
+  >
+    <Card css={{ p: "$lg", gap: "$sm", bg: "$bg300" }}>
+      <Heading as="h3" size="lg">A card component</Heading>
+      <Text
+        css={{
+          color: "$text300",
+        }}
+      >Lorem ipsum</Text>
+      <Button>Button in Card</Button>
+    </Card>
+    <Card active css={{ p: "$lg", gap: "$sm", bg: "$bg100" }}>
+      <Heading as="h3" size="lg">Active bg100 card</Heading>
+      <Text
+        css={{
+          color: "$text300",
+        }}
+      >Lorem ipsum</Text>
+      <Button>Button in Card</Button>
+    </Card>
+    <Card
+      as="a"
+      href="#"
+      interactive
+      css={{ p: "$lg", bg: "$bg300" }}
+    >
+      <Heading as="h3" size="lg">Interactive card</Heading>
+      <Text
+        css={{
+          color: "$text300",
+        }}
+      >Try clicking this interactive card</Text>
+      <Text
+        css={{
+          color: "$text300",
+        }}
+      >Lorem ipsum</Text>
+    </Card>
+    <Card
+      as="a"
+      href="#"
+      interactive
+      css={{
+        p: "$lg",
+      }}
+    >
+      <Image
+        src="/styple-og.png"
+        layout="fill"
+        objectFit="cover"
+        objectPosition="center"
+        className="image-in-card"
+        alt="Banner of styple"
+      />
+
+      <Container>
+        <Heading as="h3" size="lg" color="white">Card with image</Heading>
+        <Text
+          color="white"
+          css={{
+            opacity: ".9",
+          }}
+        >Try clicking this interactive card</Text>
+        <Text
+          color="white"
+          css={{
+            opacity: ".9",
+          }}
+        >Lorem ipsum</Text>
+      </Container>
+    </Card>
+  </Flex>
+</Preview>
+
+```tsx outline=true
+import { Card } from "@styple/design-system";
+
+<Flex
+  css={{
+    flexDirection: "column",
+    gap: "$md",
+  }}
+>
+  <Card css={{ p: "$lg", gap: "$sm", bg: "$bg300" }}>
+    <Heading as="h3" size="lg">A card component</Heading>
+    <Text
+      css={{
+        color: "$text300",
+      }}
+    >Lorem ipsum</Text>
+    <Button>Button in Card</Button>
+  </Card>
+
+  <Card active css={{ p: "$lg", gap: "$sm", bg: "$bg100" }}>
+    <Heading as="h3" size="lg">Active bg100 card</Heading>
+    <Text
+      css={{
+        color: "$text300",
+      }}
+    >Lorem ipsum</Text>
+    <Button>Button in Card</Button>
+  </Card>
+
+  <Card
+    as="a"
+    href="#"
+    interactive
+    css={{ p: "$lg", bg: "$bg300" }}
+  >
+    <Heading as="h3" size="lg">Interactive card</Heading>
+    <Text
+      css={{
+        color: "$text300",
+      }}
+    >Try clicking this interactive card</Text>
+    <Text
+      css={{
+        color: "$text300",
+      }}
+    >Lorem ipsum</Text>
+  </Card>
+
+  <Card
+    as="a"
+    href="#"
+    interactive
+    css={{
+      p: "$lg",
+    }}
+  >
+    <Image
+      src="/styple-og.png"
+      layout="fill"
+      objectFit="cover"
+      objectPosition="center"
+      className="image-in-card"
+      alt="Banner of styple"
+    />
+
+    <Container>
+      <Heading as="h3" size="lg" color="white">Card with image</Heading>
+      <Text
+        color="white"
+        css={{
+          opacity: ".9",
+        }}
+      >Try clicking this interactive card</Text>
+      <Text
+        color="white"
+        css={{
+          opacity: ".9",
+        }}
+      >Lorem ipsum</Text>
+    </Container>
+  </Card>
+</Flex>
+```
+
+### API Reference
+
+#### Card
+
+A styled component with props:
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>active</Code>
+      </Th>
+      <Td>
+        <Code color="normal">boolean</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Active variant.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>interactive</Code>
+      </Th>
+      <Td>
+        <Code color="normal">boolean</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Interactive variant.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>
+
+---
