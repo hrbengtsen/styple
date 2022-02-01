@@ -18,6 +18,7 @@ export const docsRoutes = [
       { title: "Badge", slug: "docs/components/badge" },
       { title: "Button", slug: "docs/components/button" },
       { title: "Card", slug: "docs/components/card" },
+      { title: "Checkbox", slug: "docs/components/checkbox" },
     ],
   },
 

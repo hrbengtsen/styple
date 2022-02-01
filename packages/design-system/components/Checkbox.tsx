@@ -45,7 +45,7 @@ export const Checkbox = React.forwardRef<
   return (
     <StyledCheckbox {...props} ref={forwardedRef}>
       <StyledIndicator>
-        <Check size="16" />
+        <Check size={16} />
       </StyledIndicator>
     </StyledCheckbox>
   );
