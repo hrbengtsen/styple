@@ -1,0 +1,44 @@
+---
+title: Container
+description: Basic layout element.
+---
+
+### Examples
+
+<Preview>
+  <Flex
+    css={{
+      alignItems: "flex-start",
+      width: "100%",
+      gap: "$md",
+      px: "$md"
+    }}
+  >
+    <Container css={{ width: "100%", height: "$sm", bg: "$bg300" }} />
+    <Container css={{ width: "100%", height: "$sm", bg: "$bg300" }} />
+  </Flex>
+</Preview>
+
+```tsx outline=true
+import { Container } from "@styple/design-system";
+
+<Flex
+  css={{
+    alignItems: "flex-start",
+    width: "100%",
+    gap: "$md",
+    px: "$md"
+  }}
+>
+  <Container css={{ width: "100%", height: "$sm", bg: "$bg300" }} />
+  <Container css={{ width: "100%", height: "$sm", bg: "$bg300" }} />
+</Flex>
+```
+
+### API Reference
+
+#### Container
+
+A basic styled component.
+
+---
