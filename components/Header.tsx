@@ -74,7 +74,7 @@ export const Header = () => {
                   as="span"
                   css={{
                     display: "inline-block",
-                    transition: "transform 350ms ease-in-out",
+                    transition: "transform 350ms ease-out",
                     willChange: "transform",
                     "a:hover &": {
                       transform: "translateX(84px) rotate(-45deg)",
