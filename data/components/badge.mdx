@@ -1,0 +1,117 @@
+---
+title: Badge
+description: A visual indicator of some value.
+---
+
+### Example
+
+<Preview>
+  <Flex
+    css={{
+      flexDirection: "column",
+      alignItems: "flex-start",
+      gap: "$md",
+    }}
+  >
+    <Badge>Small</Badge>
+    <Badge size="lg">Large</Badge>
+    <Badge variant="primary">Primary</Badge>
+    <Badge variant="accent">Accent</Badge>
+    <Badge variant="danger">Danger</Badge>
+    <Badge variant="success">Success</Badge>
+    <Badge as="a" href="#" interactive>Interactive</Badge>
+    <Badge as="button" disabled>Disabled</Badge>
+  </Flex>
+</Preview>
+
+```tsx outline=true
+import { Badge } from "@styple/design-system";
+
+<Flex
+  css={{
+    flexDirection: "column",
+    alignItems: "flex-start",
+    gap: "$md",
+  }}
+>
+  <Badge>Small</Badge>
+  <Badge size="lg">Large</Badge>
+  <Badge variant="primary">Primary</Badge>
+  <Badge variant="accent">Accent</Badge>
+  <Badge variant="danger">Danger</Badge>
+  <Badge variant="success">Success</Badge>
+  <Badge as="a" href="#" interactive>Interactive</Badge>
+  <Badge as="button" disabled>Disabled</Badge>
+</Flex>
+```
+
+### API Reference
+
+#### Badge
+
+A styled component with props:
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>interactive</Code>
+      </Th>
+      <Td>
+        <Code color="normal">boolean</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Interactive variant.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>size</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+        <Popover content={
+          <Code color="normal">"sm" | "lg"</Code>
+        }>
+          <Button highlight size="circle" css={{
+            size: "24px",
+            p: 0,
+            ml: "$xs",
+            lineHeight: 0
+          }}><Info size={16} style={{ verticalAlign: "middle" }} /></Button>
+        </Popover>
+      </Td>
+      <Td><Code color="normal">"sm"</Code></Td>
+      <Td><Text>Size variant.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>variant</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+        <Popover content={
+          <Code color="normal">"primary" | "accent" | "danger" | "success" | "normal"</Code>
+        }>
+          <Button highlight size="circle" css={{
+            size: "24px",
+            p: 0,
+            ml: "$xs",
+            lineHeight: 0
+          }}><Info size={16} style={{ verticalAlign: "middle" }} /></Button>
+        </Popover>
+      </Td>
+      <Td><Code color="normal">"normal"</Code></Td>
+      <Td><Text>Main variant.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>
+
+---
