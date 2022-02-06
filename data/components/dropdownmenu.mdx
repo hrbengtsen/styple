@@ -1,0 +1,91 @@
+---
+title: DropdownMenu
+description: A menu with a set of user actions displayed by clicking a button.
+---
+
+### Example
+
+<Preview>
+  <DropdownMenu>
+    <DropdownMenuTrigger asChild>
+      <Button>Dropdown</Button>
+    </DropdownMenuTrigger>
+    <DropdownMenuContent align="start">
+      <DropdownMenuItem css={{ color: "$text100" }}>Item 1</DropdownMenuItem>
+      <DropdownMenuItem css={{ color: "$text300" }}>Item 2</DropdownMenuItem>
+      <DropdownMenuCheckboxItem>Checkbox</DropdownMenuCheckboxItem>
+      <DropdownMenuSeparator />
+      <DropdownMenuLabel>Menu label</DropdownMenuLabel>
+      <DropdownMenuItem><LinkIcon size="16" style={{ marginRight: "8px" }} /> Link item</DropdownMenuItem>
+      <DropdownMenuItem><Trash2 size="16" style={{ marginRight: "8px" }} /> Action item</DropdownMenuItem>
+      <DropdownMenuItem disabled>Disabled item</DropdownMenuItem>
+    </DropdownMenuContent>
+  </DropdownMenu>
+</Preview>
+
+```tsx outline=true
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuCheckboxItem, DropdownMenuSeparator, DropdownMenuLabel } from "@styple/design-system";
+
+<DropdownMenu>
+  <DropdownMenuTrigger asChild>
+    <Button>Dropdown</Button>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent align="start">
+    <DropdownMenuItem css={{ color: "$text100" }}>Item 1</DropdownMenuItem>
+    <DropdownMenuItem css={{ color: "$text300" }}>Item 2</DropdownMenuItem>
+    <DropdownMenuCheckboxItem>Checkbox</DropdownMenuCheckboxItem>
+    <DropdownMenuSeparator />
+    <DropdownMenuLabel>Menu label</DropdownMenuLabel>
+    <DropdownMenuItem><LinkIcon size="16" style={{ marginRight: "8px" }} /> Link item</DropdownMenuItem>
+    <DropdownMenuItem><Trash2 size="16" style={{ marginRight: "8px" }} /> Action item</DropdownMenuItem>
+    <DropdownMenuItem disabled>Disabled item</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+```
+
+### API Reference
+
+See [Radix-UI DropdownMenu (v0.1.4)](https://www.radix-ui.com/docs/primitives/components/dropdown-menu) for details. This only covers **styple** abstractions.
+
+#### DropdownMenu
+
+An export of `DropdownMenu.Root`.
+
+#### DropdownMenuTrigger
+
+An export of `DropdownMenu.Trigger`.
+
+#### DropdownMenuCheckboxItem
+
+A styled abstraction of `DropdownMenu.CheckboxItem` made as a `Switch`. Custom props:
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>onChange</Code>
+      </Th>
+      <Td>
+        <Code color="normal">(bool: boolean) => void</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Function handler replacing `onCheckedChange`.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>
+
+#### Others
+
+`DropdownMenuContent`, `DropdownMenuLabel`, `DropdownMenuItem`, `DropdownMenuSeparator` and `DropdownMenuGroup` are styled component wrappers for the respective parts of the primitive. 
+
+The rest of the components of the primitive are not currently exported by **styple**.
+
+---
