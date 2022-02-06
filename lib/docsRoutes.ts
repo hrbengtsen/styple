@@ -21,6 +21,7 @@ export const docsRoutes = [
       { title: "Checkbox", slug: "docs/components/checkbox" },
       { title: "Code", slug: "docs/components/code" },
       { title: "Container", slug: "docs/components/container" },
+      { title: "Dialog", slug: "docs/components/dialog" },
     ],
   },
 

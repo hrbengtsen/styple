@@ -1,0 +1,76 @@
+---
+title: Dialog
+description: A modal overlaying the page or another dialog, rendering the content underneath inert.
+---
+
+### Example
+
+<Preview>
+  <Dialog>
+    <DialogTrigger asChild>
+      <Button>Open dialog</Button>
+    </DialogTrigger>
+    <DialogContent
+      aria-labelledby="dialog-heading"
+      aria-describedby="dialog-desc"
+    >
+      <Heading id="dialog-heading" as="h4" css={{ mb: "$md" }}>Example Heading</Heading>
+      <Text id="dialog-desc" css={{ lineHeight: "25px" }}>Lorem ipsum example description text.</Text>
+      <Flex
+        css={{
+          justifyContent: "flex-end",
+          marginTop: "$lg",
+        }}
+      >
+        <DialogClose asChild>
+          <Button transparent variant="success">Close dialog</Button>
+        </DialogClose>
+      </Flex>
+    </DialogContent>
+  </Dialog>
+</Preview>
+
+```tsx outline=true
+import { Dialog, DialogTrigger, DialogContent, DialogCancel, DialogClose } from "@styple/design-system";
+
+<Dialog>
+  <DialogTrigger asChild>
+    <Button>Open dialog</Button>
+  </DialogTrigger>
+  <DialogContent
+    aria-labelledby="dialog-heading"
+    aria-describedby="dialog-desc"
+  >
+    <Heading id="dialog-heading" as="h4" css={{ mb: "$md" }}>Example Heading</Heading>
+    <Text id="dialog-desc" css={{ lineHeight: "25px" }}>Lorem ipsum example description text.</Text>
+    <Flex
+      css={{
+        justifyContent: "flex-end",
+        marginTop: "$lg",
+      }}
+    >
+      <DialogClose asChild>
+        <Button transparent variant="success">Close dialog</Button>
+      </DialogClose>
+    </Flex>
+  </DialogContent>
+</Dialog>
+```
+
+### API Reference
+
+See [Radix-UI Dialog (v0.1.4)](https://www.radix-ui.com/docs/primitives/components/dialog) for details. This only covers **styple** abstractions.
+
+#### Dialog
+
+A styled component wrapper for `Dialog.Root`.
+
+#### DialogContent
+
+A styled abstraction combining `Dialog.Overlay`, `Dialog.Content` and a close button of `Dialog.Close`.
+
+#### Others
+
+The rest of the components (except `Dialog.Portal`) of the primitive are exported by **styple** with no changes. Aria-labels can be used as an alternative to `Dialog.Title` and `Dialog.Description` as in the example above.
+
+---
