@@ -49,6 +49,7 @@ export {
   DialogClose,
   DialogTitle,
   DialogDescription,
+  DialogPortal,
 } from "./components/Dialog";
 export {
   AlertDialog,
@@ -58,6 +59,7 @@ export {
   AlertDialogCancel,
   AlertDialogTitle,
   AlertDialogDescription,
+  AlertDialogPortal,
 } from "./components/AlertDialog";
 export {
   Sheet,
