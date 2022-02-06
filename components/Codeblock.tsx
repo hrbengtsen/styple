@@ -48,9 +48,12 @@ export const CodeBlock = ({ className, id, line, outline, ...props }) => {
         tactile
         css={{
           position: "absolute",
-          right: 0,
-          top: 0,
+          right: "$xs",
+          top: "$xs",
+
+          bg: `${outline ? "$bg200A" : "$bg300A"}`,
           "&:hover, &:focus": {
+            bg: `${outline ? "$bg200A" : "$bg300A"}`,
             color: `${codeCopied && "$success200"}`,
           },
         }}
