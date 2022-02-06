@@ -1,44 +1,46 @@
 ---
-title: Container
-description: Basic layout element.
+title: Grid
+description: Container with grid.
 ---
 
 ### Example
 
 <Preview>
-  <Flex
+  <Grid
     css={{
-      alignItems: "flex-start",
       width: "100%",
       gap: "$md",
-      px: "$md"
+      px: "$md",
+      gridTemplateColumns: "1fr 1fr",
+      gridAutoRows: "1fr"
     }}
   >
     <Container css={{ width: "100%", height: "$lg", bg: "$bg300" }} />
     <Container css={{ width: "100%", height: "$lg", bg: "$bg300" }} />
-  </Flex>
+  </Grid>
 </Preview>
 
 ```tsx outline=true
-import { Container } from "@styple/design-system";
+import { Grid } from "@styple/design-system";
 
-<Flex
+<Grid
   css={{
-    alignItems: "flex-start",
     width: "100%",
     gap: "$md",
-    px: "$md"
+    px: "$md",
+    gridTemplateColumns: "1fr 1fr",
+    gridAutoRows: "1fr"
   }}
 >
   <Container css={{ width: "100%", height: "$lg", bg: "$bg300" }} />
   <Container css={{ width: "100%", height: "$lg", bg: "$bg300" }} />
-</Flex>
+</Grid>
 ```
 
 ### API Reference
 
-#### Container
+#### Grid
 
-A basic styled component.
+A styled component wrapper for `Container` with display grid.
 
 ---
