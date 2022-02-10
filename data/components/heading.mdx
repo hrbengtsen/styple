@@ -1,0 +1,107 @@
+---
+title: Heading
+description: A caption or title for a section.
+---
+
+### Examples
+
+<Preview>
+  <Flex
+    css={{
+      flexDirection: "column",
+    }}
+  >  
+    <Heading
+      css={{
+        fontWeight: "$black",
+        color: "$text100",
+      }}
+    >styple lorem ipsum</Heading>
+    <Heading
+      as="h2"
+      css={{
+        fontWeight: "$black",
+        color: "$text200",
+      }}
+    >styple lorem ipsum</Heading>
+    <Heading
+      as="h3"
+      css={{
+        fontWeight: "$black",
+        color: "$text300",
+      }}
+    >styple lorem ipsum</Heading>
+  </Flex>
+</Preview>
+
+```tsx outline=true
+import { Heading } from "@styple/design-system";
+
+<Flex
+  css={{
+    flexDirection: "column",
+  }}
+>
+  <Heading
+    css={{
+      fontWeight: "$black",
+      color: "$text100",
+    }}
+  >styple lorem ipsum</Heading>
+  <Heading
+    as="h2"
+    css={{
+      fontWeight: "$black",
+      color: "$text200",
+    }}
+  >styple lorem ipsum</Heading>
+  <Heading
+    as="h3"
+    css={{
+      fontWeight: "$black",
+      color: "$text300",
+    }}
+  >styple lorem ipsum</Heading>
+</Flex>
+```
+
+### API Reference
+
+#### Heading
+
+A styled component with `Text`'s styles and variants. However, it defaults to `color="heading"` and `size` is chosen depending on heading tag unless overridden. Custom props:
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>as</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+        <Popover content={
+          <Code color="normal">"h1" | "h2" | "h3" | "h4"</Code>
+        }>
+          <Button highlight size="circle" css={{
+            size: "24px",
+            p: 0,
+            ml: "$xs",
+            lineHeight: 0
+          }}><Info size={16} style={{ verticalAlign: "middle" }} /></Button>
+        </Popover>
+      </Td>
+      <Td><Code color="normal">"h1"</Code></Td>
+      <Td><Text>Choose heading tag to display. Depending on tag different `size` variants are set.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>
+
+---

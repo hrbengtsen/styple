@@ -25,6 +25,7 @@ export const docsRoutes = [
       { title: "DropdownMenu", slug: "docs/components/dropdownmenu" },
       { title: "Flex", slug: "docs/components/flex" },
       { title: "Grid", slug: "docs/components/grid" },
+      { title: "Heading", slug: "docs/components/heading" },
     ],
   },
 
