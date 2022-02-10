@@ -2,7 +2,6 @@ import {
   Container,
   Heading,
   Section,
-  Link,
   Grid,
   Text,
   Flex,
@@ -11,6 +10,7 @@ import {
 } from "../packages/design-system";
 import { PersonStanding, Brush, Code2 } from "lucide-react";
 import { CodeCopy } from "../components/CodeCopy";
+import { Link } from "../components/Link";
 import NextLink from "next/link";
 
 const personAnim = keyframes({

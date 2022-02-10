@@ -1,0 +1,71 @@
+---
+title: Link
+description: Lets user navigate to a different place with a click.
+---
+
+### Example
+
+<Preview>
+  <Text css={{ px: "$lg" }}>This is a text paragraph with some <Link variant="color" href="#">links like this</Link>. There are a couple different variants for <Link href="#">these links</Link> that you see here. That is all.</Text>
+</Preview>
+
+```tsx outline=true
+import { Link } from "@styple/design-system";
+
+<Text css={{ px: "$lg" }}>
+  This is a text paragraph with some <Link variant="color" href="#">links like this</Link>.
+  There are a couple different variants for <Link href="#">these links</Link> that you see here. That is all.
+</Text>
+```
+
+### With `next/link`
+
+When using something like Next.js you might want to make a wrapper for this component, which can be done like so:
+
+```tsx 
+import NextLink from "next/link";
+import { Link as DSLink } from "@styple/design-system";
+import React from "react";
+
+export const Link = React.forwardRef<
+  React.ElementRef<typeof DSLink>,
+  React.ComponentProps<typeof DSLink>
+>(({ href, children, ...props }, forwardedRef) => {
+  return (
+    <NextLink href={href} passHref>
+      <DSLink ref={forwardedRef} {...props}>
+        {children}
+      </DSLink>
+    </NextLink>
+  );
+});
+```
+
+### API Reference
+
+#### Link
+
+A styled component with props:
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>variant</Code>
+      </Th>
+      <Td>
+        <Code color="normal">"color" | "underline"</Code>
+      </Td>
+      <Td><Code color="normal">"underline"</Code></Td>
+      <Td><Text>Variant type of the link.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>

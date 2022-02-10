@@ -1,6 +1,7 @@
-import { Container, Link, Text } from "../packages/design-system";
+import { Container, Text } from "../packages/design-system";
 import { RemoveScroll } from "react-remove-scroll";
 import { useEffect, useState } from "react";
+import { Link } from "./Link";
 
 export const QuickNav = () => {
   const [headings, setHeadings] = useState<HTMLParagraphElement[]>([]);

@@ -6,15 +6,10 @@ import {
   PageProps,
   RouteProps,
 } from "../lib/docsRoutes";
-import {
-  Container,
-  Flex,
-  NavLinkItem,
-  Text,
-  Sidebar,
-} from "../packages/design-system";
+import { Container, Flex, Text, Sidebar } from "../packages/design-system";
 import { Sidebar as SidebarIcon, ArrowLeft, ArrowRight } from "lucide-react";
 import { Footer } from "./Footer";
+import { NavLinkItem } from "./NavLinkItem";
 
 export const DocsPage = ({
   children,

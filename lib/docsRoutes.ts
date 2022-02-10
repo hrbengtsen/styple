@@ -27,6 +27,7 @@ export const docsRoutes = [
       { title: "Grid", slug: "docs/components/grid" },
       { title: "Heading", slug: "docs/components/heading" },
       { title: "Label", slug: "docs/components/label" },
+      { title: "Link", slug: "docs/components/link" },
     ],
   },
 

@@ -5,6 +5,7 @@ import { Preview } from "../components/Preview";
 import { CodeBlock, CodeBlockLink, CodeHighlight } from "./Codeblock";
 import { Coffee, Info, Plus, Trash2, Link as LinkIcon } from "lucide-react";
 import Image from "next/image";
+import { Link } from "./Link";
 
 export const components = {
   ...SDS,
@@ -86,9 +87,9 @@ export const components = {
     </SDS.Text>
   ),
   a: ({ children, href, ...props }) => (
-    <SDS.Link href={href} {...props}>
+    <Link href={href} {...props}>
       {children}
-    </SDS.Link>
+    </Link>
   ),
   hr: (props) => <SDS.Separator size="lg" {...props} />,
   pre: ({ children }) => <>{children}</>,

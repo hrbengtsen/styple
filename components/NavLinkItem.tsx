@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
-import Link from "next/link";
-import { NavItem } from "..";
+import NextLink from "next/link";
+import { NavItem } from "../packages/design-system";
 import React from "react";
 import { UrlObject } from "url";
 
@@ -18,7 +18,7 @@ export const NavLinkItem = React.forwardRef<
   const isActive = asPath.split("#")[0] === href;
 
   return (
-    <Link href={href} passHref>
+    <NextLink href={href} passHref>
       <NavItem
         className={isActive ? "active" : ""}
         ref={forwardedRef}
@@ -26,6 +26,6 @@ export const NavLinkItem = React.forwardRef<
       >
         {children}
       </NavItem>
-    </Link>
+    </NextLink>
   );
 });

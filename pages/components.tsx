@@ -5,7 +5,6 @@ import {
   Heading,
   Text,
   Button,
-  NavLinkItem,
   Card,
   Spinner,
   Avatar,
@@ -65,15 +64,17 @@ import {
   Navbar,
   Sidebar,
   keyframes,
-  Link,
 } from "../packages/design-system";
 import { Searchbar } from "../components/Searchbar";
+import { NavLinkItem } from "../components/NavLinkItem";
+import { Link } from "../components/Link";
 import { Plus, Trash2, Link as LinkIcon, GripVertical } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { QuickNav } from "../components/QuickNav";
 import { useCopy } from "../packages/hooks/src/useCopy";
+import NextLink from "next/link";
 
 // Keyframes for navbar examples
 const slideRight = keyframes({
@@ -96,9 +97,11 @@ const openFullNav = keyframes({
 export default function Components() {
   const router = useRouter();
   const [fullpageNavState, setFullpageNavState] = useState<boolean>(false);
-  const { text: npmText, copy: copyNpm, copied: npmCopied } = useCopy(
-    "npm i @styple/design-system"
-  );
+  const {
+    text: npmText,
+    copy: copyNpm,
+    copied: npmCopied,
+  } = useCopy("npm i @styple/design-system");
 
   return (
     <Flex

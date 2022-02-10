@@ -1,4 +1,5 @@
-import { Section, Text, Link } from "../packages/design-system";
+import { Section, Text } from "../packages/design-system";
+import { Link } from "./Link";
 
 export const Footer = () => (
   <Section

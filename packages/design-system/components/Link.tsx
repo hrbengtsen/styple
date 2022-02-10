@@ -1,10 +1,7 @@
-import NextLink from "next/link";
-import React from "react";
-import { UrlObject } from "url";
 import { styled } from "../stitches.config";
 import { Text } from "..";
 
-const StyledLink = styled("a", {
+export const Link = styled("a", {
   textDecorationLine: "none",
   textUnderlineOffset: "2px",
   textDecorationColor: "$button100",
@@ -46,23 +43,4 @@ const StyledLink = styled("a", {
   defaultVariants: {
     variant: "underline",
   },
-});
-
-type NavItemProps = React.ComponentProps<typeof StyledLink>;
-type NavLinkItemProps = NavItemProps & {
-  href: string | UrlObject;
-  children: any;
-};
-
-export const Link = React.forwardRef<
-  React.ElementRef<typeof StyledLink>,
-  NavLinkItemProps
->(({ href, children, ...props }, forwardedRef) => {
-  return (
-    <NextLink href={href} passHref>
-      <StyledLink ref={forwardedRef} {...props}>
-        {children}
-      </StyledLink>
-    </NextLink>
-  );
 });

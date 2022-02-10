@@ -2,11 +2,11 @@ import {
   Container,
   Navbar,
   Flex,
-  NavLinkItem,
   Text,
   Tooltip,
-  Link,
 } from "../packages/design-system";
+import { NavLinkItem } from "./NavLinkItem";
+import { Link } from "./Link";
 import { ThemeButton } from "./ThemeButton";
 import { ArrowLeft, ArrowRight, Github } from "lucide-react";
 import { useRouter } from "next/router";
