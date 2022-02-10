@@ -1,0 +1,40 @@
+---
+title: Label
+description: A label for form components.
+---
+
+### Examples
+
+<Preview>
+  <Container>
+    <Label htmlFor="labelInput">Test label</Label>
+    <TextField
+      id="labelInput"
+      size="lg"
+      placeholder="Textfield with label"
+    />
+  </Container>
+</Preview>
+
+```tsx outline=true
+import { Label } from "@styple/design-system";
+
+<Container>
+  <Label htmlFor="labelInput">Test label</Label>
+  <TextField
+    id="labelInput"
+    size="lg"
+    placeholder="Textfield with label"
+  />
+</Container>
+```
+
+### API Reference
+
+See [Radix-UI Label (v0.1.4)](https://www.radix-ui.com/docs/primitives/components/label) for details.
+
+#### Label
+
+A styled component wrapper for `Label.Root` with some of `Text`'s base styles and all its variants.
+
+---
