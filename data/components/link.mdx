@@ -62,7 +62,17 @@ A styled component with props:
         <Code>variant</Code>
       </Th>
       <Td>
-        <Code color="normal">"color" | "underline"</Code>
+        <Code color="normal">string</Code>
+        <Popover content={
+          <Code color="normal">"color" | "underline"</Code>
+        }>
+          <Button highlight size="circle" css={{
+            size: "24px",
+            p: 0,
+            ml: "$xs",
+            lineHeight: 0
+          }}><Info size={16} style={{ verticalAlign: "middle" }} /></Button>
+        </Popover>
       </Td>
       <Td><Code color="normal">"underline"</Code></Td>
       <Td><Text>Variant type of the link.</Text></Td>
