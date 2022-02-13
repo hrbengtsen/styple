@@ -6,7 +6,13 @@ import {
   PageProps,
   RouteProps,
 } from "../lib/docsRoutes";
-import { Container, Flex, Text, Sidebar } from "../packages/design-system";
+import {
+  Container,
+  Flex,
+  Text,
+  Sidebar,
+  ScrollArea,
+} from "../packages/design-system";
 import { Sidebar as SidebarIcon, ArrowLeft, ArrowRight } from "lucide-react";
 import { Footer } from "./Footer";
 import { NavLinkItem } from "./NavLinkItem";
@@ -45,24 +51,27 @@ export const DocsPage = ({
           boxShadow: "inset 0 -1px 2px -1px $colors$button100",
 
           "@bp3": {
-            height: "100%",
-            width: "auto",
+            width: 250,
+            bottom: 0,
+            boxShadow: "inset -1px 0 2px -1px $colors$button100",
           },
         }}
         side="left"
         bp="@bp3"
         content={
-          <Container
+          <ScrollArea
             css={{
-              width: 250,
               px: "$lg",
-              boxShadow: "inset -1px 0 2px -1px $colors$button100",
             }}
           >
             {docsRoutes.map((routeSection: RouteProps) => (
-              <Container key={routeSection.label} css={{ my: "$xl" }}>
+              <Container key={routeSection.label} css={{ py: "$lg" }}>
                 <Text
-                  css={{ fontWeight: "$bold", mb: "$sm", color: "$text100" }}
+                  css={{
+                    fontWeight: "$bold",
+                    mb: "$sm",
+                    color: "$text100",
+                  }}
                 >
                   {routeSection.label}
                 </Text>
@@ -96,12 +105,12 @@ export const DocsPage = ({
                 </Container>
               </Container>
             ))}
-          </Container>
+          </ScrollArea>
         }
         mobileContent={
           <>
             {docsRoutes.map((routeSection: RouteProps) => (
-              <Container key={routeSection.label} css={{ my: "$xl" }}>
+              <Container key={routeSection.label} css={{ py: "$lg" }}>
                 <Text
                   css={{ fontWeight: "$bold", mb: "$sm", color: "$text100" }}
                 >
