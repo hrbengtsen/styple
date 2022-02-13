@@ -62,6 +62,7 @@ export const AlertDialogContent = React.forwardRef<
     </StyledContent>
   </StyledOverlay>
 ));
+AlertDialogContent.displayName = "AlertDialogContent";
 
 export const AlertDialogTrigger = AlertDialogPrimitive.Trigger;
 export const AlertDialogAction = AlertDialogPrimitive.Action;

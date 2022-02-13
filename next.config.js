@@ -8,4 +8,7 @@ module.exports = {
       },
     ];
   },
+  eslint: {
+    dirs: ["pages", "lib", "packages", "components", "data"],
+  },
 };

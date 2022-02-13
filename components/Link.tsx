@@ -14,3 +14,4 @@ export const Link = React.forwardRef<
     </NextLink>
   );
 });
+Link.displayName = "Link";

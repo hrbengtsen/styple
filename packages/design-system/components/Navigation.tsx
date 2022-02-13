@@ -82,6 +82,7 @@ const Burger = React.forwardRef<
     <span />
   </StyledBurger>
 ));
+Burger.displayName = "Burger";
 
 // General collapsible navbar with custom animated Burger
 type NavbarProps = React.ComponentProps<typeof Container> & {
@@ -111,7 +112,7 @@ export const Navbar = React.forwardRef<
 
     React.useEffect(() => {
       if (onOpenChange) onOpenChange(internalOpen);
-    }, [internalOpen]);
+    }, [internalOpen, onOpenChange]);
 
     return (
       <Collapsible.Root
@@ -141,6 +142,7 @@ export const Navbar = React.forwardRef<
     );
   }
 );
+Navbar.displayName = "Navbar";
 
 // Sidebar
 type SidebarProps = React.ComponentProps<typeof Container> & {
@@ -206,3 +208,4 @@ export const Sidebar = React.forwardRef<
     );
   }
 );
+Sidebar.displayName = "Sidebar";

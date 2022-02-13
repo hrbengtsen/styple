@@ -50,3 +50,4 @@ export const Checkbox = React.forwardRef<
     </StyledCheckbox>
   );
 });
+Checkbox.displayName = "Checkbox";

@@ -71,6 +71,7 @@ export const DialogContent = React.forwardRef<
     </StyledContent>
   </StyledOverlay>
 ));
+DialogContent.displayName = "DialogContent";
 
 export const DialogTrigger = DialogPrimitive.Trigger;
 export const DialogClose = DialogPrimitive.Close;

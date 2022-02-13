@@ -35,3 +35,4 @@ export const Heading = React.forwardRef<
     <StyledHeading as={as} size={textSize[as]} {...rest} ref={forwardedRef} />
   );
 });
+Heading.displayName = "Heading";

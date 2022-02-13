@@ -27,7 +27,7 @@ export const useDebounce = (
     }
 
     return () => clearTimeout(delayDebounceFn);
-  }, [state, callback]);
+  }, [state, callback, delay]);
 
   return [state, setState];
 };

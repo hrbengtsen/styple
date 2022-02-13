@@ -29,3 +29,4 @@ export const NavLinkItem = React.forwardRef<
     </NextLink>
   );
 });
+NavLinkItem.displayName = "NavLinkItem";

@@ -27,6 +27,7 @@ export const TabsList = React.forwardRef<
     <Separator />
   </>
 ));
+TabsList.displayName = "TabsList";
 
 export const TabsTrigger = styled(TabsPrimitive.Trigger, {
   display: "inline-flex",

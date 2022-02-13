@@ -137,6 +137,7 @@ export const SheetContent = React.forwardRef<
     </StyledContent>
   </StyledOverlay>
 ));
+SheetContent.displayName = "SheetContent";
 
 export const SheetTrigger = DialogPrimitive.Trigger;
 export const SheetClose = DialogPrimitive.Close;

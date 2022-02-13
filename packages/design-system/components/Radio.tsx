@@ -51,3 +51,4 @@ export const Radio = React.forwardRef<
     </StyledRadio>
   );
 });
+Radio.displayName = "Radio";

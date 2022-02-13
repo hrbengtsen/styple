@@ -123,6 +123,7 @@ export const Avatar = React.forwardRef<
     </StyledAvatar>
   );
 });
+Avatar.displayName = "Avatar";
 
 type AvatarGroupProps = React.ComponentProps<typeof StyledAvatarGroup> & {
   limit?: number;
@@ -154,6 +155,7 @@ export const AvatarGroup = React.forwardRef<
     </StyledAvatarGroup>
   );
 });
+AvatarGroup.displayName = "AvatarGroup";
 
 const StyledAvatarGroup = styled("div", {
   display: "flex",

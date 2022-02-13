@@ -122,3 +122,4 @@ export const DropdownMenuCheckboxItem = React.forwardRef<
     </StyledDropdownMenuCheckboxItem>
   );
 });
+DropdownMenuCheckboxItem.displayName = "DropdownMenuCheckboxItem";

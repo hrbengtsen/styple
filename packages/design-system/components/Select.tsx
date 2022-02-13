@@ -88,3 +88,4 @@ export const Select = React.forwardRef<
     <StyledChevronDown sizeOffset={size} size="20" />
   </SelectWrapper>
 ));
+Select.displayName = "Select";

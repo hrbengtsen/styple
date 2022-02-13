@@ -59,3 +59,4 @@ export const SearchField = React.forwardRef<
     </Container>
   );
 });
+SearchField.displayName = "SearchField";

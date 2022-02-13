@@ -32,6 +32,7 @@ export const Accordion = React.forwardRef<
     {children}
   </StyledAccordion>
 ));
+Accordion.displayName = "Accordion";
 
 export const AccordionItem = styled(AccordionPrimitive.Item, {});
 
@@ -114,3 +115,4 @@ export const AccordionTrigger = React.forwardRef<
     {!noSeparator && <Separator />}
   </AccordionHeader>
 ));
+AccordionTrigger.displayName = "Accordion";
