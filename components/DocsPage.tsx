@@ -59,52 +59,50 @@ export const DocsPage = ({
         side="left"
         bp="@bp3"
         content={
-          <ScrollArea
-            css={{
-              px: "$lg",
-            }}
-          >
-            {docsRoutes.map((routeSection: RouteProps) => (
-              <Container key={routeSection.label} css={{ py: "$lg" }}>
-                <Text
-                  css={{
-                    fontWeight: "$bold",
-                    mb: "$sm",
-                    color: "$text100",
-                  }}
-                >
-                  {routeSection.label}
-                </Text>
-                <Container
-                  as="ul"
-                  css={{
-                    listStyleType: "none",
-                    p: 0,
-                    m: 0,
-                  }}
-                >
-                  {routeSection.pages.map((page: PageProps) => (
-                    <Container as="li" key={page.slug}>
-                      <NavLinkItem
-                        highlight
-                        size="sm"
-                        href={`/${page.slug}`}
-                        css={{
-                          fontSize: "$xs",
-                          "&.active": {
-                            bg: "$bg300",
-                            fontWeight: "$semibold",
-                          },
-                          my: "$xs",
-                        }}
-                      >
-                        {page.title}
-                      </NavLinkItem>
-                    </Container>
-                  ))}
+          <ScrollArea>
+            <Container css={{ px: "$lg" }}>
+              {docsRoutes.map((routeSection: RouteProps) => (
+                <Container key={routeSection.label} css={{ py: "$lg" }}>
+                  <Text
+                    css={{
+                      fontWeight: "$bold",
+                      mb: "$sm",
+                      color: "$text100",
+                    }}
+                  >
+                    {routeSection.label}
+                  </Text>
+                  <Container
+                    as="ul"
+                    css={{
+                      listStyleType: "none",
+                      p: 0,
+                      m: 0,
+                    }}
+                  >
+                    {routeSection.pages.map((page: PageProps) => (
+                      <Container as="li" key={page.slug}>
+                        <NavLinkItem
+                          highlight
+                          size="sm"
+                          href={`/${page.slug}`}
+                          css={{
+                            fontSize: "$xs",
+                            "&.active": {
+                              bg: "$bg300",
+                              fontWeight: "$semibold",
+                            },
+                            my: "$xs",
+                          }}
+                        >
+                          {page.title}
+                        </NavLinkItem>
+                      </Container>
+                    ))}
+                  </Container>
                 </Container>
-              </Container>
-            ))}
+              ))}
+            </Container>
           </ScrollArea>
         }
         mobileContent={
