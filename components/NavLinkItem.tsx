@@ -7,7 +7,7 @@ import { UrlObject } from "url";
 type NavItemProps = React.ComponentProps<typeof NavItem>;
 type NavLinkItemProps = NavItemProps & {
   href: string | UrlObject;
-  children: any;
+  children: React.ReactNode;
 };
 
 export const NavLinkItem = React.forwardRef<

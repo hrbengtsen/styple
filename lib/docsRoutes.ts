@@ -29,6 +29,7 @@ export const docsRoutes = [
       { title: "Label", slug: "docs/components/label" },
       { title: "Link", slug: "docs/components/link" },
       { title: "Navbar", slug: "docs/components/navbar" },
+      { title: "NavItem", slug: "docs/components/navitem" },
     ],
   },
 

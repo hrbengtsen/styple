@@ -1,0 +1,168 @@
+---
+title: NavItem
+description: Navigation item typically used along a Navbar.
+---
+
+### Examples
+
+<Preview>
+  <Flex
+    css={{
+      flexDirection: "column",
+      gap: "$md",
+      alignItems: "center",
+    }}
+  >
+    <Flex
+      css={{
+        gap: "$md",
+        justifyContent: "center",
+      }}
+    >
+      <NavLinkItem ghost href="/docs/components/navitem">Here (color, default)</NavLinkItem>
+      <NavLinkItem ghost href="/docs/components/button">Button</NavLinkItem>
+      <NavLinkItem ghost href="https://www.bitetap.com/">Ext. Link</NavLinkItem>
+    </Flex>
+    <Flex
+      css={{
+        gap: "$md",
+        justifyContent: "center",
+      }}
+    >
+      <NavLinkItem active="bold" ghost href="/docs/components/navitem">Here (bold)</NavLinkItem>
+      <NavLinkItem active="bold" ghost href="/docs/components/button">Button</NavLinkItem>
+      <NavLinkItem active="bold" ghost href="https://www.bitetap.com/">Ext. Link</NavLinkItem>
+    </Flex>
+    <Flex
+      css={{
+        gap: "$md",
+        justifyContent: "center",
+      }}
+    >
+      <NavLinkItem active="both" ghost href="/docs/components/navitem">Here (both)</NavLinkItem>
+      <NavLinkItem active="both" ghost href="/docs/components/button">Button</NavLinkItem>
+      <NavLinkItem active="both" ghost href="https://www.bitetap.com/">Ext. Link</NavLinkItem>
+    </Flex>
+  </Flex>
+</Preview>
+
+```tsx outline=true
+import { NavItem } from "@styple/design-system";
+
+<Flex
+  css={{
+    flexDirection: "column",
+    gap: "$md",
+    alignItems: "center",
+  }}
+>
+  <Flex
+    css={{
+      gap: "$md",
+      justifyContent: "center",
+    }}
+  >
+    <NavLinkItem ghost href="/docs/components/navitem">Here (color, default)</NavLinkItem>
+    <NavLinkItem ghost href="/docs/components/button">Button</NavLinkItem>
+    <NavLinkItem ghost href="https://www.bitetap.com/">Ext. Link</NavLinkItem>
+  </Flex>
+  <Flex
+    css={{
+      gap: "$md",
+      justifyContent: "center",
+    }}
+  >
+    <NavLinkItem active="bold" ghost href="/docs/components/navitem">Here (bold)</NavLinkItem>
+    <NavLinkItem active="bold" ghost href="/docs/components/button">Button</NavLinkItem>
+    <NavLinkItem active="bold" ghost href="https://www.bitetap.com/">Ext. Link</NavLinkItem>
+  </Flex>
+  <Flex
+    css={{
+      gap: "$md",
+      justifyContent: "center",
+    }}
+  >
+    <NavLinkItem active="both" ghost href="/docs/components/navitem">Here (both)</NavLinkItem>
+    <NavLinkItem active="both" ghost href="/docs/components/button">Button</NavLinkItem>
+    <NavLinkItem active="both" ghost href="https://www.bitetap.com/">Ext. Link</NavLinkItem>
+  </Flex>
+</Flex>
+```
+
+### With `next/link`
+
+When using something like Next.js you might want to make a wrapper for this component, which can be done like so:
+
+```tsx 
+import { useRouter } from "next/router";
+import NextLink from "next/link";
+import { NavItem } from "@styple/design-system";
+import React from "react";
+import { UrlObject } from "url";
+
+type NavItemProps = React.ComponentProps<typeof NavItem>;
+type NavLinkItemProps = NavItemProps & {
+  href: string | UrlObject;
+  children: React.ReactNode;
+};
+
+export const NavLinkItem = React.forwardRef<
+  React.ElementRef<typeof NavItem>,
+  NavLinkItemProps
+>(({ href, children, ...props }, forwardedRef) => {
+  const { asPath } = useRouter();
+  const isActive = asPath.split("#")[0] === href;
+
+  return (
+    <NextLink href={href} passHref>
+      <NavItem
+        className={isActive ? "active" : ""}
+        ref={forwardedRef}
+        {...props}
+      >
+        {children}
+      </NavItem>
+    </NextLink>
+  );
+});
+NavLinkItem.displayName = "NavLinkItem";
+```
+
+### API Reference
+
+#### NavItem
+
+A styled component with the same variants as `Button` with the addition of:
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>active</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+        <Popover content={
+          <Code color="normal">"bold" | "color" | "both"</Code>
+        }>
+          <Button highlight size="circle" css={{
+            size: "24px",
+            p: 0,
+            ml: "$xs",
+            lineHeight: 0
+          }}><Info size={16} style={{ verticalAlign: "middle" }} /></Button>
+        </Popover>
+      </Td>
+      <Td><Code color="normal">"color"</Code></Td>
+      <Td><Text>Active variant.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>
