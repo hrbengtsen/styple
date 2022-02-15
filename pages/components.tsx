@@ -1404,16 +1404,6 @@ export default function Components() {
                   </NavLinkItem>
                 </Flex>
               }
-              open={fullpageNavState}
-              onOpenChange={(open) => {
-                if (open && typeof document !== "undefined") {
-                  document.body.style.overflowY = "hidden";
-                } else if (typeof document !== "undefined") {
-                  document.body.style.overflowY = "auto";
-                }
-
-                setFullpageNavState(open);
-              }}
             />
           </Container>
           <Container

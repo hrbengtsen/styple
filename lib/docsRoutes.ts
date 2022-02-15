@@ -28,6 +28,7 @@ export const docsRoutes = [
       { title: "Heading", slug: "docs/components/heading" },
       { title: "Label", slug: "docs/components/label" },
       { title: "Link", slug: "docs/components/link" },
+      { title: "Navbar", slug: "docs/components/navbar" },
     ],
   },
 

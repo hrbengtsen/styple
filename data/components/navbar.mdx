@@ -1,0 +1,104 @@
+---
+title: Navbar
+description: Navigation bar with items to navigate an application.
+---
+
+### Examples
+
+<Preview>
+  <DemoNavbars />
+</Preview>
+
+<CodeBlockLink id="navbar" index="1" href="https://github.com/hrbengtsen/styple/blob/main/components/DemoNavbars.tsx" />
+
+```tsx outline=true id=navbar
+import { Navbar } from "@styple/design-system";
+
+// Simplified code, see __DemoNavbars__ for full source. 
+// Resize your screen to see responsive-ness.
+<Flex
+  css={{
+    width: "100%",
+    gap: "$md",
+    px: "$md",
+    flexDirection: "column",
+  }}
+>
+  <Container css={{ bg: "$bg300" }}>
+    <Navbar css={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        p: "$md",
+        height: "$xl",
+      }}
+      brand={<Text>Basic navbar</Text>}
+      content={/* Regular content as JSX */}
+      mobileContent={/* Mobile content as JSX */} 
+    />
+  </Container>
+  <Container css={{ bg: "$bg300" }}>
+    <Navbar
+      css={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        p: "$md",
+        height: "$xl",
+      }}
+      brand={<Text>Fullpage navbar</Text>}
+      content={/* Regular content as JSX */}
+      mobileContent={/* Mobile content as JSX. Uses a CollapsibleTrigger for the closing anim. */} 
+    />
+  </Container>
+</Flex>
+```
+
+### API Reference
+
+#### Navbar
+
+A custom styled component, using `Collapsible` internally. With props:
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>brand</Code>
+      </Th>
+      <Td>
+        <Code color="normal">ReactNode</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Display your brand in the navbar.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>content</Code>
+      </Th>
+      <Td>
+        <Code color="normal">ReactNode</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>The regular content of the navbar.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>mobileContent</Code>
+      </Th>
+      <Td>
+        <Code color="normal">ReactNode</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>The content to display instead on mobile.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>

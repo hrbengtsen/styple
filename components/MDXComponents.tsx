@@ -6,6 +6,8 @@ import { CodeBlock, CodeBlockLink, CodeHighlight } from "./Codeblock";
 import { Coffee, Info, Plus, Trash2, Link as LinkIcon } from "lucide-react";
 import Image from "next/image";
 import { Link } from "./Link";
+import { NavLinkItem } from "./NavLinkItem";
+import { DemoNavbars } from "./DemoNavbars";
 
 export const components = {
   ...SDS,
@@ -17,6 +19,8 @@ export const components = {
   Trash2,
   LinkIcon,
   Image,
+  NavLinkItem,
+  DemoNavbars,
   h1: ({ children, ...props }) => (
     <SDS.Heading size="2xl" css={{ mb: "$md", mt: "$3xl" }} {...props}>
       {children}

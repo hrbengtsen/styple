@@ -87,8 +87,6 @@ Burger.displayName = "Burger";
 // General collapsible navbar with custom animated Burger
 type NavbarProps = React.ComponentProps<typeof Container> & {
   css?: CSS;
-  open?: boolean;
-  onOpenChange?: (bool: boolean) => void;
   brand?: React.ReactNode;
   content: React.ReactNode;
   mobileContent: React.ReactNode;
@@ -97,51 +95,36 @@ type NavbarProps = React.ComponentProps<typeof Container> & {
 export const Navbar = React.forwardRef<
   React.ElementRef<typeof StyledBurger>,
   NavbarProps
->(
-  (
-    { open, onOpenChange, brand, content, mobileContent, ...props },
-    forwardedRef
-  ) => {
-    const [internalOpen, setInternalOpen] = React.useState<boolean>(
-      open || false
-    );
+>(({ brand, content, mobileContent, ...props }, forwardedRef) => {
+  const [internalOpen, setInternalOpen] = React.useState<boolean>(false);
 
-    React.useEffect(() => {
-      setInternalOpen(open);
-    }, [open]);
-
-    React.useEffect(() => {
-      if (onOpenChange) onOpenChange(internalOpen);
-    }, [internalOpen, onOpenChange]);
-
-    return (
-      <Collapsible.Root
-        open={internalOpen}
-        onOpenChange={(open) => {
-          setInternalOpen(open);
-        }}
-      >
-        <Container {...props}>
-          {brand}
-          <Container
-            css={{
-              display: "none",
-              "@bp2": {
-                display: "flex",
-              },
-            }}
-          >
-            {content}
-          </Container>
-          <Collapsible.Trigger asChild>
-            <Burger open={internalOpen} ref={forwardedRef} />
-          </Collapsible.Trigger>
+  return (
+    <Collapsible.Root
+      open={internalOpen}
+      onOpenChange={(open) => {
+        setInternalOpen(open);
+      }}
+    >
+      <Container {...props}>
+        {brand}
+        <Container
+          css={{
+            display: "none",
+            "@bp2": {
+              display: "flex",
+            },
+          }}
+        >
+          {content}
         </Container>
-        <Collapsible.Content asChild>{mobileContent}</Collapsible.Content>
-      </Collapsible.Root>
-    );
-  }
-);
+        <Collapsible.Trigger asChild>
+          <Burger open={internalOpen} ref={forwardedRef} />
+        </Collapsible.Trigger>
+      </Container>
+      <Collapsible.Content asChild>{mobileContent}</Collapsible.Content>
+    </Collapsible.Root>
+  );
+});
 Navbar.displayName = "Navbar";
 
 // Sidebar
