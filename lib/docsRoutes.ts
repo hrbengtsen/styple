@@ -30,6 +30,7 @@ export const docsRoutes = [
       { title: "Link", slug: "docs/components/link" },
       { title: "Navbar", slug: "docs/components/navbar" },
       { title: "NavItem", slug: "docs/components/navitem" },
+      { title: "Popover", slug: "docs/components/popover" },
     ],
   },
 

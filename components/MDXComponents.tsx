@@ -3,7 +3,14 @@ import * as SDS from "../packages/design-system";
 import { Release } from "../components/Release";
 import { Preview } from "../components/Preview";
 import { CodeBlock, CodeBlockLink, CodeHighlight } from "./Codeblock";
-import { Coffee, Info, Plus, Trash2, Link as LinkIcon } from "lucide-react";
+import {
+  Coffee,
+  Info,
+  Plus,
+  Trash2,
+  Link as LinkIcon,
+  GripVertical,
+} from "lucide-react";
 import Image from "next/image";
 import { Link } from "./Link";
 import { NavLinkItem } from "./NavLinkItem";
@@ -18,6 +25,7 @@ export const components = {
   Plus,
   Trash2,
   LinkIcon,
+  GripVertical,
   Image,
   NavLinkItem,
   DemoNavbars,

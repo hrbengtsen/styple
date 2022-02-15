@@ -1,0 +1,97 @@
+---
+title: Popover
+description: Displays content near a Button when its clicked.
+---
+
+### Example
+
+<Preview>
+  <Flex
+    css={{
+      gap: "$md",
+      alignItems: "center",
+    }}
+  >
+    <Popover content="Popover content">
+      <Button highlight size="circle">
+        <Plus style={{ verticalAlign: "middle" }} />
+      </Button>
+    </Popover>
+    <Popover
+      content={
+        <><b>Drag</b> to move <br /> <b>Click</b> to open menu</>
+      }
+    >
+      <Button highlight css={{ p: "0", borderRadius: "$md" }}>
+        <GripVertical style={{ verticalAlign: "middle" }} />
+      </Button>
+    </Popover>
+  </Flex>
+</Preview>
+
+```tsx outline=true
+import { Popover } from "@styple/design-system";
+
+<Flex
+  css={{
+    gap: "$md",
+    alignItems: "center",
+  }}
+>
+  <Popover content="Popover content">
+    <Button highlight size="circle">
+      <Plus style={{ verticalAlign: "middle" }} />
+    </Button>
+  </Popover>
+  <Popover
+    content={
+      <><b>Drag</b> to move <br /> <b>Click</b> to open menu</>
+    }
+  >
+    <Button highlight css={{ p: "0", borderRadius: "$md" }}>
+      <GripVertical style={{ verticalAlign: "middle" }} />
+    </Button>
+  </Popover>
+</Flex>
+```
+
+### API Reference
+
+See [Radix-UI Popover (v0.1.4)](https://www.radix-ui.com/docs/primitives/components/popover) for details. This only covers **styple** abstractions.
+
+#### Popover
+
+A styled abstraction of the entire primitive. Forwards props `open`, `defaultOpen` and `onOpenChange`. Custom props:
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>children</Code>
+      </Th>
+      <Td>
+        <Code color="normal">ReactElement</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Child to trigger popover.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>content</Code>
+      </Th>
+      <Td>
+        <Code color="normal">ReactNode</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>The content of the popover.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>
