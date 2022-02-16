@@ -15,6 +15,7 @@ import Image from "next/image";
 import { Link } from "./Link";
 import { NavLinkItem } from "./NavLinkItem";
 import { DemoNavbars } from "./DemoNavbars";
+import { Searchbar } from "./Searchbar";
 
 export const components = {
   ...SDS,
@@ -29,6 +30,7 @@ export const components = {
   Image,
   NavLinkItem,
   DemoNavbars,
+  Searchbar,
   h1: ({ children, ...props }) => (
     <SDS.Heading size="2xl" css={{ mb: "$md", mt: "$3xl" }} {...props}>
       {children}
