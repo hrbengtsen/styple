@@ -1,0 +1,42 @@
+---
+title: ScrollArea
+description: Native-like scrollbars with custom styling.
+---
+
+### Example
+
+<Preview>
+  <ScrollArea>
+    <Container css={{
+      maxWidth: "$4xl",
+      height: "$lg",
+      whiteSpace: "nowrap"
+    }}>
+      <Text>A long example line that overflows the container element, since white-space nowrap is applied. A native-like scrollbar is added through ScrollArea. It works both vertically and horizontally.</Text>
+    </Container>
+  </ScrollArea>
+</Preview>
+
+```tsx outline=true
+import { ScrollArea } from "@styple/design-system";
+
+<ScrollArea>
+  <Container css={{
+    maxWidth: "$4xl",
+    height: "$lg",
+    whiteSpace: "nowrap"
+  }}>
+    <Text>A long example line that overflows the container element, since white-space nowrap is applied. A native-like scrollbar is added through ScrollArea. It works both vertically and horizontally.</Text>
+  </Container>
+</ScrollArea>
+```
+
+### API Reference
+
+See [Radix-UI Scroll Area (v0.1.3)](https://www.radix-ui.com/docs/primitives/components/scroll-area) for details. This only covers **styple** abstractions.
+
+#### ScrollArea
+
+A styled abstraction of the entire primitive with support for both vertical and horizontal automatic scrollbars. Wrap this component around any overflowing container to see its effect.
+
+---
