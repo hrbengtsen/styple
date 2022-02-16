@@ -1,0 +1,60 @@
+---
+title: Radio
+description: Checkable buttons, where only one radio button can be checked at once.
+---
+
+### Example
+
+<Preview>
+  <Flex
+    css={{
+      gap: "$md",
+      alignItems: "center",
+    }}
+  >
+    <RadioGroup defaultValue="1">
+      <Radio
+        value="1"
+        css={{
+          mr: "$sm",
+        }}
+      />
+      <Radio value="2" />
+    </RadioGroup>
+  </Flex>
+</Preview>
+
+```tsx outline=true
+import { RadioGroup, Radio } from "@styple/design-system";
+
+<Flex
+  css={{
+    gap: "$md",
+    alignItems: "center",
+  }}
+>
+  <RadioGroup defaultValue="1">
+    <Radio
+      value="1"
+      css={{
+        mr: "$sm",
+      }}
+    />
+    <Radio value="2" />
+  </RadioGroup>
+</Flex>
+```
+
+### API Reference
+
+See [Radix-UI Radio Group (v0.1.4)](https://www.radix-ui.com/docs/primitives/components/radio-group) for details. This only covers **styple** abstractions.
+
+#### Radio
+
+A styled abstraction of `RadioGroup.Item` and `RadioGroup.Indicator`.
+
+#### RadioGroup
+
+A styled component wrapper for `RadioGroup.Root`.
+
+---

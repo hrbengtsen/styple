@@ -13,8 +13,8 @@ const StyledCheckbox = styled(CheckboxPrimitive.Root, {
     boxSizing: "border-box",
   },
 
-  width: "20px",
-  height: "20px",
+  width: "21px",
+  height: "21px",
   borderRadius: "$lg",
   bg: "$bg200",
   boxShadow: "inset 0 0 0 1px $colors$button100",
