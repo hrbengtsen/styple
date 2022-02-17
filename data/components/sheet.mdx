@@ -1,0 +1,76 @@
+---
+title: Sheet
+description: A modal overlaying a side of the page, rendering the content underneath inert.
+---
+
+### Example
+
+<Preview>
+  <Sheet>
+    <SheetTrigger asChild>
+      <Button>Open sheet</Button>
+    </SheetTrigger>
+    <SheetContent
+      aria-labelledby="sheet-heading"
+      aria-describedby="sheet-desc"
+    >
+      <Heading id="sheet-heading" as="h4" css={{ mb: "$md" }}>Example Heading</Heading>
+      <Text id="sheet-desc" css={{ lineHeight: "25px" }}>Lorem ipsum example description text.</Text>
+      <Flex
+        css={{
+          justifyContent: "flex-end",
+          marginTop: "$lg",
+        }}
+      >
+        <SheetClose asChild>
+          <Button transparent variant="success">Close sheet</Button>
+        </SheetClose>
+      </Flex>
+    </SheetContent>
+  </Sheet>
+</Preview>
+
+```tsx outline=true
+import { Sheet, SheetTrigger, SheetContent, SheetCancel, SheetClose } from "@styple/design-system";
+
+<Sheet>
+  <SheetTrigger asChild>
+    <Button>Open sheet</Button>
+  </SheetTrigger>
+  <SheetContent
+    aria-labelledby="sheet-heading"
+    aria-describedby="sheet-desc"
+  >
+    <Heading id="sheet-heading" as="h4" css={{ mb: "$md" }}>Example Heading</Heading>
+    <Text id="sheet-desc" css={{ lineHeight: "25px" }}>Lorem ipsum example description text.</Text>
+    <Flex
+      css={{
+        justifyContent: "flex-end",
+        marginTop: "$lg",
+      }}
+    >
+      <SheetClose asChild>
+        <Button transparent variant="success">Close sheet</Button>
+      </SheetClose>
+    </Flex>
+  </SheetContent>
+</Sheet>
+```
+
+### API Reference
+
+See [Radix-UI Dialog (v0.1.4)](https://www.radix-ui.com/docs/primitives/components/dialog) for details. This only covers **styple** abstractions.
+
+#### Sheet
+
+A styled component wrapper for `Dialog.Root`.
+
+#### SheetContent
+
+A styled abstraction combining `Dialog.Overlay`, `Dialog.Content` and a close button of `Dialog.Close`.
+
+#### Others
+
+The rest of the components of the primitive are exported by **styple** with no changes. Aria-labels can be used as an alternative to `Dialog.Title` and `Dialog.Description` as in the example above.
+
+---

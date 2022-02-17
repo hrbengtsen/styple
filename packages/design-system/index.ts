@@ -67,6 +67,7 @@ export {
   SheetClose,
   SheetTitle,
   SheetDescription,
+  SheetPortal,
 } from "./components/Sheet";
 
 export {
