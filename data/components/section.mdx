@@ -1,0 +1,77 @@
+---
+title: Section
+description: Container with padding.
+---
+
+### Example
+
+<Preview>
+  <Section
+    css={{
+      display: "flex",
+      alignItems: "flex-start",
+      width: "100%",
+      gap: "$md",
+      px: "$md",
+    }}
+  >
+    <Container css={{ width: "100%", height: "$lg", bg: "$bg300" }} />
+    <Container css={{ width: "100%", height: "$lg", bg: "$bg300" }} />
+  </Section>
+</Preview>
+
+```tsx outline=true
+import { Section } from "@styple/design-system";
+
+<Section
+  css={{
+    display: "flex",
+    alignItems: "flex-start",
+    width: "100%",
+    gap: "$md",
+    px: "$md",
+  }}
+>
+  <Container css={{ width: "100%", height: "$lg", bg: "$bg300" }} />
+  <Container css={{ width: "100%", height: "$lg", bg: "$bg300" }} />
+</Section>
+```
+
+### API Reference
+
+#### Section
+
+A styled component wrapper for `Container` with size variants. Custom props:
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>size</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+        <Popover content={
+          <Code color="normal">"sm" | "md" | "lg" | "xl"</Code>
+        }>
+          <Button highlight size="circle" css={{
+            size: "24px",
+            p: 0,
+            ml: "$xs",
+            lineHeight: 0
+          }}><Info size={16} style={{ verticalAlign: "middle" }} /></Button>
+        </Popover>
+      </Td>
+      <Td><Code color="normal">"sm"</Code></Td>
+      <Td><Text>Size of the section (vertical padding).</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>
