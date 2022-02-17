@@ -35,6 +35,7 @@ export const docsRoutes = [
       { title: "ScrollArea", slug: "docs/components/scrollarea" },
       { title: "SearchField", slug: "docs/components/searchfield" },
       { title: "Section", slug: "docs/components/section" },
+      { title: "Select", slug: "docs/components/select" },
     ],
   },
 
