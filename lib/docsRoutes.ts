@@ -36,6 +36,7 @@ export const docsRoutes = [
       { title: "SearchField", slug: "docs/components/searchfield" },
       { title: "Section", slug: "docs/components/section" },
       { title: "Select", slug: "docs/components/select" },
+      { title: "Separator", slug: "docs/components/separator" },
     ],
   },
 

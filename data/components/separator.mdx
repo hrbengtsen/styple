@@ -1,0 +1,85 @@
+---
+title: Separator
+description: Separate content both visually and semantically.
+---
+
+### Example
+
+<Preview>
+  <Flex
+    css={{
+      gap: "$md",
+      px: "$md",
+      alignItems: "center",
+      flexDirection: "column",
+      width: "100%"
+    }}
+  >
+    <Separator />
+    <Separator size="lg" />
+    <Separator size="sm" />
+    <Separator orientation="vertical" size="lg" />
+    <Separator orientation="vertical" size="sm" />
+  </Flex>
+</Preview>
+
+```tsx outline=true
+import { Separator } from "@styple/design-system";
+
+<Flex
+  css={{
+    gap: "$md",
+    px: "$md",
+    alignItems: "center",
+    flexDirection: "column",
+    width: "100%"
+  }}
+>
+  <Separator />
+  <Separator size="lg" />
+  <Separator size="sm" />
+  <Separator orientation="vertical" size="lg" />
+  <Separator orientation="vertical" size="sm" />
+</Flex>
+```
+
+### API Reference
+
+See [Radix-UI Separator (v0.1.3)](https://www.radix-ui.com/docs/primitives/components/separator) for details. This only covers **styple** abstractions.
+
+#### Separator
+
+A styled component wrapper for the primitive. Custom props:
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>size</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+        <Popover content={
+          <Code color="normal">"sm" | "lg" | "fill"</Code>
+        }>
+          <Button highlight size="circle" css={{
+            size: "24px",
+            p: 0,
+            ml: "$xs",
+            lineHeight: 0
+          }}><Info size={16} style={{ verticalAlign: "middle" }} /></Button>
+        </Popover>
+      </Td>
+      <Td><Code color="normal">"fill"</Code></Td>
+      <Td><Text>Size variant.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>
