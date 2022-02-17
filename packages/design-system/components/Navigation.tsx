@@ -164,7 +164,7 @@ export const Sidebar = React.forwardRef<
               display: "none",
               [bp]: {
                 display: "block",
-                size: "100%",
+                height: "100%", // can get annoying when styling a sidebar, but it enables scrollarea in content
               },
             }}
           >
@@ -179,7 +179,6 @@ export const Sidebar = React.forwardRef<
                   display: "none",
                 },
                 p: "$sm",
-                width: "100%",
               }}
             >
               {icon ? icon : <Menu style={{ verticalAlign: "middle" }} />}

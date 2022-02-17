@@ -1,0 +1,174 @@
+---
+title: Sidebar
+description: Specific type of navigation bar using a Sheet.
+---
+
+### Example
+
+<Preview>
+  <Flex
+    css={{
+      width: "100%",
+      gap: "$md",
+      px: "$md",
+      flexDirection: "column",
+    }}
+  >
+    <Container css={{ bg: "$bg300" }}>
+      <Sidebar
+        css={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          px: "$md",
+          height: "$xl",
+        }}
+        brand={<Text>Sidebar</Text>}
+        content={
+          <Flex css={{ height: "100%", alignItems: "center" }}>
+            <NavLinkItem ghost href="/">Link 1</NavLinkItem>
+            <NavLinkItem ghost href="/test">Link 2</NavLinkItem>
+            <NavLinkItem ghost href="https://www.bitetap.com/">Link 3</NavLinkItem>
+          </Flex>
+        }
+        mobileContent={
+          <>
+            <NavLinkItem ghost href="/">Link 1</NavLinkItem>
+            <NavLinkItem ghost href="/test">Link 2</NavLinkItem>
+            <NavLinkItem ghost href="https://www.bitetap.com/">Link 3</NavLinkItem>
+          </>
+        }
+      />
+    </Container>
+  </Flex>
+</Preview>
+
+<CodeBlockLink id="navbar" index="1" href="https://github.com/hrbengtsen/styple/blob/main/components/DemoNavbars.tsx" />
+
+```tsx outline=true id=navbar
+import { Sidebar } from "@styple/design-system";
+
+// Resize your screen to see responsive-ness.
+<Flex
+  css={{
+    width: "100%",
+    gap: "$md",
+    px: "$md",
+    flexDirection: "column",
+  }}
+>
+  <Container css={{ bg: "$bg300" }}>
+    <Sidebar
+      css={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        px: "$md",
+        height: "$xl",
+      }}
+      brand={<Text>Sidebar</Text>}
+      content={/* Regular content as JSX */}
+      mobileContent={/* Mobile content as JSX */} 
+    />
+  </Container>
+</Flex>
+```
+
+### API Reference
+
+#### Sidebar
+
+A custom styled component, using `Sheet` internally. With props:
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>brand</Code>
+      </Th>
+      <Td>
+        <Code color="normal">ReactNode</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Display your brand in the sidebar.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>content</Code>
+      </Th>
+      <Td>
+        <Code color="normal">ReactNode</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>The regular content of the sidebar.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>mobileContent</Code>
+      </Th>
+      <Td>
+        <Code color="normal">ReactNode</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>The content to display instead on mobile.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>side</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+        <Popover content={
+          <Code color="normal">"bottom" | "left" | "right" | "top"</Code>
+        }>
+          <Button highlight size="circle" css={{
+            size: "24px",
+            p: 0,
+            ml: "$xs",
+            lineHeight: 0
+          }}><Info size={16} style={{ verticalAlign: "middle" }} /></Button>
+        </Popover>
+      </Td>
+      <Td><Code color="normal">"right"</Code></Td>
+      <Td><Text>Side to show `Sheet` on.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>bp</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+        <Popover content={
+          <Code color="normal">"@bp1" | "@bp2" | "@bp3" | "@bp4"</Code>
+        }>
+          <Button highlight size="circle" css={{
+            size: "24px",
+            p: 0,
+            ml: "$xs",
+            lineHeight: 0
+          }}><Info size={16} style={{ verticalAlign: "middle" }} /></Button>
+        </Popover>
+      </Td>
+      <Td><Code color="normal">"@bp2"</Code></Td>
+      <Td><Text>Breakpoint to display regular content at.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>icon</Code>
+      </Th>
+      <Td>
+        <Code color="normal">ReactNode</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Icon of the `SheetTrigger`.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>

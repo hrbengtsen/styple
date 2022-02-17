@@ -38,6 +38,7 @@ export const docsRoutes = [
       { title: "Select", slug: "docs/components/select" },
       { title: "Separator", slug: "docs/components/separator" },
       { title: "Sheet", slug: "docs/components/sheet" },
+      { title: "Sidebar", slug: "docs/components/sidebar" },
     ],
   },
 
