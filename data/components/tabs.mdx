@@ -1,0 +1,72 @@
+---
+title: Tabs
+description: Views that are displayed one at a time.
+---
+
+### Example
+
+<Preview>
+  <Flex
+    css={{
+      px: "$md",
+    }}
+  >
+    <Tabs defaultValue="tab1">
+      <TabsList>
+        <TabsTrigger value="tab1">Account</TabsTrigger>
+        <TabsTrigger value="tab2">Settings</TabsTrigger>
+      </TabsList>
+      <TabsContent value="tab1">
+        <Text>Account tab content is here</Text>
+      </TabsContent>
+      <TabsContent value="tab2">
+        <Text>Settings tab content is here</Text>
+      </TabsContent>
+    </Tabs>
+  </Flex>
+</Preview>
+
+```tsx outline=true
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@styple/design-system";
+
+<Flex
+  css={{
+    px: "$md",
+  }}
+>
+  <Tabs defaultValue="tab1">
+    <TabsList>
+      <TabsTrigger value="tab1">Account</TabsTrigger>
+      <TabsTrigger value="tab2">Settings</TabsTrigger>
+    </TabsList>
+    <TabsContent value="tab1">
+      <Text>Account tab content is here</Text>
+    </TabsContent>
+    <TabsContent value="tab2">
+      <Text>Settings tab content is here</Text>
+    </TabsContent>
+  </Tabs>
+</Flex>
+```
+
+### API Reference
+
+See [Radix-UI Tabs (v0.1.4)](https://www.radix-ui.com/docs/primitives/components/tabs) for details. This only covers **styple** abstractions.
+
+#### Tabs
+
+A styled component wrapper for `Tabs.Root`.
+
+#### TabsList
+
+A styled component wrapper for `Tabs.List`.
+
+#### TabsTrigger
+
+A styled component wrapper for `Tabs.Trigger`.
+
+#### TabsContent
+
+A styled component wrapper for `Tabs.Content`.
+
+---
