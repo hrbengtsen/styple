@@ -40,6 +40,7 @@ export const docsRoutes = [
       { title: "Sheet", slug: "docs/components/sheet" },
       { title: "Sidebar", slug: "docs/components/sidebar" },
       { title: "Skeleton", slug: "docs/components/skeleton" },
+      { title: "Slider", slug: "docs/components/slider" },
     ],
   },
 
