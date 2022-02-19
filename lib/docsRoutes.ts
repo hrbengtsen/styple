@@ -43,6 +43,7 @@ export const docsRoutes = [
       { title: "Slider", slug: "docs/components/slider" },
       { title: "Spinner", slug: "docs/components/spinner" },
       { title: "Status", slug: "docs/components/status" },
+      { title: "Switch", slug: "docs/components/switch" },
     ],
   },
 
