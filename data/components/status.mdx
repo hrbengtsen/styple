@@ -1,0 +1,115 @@
+---
+title: Status
+description: Displays a status of some content.
+---
+
+### Examples
+
+<Preview>
+  <Flex
+    css={{
+      gap: "$md",
+    }}
+  >
+    <Container>
+      <Status />
+      <Status size="lg" />
+    </Container>
+    <Container>
+      <Status variant="primary" />
+      <Status size="lg" variant="primary" />
+    </Container>
+    <Container>
+      <Status variant="accent" />
+      <Status size="lg" variant="accent" />
+    </Container>
+    <Container>
+      <Status variant="danger" />
+      <Status size="lg" variant="danger" />
+    </Container>
+    <Container>
+      <Status variant="success" />
+      <Status size="lg" variant="success" />
+    </Container>
+  </Flex>
+</Preview>
+
+```tsx outline=true
+import { Status } from "@styple/design-system";
+
+<Flex
+  css={{
+    gap: "$md",
+  }}
+>
+  <Container>
+    <Status />
+    <Status size="lg" />
+  </Container>
+  <Container>
+    <Status variant="primary" />
+    <Status size="lg" variant="primary" />
+  </Container>
+  <Container>
+    <Status variant="accent" />
+    <Status size="lg" variant="accent" />
+  </Container>
+  <Container>
+    <Status variant="danger" />
+    <Status size="lg" variant="danger" />
+  </Container>
+  <Container>
+    <Status variant="success" />
+    <Status size="lg" variant="success" />
+  </Container>
+</Flex>
+```
+
+### API Reference
+
+#### Status
+
+A styled component. With Props: 
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>size</Code>
+      </Th>
+      <Td>
+        <Code color="normal">"sm" | "lg"</Code>
+      </Td>
+      <Td><Code color="normal">"sm"</Code></Td>
+      <Td><Text>Size variant.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>variant</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+        <Popover content={
+          <Code color="normal">"primary" | "accent" | "danger" | "success" | "normal"</Code>
+        }>
+          <Button highlight size="circle" css={{
+            size: "24px",
+            p: 0,
+            ml: "$xs",
+            lineHeight: 0
+          }}><Info size={16} style={{ verticalAlign: "middle" }} /></Button>
+        </Popover>
+      </Td>
+      <Td><Code color="normal">"normal"</Code></Td>
+      <Td><Text>Main variant.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>
