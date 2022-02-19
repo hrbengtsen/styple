@@ -1,0 +1,107 @@
+---
+title: Text
+description: A paragraph of text.
+---
+
+### Examples
+
+<Preview>
+  <Flex
+    css={{
+      flexDirection: "column",
+    }}
+  >  
+    <Text size="md" color="primary">Primary colored text</Text>
+    <Text size="md" color="accent">Accent colored text</Text>
+    <Text size="md" color="danger">Danger colored text</Text>
+    <Text size="md" color="success">Success colored text</Text>
+  </Flex>
+</Preview>
+
+```tsx outline=true
+import { Text } from "@styple/design-system";
+
+<Flex
+  css={{
+    flexDirection: "column",
+  }}
+>  
+  <Text size="md" color="primary">Primary colored text</Text>
+  <Text size="md" color="accent">Accent colored text</Text>
+  <Text size="md" color="danger">Danger colored text</Text>
+  <Text size="md" color="success">Success colored text</Text>
+</Flex>
+```
+
+### API Reference
+
+#### Text
+
+A styled component. With Props: 
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>size</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+        <Popover content={
+          <Flex css={{
+            flexDirection: "column"
+          }}>
+            <Code color="normal">"xs" | "sm" |</Code>
+            <Code color="normal">"md" | "lg" |</Code>
+            <Code color="normal">"xl" | "2xl" |</Code>
+            <Code color="normal">"3xl" | "4xl" | "max"</Code>
+          </Flex>
+        }>
+          <Button highlight size="circle" css={{
+            size: "24px",
+            p: 0,
+            ml: "$xs",
+            lineHeight: 0
+          }}><Info size={16} style={{ verticalAlign: "middle" }} /></Button>
+        </Popover>
+      </Td>
+      <Td><Code color="normal">"sm"</Code></Td>
+      <Td><Text>Size variant.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>color</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+        <Popover content={
+          <Flex css={{
+            flexDirection: "column"
+          }}>
+            <Code color="normal">"primary" | "accent" |</Code>
+            <Code color="normal">"danger" | "success" |</Code>
+            <Code color="normal">"heading" | "text" |</Code>
+            <Code color="normal">"white" | "black"</Code>
+          </Flex>
+        }>
+          <Button highlight size="circle" css={{
+            size: "24px",
+            p: 0,
+            ml: "$xs",
+            lineHeight: 0
+          }}><Info size={16} style={{ verticalAlign: "middle" }} /></Button>
+        </Popover>
+      </Td>
+      <Td><Code color="normal">"text"</Code></Td>
+      <Td><Text>Color variant.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>
