@@ -41,6 +41,7 @@ export const docsRoutes = [
       { title: "Sidebar", slug: "docs/components/sidebar" },
       { title: "Skeleton", slug: "docs/components/skeleton" },
       { title: "Slider", slug: "docs/components/slider" },
+      { title: "Spinner", slug: "docs/components/spinner" },
     ],
   },
 

@@ -1,0 +1,61 @@
+---
+title: Spinner
+description: Display to signify loading of some content.
+---
+
+### Example
+
+<Preview>
+  <Spinner />
+</Preview>
+
+```tsx outline=true
+import { Spinner } from "@styple/design-system";
+
+<Spinner />
+```
+
+### API Reference
+
+#### Spinner
+
+A styled component. With Props: 
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>color</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+        <Popover content={
+          <Flex css={{
+            flexDirection: "column"
+          }}>
+            <Code color="normal">"primary" | "accent" | "danger" |</Code>
+            <Code color="normal">"success" | "text" |</Code>
+            <Code color="normal">"white" | "black"</Code>
+          </Flex>
+        }>
+          <Button highlight size="circle" css={{
+            size: "24px",
+            p: 0,
+            ml: "$xs",
+            lineHeight: 0
+          }}><Info size={16} style={{ verticalAlign: "middle" }} /></Button>
+        </Popover>
+      </Td>
+      <Td><Code color="normal">"text"</Code></Td>
+      <Td><Text>Color variant.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>
