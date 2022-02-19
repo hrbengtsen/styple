@@ -1,0 +1,143 @@
+---
+title: Skeleton
+description: Placeholder preview of content.
+---
+
+### Examples
+
+<Preview>
+  <Flex
+    css={{
+      gap: "$md",
+      px: "$md",
+      flexDirection: "column",
+    }}
+  >
+    <Flex
+      css={{
+        gap: "$md",
+      }}
+    >
+      <Skeleton variant="avatarSm" />
+      <Skeleton variant="avatarMd" />
+      <Skeleton variant="avatarLg" />
+      <Skeleton variant="avatarXl" />
+    </Flex>
+    <Skeleton
+      variant="title"
+      css={{
+        width: "100%",
+      }}
+    />
+    <Skeleton
+      variant="heading"
+      css={{
+        width: "100%",
+      }}
+    />
+    <Skeleton
+      css={{
+        width: "100%",
+      }}
+    />
+    <Skeleton variant="buttonSm" />
+    <Skeleton variant="buttonMd" />
+    <Skeleton variant="buttonLg" />
+    <Skeleton variant="badgeSm" />
+    <Skeleton variant="badgeLg" />
+    <Skeleton variant="card" />
+  </Flex>
+</Preview>
+
+```tsx outline=true
+import { Skeleton } from "@styple/design-system";
+
+<Flex
+  css={{
+    gap: "$md",
+    px: "$md",
+    flexDirection: "column",
+  }}
+>
+  <Flex
+    css={{
+      gap: "$md",
+    }}
+  >
+    <Skeleton variant="avatarSm" />
+    <Skeleton variant="avatarMd" />
+    <Skeleton variant="avatarLg" />
+    <Skeleton variant="avatarXl" />
+  </Flex>
+  <Skeleton
+    variant="title"
+    css={{
+      width: "100%",
+    }}
+  />
+  <Skeleton
+    variant="heading"
+    css={{
+      width: "100%",
+    }}
+  />
+  <Skeleton
+    css={{
+      width: "100%",
+    }}
+  />
+  <Skeleton variant="buttonSm" />
+  <Skeleton variant="buttonMd" />
+  <Skeleton variant="buttonLg" />
+  <Skeleton variant="badgeSm" />
+  <Skeleton variant="badgeLg" />
+  <Skeleton variant="card" />
+</Flex>
+```
+
+### API Reference
+
+#### Skeleton
+
+A styled component. With props:
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>variant</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+        <Popover content={
+          <Flex css={{
+            flexDirection: "column"
+          }}>
+            <Code color="normal">"avatarSm" | "avatarMd" |</Code>
+            <Code color="normal">"avatarLg" | "avatarXl" |</Code>
+            <Code color="normal">"text" | "heading" | "title" |</Code>
+            <Code color="normal">"buttonSm" | "buttonMd" | "buttonLg" |</Code>
+            <Code color="normal">"badgeSm" | "badgeLg" | "card"</Code>
+          </Flex>
+        }>
+          <Button highlight size="circle" css={{
+            size: "24px",
+            p: 0,
+            ml: "$xs",
+            lineHeight: 0
+          }}><Info size={16} style={{ verticalAlign: "middle" }} /></Button>
+        </Popover>
+      </Td>
+      <Td><Code color="normal">"text"</Code></Td>
+      <Td><Text>Type of skeleton.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>

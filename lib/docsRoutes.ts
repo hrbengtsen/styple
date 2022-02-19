@@ -39,6 +39,7 @@ export const docsRoutes = [
       { title: "Separator", slug: "docs/components/separator" },
       { title: "Sheet", slug: "docs/components/sheet" },
       { title: "Sidebar", slug: "docs/components/sidebar" },
+      { title: "Skeleton", slug: "docs/components/skeleton" },
     ],
   },
 
