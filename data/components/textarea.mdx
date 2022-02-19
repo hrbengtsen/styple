@@ -1,0 +1,71 @@
+---
+title: TextArea
+description: A field where a user can input text.
+---
+
+### Examples
+
+<Preview>
+  <Flex
+    css={{
+      flexDirection: "column",
+      gap: "$md"
+    }}
+  >  
+    <TextArea placeholder="Default textarea" />
+        <TextArea variant="ghost" placeholder="Ghost textarea" />
+  </Flex>
+</Preview>
+
+```tsx outline=true
+import { TextArea } from "@styple/design-system";
+
+<Flex
+  css={{
+    flexDirection: "column",
+    gap: "$md"
+  }}
+>  
+  <TextArea placeholder="Default textarea" />
+  <TextArea variant="ghost" placeholder="Ghost textarea" />
+</Flex>
+```
+
+### API Reference
+
+#### TextArea
+
+A styled component. With Props: 
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>variant</Code>
+      </Th>
+      <Td>
+        <Code color="normal">"ghost"</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Main variant.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>state</Code>
+      </Th>
+      <Td>
+        <Code color="normal">"valid" | "invalid"</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>State variant.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>

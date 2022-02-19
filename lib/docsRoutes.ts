@@ -47,6 +47,7 @@ export const docsRoutes = [
       { title: "Table", slug: "docs/components/table" },
       { title: "Tabs", slug: "docs/components/tabs" },
       { title: "Text", slug: "docs/components/text" },
+      { title: "TextArea", slug: "docs/components/textarea" },
     ],
   },
 
