@@ -14,7 +14,6 @@ export {
 
 // Components
 export { Container, Flex, Grid, Section } from "./components/Containers";
-export { Spacer } from "./components/Spacer";
 export { Separator } from "./components/Separator";
 
 export { Heading } from "./components/Heading";
