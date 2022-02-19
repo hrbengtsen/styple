@@ -1,0 +1,79 @@
+---
+title: Toggle
+description: A toggle button, that can be on or off.
+---
+
+### Examples
+
+<Preview>
+  <Flex
+    css={{
+      gap: "$md"
+    }}
+  >  
+    <Toggle
+      css={{
+        fontWeight: "$bold",
+      }}
+    >B</Toggle>
+    <Toggle>I</Toggle>
+    <Toggle
+      css={{
+        textDecoration: "underline",
+      }}
+    >U</Toggle>
+    <Toggle size="lg">L</Toggle>
+  </Flex>
+</Preview>
+
+```tsx outline=true
+import { Toggle } from "@styple/design-system";
+
+<Flex
+  css={{
+    gap: "$md"
+  }}
+>  
+  <Toggle
+    css={{
+      fontWeight: "$bold",
+    }}
+  >B</Toggle>
+  <Toggle>I</Toggle>
+  <Toggle
+    css={{
+      textDecoration: "underline",
+    }}
+  >U</Toggle>
+  <Toggle size="lg">L</Toggle>
+</Flex>
+```
+
+### API Reference
+
+#### Toggle
+
+A styled component. With Props: 
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>size</Code>
+      </Th>
+      <Td>
+        <Code color="normal">"sm" | "lg"</Code>
+      </Td>
+      <Td><Code color="normal">"sm"</Code></Td>
+      <Td><Text>Size variant.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>
