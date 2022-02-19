@@ -1,0 +1,89 @@
+---
+title: TextField
+description: An input field users can type in.
+---
+
+### Examples
+
+<Preview>
+  <Flex
+    css={{
+      flexDirection: "column",
+      gap: "$md"
+    }}
+  >  
+    <TextField placeholder="Default textfield" />
+    <TextField size="lg" placeholder="Large textfield" />
+    <TextField size="lg" placeholder="Disabled textfield" disabled />
+    <TextField size="lg" placeholder="Ghost textfield" variant="ghost" />
+    <TextField size="lg" placeholder="Invalid textfield" state="invalid" />
+    <TextField size="lg" placeholder="Valid textfield" state="valid" />
+  </Flex>
+</Preview>
+
+```tsx outline=true
+import { TextField } from "@styple/design-system";
+
+<Flex
+  css={{
+    flexDirection: "column",
+    gap: "$md"
+  }}
+>  
+  <TextField placeholder="Default textfield" />
+  <TextField size="lg" placeholder="Large textfield" />
+  <TextField size="lg" placeholder="Disabled textfield" disabled />
+  <TextField size="lg" placeholder="Ghost textfield" variant="ghost" />
+  <TextField size="lg" placeholder="Invalid textfield" state="invalid" />
+  <TextField size="lg" placeholder="Valid textfield" state="valid" />
+</Flex>
+```
+
+### API Reference
+
+#### TextField
+
+A styled component. With Props: 
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>size</Code>
+      </Th>
+      <Td>
+        <Code color="normal">"sm" | "lg"</Code>
+      </Td>
+      <Td><Code color="normal">"sm"</Code></Td>
+      <Td><Text>Size variant.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>variant</Code>
+      </Th>
+      <Td>
+        <Code color="normal">"ghost"</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Main variant.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>state</Code>
+      </Th>
+      <Td>
+        <Code color="normal">"valid" | "invalid"</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>State variant.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>
