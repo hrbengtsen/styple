@@ -50,6 +50,7 @@ export const docsRoutes = [
       { title: "TextArea", slug: "docs/components/textarea" },
       { title: "TextField", slug: "docs/components/textfield" },
       { title: "Toggle", slug: "docs/components/toggle" },
+      { title: "Tooltip", slug: "docs/components/tooltip" },
     ],
   },
 
