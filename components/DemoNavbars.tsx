@@ -49,10 +49,10 @@ export function DemoNavbars() {
           brand={<Text>Basic navbar</Text>}
           content={
             <Flex>
-              <NavLinkItem ghost href="/">
+              <NavLinkItem ghost href="/docs/components/navbar">
                 Link 1
               </NavLinkItem>
-              <NavLinkItem ghost href="/test">
+              <NavLinkItem ghost href="/">
                 Link 2
               </NavLinkItem>
               <NavLinkItem ghost href="https://www.bitetap.com/">
@@ -76,10 +76,10 @@ export function DemoNavbars() {
                 },
               }}
             >
-              <NavLinkItem ghost href="/">
+              <NavLinkItem ghost href="/docs/components/navbar">
                 Link 1
               </NavLinkItem>
-              <NavLinkItem ghost href="/test">
+              <NavLinkItem ghost href="/">
                 Link 2
               </NavLinkItem>
               <NavLinkItem ghost href="https://www.bitetap.com/">
@@ -101,10 +101,10 @@ export function DemoNavbars() {
           brand={<Text>Fullpage navbar</Text>}
           content={
             <Flex>
-              <NavLinkItem ghost href="/">
+              <NavLinkItem ghost href="/docs/components/navbar">
                 Link 1
               </NavLinkItem>
-              <NavLinkItem ghost href="/test">
+              <NavLinkItem ghost href="/">
                 Link 2
               </NavLinkItem>
               <NavLinkItem ghost href="https://www.bitetap.com/">
@@ -136,7 +136,7 @@ export function DemoNavbars() {
 
               <NavLinkItem
                 ghost
-                href="/"
+                href="/docs/components/navbar"
                 css={{
                   animation: `${slideRight} 200ms cubic-bezier(0.87, 0, 0.13, 1)`,
                   animationFillMode: "forwards",
@@ -148,7 +148,7 @@ export function DemoNavbars() {
               </NavLinkItem>
               <NavLinkItem
                 ghost
-                href="/test"
+                href="/"
                 css={{
                   animation: `${slideRight} 200ms cubic-bezier(0.87, 0, 0.13, 1)`,
                   animationDelay: "75ms",
