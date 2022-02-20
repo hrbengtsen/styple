@@ -6,7 +6,7 @@ description: What the styple theming and config provides and how to customize it
 **styple** has a default theming in its `stitches.config` which exports the following for use (see [Stitches API docs](https://stitches.dev/docs/api)):
 
 ```tsx 
-// @styple/design-system exports besides components
+// @styple/design-system exports this besides components
 export { 
   styled,       // create styled components 
   css,          // generate class names from a style object
@@ -229,6 +229,8 @@ utils: {
 ```ts
 export const globalStyles = globalCss({
   // ...
+
+  // Assumes local hosting of the Inter variable font
   "@font-face": {
     fontFamily: "Inter",
     fontStyle: "normal",
@@ -245,6 +247,7 @@ export const globalStyles = globalCss({
     bg: "$bg200",
     "-webkit-font-smoothing": "antialiased",
   },
+  
   //...
 
   ".image-in-card": {
