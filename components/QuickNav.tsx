@@ -14,6 +14,8 @@ export const QuickNav = () => {
     setHeadings(headingElements);
   }, []);
 
+  if (headings.length === 0) return null;
+
   return (
     <Container
       as="aside"
