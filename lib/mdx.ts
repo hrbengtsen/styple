@@ -17,7 +17,7 @@ const ROOT_PATH = path.join(process.cwd(), "data");
 export const getAllFrontmatter = (fromPath: string) => {
   const files = fs.readdirSync(path.join(ROOT_PATH, fromPath));
 
-  return files.reduce((allFiles, fileSlug) => {
+  return files.reduce((allFiles: Frontmatter[], fileSlug) => {
     const source = fs.readFileSync(
       path.join(ROOT_PATH, fromPath, fileSlug),
       "utf-8"
@@ -34,7 +34,10 @@ export const getAllFrontmatter = (fromPath: string) => {
   }, []);
 };
 
-export async function getMdxBySlug(basePath: string, slug: string | string[]) {
+export async function getMdxBySlug(
+  basePath: string,
+  slug: string | string[] | undefined
+) {
   const source = fs.readFileSync(
     path.join(ROOT_PATH, basePath, `${slug}.mdx`),
     "utf8"

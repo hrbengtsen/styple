@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
  * @returns Current active element
  */
 export const useActiveElement = () => {
-  const [activeElement, setActiveElement] = useState<Element>(null);
+  const [activeElement, setActiveElement] = useState<Element | null>(null);
 
   const handleFocusIn = () => {
     setActiveElement(document.activeElement);

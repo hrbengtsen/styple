@@ -5,7 +5,7 @@ import React from "react";
 import { UrlObject } from "url";
 
 type NavItemProps = React.ComponentProps<typeof NavItem>;
-type NavLinkItemProps = NavItemProps & {
+type NavLinkItemProps = Omit<NavItemProps, "href"> & {
   href: string | UrlObject;
   children: React.ReactNode;
 };

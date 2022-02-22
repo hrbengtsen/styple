@@ -60,7 +60,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const { frontmatter, code } = await getMdxBySlug(
     "overview",
-    context.params.slug
+    context.params?.slug
   );
   return {
     props: { frontmatter: JSON.parse(JSON.stringify(frontmatter)), code },

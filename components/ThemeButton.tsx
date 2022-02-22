@@ -52,30 +52,30 @@ export function ThemeButton() {
     }
   }
 
+  if (!mounted) return null;
+
   return (
-    mounted && (
-      <Tooltip
-        content={
-          <>
-            Change <b>theme</b>
-          </>
-        }
+    <Tooltip
+      content={
+        <>
+          Change <b>theme</b>
+        </>
+      }
+    >
+      <Button
+        size="circle"
+        ghost
+        onClick={() => changeTheme()}
+        css={{
+          transition: "transform 200ms ease-in-out",
+          willChange: "transform",
+          "&:hover": {
+            transform: "rotate(12deg)",
+          },
+        }}
       >
-        <Button
-          size="circle"
-          ghost
-          onClick={() => changeTheme()}
-          css={{
-            transition: "transform 200ms ease-in-out",
-            willChange: "transform",
-            "&:hover": {
-              transform: "rotate(12deg)",
-            },
-          }}
-        >
-          {getThemeIcon()}
-        </Button>
-      </Tooltip>
-    )
+        {getThemeIcon()}
+      </Button>
+    </Tooltip>
   );
 }

@@ -78,7 +78,7 @@ export type RouteProps = {
 };
 
 export const allDocsRoutes: PageProps[] = docsRoutes.reduce(
-  (acc, cur: RouteProps) => {
+  (acc: PageProps[], cur: RouteProps) => {
     return [...acc, ...cur.pages];
   },
   []

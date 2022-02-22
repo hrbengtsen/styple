@@ -5,17 +5,28 @@ import { Code, Container, Button } from "../packages/design-system";
 import { useCopy } from "../packages/hooks";
 import { Copy, CheckCircle2 } from "lucide-react";
 
+export type CodeBlockProps = React.ComponentProps<typeof Container> & {
+  line?: string;
+  outline?: boolean;
+};
+
 // MDX codeblock
-export const CodeBlock = ({ className, id, line, outline, ...props }) => {
-  const [code, setCode] = React.useState(undefined);
-  const preRef = React.useRef(null);
+export const CodeBlock = ({
+  className,
+  id,
+  line,
+  outline,
+  ...props
+}: CodeBlockProps) => {
+  const [code, setCode] = React.useState<string>("");
+  const preRef = React.useRef<HTMLPreElement>(null);
   const { copy: copyCode, copied: codeCopied } = useCopy(code);
 
   React.useEffect(() => {
     if (preRef.current) {
       const codeElement = preRef.current.querySelector("code");
-      const code = codeElement.innerText.replace(/\n{2,}/g, "\n");
-      setCode(code);
+      const code = codeElement?.innerText.replace(/\n{2,}/g, "\n");
+      if (code) setCode(code);
     }
   }, [preRef]);
 
@@ -73,8 +84,14 @@ export const CodeBlock = ({ className, id, line, outline, ...props }) => {
   );
 };
 
+type CodeBlockLinkProps = {
+  id: string;
+  index: string;
+  href: string;
+};
+
 // Make code in codeblock a link via word highlighting: __x__ and this component
-export const CodeBlockLink = ({ id, index, href }) => {
+export const CodeBlockLink = ({ id, index, href }: CodeBlockLinkProps) => {
   const isExternal = href.startsWith("http");
 
   React.useEffect(() => {
@@ -82,7 +99,7 @@ export const CodeBlockLink = ({ id, index, href }) => {
     if (!codeBlock) return;
 
     const allHighlightWords = codeBlock.querySelectorAll(".highlight-word");
-    const target = allHighlightWords[index - 1];
+    const target = allHighlightWords[+index - 1];
     if (!target) return;
 
     target.replaceWith(
@@ -98,12 +115,18 @@ export const CodeBlockLink = ({ id, index, href }) => {
   return null;
 };
 
+type CodeHighlightProps = React.ComponentProps<typeof Code> & {
+  id: string;
+  index: string;
+};
+
 // Highlight some code on hover of this component
-export const CodeHighlight = ({ id, index, ...props }) => {
+export const CodeHighlight = ({ id, index, ...props }: CodeHighlightProps) => {
   const triggerRef = React.useRef<HTMLElement>(null);
 
   React.useEffect(() => {
     const trigger = triggerRef.current;
+    if (!trigger) return;
 
     const codeBlock = document.getElementById(id);
     if (!codeBlock) return;

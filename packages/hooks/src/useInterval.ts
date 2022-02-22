@@ -9,15 +9,15 @@ import { useEffect, useRef, useState, useCallback } from "react";
  */
 export const useInterval = (
   callback: () => void,
-  delay: number,
+  delay: number = 0,
   dependency: any = null
 ): (() => void) => {
   const savedCallback = useRef<() => void>();
-  const intervalId = useRef(null);
+  const intervalId = useRef<NodeJS.Timeout>();
   const [currentDelay, setDelay] = useState<number>(delay);
 
   const toggleRunning = useCallback(
-    () => setDelay((currentDelay) => (currentDelay === null ? delay : null)),
+    () => setDelay((currentDelay) => (currentDelay === 0 ? delay : 0)),
     [delay]
   );
 
@@ -29,14 +29,16 @@ export const useInterval = (
   // Set up the interval.
   useEffect(() => {
     function tick() {
-      savedCallback.current();
+      if (savedCallback.current) savedCallback.current();
     }
 
     if (intervalId.current) clearInterval(intervalId.current);
 
-    if (currentDelay !== null) intervalId.current = setInterval(tick, delay);
+    if (currentDelay !== 0) intervalId.current = setInterval(tick, delay);
 
-    return () => clearInterval(intervalId.current);
+    return () => {
+      if (intervalId.current) clearInterval(intervalId.current);
+    };
   }, [currentDelay, dependency, delay]);
 
   return toggleRunning;

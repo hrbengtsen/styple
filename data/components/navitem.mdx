@@ -96,12 +96,12 @@ When using something like Next.js you might want to make a wrapper for this comp
 ```tsx 
 import { useRouter } from "next/router";
 import NextLink from "next/link";
-import { NavItem } from "@styple/design-system";
+import { NavItem } from "../packages/design-system";
 import React from "react";
 import { UrlObject } from "url";
 
 type NavItemProps = React.ComponentProps<typeof NavItem>;
-type NavLinkItemProps = NavItemProps & {
+type NavLinkItemProps = Omit<NavItemProps, "href"> & {
   href: string | UrlObject;
   children: React.ReactNode;
 };
