@@ -19,7 +19,7 @@ const SelectWrapper = styled("div", {
         height: "$lg",
         borderRadius: "$lg",
       },
-      lg: {
+      md: {
         height: "40px",
         borderRadius: "$xl",
       },
@@ -48,7 +48,7 @@ const StyledSelect = styled("select", {
   variants: {
     size: {
       sm: {},
-      lg: {},
+      md: {},
     },
   },
 });
@@ -64,7 +64,7 @@ const StyledChevronDown = styled(ChevronDown, {
         top: "6px",
         right: "6px",
       },
-      lg: {
+      md: {
         top: "10px",
         right: "6px",
       },

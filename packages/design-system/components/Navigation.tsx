@@ -13,10 +13,6 @@ const StyledBurger = styled("button", {
   cursor: "pointer",
   bg: "transparent",
 
-  "@bp2": {
-    display: "none",
-  },
-
   span: {
     display: "block",
     position: "absolute",
@@ -69,13 +65,23 @@ const StyledBurger = styled("button", {
 type BurgerProps = React.ComponentProps<typeof StyledBurger> & {
   css?: CSS;
   open: boolean;
+  bp?: "@bp1" | "@bp2" | "@bp3" | "@bp4";
 };
 
 const Burger = React.forwardRef<
   React.ElementRef<typeof StyledBurger>,
   BurgerProps
->(({ open, ...props }, forwardedRef) => (
-  <StyledBurger open={open} {...props} ref={forwardedRef}>
+>(({ open, bp = "@bp2", ...props }, forwardedRef) => (
+  <StyledBurger
+    open={open}
+    css={{
+      [bp]: {
+        display: "none",
+      },
+    }}
+    {...props}
+    ref={forwardedRef}
+  >
     <span />
     <span />
     <span />
@@ -90,12 +96,13 @@ type NavbarProps = React.ComponentProps<typeof Container> & {
   brand?: React.ReactNode;
   content: React.ReactNode;
   mobileContent: React.ReactNode;
+  bp?: "@bp1" | "@bp2" | "@bp3" | "@bp4";
 };
 
 export const Navbar = React.forwardRef<
   React.ElementRef<typeof StyledBurger>,
   NavbarProps
->(({ brand, content, mobileContent, ...props }, forwardedRef) => {
+>(({ brand, content, mobileContent, bp = "@bp2", ...props }, forwardedRef) => {
   const [internalOpen, setInternalOpen] = React.useState<boolean>(false);
 
   return (
@@ -110,7 +117,7 @@ export const Navbar = React.forwardRef<
         <Container
           css={{
             display: "none",
-            "@bp2": {
+            [bp]: {
               display: "flex",
             },
           }}

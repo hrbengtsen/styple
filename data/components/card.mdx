@@ -12,7 +12,7 @@ description: Container for content surrounding a specific thing.
       gap: "$md",
     }}
   >
-    <Card css={{ p: "$lg", gap: "$sm", bg: "$bg300" }}>
+    <Card css={{ gap: "$sm" }}>
       <Heading as="h3" size="lg">A card component</Heading>
       <Text
         css={{
@@ -21,7 +21,7 @@ description: Container for content surrounding a specific thing.
       >Lorem ipsum</Text>
       <Button>Button in Card</Button>
     </Card>
-    <Card active css={{ p: "$lg", gap: "$sm", bg: "$bg100" }}>
+    <Card active css={{ gap: "$sm", bg: "$bg100" }}>
       <Heading as="h3" size="lg">Active bg100 card</Heading>
       <Text
         css={{
@@ -34,7 +34,6 @@ description: Container for content surrounding a specific thing.
       as="a"
       href="#"
       interactive
-      css={{ p: "$lg", bg: "$bg300" }}
     >
       <Heading as="h3" size="lg">Interactive card</Heading>
       <Text
@@ -52,9 +51,6 @@ description: Container for content surrounding a specific thing.
       as="a"
       href="#"
       interactive
-      css={{
-        p: "$lg",
-      }}
     >
       <Image
         src="/styple-og.png"
@@ -93,7 +89,7 @@ import { Card } from "@styple/design-system";
     gap: "$md",
   }}
 >
-  <Card css={{ p: "$lg", gap: "$sm", bg: "$bg300" }}>
+  <Card css={{ gap: "$sm" }}>
     <Heading as="h3" size="lg">A card component</Heading>
     <Text
       css={{
@@ -103,7 +99,7 @@ import { Card } from "@styple/design-system";
     <Button>Button in Card</Button>
   </Card>
 
-  <Card active css={{ p: "$lg", gap: "$sm", bg: "$bg100" }}>
+  <Card active css={{ gap: "$sm", bg: "$bg100" }}>
     <Heading as="h3" size="lg">Active bg100 card</Heading>
     <Text
       css={{
@@ -117,7 +113,6 @@ import { Card } from "@styple/design-system";
     as="a"
     href="#"
     interactive
-    css={{ p: "$lg", bg: "$bg300" }}
   >
     <Heading as="h3" size="lg">Interactive card</Heading>
     <Text
@@ -136,9 +131,6 @@ import { Card } from "@styple/design-system";
     as="a"
     href="#"
     interactive
-    css={{
-      p: "$lg",
-    }}
   >
     <Image
       src="/styple-og.png"
@@ -186,7 +178,7 @@ A styled component with props:
   <Tbody>
     <Tr>
       <Th>
-        <Code>active</Code>
+        <Code>active?</Code>
       </Th>
       <Td>
         <Code color="normal">boolean</Code>
@@ -196,7 +188,7 @@ A styled component with props:
     </Tr>
     <Tr>
       <Th>
-        <Code>interactive</Code>
+        <Code>interactive?</Code>
       </Th>
       <Td>
         <Code color="normal">boolean</Code>

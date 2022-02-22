@@ -46,9 +46,26 @@ const Rotating = styled("div", {
   },
 });
 
-export const Spinner = (props: React.ComponentProps<typeof Rotating>) => {
+type SpinnerProps = React.ComponentProps<typeof Rotating> & {
+  delay?: number;
+};
+
+export const Spinner = ({ delay = 600, ...props }: SpinnerProps) => {
+  const [hidden, setHidden] = React.useState(true);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setHidden(false);
+    }, delay);
+  }, [delay]);
+
   return (
-    <Rotating {...props}>
+    <Rotating
+      {...props}
+      css={{
+        visibility: `${hidden ? "hidden" : "visisble"}`,
+      }}
+    >
       <svg
         width="24"
         height="24"

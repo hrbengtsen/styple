@@ -13,9 +13,12 @@ description: A modal overlaying a side of the page, rendering the content undern
     <SheetContent
       aria-labelledby="sheet-heading"
       aria-describedby="sheet-desc"
+      css={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}
     >
-      <Heading id="sheet-heading" as="h4" css={{ mb: "$md" }}>Example Heading</Heading>
-      <Text id="sheet-desc" css={{ lineHeight: "25px" }}>Lorem ipsum example description text.</Text>
+      <Container>
+        <Heading id="sheet-heading" as="h4" css={{ mb: "$md" }}>Example Heading</Heading>
+        <Text id="sheet-desc" css={{ lineHeight: "25px" }}>Here is some lorem ipsum example description text.</Text>
+      </Container>
       <Flex
         css={{
           justifyContent: "flex-end",
@@ -40,9 +43,12 @@ import { Sheet, SheetTrigger, SheetContent, SheetCancel, SheetClose } from "@sty
   <SheetContent
     aria-labelledby="sheet-heading"
     aria-describedby="sheet-desc"
+    css={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}
   >
-    <Heading id="sheet-heading" as="h4" css={{ mb: "$md" }}>Example Heading</Heading>
-    <Text id="sheet-desc" css={{ lineHeight: "25px" }}>Lorem ipsum example description text.</Text>
+    <Container>
+      <Heading id="sheet-heading" as="h4" css={{ mb: "$md" }}>Example Heading</Heading>
+      <Text id="sheet-desc" css={{ lineHeight: "25px" }}>Here is some lorem ipsum example description text.</Text>
+    </Container>
     <Flex
       css={{
         justifyContent: "flex-end",

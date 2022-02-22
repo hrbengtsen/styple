@@ -1,13 +1,14 @@
 import { styled } from "../stitches.config";
 
 export const Card = styled("div", {
-  bg: "$bg200",
+  bg: "$bg300",
   position: "relative",
   border: "none",
 
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
+  p: "$lg",
 
   boxSizing: "border-box",
   borderRadius: "$xl",

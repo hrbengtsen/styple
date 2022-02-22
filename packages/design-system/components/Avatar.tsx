@@ -105,8 +105,8 @@ type AvatarVariants = VariantProps<typeof StyledAvatar>;
 type AvatarPrimitiveProps = React.ComponentProps<typeof AvatarPrimitive.Root>;
 type AvatarProps = AvatarPrimitiveProps &
   AvatarVariants & {
-    alt?: string;
-    src?: string;
+    alt: string;
+    src: string;
     fallback?: React.ReactNode;
   };
 

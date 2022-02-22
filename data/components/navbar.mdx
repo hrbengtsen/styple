@@ -72,7 +72,7 @@ A custom styled component, using `Collapsible` internally. With props:
   <Tbody>
     <Tr>
       <Th>
-        <Code>brand</Code>
+        <Code>brand?</Code>
       </Th>
       <Td>
         <Code color="normal">ReactNode</Code>
@@ -99,6 +99,26 @@ A custom styled component, using `Collapsible` internally. With props:
       </Td>
       <Td>-</Td>
       <Td><Text>The content to display instead on mobile.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>bp</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+        <Popover content={
+          <Code color="normal">"@bp1" | "@bp2" | "@bp3" | "@bp4"</Code>
+        }>
+          <Button highlight size="circle" css={{
+            size: "24px",
+            p: 0,
+            ml: "$xs",
+            lineHeight: 0
+          }}><Info size={16} style={{ verticalAlign: "middle" }} /></Button>
+        </Popover>
+      </Td>
+      <Td><Code color="normal">"@bp2"</Code></Td>
+      <Td><Text>Breakpoint to display regular content at.</Text></Td>
     </Tr>
   </Tbody>
 </Table>
