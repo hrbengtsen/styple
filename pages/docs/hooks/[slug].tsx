@@ -5,6 +5,7 @@ import { useMemo } from "react";
 import { components } from "../../../components/MDXComponents";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { QuickNav } from "../../../components/QuickNav";
+import { MetaData } from "../../../components/MetaData";
 
 type DocsType = {
   frontmatter: Frontmatter;
@@ -15,34 +16,37 @@ export default function DocsHooks({ frontmatter, code }: DocsType) {
   const Component = useMemo(() => getMDXComponent(code), [code]);
 
   return (
-    <Container
-      css={{
-        px: "$lg",
-        maxWidth: "768px",
-        mx: "auto",
-      }}
-    >
-      <Section size="md">
-        <Heading size="3xl" css={{ fontWeight: "$black" }}>
-          {frontmatter.title}
-        </Heading>
-        <Heading
-          as="h2"
-          size="md"
-          css={{
-            fontWeight: "$semibold",
-            color: "$text200",
-          }}
-        >
-          {frontmatter.description}
-        </Heading>
-      </Section>
-      <Component components={components as any} />
-      <QuickNav
-        // Add quicknav here instead of in Layout, to make it re-render with new headings when changing doc through this key
-        key={frontmatter.slug}
-      />
-    </Container>
+    <>
+      <MetaData title={`${frontmatter.title} — styple`} />
+      <Container
+        css={{
+          px: "$lg",
+          maxWidth: "768px",
+          mx: "auto",
+        }}
+      >
+        <Section size="md">
+          <Heading size="3xl" css={{ fontWeight: "$black" }}>
+            {frontmatter.title}
+          </Heading>
+          <Heading
+            as="h2"
+            size="md"
+            css={{
+              fontWeight: "$semibold",
+              color: "$text200",
+            }}
+          >
+            {frontmatter.description}
+          </Heading>
+        </Section>
+        <Component components={components as any} />
+        <QuickNav
+          // Add quicknav here instead of in Layout, to make it re-render with new headings when changing doc through this key
+          key={frontmatter.slug}
+        />
+      </Container>
+    </>
   );
 }
 
