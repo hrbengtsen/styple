@@ -9,10 +9,8 @@ import {
 } from "..";
 
 describe("Test AlertDialog", () => {
-  let view: RenderResult;
-
-  beforeEach(() => {
-    view = render(
+  it("should render as expected", () => {
+    const view: RenderResult = render(
       <AlertDialog>
         <AlertDialogTrigger>Open alertdialog</AlertDialogTrigger>
         <AlertDialogContent>
@@ -22,9 +20,7 @@ describe("Test AlertDialog", () => {
         </AlertDialogContent>
       </AlertDialog>
     );
-  });
 
-  it("should render as expected", () => {
     expect(view).toMatchSnapshot();
   });
 });
