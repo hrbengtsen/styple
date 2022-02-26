@@ -13,10 +13,10 @@ import {
 } from "..";
 
 describe("Test Accordion", () => {
-  let rendered: RenderResult;
+  let view: RenderResult;
 
   beforeEach(() => {
-    rendered = render(
+    view = render(
       <Accordion type="single">
         <AccordionItem value="accordion-one">
           <AccordionTrigger>Accordion one</AccordionTrigger>
@@ -33,12 +33,12 @@ describe("Test Accordion", () => {
   });
 
   it("should render as expected", () => {
-    expect(rendered).toMatchSnapshot();
+    expect(view).toMatchSnapshot();
   });
 
   it("should be collapsible when type is single", () => {
-    let trigger: HTMLElement = screen.getByText("Accordion one");
-    let content: HTMLElement = screen.getByTestId("content-one");
+    const trigger: HTMLElement = screen.getByText("Accordion one");
+    const content: HTMLElement = screen.getByTestId("content-one");
 
     fireEvent.click(trigger);
     expect(content).toHaveAttribute("data-state", "open");

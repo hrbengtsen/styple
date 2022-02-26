@@ -23,6 +23,7 @@ Object {
               data-radix-collection-item=""
               data-state="closed"
               id="radix-1"
+              type="button"
             >
               Accordion one
               <svg
@@ -74,6 +75,7 @@ Object {
               data-radix-collection-item=""
               data-state="closed"
               id="radix-3"
+              type="button"
             >
               Accordion two
               <svg
@@ -131,6 +133,7 @@ Object {
             data-radix-collection-item=""
             data-state="closed"
             id="radix-1"
+            type="button"
           >
             Accordion one
             <svg
@@ -182,6 +185,7 @@ Object {
             data-radix-collection-item=""
             data-state="closed"
             id="radix-3"
+            type="button"
           >
             Accordion two
             <svg
