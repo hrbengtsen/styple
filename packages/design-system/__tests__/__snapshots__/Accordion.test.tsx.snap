@@ -1,0 +1,274 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Accordion should render as expected 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="c-PJLV"
+      >
+        <div
+          class="c-PJLV"
+          data-state="closed"
+        >
+          <h3
+            class="c-leHWbT"
+            data-state="closed"
+          >
+            <button
+              aria-controls="radix-0"
+              aria-expanded="false"
+              class="c-brQuED"
+              data-radix-collection-item=""
+              data-state="closed"
+              id="radix-1"
+            >
+              Accordion one
+              <svg
+                class="lucide lucide-chevron-down"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polyline
+                  points="6 9 12 15 18 9"
+                />
+              </svg>
+            </button>
+            <div
+              class="c-cWhwNz c-cWhwNz-dbVHzF-size-fill"
+              data-orientation="horizontal"
+              role="separator"
+            />
+          </h3>
+          <div
+            aria-labelledby="radix-1"
+            class="c-kDvOPF"
+            data-state="closed"
+            data-testid="content-one"
+            hidden=""
+            id="radix-0"
+            role="region"
+            style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"
+          />
+        </div>
+        <div
+          class="c-PJLV"
+          data-state="closed"
+        >
+          <h3
+            class="c-leHWbT"
+            data-state="closed"
+          >
+            <button
+              aria-controls="radix-2"
+              aria-expanded="false"
+              class="c-brQuED"
+              data-radix-collection-item=""
+              data-state="closed"
+              id="radix-3"
+            >
+              Accordion two
+              <svg
+                class="lucide lucide-chevron-down"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polyline
+                  points="6 9 12 15 18 9"
+                />
+              </svg>
+            </button>
+            <div
+              class="c-cWhwNz c-cWhwNz-dbVHzF-size-fill"
+              data-orientation="horizontal"
+              role="separator"
+            />
+          </h3>
+          <div
+            aria-labelledby="radix-3"
+            class="c-kDvOPF"
+            data-state="closed"
+            hidden=""
+            id="radix-2"
+            role="region"
+            style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"
+          />
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="c-PJLV"
+    >
+      <div
+        class="c-PJLV"
+        data-state="closed"
+      >
+        <h3
+          class="c-leHWbT"
+          data-state="closed"
+        >
+          <button
+            aria-controls="radix-0"
+            aria-expanded="false"
+            class="c-brQuED"
+            data-radix-collection-item=""
+            data-state="closed"
+            id="radix-1"
+          >
+            Accordion one
+            <svg
+              class="lucide lucide-chevron-down"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polyline
+                points="6 9 12 15 18 9"
+              />
+            </svg>
+          </button>
+          <div
+            class="c-cWhwNz c-cWhwNz-dbVHzF-size-fill"
+            data-orientation="horizontal"
+            role="separator"
+          />
+        </h3>
+        <div
+          aria-labelledby="radix-1"
+          class="c-kDvOPF"
+          data-state="closed"
+          data-testid="content-one"
+          hidden=""
+          id="radix-0"
+          role="region"
+          style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"
+        />
+      </div>
+      <div
+        class="c-PJLV"
+        data-state="closed"
+      >
+        <h3
+          class="c-leHWbT"
+          data-state="closed"
+        >
+          <button
+            aria-controls="radix-2"
+            aria-expanded="false"
+            class="c-brQuED"
+            data-radix-collection-item=""
+            data-state="closed"
+            id="radix-3"
+          >
+            Accordion two
+            <svg
+              class="lucide lucide-chevron-down"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polyline
+                points="6 9 12 15 18 9"
+              />
+            </svg>
+          </button>
+          <div
+            class="c-cWhwNz c-cWhwNz-dbVHzF-size-fill"
+            data-orientation="horizontal"
+            role="separator"
+          />
+        </h3>
+        <div
+          aria-labelledby="radix-3"
+          class="c-kDvOPF"
+          data-state="closed"
+          hidden=""
+          id="radix-2"
+          role="region"
+          style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"
+        />
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
