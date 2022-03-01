@@ -1,6 +1,11 @@
 import "@testing-library/jest-dom";
+import { PointerEvent } from "./helpers";
 
 // Mock browser API's used internally in Radix
+// see https://github.com/radix-ui/primitives/issues/856#issuecomment-928704064
+
+// @ts-ignore
+global.PointerEvent = PointerEvent;
 
 global.ResizeObserver = class ResizeObserver {
   cb: any;

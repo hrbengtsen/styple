@@ -18,14 +18,18 @@ import {
 describe("Test DropdownMenu", () => {
   let view: RenderResult;
 
+  const mockOnChange = jest.fn((bool) => bool);
+
   beforeEach(() => {
     view = render(
-      <DropdownMenu open={true}>
+      <DropdownMenu>
         <DropdownMenuTrigger>trigger</DropdownMenuTrigger>
-        <DropdownMenuContent portalled={false}>
+        <DropdownMenuContent>
           <DropdownMenuLabel>label</DropdownMenuLabel>
           <DropdownMenuItem>item</DropdownMenuItem>
-          <DropdownMenuCheckboxItem>checkbox</DropdownMenuCheckboxItem>
+          <DropdownMenuCheckboxItem onChange={mockOnChange}>
+            checkbox
+          </DropdownMenuCheckboxItem>
           <DropdownMenuSeparator />
         </DropdownMenuContent>
       </DropdownMenu>
@@ -39,16 +43,25 @@ describe("Test DropdownMenu", () => {
   it("should support custom onChange", async () => {
     const trigger: HTMLElement = screen.getByText("trigger");
 
-    // dropdowncontent is not rendered in jsdom when clicking trigger, figure out how to fix or just test with open={true} as above
-
     // Open dropdown
-    //fireEvent.click(trigger);
+    fireEvent.pointerDown(
+      trigger,
+      new PointerEvent("pointerdown", {
+        ctrlKey: false,
+        button: 0,
+      })
+    );
 
-    //const checkbox: HTMLElement = await screen.findByText("checkbox");
+    const checkbox: HTMLElement = await screen.findByText("checkbox");
 
-    //expect(checkbox).not.toBeChecked();
-    //fireEvent.click(checkbox);
-    //expect(checkbox).toBeChecked();
-    //screen.debug();
+    expect(checkbox).not.toBeChecked();
+    fireEvent.click(checkbox);
+    expect(checkbox).toBeChecked();
+
+    // Check onChange was called just once, when checkbox was clicked
+    expect(mockOnChange.mock.calls.length).toBe(1);
+
+    // Check onChange was called with correct value
+    expect(mockOnChange.mock.calls[0][0]).toBe(true);
   });
 });

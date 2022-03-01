@@ -13,7 +13,7 @@ const customJestConfig = {
   transform: {
     "^.+\\.(ts|tsx)$": "ts-jest",
   },
-  setupFilesAfterEnv: ["<rootDir>/setup-tests.ts"],
+  setupFilesAfterEnv: ["<rootDir>/test/setup-tests.ts"],
 };
 
 module.exports = createJestConfig(customJestConfig);
