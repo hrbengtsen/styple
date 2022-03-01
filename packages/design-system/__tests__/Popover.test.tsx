@@ -1,15 +1,13 @@
 import * as React from "react";
 import { render, RenderResult } from "@testing-library/react";
-import { Navbar } from "..";
+import { Popover, Button } from "..";
 
-describe("Test Navbar", () => {
+describe("Test Popover", () => {
   it("should render as expected", () => {
     const view: RenderResult = render(
-      <Navbar
-        brand={<>Basic navbar</>}
-        content={<>Regular content</>}
-        mobileContent={<>Mobile content</>}
-      />
+      <Popover content={<>Popover content</>}>
+        <Button>Popover trigger</Button>
+      </Popover>
     );
 
     expect(view).toMatchSnapshot();

@@ -1,65 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test Navbar should render as expected 1`] = `
+exports[`Test Popover should render as expected 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
+      <button
+        aria-controls="radix-0"
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        class="c-jcnnme c-jcnnme-dWmsQj-size-md c-jcnnme-zoiF-variant-normal"
         data-state="closed"
+        type="button"
       >
-        <div
-          class="c-lesPJm"
-        >
-          Basic navbar
-          <div
-            class="c-lesPJm c-lesPJm-ibzxrHk-css"
-          >
-            Regular content
-          </div>
-          <button
-            aria-controls="radix-0"
-            aria-expanded="false"
-            class="c-bcMgnR c-bcMgnR-igJqlz-css"
-            data-state="closed"
-            type="button"
-          >
-            <span />
-            <span />
-            <span />
-            <span />
-          </button>
-        </div>
-      </div>
+        Popover trigger
+      </button>
     </div>
   </body>,
   "container": <div>
-    <div
+    <button
+      aria-controls="radix-0"
+      aria-expanded="false"
+      aria-haspopup="dialog"
+      class="c-jcnnme c-jcnnme-dWmsQj-size-md c-jcnnme-zoiF-variant-normal"
       data-state="closed"
+      type="button"
     >
-      <div
-        class="c-lesPJm"
-      >
-        Basic navbar
-        <div
-          class="c-lesPJm c-lesPJm-ibzxrHk-css"
-        >
-          Regular content
-        </div>
-        <button
-          aria-controls="radix-0"
-          aria-expanded="false"
-          class="c-bcMgnR c-bcMgnR-igJqlz-css"
-          data-state="closed"
-          type="button"
-        >
-          <span />
-          <span />
-          <span />
-          <span />
-        </button>
-      </div>
-    </div>
+      Popover trigger
+    </button>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
