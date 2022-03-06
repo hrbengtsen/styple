@@ -1,8 +1,8 @@
 import React from "react";
-import { styled, css, keyframes, CSS } from "../stitches.config";
+import { styled, css, keyframes } from "../stitches.config";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { panelStyles } from "./Panel";
-import { Switch } from "..";
+import { Switch } from "./Switch";
 
 export const DropdownMenu = DropdownMenuPrimitive.Root;
 export const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
@@ -89,7 +89,6 @@ type DropdownMenuCheckboxItemProps = Omit<
   React.ComponentProps<typeof DropdownMenuPrimitive.CheckboxItem>,
   "onCheckedChange"
 > & {
-  css?: CSS;
   onChange?: (bool: boolean) => void;
 };
 

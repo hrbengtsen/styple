@@ -1,5 +1,5 @@
 import React from "react";
-import { styled, CSS } from "../stitches.config";
+import { styled } from "../stitches.config";
 import * as SliderPrimitive from "@radix-ui/react-slider";
 
 const SliderTrack = styled(SliderPrimitive.Track, {
@@ -79,7 +79,7 @@ const StyledSlider = styled(SliderPrimitive.Root, {
   },
 });
 
-type SliderProps = React.ComponentProps<typeof StyledSlider> & { css?: CSS };
+type SliderProps = React.ComponentProps<typeof StyledSlider>;
 
 export const Slider = React.forwardRef<
   React.ElementRef<typeof StyledSlider>,

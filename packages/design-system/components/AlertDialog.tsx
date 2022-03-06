@@ -1,5 +1,5 @@
 import React from "react";
-import { styled, CSS } from "../stitches.config";
+import { styled } from "../stitches.config";
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
 import { overlayStyles } from "./Overlay";
 import { panelStyles, contentFadeIn } from "./Panel";
@@ -48,9 +48,7 @@ export function AlertDialog({ children, ...props }: AlertDialogProps) {
   );
 }
 
-type AlertDialogContentProps = React.ComponentProps<typeof StyledContent> & {
-  css?: CSS;
-};
+type AlertDialogContentProps = React.ComponentProps<typeof StyledContent>;
 
 export const AlertDialogContent = React.forwardRef<
   React.ElementRef<typeof StyledContent>,

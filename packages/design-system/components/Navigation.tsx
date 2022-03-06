@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Sheet, SheetContent, SheetTrigger, Button } from "..";
-import { CSS, styled } from "../stitches.config";
+import { styled } from "../stitches.config";
 import * as Collapsible from "@radix-ui/react-collapsible";
 import { Menu } from "lucide-react";
 
@@ -63,7 +63,6 @@ const StyledBurger = styled("button", {
 });
 
 type BurgerProps = React.ComponentProps<typeof StyledBurger> & {
-  css?: CSS;
   open: boolean;
   bp?: "@bp1" | "@bp2" | "@bp3" | "@bp4";
 };
@@ -92,7 +91,6 @@ Burger.displayName = "Burger";
 
 // General collapsible navbar with custom animated Burger
 type NavbarProps = React.ComponentProps<typeof Container> & {
-  css?: CSS;
   brand?: React.ReactNode;
   content: React.ReactNode;
   mobileContent: React.ReactNode;
@@ -136,7 +134,6 @@ Navbar.displayName = "Navbar";
 
 // Sidebar
 type SidebarProps = React.ComponentProps<typeof Container> & {
-  css?: CSS;
   brand?: React.ReactNode;
   content: React.ReactNode;
   mobileContent: React.ReactNode;

@@ -1,9 +1,6 @@
 import { Container } from "../packages/design-system";
-import { CSS } from "../packages/design-system/stitches.config";
 
-type PreviewProps = React.ComponentProps<typeof Container> & {
-  css?: CSS;
-};
+type PreviewProps = React.ComponentProps<typeof Container>;
 
 export const Preview = ({ css, ...props }: PreviewProps) => (
   <Container

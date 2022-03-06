@@ -1,5 +1,5 @@
 import React from "react";
-import { styled, CSS } from "../stitches.config";
+import { styled } from "../stitches.config";
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 
 export const RadioGroup = styled(RadioGroupPrimitive.Root, {
@@ -37,9 +37,7 @@ const StyledIndicator = styled(RadioGroupPrimitive.Indicator, {
   },
 });
 
-type RadioProps = React.ComponentProps<typeof StyledRadio> & {
-  css?: CSS;
-};
+type RadioProps = React.ComponentProps<typeof StyledRadio>;
 
 export const Radio = React.forwardRef<
   React.ElementRef<typeof StyledRadio>,

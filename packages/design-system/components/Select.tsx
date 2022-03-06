@@ -1,5 +1,6 @@
 import React from "react";
-import { styled, CSS, VariantProps } from "../stitches.config";
+import { styled } from "../stitches.config";
+import { VariantProps } from "@stitches/react";
 import { ChevronDown } from "lucide-react";
 
 const SelectWrapper = styled("div", {
@@ -76,8 +77,7 @@ const StyledChevronDown = styled(ChevronDown, {
 });
 
 type SelectVariants = VariantProps<typeof SelectWrapper>;
-type SelectProps = React.ComponentProps<typeof StyledSelect> &
-  SelectVariants & { css?: CSS };
+type SelectProps = React.ComponentProps<typeof StyledSelect> & SelectVariants;
 
 export const Select = React.forwardRef<
   React.ElementRef<typeof StyledSelect>,

@@ -1,5 +1,5 @@
 import React from "react";
-import { styled, CSS } from "../stitches.config";
+import { styled } from "../stitches.config";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { Check } from "lucide-react";
 
@@ -34,9 +34,7 @@ const StyledIndicator = styled(CheckboxPrimitive.Indicator, {
   color: "$text200",
 });
 
-type CheckboxProps = React.ComponentProps<typeof StyledCheckbox> & {
-  css?: CSS;
-};
+type CheckboxProps = React.ComponentProps<typeof StyledCheckbox>;
 
 export const Checkbox = React.forwardRef<
   React.ElementRef<typeof StyledCheckbox>,

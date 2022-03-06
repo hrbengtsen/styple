@@ -1,5 +1,5 @@
 import React from "react";
-import { styled, CSS } from "../stitches.config";
+import { styled } from "../stitches.config";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
 import { overlayStyles } from "./Overlay";
@@ -52,9 +52,7 @@ export function Dialog({ children, ...props }: DialogProps) {
   return <DialogPrimitive.Root {...props}>{children}</DialogPrimitive.Root>;
 }
 
-type DialogContentProps = React.ComponentProps<typeof StyledContent> & {
-  css?: CSS;
-};
+type DialogContentProps = React.ComponentProps<typeof StyledContent>;
 
 export const DialogContent = React.forwardRef<
   React.ElementRef<typeof StyledContent>,

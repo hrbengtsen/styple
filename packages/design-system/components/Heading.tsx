@@ -1,5 +1,6 @@
 import React from "react";
-import { styled, VariantProps, CSS } from "../stitches.config";
+import { styled, config } from "../stitches.config";
+import { VariantProps, CSS } from "@stitches/react";
 import { Text } from "./Text";
 
 const DEFAULT_TAG = "h1";
@@ -7,7 +8,10 @@ const DEFAULT_TAG = "h1";
 type TextSizeVariants = Pick<VariantProps<typeof Text>, "size">;
 type HeadingTypeVariants = "h1" | "h2" | "h3" | "h4";
 type HeadingProps = React.ComponentPropsWithRef<typeof DEFAULT_TAG> &
-  VariantProps<typeof Text> & { css?: CSS; as?: HeadingTypeVariants };
+  VariantProps<typeof Text> & {
+    css?: CSS<typeof config>;
+    as?: HeadingTypeVariants;
+  };
 
 export const StyledHeading = styled(Text, {
   // Reset

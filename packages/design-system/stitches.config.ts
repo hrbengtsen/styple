@@ -118,12 +118,9 @@ const defaultTheme = {
     xl: "8px",
   },
   shadows: {
-    sm:
-      "0px 2px 8px -2px rgba(22, 23, 24, 0.35), 0px 2px 5px -3px rgba(22, 23, 24, 0.2)",
-    md:
-      "0px 5px 16px -5px rgba(22, 23, 24, 0.35), 0px 5px 10px -7px rgba(22, 23, 24, 0.2)",
-    lg:
-      "0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)",
+    sm: "0px 2px 8px -2px rgba(22, 23, 24, 0.35), 0px 2px 5px -3px rgba(22, 23, 24, 0.2)",
+    md: "0px 5px 16px -5px rgba(22, 23, 24, 0.35), 0px 5px 10px -7px rgba(22, 23, 24, 0.2)",
+    lg: "0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)",
   },
   zIndices: {
     1: "100",
@@ -232,8 +229,9 @@ export const {
   },
 });
 
-export type { VariantProps } from "@stitches/react";
-export type CSS = Stitches.CSS<typeof config>;
+// Following re-exports cause internal parcel build error. Have refactored ds to work without them directly
+//export type { VariantProps } from "@stitches/react";
+//export type CSS = Stitches.CSS<typeof config>;
 
 // Default global styles (based on https://www.joshwcomeau.com/css/custom-css-reset/)
 export const globalStyles = globalCss({

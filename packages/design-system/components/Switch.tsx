@@ -1,5 +1,5 @@
 import React from "react";
-import { styled, CSS } from "../stitches.config";
+import { styled } from "../stitches.config";
 import * as SwitchPrimitive from "@radix-ui/react-switch";
 
 const StyledThumb = styled(SwitchPrimitive.Thumb, {
@@ -54,9 +54,7 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
   },
 });
 
-type SwitchProps = React.ComponentProps<typeof StyledSwitch> & {
-  css?: CSS;
-};
+type SwitchProps = React.ComponentProps<typeof StyledSwitch>;
 
 export const Switch = React.forwardRef<
   React.ElementRef<typeof StyledSwitch>,

@@ -1,5 +1,5 @@
 import React from "react";
-import { styled, CSS } from "../stitches.config";
+import { styled } from "../stitches.config";
 import * as TabsPrimitive from "@radix-ui/react-tabs";
 import { Separator } from "..";
 
@@ -14,9 +14,7 @@ const StyledTabsList = styled(TabsPrimitive.List, {
   flexShrink: 0,
 });
 
-type TabsListProps = React.ComponentProps<typeof StyledTabsList> & {
-  css?: CSS;
-};
+type TabsListProps = React.ComponentProps<typeof StyledTabsList>;
 
 export const TabsList = React.forwardRef<
   React.ElementRef<typeof StyledTabsList>,

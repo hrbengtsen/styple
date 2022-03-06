@@ -1,5 +1,5 @@
 import React from "react";
-import { styled, CSS, keyframes } from "../stitches.config";
+import { styled, keyframes } from "../stitches.config";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { ChevronDown } from "lucide-react";
 import { Separator } from "..";
@@ -16,9 +16,7 @@ const slideUp = keyframes({
 
 const StyledAccordion = styled(AccordionPrimitive.Root, {});
 
-type AcoordionProps = React.ComponentProps<typeof StyledAccordion> & {
-  css?: CSS;
-};
+type AcoordionProps = React.ComponentProps<typeof StyledAccordion>;
 
 export const Accordion = React.forwardRef<
   React.ElementRef<typeof StyledAccordion>,
@@ -99,7 +97,6 @@ const StyledTrigger = styled(AccordionPrimitive.Trigger, {
 });
 
 type AccordionTriggerProps = React.ComponentProps<typeof StyledTrigger> & {
-  css?: CSS;
   noSeparator?: boolean;
 };
 

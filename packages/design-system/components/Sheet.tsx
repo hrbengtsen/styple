@@ -1,5 +1,6 @@
 import React from "react";
-import { styled, CSS, VariantProps, keyframes } from "../stitches.config";
+import { styled, keyframes } from "../stitches.config";
+import { VariantProps } from "@stitches/react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
 import { overlayStyles } from "./Overlay";
@@ -118,9 +119,7 @@ export function Sheet({ children, ...props }: SheetProps) {
 }
 
 type SheetContentProps = React.ComponentProps<typeof StyledContent> &
-  VariantProps<typeof StyledContent> & {
-    css?: CSS;
-  };
+  VariantProps<typeof StyledContent>;
 
 export const SheetContent = React.forwardRef<
   React.ElementRef<typeof StyledContent>,

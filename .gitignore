@@ -23,6 +23,10 @@
 *.pem
 tsconfig.tsbuildinfo
 
+# packages
+.parcel-cache
+/packages/**/dist
+
 # debug
 npm-debug.log*
 yarn-debug.log*
