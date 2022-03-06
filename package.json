@@ -1,6 +1,6 @@
 {
   "name": "@styple/website",
-  "description": "Styple monorepo",
+  "description": "styple monorepo",
   "version": "1.0.0",
   "private": "true",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --coverage",
+    "test": "jest",
     "typecheck": "tsc --noEmit",
     "precommit": "pretty-quick --staged && lint-staged",
     "prepare": "husky install",

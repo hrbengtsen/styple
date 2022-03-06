@@ -1,27 +1,44 @@
 import * as React from "react";
-import { render, RenderResult } from "@testing-library/react";
+import { render, RenderResult, screen } from "@testing-library/react";
 import { SearchField } from "..";
 
-describe("Test ScrollArea", () => {
-  it("should render as expected", () => {
-    const setState = jest.fn();
-    const useStateSpy = jest.spyOn(React, "useState");
+describe("Test SearchField", () => {
+  let view: RenderResult;
 
-    // @ts-ignore
-    useStateSpy.mockImplementation((init) => [init, setState]);
+  const setState = jest.fn();
+  const useStateSpy = jest.spyOn(React, "useState");
 
-    const keyPressed = jest.fn();
+  // @ts-ignore
+  useStateSpy.mockImplementation((init) => [init, setState]);
 
-    const view: RenderResult = render(
+  const keyPressed = jest.fn();
+
+  beforeEach(() => {
+    view = render(
       <SearchField
-        query={""}
+        query=""
         setQuery={setState}
         keyPressed={keyPressed}
         placeholder="Search test.."
       />
     );
+  });
+
+  it("should render as expected", () => {
     expect(view).toMatchSnapshot();
   });
 
-  it("should render reset Button if non-empty query", () => {});
+  it("should render reset Button if non-empty query", () => {
+    view.rerender(
+      <SearchField
+        query="search"
+        setQuery={setState}
+        keyPressed={keyPressed}
+        placeholder="Search test.."
+      />
+    );
+
+    const button: HTMLElement | null = screen.queryByRole("button");
+    expect(button).toBeInTheDocument();
+  });
 });
