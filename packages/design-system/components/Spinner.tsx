@@ -63,7 +63,7 @@ export const Spinner = ({ delay = 600, ...props }: SpinnerProps) => {
     <Rotating
       {...props}
       css={{
-        visibility: `${hidden ? "hidden" : "visisble"}`,
+        visibility: `${hidden ? "hidden" : "visible"}`,
       }}
     >
       <svg
