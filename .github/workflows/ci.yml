@@ -22,4 +22,4 @@ jobs:
       - name: Run build
         run: npm run build:packages --if-present
       - name: Run tests
-        run: npm test
+        run: npm test -- --ci
