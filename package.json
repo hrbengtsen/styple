@@ -17,8 +17,8 @@
     "typecheck": "tsc --noEmit",
     "precommit": "pretty-quick --staged && lint-staged",
     "prepare": "husky install",
-    "build:ds": "parcel build packages/design-system/ --no-cache",
-    "build:hooks": "parcel build packages/hooks/ --no-cache"
+    "build:clean": "rimraf packages/*/dist",
+    "build:packages": "npm run build:clean && parcel build packages/*"
   },
   "dependencies": {
     "hast-util-to-html": "^8.0.3",
@@ -55,6 +55,7 @@
     "prettier": "^2.5.1",
     "pretty-quick": "^3.1.3",
     "react-test-renderer": "^17.0.2",
+    "rimraf": "^3.0.2",
     "ts-jest": "^27.1.3",
     "typescript": "^4.6.2"
   },
