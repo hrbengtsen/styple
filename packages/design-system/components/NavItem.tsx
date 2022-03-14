@@ -412,6 +412,20 @@ export const NavItem = styled("a", {
         },
       },
     },
+    // Variant + highlight compounds
+    {
+      variant: "normal",
+      highlight: "true",
+      css: {
+        bg: "transparent",
+        "&:hover": {
+          bg: "$bg300",
+        },
+        "&:focus": {
+          bg: "$bg300",
+        },
+      },
+    },
     // Size + pill compounds
     {
       size: "sm",
