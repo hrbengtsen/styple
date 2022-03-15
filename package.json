@@ -17,14 +17,14 @@
     "typecheck": "tsc --noEmit",
     "precommit": "pretty-quick --staged && lint-staged",
     "prepare": "husky install",
-    "build:ds": "parcel build packages/design-system/ --no-cache",
-    "build:hooks": "parcel build packages/hooks/ --no-cache"
+    "build:clean": "rimraf packages/*/dist",
+    "build:packages": "npm run build:clean && parcel build packages/*",
+    "release": "npm publish --access public --workspaces"
   },
   "dependencies": {
     "hast-util-to-html": "^8.0.3",
     "hast-util-to-string": "^2.0.0",
     "mdx-bundler": "^8.0.1",
-    "microbundle": "^0.14.2",
     "next": "^12.1.0",
     "next-themes": "^0.0.15",
     "parse-numeric-range": "^1.3.0",
@@ -57,6 +57,7 @@
     "prettier": "^2.5.1",
     "pretty-quick": "^3.1.3",
     "react-test-renderer": "^17.0.2",
+    "rimraf": "^3.0.2",
     "ts-jest": "^27.1.3",
     "typescript": "^4.6.2"
   },
