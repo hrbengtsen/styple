@@ -1,20 +1,21 @@
 {
   "name": "@styple/hooks",
-  "description": "Styple Hooks",
+  "description": "styple hooks",
   "version": "0.1.0",
+  "license": "MIT",
   "source": "index.ts",
   "main": "dist/index.js",
   "module": "dist/index.module.js",
-  "unpkg": "dist/index.umd.js",
   "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "microbundle --jsx React.createElement",
-    "dev": "microbundle watch --jsx React.createElement"
-  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "peerDependencies": {
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
+  "homepage": "https://www.styple.dev/docs",
   "repository": {
     "type": "git",
     "url": "https://github.com/hrbengtsen/styple"
