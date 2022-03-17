@@ -14,7 +14,7 @@ or copy the source:
 ```ts line=3-20
 import { useState, useEffect, MutableRefObject } from "react";
 
-export const useOnScreen = (ref: MutableRefObject<Element>) => {
+export const useOnScreen = (ref: MutableRefObject<Element | null>) => {
   const [isIntersecting, setIntersecting] = useState<boolean>(false);
 
   useEffect(() => {
