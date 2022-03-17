@@ -16,7 +16,7 @@ function ActiveElementExample() {
 }
 
 describe("Test useActiveElement", () => {
-  it("should render as expected", () => {
+  it("should work as expected", () => {
     render(<ActiveElementExample />);
 
     const button1 = screen.getByText(/button 1/i);
