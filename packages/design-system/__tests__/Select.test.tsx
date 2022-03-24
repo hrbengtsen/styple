@@ -1,14 +1,14 @@
 import * as React from "react";
 import { render, RenderResult } from "@testing-library/react";
-import { Select } from "..";
+import { Select, SelectItem } from "..";
 
 describe("Test Select", () => {
   it("should render as expected", () => {
     const view: RenderResult = render(
-      <Select>
-        <option>Select 1</option>
-        <option>Select 2</option>
-        <option>Select 3</option>
+      <Select defaultValue="1" size="md">
+        <SelectItem value="1">Select 1</SelectItem>
+        <SelectItem value="2">Select 2</SelectItem>
+        <SelectItem value="3">Select 3</SelectItem>
       </Select>
     );
 
