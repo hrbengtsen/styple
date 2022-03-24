@@ -12,21 +12,31 @@ description: Enable user selection of a list of options.
       alignItems: "center",
     }}
   >
-    <Select>
-      <option>Select 1</option>
-      <option>Select 2</option>
-      <option>Select 3</option>
+    <Select defaultValue="1">
+      <SelectGroup>
+        <SelectLabel>First</SelectLabel>
+        <SelectItem value="1">Select 1</SelectItem>
+        <SelectItem value="2">Select 2</SelectItem>
+        <SelectItem value="3">Select 3</SelectItem>
+      </SelectGroup>
+      <SelectSeparator />
+      <SelectGroup>
+        <SelectLabel>Second</SelectLabel>
+        <SelectItem value="4">Select 4</SelectItem>
+        <SelectItem value="5">Select 5</SelectItem>
+        <SelectItem value="6">Select 6</SelectItem>
+      </SelectGroup>
     </Select>
-    <Select size="md">
-      <option>Select 1</option>
-      <option>Select 2</option>
-      <option>Select 3</option>
+    <Select defaultValue="1" size="md">
+      <SelectItem value="1">Select 1</SelectItem>
+      <SelectItem value="2">Select 2</SelectItem>
+      <SelectItem value="3">Select 3</SelectItem>
     </Select>
   </Flex>
 </Preview>
 
 ```tsx outline=true
-import { Select } from "@styple/design-system";
+import { Select, SelectItem, SelectGroup, SelectLabel, SelectSeparator } from "@styple/design-system";
 
 <Flex
   css={{
@@ -34,24 +44,36 @@ import { Select } from "@styple/design-system";
     alignItems: "center",
   }}
 >
-  <Select>
-    <option>Select 1</option>
-    <option>Select 2</option>
-    <option>Select 3</option>
+  <Select defaultValue="1">
+    <SelectGroup>
+      <SelectLabel>First</SelectLabel>
+      <SelectItem value="1">Select 1</SelectItem>
+      <SelectItem value="2">Select 2</SelectItem>
+      <SelectItem value="3">Select 3</SelectItem>
+    </SelectGroup>
+    <SelectSeparator />
+    <SelectGroup>
+      <SelectLabel>Second</SelectLabel>
+      <SelectItem value="4">Select 4</SelectItem>
+      <SelectItem value="5">Select 5</SelectItem>
+      <SelectItem value="6">Select 6</SelectItem>
+    </SelectGroup>
   </Select>
-  <Select size="md">
-    <option>Select 1</option>
-    <option>Select 2</option>
-    <option>Select 3</option>
+  <Select defaultValue="1" size="md">
+    <SelectItem value="1">Select 1</SelectItem>
+    <SelectItem value="2">Select 2</SelectItem>
+    <SelectItem value="3">Select 3</SelectItem>
   </Select>
 </Flex>
 ```
 
 ### API Reference
 
+See [Radix-UI Select (v0.1.1)](https://www.radix-ui.com/docs/primitives/components/select) for details. This only covers **styple** abstractions.
+
 #### Select
 
-A styled component wrapping the native select. Custom props:
+A styled abstraction combining `Select.Root`, `Select.Trigger`, `Select.Value`, `Select.Icon`, `Select.Content`, `Select.ScrollDownButton`, `Select.ScrollUpButton` and `Select.Viewport`. Takes the props of `Select.Root` and a variant from the styled trigger:
 
 <Table>
   <Thead>
@@ -75,3 +97,21 @@ A styled component wrapping the native select. Custom props:
     </Tr>
   </Tbody>
 </Table>
+
+#### SelectItem
+
+A styled abstraction combining `Select.Item`, `Select.ItemText` and `Select.ItemIndicator`.
+
+#### SelectGroup
+
+A styled component wrapper for `Select.Group`.
+
+#### SelectLabel
+
+A styled component wrapper for `Select.Label`.
+
+#### SelectSeparator
+
+A styled component wrapper for `Select.Separator`.
+
+---

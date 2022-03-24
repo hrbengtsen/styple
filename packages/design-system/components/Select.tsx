@@ -1,27 +1,39 @@
 import React from "react";
-import { styled } from "../stitches.config";
+import * as SelectPrimitive from "@radix-ui/react-select";
+import { ChevronDown, ChevronUp, Check } from "lucide-react";
+import { styled, css } from "../stitches.config";
+import { panelStyles } from "./Panel";
 import { VariantProps } from "@stitches/react";
-import { ChevronDown } from "lucide-react";
 
-const SelectWrapper = styled("div", {
-  position: "relative",
-  backgroundColor: "$button200",
+const StyledSelect = styled(SelectPrimitive.Trigger, {
+  all: "unset",
+
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+
+  transition: "$color, $bgColor, $transform, $border, $boxShadow",
+
+  fontSize: "$sm",
+  bg: "$button200",
   color: "$text200",
-
-  transition: "$boxShadow",
-
-  "&:focus-within": {
-    boxShadow: "0 0 0 0.1rem $colors$button100",
-  },
+  "&:hover": { bg: "$button300" },
+  "&:focus": { bg: "$button300", boxShadow: "0 0 0 0.1rem $colors$button100" },
+  lineHeight: 1,
+  gap: "$xs",
 
   variants: {
     size: {
       sm: {
-        height: "$lg",
+        py: "$xs",
+        px: "$sm",
+        height: "$md",
         borderRadius: "$lg",
       },
       md: {
-        height: "40px",
+        py: "$xs",
+        px: "$md",
+        height: "$lg",
         borderRadius: "$xl",
       },
     },
@@ -31,61 +43,118 @@ const SelectWrapper = styled("div", {
   },
 });
 
-const StyledSelect = styled("select", {
-  appearance: "none",
-  bg: "transparent",
-  border: "none",
-  borderRadius: "inherit",
-  color: "inherit",
-  outline: "none",
-  width: "100%",
-  height: "100%",
-  lineHeight: "1",
-  pl: "$sm",
-  pr: "$2xl",
-  py: "$sm",
-
-  // Fixes size type-error
-  variants: {
-    size: {
-      sm: {},
-      md: {},
-    },
-  },
+const StyledContent = styled(SelectPrimitive.Content, panelStyles, {
+  overflow: "hidden",
 });
 
-const StyledChevronDown = styled(ChevronDown, {
-  position: "absolute",
-  pointerEvents: "none",
-  display: "inline",
+const scrollButtonStyles = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  height: "$xs",
+  bg: "$bg200E",
+  color: "$text200",
+  cursor: "default",
+};
 
-  variants: {
-    sizeOffset: {
-      sm: {
-        top: "6px",
-        right: "6px",
-      },
-      md: {
-        top: "10px",
-        right: "6px",
-      },
-    },
-  },
-  defaultVariants: {
-    sizeOffset: "sm",
-  },
-});
+const StyledScrollUpButton = styled(
+  SelectPrimitive.ScrollUpButton,
+  scrollButtonStyles
+);
+const StyledScrollDownButton = styled(
+  SelectPrimitive.ScrollDownButton,
+  scrollButtonStyles
+);
 
-type SelectVariants = VariantProps<typeof SelectWrapper>;
-type SelectProps = React.ComponentProps<typeof StyledSelect> & SelectVariants;
+type SelectProps = React.ComponentProps<typeof SelectPrimitive.Root> &
+  VariantProps<typeof StyledSelect>;
 
 export const Select = React.forwardRef<
   React.ElementRef<typeof StyledSelect>,
   SelectProps
->(({ size, css, ...props }, forwardedRef) => (
-  <SelectWrapper css={css} size={size}>
-    <StyledSelect ref={forwardedRef} {...props} />
-    <StyledChevronDown sizeOffset={size} size="20" />
-  </SelectWrapper>
-));
+>(({ children, size, ...props }, forwardedRef) => {
+  return (
+    <SelectPrimitive.Root {...props}>
+      <StyledSelect size={size} ref={forwardedRef}>
+        <SelectPrimitive.Value />
+        <SelectPrimitive.Icon>
+          <ChevronDown size="20" style={{ verticalAlign: "middle" }} />
+        </SelectPrimitive.Icon>
+      </StyledSelect>
+      <StyledContent>
+        <StyledScrollUpButton>
+          <ChevronUp size="20" />
+        </StyledScrollUpButton>
+        <SelectPrimitive.Viewport>{children}</SelectPrimitive.Viewport>
+        <StyledScrollDownButton>
+          <ChevronDown size="20" />
+        </StyledScrollDownButton>
+      </StyledContent>
+    </SelectPrimitive.Root>
+  );
+});
 Select.displayName = "Select";
+
+type SelectItemProps = React.ComponentProps<typeof SelectPrimitive.Item>;
+
+const baseItemCss = css({
+  all: "unset",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "flex-start",
+  whiteSpace: "nowrap",
+  height: "$lg",
+  px: "$xl",
+  borderRadius: "$lg",
+  color: "$text200",
+  userSelect: "none",
+  fontSize: "$sm",
+});
+
+const StyledSelectItem = styled(SelectPrimitive.Item, baseItemCss, {
+  transition: "background-color 0.15s ease-in-out",
+  position: "relative",
+
+  "&[data-disabled]": { opacity: "0.5" },
+
+  "&:focus": {
+    outline: "none",
+    bg: "$bg300",
+  },
+});
+
+const SelectItemIndicator = styled(SelectPrimitive.ItemIndicator, {
+  position: "absolute",
+  left: 5,
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+});
+
+export const SelectItem = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.Item>,
+  SelectItemProps
+>(({ children, ...props }, forwardedRef) => {
+  return (
+    <StyledSelectItem {...props} ref={forwardedRef}>
+      <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
+      <SelectItemIndicator>
+        <Check size="16" />
+      </SelectItemIndicator>
+    </StyledSelectItem>
+  );
+});
+SelectItem.displayName = "SelectItem";
+
+export const SelectLabel = styled(SelectPrimitive.Label, baseItemCss, {
+  fontWeight: "$semibold",
+});
+
+export const SelectSeparator = styled(SelectPrimitive.Separator, {
+  height: 1,
+  my: "$sm",
+  bg: "$text200",
+  opacity: ".3",
+});
+
+export const SelectGroup = SelectPrimitive.Group;
