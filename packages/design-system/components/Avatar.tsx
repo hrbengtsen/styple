@@ -1,7 +1,9 @@
-import { styled } from "../stitches.config";
+import { styled, config } from "../stitches.config";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import React from "react";
-import { VariantProps } from "@stitches/react";
+import { CSS, VariantProps } from "@stitches/react";
+import { Status } from "./Status";
+import { Container } from "./Containers";
 
 const StyledAvatar = styled(AvatarPrimitive.Root, {
   display: "flex",
@@ -101,6 +103,8 @@ const StyledFallback = styled(AvatarPrimitive.Fallback, {
   },
 });
 
+type StatusVariants = Pick<React.ComponentProps<typeof Status>, "variant">;
+
 type AvatarVariants = VariantProps<typeof StyledAvatar>;
 type AvatarPrimitiveProps = React.ComponentProps<typeof AvatarPrimitive.Root>;
 type AvatarProps = AvatarPrimitiveProps &
@@ -108,21 +112,65 @@ type AvatarProps = AvatarPrimitiveProps &
     alt: string;
     src: string;
     fallback?: React.ReactNode;
+    status?: StatusVariants["variant"];
+    statusShadowColor?: CSS<typeof config>["color"];
   };
 
 export const Avatar = React.forwardRef<
   React.ElementRef<typeof StyledAvatar>,
   AvatarProps
->(({ alt, src, fallback, size, ...props }, forwardedRef) => {
-  return (
-    <StyledAvatar ref={forwardedRef} size={size} {...props}>
-      <StyledImage alt={alt} src={src} />
-      <StyledFallback size={size} delayMs={600}>
-        {fallback}
-      </StyledFallback>
-    </StyledAvatar>
-  );
-});
+>(
+  (
+    {
+      alt,
+      src,
+      fallback,
+      status,
+      statusShadowColor = "$bg200",
+      size,
+      ...props
+    },
+    forwardedRef
+  ) => {
+    return (
+      <Container
+        css={{
+          position: "relative",
+          height: "fit-content",
+          width: "fit-content",
+        }}
+      >
+        <StyledAvatar ref={forwardedRef} size={size} {...props}>
+          <StyledImage alt={alt} src={src} />
+          <StyledFallback size={size} delayMs={600}>
+            {fallback}
+          </StyledFallback>
+        </StyledAvatar>
+        {status && (
+          <Container
+            css={{
+              position: "absolute",
+              bottom: 0,
+              right: 0,
+              // Typecast statusShadowColor to string to check if value is a token
+              boxShadow: `0 0 0 3px ${
+                (statusShadowColor + "").startsWith("$")
+                  ? `$colors${statusShadowColor}`
+                  : statusShadowColor
+              }`,
+              borderRadius: "$round",
+            }}
+          >
+            <Status
+              variant={status}
+              size={size === "lg" || size === "xl" ? "lg" : "sm"}
+            />
+          </Container>
+        )}
+      </Container>
+    );
+  }
+);
 Avatar.displayName = "Avatar";
 
 type AvatarGroupProps = React.ComponentProps<typeof StyledAvatarGroup> & {

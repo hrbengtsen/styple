@@ -21,40 +21,48 @@ description: Image with a fallback for representing profiles and users.
     </Flex>
     
     <Flex css={{ gap: "$sm" }}>
-      <Avatar src="/founder.webp" fallback="M" />
-      <Avatar src="/founder.webp" fallback="M" size="md" />
-      <Avatar src="/founder.webp" fallback="M" size="lg" />
-      <Avatar src="/founder.webp" fallback="M" size="xl" />
+      <Avatar src="/founder.webp" alt="Avatar image of Mikkel" fallback="M" />
+      <Avatar src="/founder.webp" alt="Avatar image of Mikkel" fallback="M" size="md" />
+      <Avatar src="/founder.webp" alt="Avatar image of Mikkel" fallback="M" size="lg" />
+      <Avatar src="/founder.webp" alt="Avatar image of Mikkel" fallback="M" size="xl" />
     </Flex>
 
     <Flex css={{ gap: "$sm" }}>
-      <Avatar src="/founder.webp" fallback="M" size="md" inactive />
+      <Avatar src="/founder.webp" alt="Avatar image of Mikkel" fallback="M" status="normal" />
+      <Avatar src="/founder.webp" alt="Avatar image of Mikkel" fallback="M" status="primary"  />
+      <Avatar src="/founder.webp" alt="Avatar image of Mikkel" fallback="M" status="accent" size="md" />
+      <Avatar src="/founder.webp" alt="Avatar image of Mikkel" fallback="M" status="danger" size="lg" />
+      <Avatar src="/founder.webp" alt="Avatar image of Mikkel" fallback="M" status="success" size="xl" />
+    </Flex>
+
+    <Flex css={{ gap: "$sm" }}>
+      <Avatar src="/founder.webp" alt="Avatar image of Mikkel" fallback="M" size="md" inactive />
       <Button
         ghost
         css={{
           p: "0",
         }}
       >
-        <Avatar src="/founder.webp" fallback="M" size="md" interactive />
+        <Avatar src="/founder.webp" alt="Avatar image of Mikkel" fallback="M" size="md" interactive />
       </Button>
     </Flex>
 
     <AvatarGroup>
-      <Avatar src="/founder.webp" fallback="M" size="lg" />
-      <Avatar src="/founder.webp" fallback="M" size="lg" />
-      <Avatar src="/founder.webp" fallback="M" size="lg" />
-      <Avatar src="/founder.webp" fallback="M" size="lg" />
+      <Avatar src="/founder.webp" alt="Avatar image of Mikkel" fallback="M" size="lg" />
+      <Avatar src="/founder.webp" alt="Avatar image of Mikkel" fallback="M" size="lg" />
+      <Avatar src="/founder.webp" alt="Avatar image of Mikkel" fallback="M" size="lg" />
+      <Avatar src="/founder.webp" alt="Avatar image of Mikkel" fallback="M" size="lg" />
     </AvatarGroup>
     <AvatarGroup limit={2}>
-      <Avatar src="/founder.webp" fallback="M" size="lg" />
-      <Avatar src="/founder.webp" fallback="M" size="lg" />
-      <Avatar src="/founder.webp" fallback="M" size="lg" />
-      <Avatar src="/founder.webp" fallback="M" size="lg" />
+      <Avatar src="/founder.webp" alt="Avatar image of Mikkel" fallback="M" size="lg" />
+      <Avatar src="/founder.webp" alt="Avatar image of Mikkel" fallback="M" size="lg" />
+      <Avatar src="/founder.webp" alt="Avatar image of Mikkel" fallback="M" size="lg" />
+      <Avatar src="/founder.webp" alt="Avatar image of Mikkel" fallback="M" size="lg" />
     </AvatarGroup>
     <AvatarGroup num={183}>
-      <Avatar src="/founder.webp" fallback="M" />
-      <Avatar src="/founder.webp" fallback="M" />
-      <Avatar src="/founder.webp" fallback="M" />
+      <Avatar src="/founder.webp" alt="Avatar image of Mikkel" fallback="M" />
+      <Avatar src="/founder.webp" alt="Avatar image of Mikkel" fallback="M" />
+      <Avatar src="/founder.webp" alt="Avatar image of Mikkel" fallback="M" />
     </AvatarGroup>
   </Flex>
 </Preview>
@@ -69,6 +77,7 @@ import { Avatar, AvatarGroup } from "@styple/design-system";
     gap: "$md",
   }}
 >
+  // For examples sake, src/alt props are required.
   <Flex css={{ gap: "$sm" }}>
     <Avatar fallback="M" />
     <Avatar fallback="M" size="md" />
@@ -82,6 +91,14 @@ import { Avatar, AvatarGroup } from "@styple/design-system";
     <Avatar src="/founder.webp" fallback="M" size="lg" />
     <Avatar src="/founder.webp" fallback="M" size="xl" />
   </Flex>
+
+  <Flex css={{ gap: "$sm" }}>
+      <Avatar src="/founder.webp" fallback="M" status="normal" />
+      <Avatar src="/founder.webp" fallback="M" status="primary"  />
+      <Avatar src="/founder.webp" fallback="M" status="accent" size="md" />
+      <Avatar src="/founder.webp" fallback="M" status="danger" size="lg" />
+      <Avatar src="/founder.webp" fallback="M" status="success" size="xl" />
+    </Flex>
 
   <Flex css={{ gap: "$sm" }}>
     <Avatar src="/founder.webp" fallback="M" size="md" inactive />
@@ -202,6 +219,36 @@ A styled abstraction for `Avatar.Root`, `Avatar.Image`, `Avatar.Fallback`. Custo
       </Td>
       <Td>-</Td>
       <Td><Text>Fallback element if image doesn't render.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>status?</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+        <Popover content={
+          <Code color="normal">"normal" | "primary" | "accent" | "danger" | "success"</Code>
+        }>
+          <Button highlight size="circle" css={{
+            size: "24px",
+            p: 0,
+            ml: "$xs",
+            lineHeight: 0
+          }}><Info size={16} style={{ verticalAlign: "middle" }} /></Button>
+        </Popover>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Profile/user status.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>statusShadowColor?</Code>
+      </Th>
+      <Td>
+        <Code color="normal">color</Code>
+      </Td>
+      <Td><Code color="normal">"$bg200"</Code></Td>
+      <Td><Text>Color of the status' shadow. Accepts valid css color or token.</Text></Td>
     </Tr>
   </Tbody>
 </Table>

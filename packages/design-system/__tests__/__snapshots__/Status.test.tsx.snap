@@ -6,13 +6,13 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="c-hECRKn c-hECRKn-jmtrBh-size-sm c-hECRKn-kDRzke-variant-normal"
+        class="c-hECRKn c-hECRKn-jmtrBh-size-sm c-hECRKn-hhuxKF-variant-normal"
       />
     </div>
   </body>,
   "container": <div>
     <div
-      class="c-hECRKn c-hECRKn-jmtrBh-size-sm c-hECRKn-kDRzke-variant-normal"
+      class="c-hECRKn c-hECRKn-jmtrBh-size-sm c-hECRKn-hhuxKF-variant-normal"
     />
   </div>,
   "debug": [Function],
