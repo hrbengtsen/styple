@@ -20,6 +20,7 @@ Object {
           <button
             aria-controls="radix-0"
             aria-expanded="false"
+            aria-label="Navigation menu toggle"
             class="c-bcMgnR c-bcMgnR-igJqlz-css"
             data-state="closed"
             type="button"
@@ -49,6 +50,7 @@ Object {
         <button
           aria-controls="radix-0"
           aria-expanded="false"
+          aria-label="Navigation menu toggle"
           class="c-bcMgnR c-bcMgnR-igJqlz-css"
           data-state="closed"
           type="button"

@@ -78,6 +78,7 @@ const Burger = React.forwardRef<
         display: "none",
       },
     }}
+    aria-label="Navigation menu toggle"
     {...props}
     ref={forwardedRef}
   >
