@@ -9,6 +9,9 @@ const StyledScrollShadow = styled("div", {
   $$shadowSize: "$sizes$md",
   $$shadowColor: "$colors$bg100A",
 
+  // Fixes overflow when ScrollArea is used
+  overflow: "hidden",
+
   variants: {
     direction: {
       horizontal: {

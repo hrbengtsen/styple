@@ -1,0 +1,87 @@
+---
+title: ScrollShadow
+description: Shadows to hint at scrollable content.
+---
+
+### Example
+
+<Preview>
+  <ScrollShadow direction="horizontal" withScrollArea>
+    <Container css={{
+      maxWidth: "$4xl",
+      height: "$lg",
+      whiteSpace: "nowrap"
+    }}>
+      <Text>A long example line that overflows the container element, since white-space nowrap is applied. A native-like scrollbar is added through ScrollArea. It works both vertically and horizontally.</Text>
+    </Container>
+  </ScrollShadow>
+</Preview>
+
+```tsx outline=true
+import { ScrollShadow } from "@styple/design-system";
+
+<ScrollShadow direction="horizontal" withScrollArea>
+  <Container css={{
+    maxWidth: "$4xl",
+    height: "$lg",
+    whiteSpace: "nowrap"
+  }}>
+    <Text>A long example line that overflows the container element, since white-space nowrap is applied. A native-like scrollbar is added through ScrollArea. It works both vertically and horizontally.</Text>
+  </Container>
+</ScrollShadow>
+```
+
+### API Reference
+
+#### ScrollShadow
+
+A custom styled component with props:
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>direction</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+        <Popover content={
+          <Code color="normal">"horizontal" | "vertical"</Code>
+        }>
+          <Button highlight size="circle" aria-label="Expanded prop type toggle" css={{
+            size: "24px",
+            p: 0,
+            ml: "$xs",
+            lineHeight: 0
+          }}><Info size={16} style={{ verticalAlign: "middle" }} /></Button>
+        </Popover>
+      </Td>
+      <Td><Code color="normal">"vertical"</Code></Td>
+      <Td><Text>Orientation of the shadows.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>withScrollArea</Code>
+      </Th>
+      <Td>
+        <Code color="normal">boolean</Code>
+      </Td>
+      <Td><Code color="normal">false</Code></Td>
+      <Td><Text>Whether to render with `ScrollArea` or native.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>
+
+<Container css={{ mt: "$lg" }} />
+
+If needed you can customize the shadow size and color by overriding the locally scoped tokens `$$shadowSize = $sizes$md` and `$$shadowColor = $colors$bg100A` via the `css` prop. Though this is not recommended.
+
+---
