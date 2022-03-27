@@ -33,6 +33,7 @@ export const docsRoutes = [
       { title: "Popover", slug: "docs/components/popover" },
       { title: "Radio", slug: "docs/components/radio" },
       { title: "ScrollArea", slug: "docs/components/scrollarea" },
+      { title: "ScrollShadow", slug: "docs/components/scrollshadow" },
       { title: "SearchField", slug: "docs/components/searchfield" },
       { title: "Section", slug: "docs/components/section" },
       { title: "Select", slug: "docs/components/select" },

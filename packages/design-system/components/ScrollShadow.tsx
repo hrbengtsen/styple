@@ -7,7 +7,7 @@ const StyledScrollShadow = styled("div", {
   position: "relative",
   height: "100%",
   $$shadowSize: "$sizes$md",
-  $$shadowColor: "rgba(22, 23, 24, 0.1)",
+  $$shadowColor: "$colors$bg100A",
 
   variants: {
     direction: {
