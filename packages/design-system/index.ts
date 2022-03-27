@@ -108,3 +108,5 @@ export { Navbar, Sidebar } from "./components/Navigation";
 export { ScrollArea } from "./components/ScrollArea";
 
 export { CollapsibleTrigger } from "@radix-ui/react-collapsible";
+
+export { ScrollShadow } from "./components/ScrollShadow";
