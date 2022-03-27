@@ -5,95 +5,111 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <table
-        class="c-cFlxTq c-cFlxTq-iaQqDl-css"
+      <div
+        class="c-hMqJpz c-hMqJpz-ebinYA-direction-horizontal c-hMqJpz-dMdkyz-cv c-hMqJpz-lbtSuu-cv"
       >
-        <thead
-          class="c-erRtkD"
+        <div
+          class="c-lesPJm c-lesPJm-idWksIc-css"
         >
-          <tr
-            class="c-PJLV"
+          <table
+            class="c-eyJUct c-eyJUct-iaQqDl-css"
           >
-            <th
-              class="c-jDDnmy c-jDDnmy-heqqZn-align-start"
+            <thead
+              class="c-gsnRPq"
             >
-              Prop
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          class="c-fGHEql"
-        >
-          <tr
-            class="c-PJLV"
-          >
-            <th
-              class="c-jDDnmy c-jDDnmy-heqqZn-align-start"
+              <tr
+                class="c-PJLV"
+              >
+                <th
+                  class="c-dLElCH c-dLElCH-heqqZn-align-start"
+                >
+                  Prop
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              class="c-fGHEql"
             >
-              defaultOpen
-            </th>
-          </tr>
-        </tbody>
-        <tfoot
-          class="c-PJLV"
-        >
-          <tr
-            class="c-PJLV"
-          >
-            <th
-              class="c-jDDnmy c-jDDnmy-heqqZn-align-start"
+              <tr
+                class="c-PJLV"
+              >
+                <th
+                  class="c-dLElCH c-dLElCH-heqqZn-align-start"
+                >
+                  defaultOpen
+                </th>
+              </tr>
+            </tbody>
+            <tfoot
+              class="c-PJLV"
             >
-              modal
-            </th>
-          </tr>
-        </tfoot>
-      </table>
+              <tr
+                class="c-PJLV"
+              >
+                <th
+                  class="c-dLElCH c-dLElCH-heqqZn-align-start"
+                >
+                  modal
+                </th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
     </div>
   </body>,
   "container": <div>
-    <table
-      class="c-cFlxTq c-cFlxTq-iaQqDl-css"
+    <div
+      class="c-hMqJpz c-hMqJpz-ebinYA-direction-horizontal c-hMqJpz-dMdkyz-cv c-hMqJpz-lbtSuu-cv"
     >
-      <thead
-        class="c-erRtkD"
+      <div
+        class="c-lesPJm c-lesPJm-idWksIc-css"
       >
-        <tr
-          class="c-PJLV"
+        <table
+          class="c-eyJUct c-eyJUct-iaQqDl-css"
         >
-          <th
-            class="c-jDDnmy c-jDDnmy-heqqZn-align-start"
+          <thead
+            class="c-gsnRPq"
           >
-            Prop
-          </th>
-        </tr>
-      </thead>
-      <tbody
-        class="c-fGHEql"
-      >
-        <tr
-          class="c-PJLV"
-        >
-          <th
-            class="c-jDDnmy c-jDDnmy-heqqZn-align-start"
+            <tr
+              class="c-PJLV"
+            >
+              <th
+                class="c-dLElCH c-dLElCH-heqqZn-align-start"
+              >
+                Prop
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="c-fGHEql"
           >
-            defaultOpen
-          </th>
-        </tr>
-      </tbody>
-      <tfoot
-        class="c-PJLV"
-      >
-        <tr
-          class="c-PJLV"
-        >
-          <th
-            class="c-jDDnmy c-jDDnmy-heqqZn-align-start"
+            <tr
+              class="c-PJLV"
+            >
+              <th
+                class="c-dLElCH c-dLElCH-heqqZn-align-start"
+              >
+                defaultOpen
+              </th>
+            </tr>
+          </tbody>
+          <tfoot
+            class="c-PJLV"
           >
-            modal
-          </th>
-        </tr>
-      </tfoot>
-    </table>
+            <tr
+              class="c-PJLV"
+            >
+              <th
+                class="c-dLElCH c-dLElCH-heqqZn-align-start"
+              >
+                modal
+              </th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
