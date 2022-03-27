@@ -196,5 +196,3 @@ export const Sidebar = React.forwardRef<
   }
 );
 Sidebar.displayName = "Sidebar";
-
-// There is a pointer-events none bug on the body with my custom wrappers of sheet, etc.
