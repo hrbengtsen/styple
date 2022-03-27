@@ -1,10 +1,6 @@
+import React from "react";
 import { styled } from "../stitches.config";
-
-export const Table = styled("table", {
-  width: "100%",
-  tableLayout: "fixed",
-  borderSpacing: 0,
-});
+import { ScrollShadow } from "./ScrollShadow";
 
 export const Tbody = styled("tbody", {
   width: "100%",
@@ -19,7 +15,7 @@ export const Th = styled("th", {
   textAlign: "start",
   fontSize: "$sm",
   color: "$text300",
-  py: "$sm",
+  p: "$sm",
 
   borderBottom: `1px solid $button100A`,
 
@@ -42,7 +38,7 @@ export const Th = styled("th", {
 });
 
 export const Td = styled("td", {
-  py: "$sm",
+  p: "$sm",
 
   borderBottom: "1px solid $button100A",
 
@@ -78,3 +74,25 @@ export const Thead = styled("thead", {
     fontWeight: "$semibold",
   },
 });
+
+const StyledTable = styled("table", {
+  "@bp1": {
+    width: "100%",
+  },
+  tableLayout: "fixed",
+  borderSpacing: 0,
+});
+
+type TableProps = React.ComponentProps<typeof StyledTable>;
+
+export const Table = React.forwardRef<
+  React.ElementRef<typeof StyledTable>,
+  TableProps
+>(({ children, ...props }, forwardedRef) => (
+  <ScrollShadow direction="horizontal">
+    <StyledTable {...props} ref={forwardedRef}>
+      {children}
+    </StyledTable>
+  </ScrollShadow>
+));
+Table.displayName = "Table";

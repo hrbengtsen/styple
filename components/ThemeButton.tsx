@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "../packages/design-system/components/Button";
 import { useTheme } from "next-themes";
 import { Sun, Moon, Coffee, MountainSnow } from "lucide-react";
@@ -8,6 +8,13 @@ import { Tooltip } from "../packages/design-system";
 export function ThemeButton() {
   const { resolvedTheme, setTheme } = useTheme();
   const mounted = useMounted();
+
+  // Custom colorScheme solution instead of enableColorScheme in next-themes due to stitches deep-theme needing to set dark color scheme
+  useEffect(() => {
+    const colorScheme =
+      resolvedTheme === "deep" || resolvedTheme === "dark" ? "dark" : "light";
+    document.documentElement.style.colorScheme = colorScheme;
+  }, [resolvedTheme]);
 
   function changeTheme() {
     switch (resolvedTheme) {

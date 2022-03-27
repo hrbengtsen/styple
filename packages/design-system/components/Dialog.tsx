@@ -62,7 +62,7 @@ export const DialogContent = React.forwardRef<
     <StyledContent {...props} ref={forwardedRef}>
       {children}
       <StyledCloseButton asChild>
-        <Button highlight size="circle">
+        <Button highlight size="circle" aria-label="Close button">
           <X />
         </Button>
       </StyledCloseButton>

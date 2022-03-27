@@ -18,9 +18,9 @@ description: Enables the user to perform an action.
     <Button pill>Pill button</Button>
     <Button outline>Outline button</Button>
     <Button ghost>Ghost button</Button>
-    <Button ghost><Plus style={{ verticalAlign: "middle" }} /></Button>
+    <Button ghost aria-label="Button with plus icon"><Plus style={{ verticalAlign: "middle" }} /></Button>
     <Button highlight>Highlight button</Button>
-    <Button highlight size="circle"><Plus style={{ verticalAlign: "middle" }} /></Button>
+    <Button highlight size="circle" aria-label="Button with plus icon"><Plus style={{ verticalAlign: "middle" }} /></Button>
     <Button size="sm">Small button</Button>
     <Button size="md">Medium button</Button>
     <Button size="lg">Large button</Button>
@@ -63,13 +63,9 @@ import { Button } from "@styple/design-system";
   <Button pill>Pill button</Button>
   <Button outline>Outline button</Button>
   <Button ghost>Ghost button</Button>
-  <Button ghost>
-    <Plus style={{ verticalAlign: "middle" }} />
-  </Button>
+  <Button ghost aria-label="Button with plus icon"><Plus style={{ verticalAlign: "middle" }} /></Button>
   <Button highlight>Highlight button</Button>
-  <Button highlight size="circle">
-    <Plus style={{ verticalAlign: "middle" }} />
-  </Button>
+  <Button highlight size="circle" aria-label="Button with plus icon"><Plus style={{ verticalAlign: "middle" }} /></Button>
   <Button size="sm">Small button</Button>
   <Button size="md">Medium button</Button>
   <Button size="lg">Large button</Button>
@@ -122,7 +118,7 @@ A styled component with props:
         <Popover content={
           <Code color="normal">"sm" | "md" | "lg" | "circle"</Code>
         }>
-          <Button highlight size="circle" css={{
+          <Button highlight size="circle" aria-label="Expanded prop type toggle" css={{
             size: "24px",
             p: 0,
             ml: "$xs",
@@ -212,7 +208,7 @@ A styled component with props:
         <Popover content={
           <Code color="normal">"primary" | "accent" | "danger" | "success" | "normal"</Code>
         }>
-          <Button highlight size="circle" css={{
+          <Button highlight size="circle" aria-label="Expanded prop type toggle" css={{
             size: "24px",
             p: 0,
             ml: "$xs",

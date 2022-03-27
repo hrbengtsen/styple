@@ -37,7 +37,7 @@ export const Header = () => {
         bg: "$bg200A",
         backdropFilter: "blur(16px)",
         position: "fixed",
-        zIndex: "$1",
+        zIndex: "$3",
         ...bottomShadowOnDocs,
       }}
     >

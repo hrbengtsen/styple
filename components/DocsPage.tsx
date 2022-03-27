@@ -16,6 +16,7 @@ import {
 import { Sidebar as SidebarIcon, ArrowLeft, ArrowRight } from "lucide-react";
 import { Footer } from "./Footer";
 import { NavLinkItem } from "./NavLinkItem";
+import { ScrollShadow } from "../packages/design-system/components/ScrollShadow";
 
 export const DocsPage = ({
   children,
@@ -40,7 +41,7 @@ export const DocsPage = ({
     >
       <Sidebar
         css={{
-          zIndex: 1,
+          zIndex: "$2",
           position: "fixed",
           left: 0,
           top: "$4xl",
@@ -59,7 +60,7 @@ export const DocsPage = ({
         side="left"
         bp="@bp3"
         content={
-          <ScrollArea>
+          <ScrollShadow withScrollArea>
             <Container css={{ px: "$lg" }}>
               {docsRoutes.map((routeSection: RouteProps) => (
                 <Container key={routeSection.label} css={{ py: "$lg" }}>
@@ -103,7 +104,7 @@ export const DocsPage = ({
                 </Container>
               ))}
             </Container>
-          </ScrollArea>
+          </ScrollShadow>
         }
         mobileContent={
           <>
@@ -171,6 +172,7 @@ export const DocsPage = ({
         }}
       >
         {children}
+
         {(previous || next) && (
           <Flex
             css={{
