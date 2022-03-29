@@ -210,11 +210,9 @@ const StyledAvatarGroup = styled("div", {
   flexDirection: "row-reverse",
   alignItems: "center",
   justifyContent: "flex-end",
-  [`& ${StyledAvatar}:nth-child(n+2)`]: {
-    marginRight: "-$md",
-  },
   [`& ${StyledAvatar}`]: {
     boxShadow: "0 0 0 2px $colors$text200",
+    mr: "-$md",
   },
 });
 
