@@ -33,7 +33,6 @@ export function DemoNavbars() {
       css={{
         width: "100%",
         gap: "$md",
-        px: "$md",
         flexDirection: "column",
       }}
     >

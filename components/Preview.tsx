@@ -11,7 +11,7 @@ export const Preview = ({ css, ...props }: PreviewProps) => (
       display: "flex",
       alignItems: "flex-start",
       justifyContent: "center",
-      py: "$lg",
+      p: "$lg",
       borderTopLeftRadius: "$xl",
       borderTopRightRadius: "$xl",
       boxShadow: "inset 0 0 0 1px $colors$button100",
