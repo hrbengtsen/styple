@@ -11,7 +11,8 @@ import {
   Flex,
   Text,
   Sidebar,
-  ScrollArea,
+  Badge,
+  Button,
 } from "../packages/design-system";
 import { Sidebar as SidebarIcon, ArrowLeft, ArrowRight } from "lucide-react";
 import { Footer } from "./Footer";
@@ -94,21 +95,36 @@ export const DocsPage = ({
                   >
                     {routeSection.pages.map((page: PageProps) => (
                       <Container as="li" key={page.slug}>
-                        <NavLinkItem
-                          highlight
-                          size="sm"
-                          href={`/${page.slug}`}
-                          css={{
-                            fontSize: "$xs",
-                            "&.active": {
-                              bg: "$bg300",
-                              fontWeight: "$semibold",
-                            },
-                            my: "$xs",
-                          }}
-                        >
-                          {page.title}
-                        </NavLinkItem>
+                        {page.draft ? (
+                          <Button
+                            highlight
+                            size="sm"
+                            disabled
+                            css={{
+                              fontSize: "$xs",
+                              my: "$xs",
+                            }}
+                          >
+                            {page.title}{" "}
+                            <Badge variant="primary">Coming...</Badge>
+                          </Button>
+                        ) : (
+                          <NavLinkItem
+                            highlight
+                            size="sm"
+                            href={`/${page.slug}`}
+                            css={{
+                              fontSize: "$xs",
+                              "&.active": {
+                                bg: "$bg300",
+                                fontWeight: "$semibold",
+                              },
+                              my: "$xs",
+                            }}
+                          >
+                            {page.title}
+                          </NavLinkItem>
+                        )}
                       </Container>
                     ))}
                   </Container>
@@ -136,21 +152,36 @@ export const DocsPage = ({
                 >
                   {routeSection.pages.map((page: PageProps) => (
                     <Container as="li" key={page.slug}>
-                      <NavLinkItem
-                        highlight
-                        size="sm"
-                        href={`/${page.slug}`}
-                        css={{
-                          fontSize: "$xs",
-                          "&.active": {
-                            bg: "$bg300",
-                            fontWeight: "$semibold",
-                          },
-                          my: "$xs",
-                        }}
-                      >
-                        {page.title}
-                      </NavLinkItem>
+                      {page.draft ? (
+                        <Button
+                          highlight
+                          size="sm"
+                          disabled
+                          css={{
+                            fontSize: "$xs",
+                            my: "$xs",
+                          }}
+                        >
+                          {page.title}{" "}
+                          <Badge variant="primary">Coming soon</Badge>
+                        </Button>
+                      ) : (
+                        <NavLinkItem
+                          highlight
+                          size="sm"
+                          href={`/${page.slug}`}
+                          css={{
+                            fontSize: "$xs",
+                            "&.active": {
+                              bg: "$bg300",
+                              fontWeight: "$semibold",
+                            },
+                            my: "$xs",
+                          }}
+                        >
+                          {page.title}
+                        </NavLinkItem>
+                      )}
                     </Container>
                   ))}
                 </Container>
