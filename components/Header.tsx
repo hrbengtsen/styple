@@ -12,6 +12,7 @@ import { ArrowLeft, ArrowRight, Github } from "lucide-react";
 import { useRouter } from "next/router";
 import { RemoveScroll } from "react-remove-scroll";
 import { keyframes } from "../packages/design-system";
+import { useEffect, useState } from "react";
 
 const openNav = keyframes({
   from: { height: 0, opacity: 0 },
@@ -28,6 +29,15 @@ export const Header = () => {
   const bottomShadowOnDocs = router.pathname.includes("/docs")
     ? { boxShadow: "inset 0 -1px 2px -1px $colors$button100" }
     : {};
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const handleRouteChange = () => setIsOpen(false);
+    router.events.on("routeChangeStart", handleRouteChange);
+
+    return () => router.events.off("routeChangeStart", handleRouteChange);
+  }, []);
 
   return (
     <Container
@@ -54,6 +64,8 @@ export const Header = () => {
             height: "$2xl",
             mx: "auto",
           }}
+          open={isOpen}
+          onOpenChange={(open) => setIsOpen(open)}
           brand={
             <Flex
               css={{

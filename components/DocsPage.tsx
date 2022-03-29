@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   allDocsRoutes,
   docsRoutes,
@@ -33,6 +33,15 @@ export const DocsPage = ({
   const previous = allDocsRoutes[currentPageIndex - 1];
   const next = allDocsRoutes[currentPageIndex + 1];
 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  useEffect(() => {
+    const handleRouteChange = () => setIsSidebarOpen(false);
+    router.events.on("routeChangeStart", handleRouteChange);
+
+    return () => router.events.off("routeChangeStart", handleRouteChange);
+  }, []);
+
   return (
     <Container
       css={{
@@ -59,6 +68,8 @@ export const DocsPage = ({
         }}
         side="left"
         bp="@bp3"
+        open={isSidebarOpen}
+        onOpenChange={(open) => setIsSidebarOpen(open)}
         content={
           <ScrollShadow withScrollArea>
             <Container css={{ px: "$lg" }}>
