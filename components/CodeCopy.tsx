@@ -1,3 +1,4 @@
+import { enterAndStagger } from "../lib/animations";
 import { Flex, Button, Code, Tooltip, Text } from "../packages/design-system";
 import { useCopy } from "../packages/hooks/src/useCopy";
 
@@ -13,6 +14,7 @@ export function CodeCopy() {
 
   return (
     <Flex
+      className={enterAndStagger()}
       css={{
         mt: "$4xl",
         justifyContent: "center",
@@ -21,6 +23,7 @@ export function CodeCopy() {
         "@bp1": {
           flexDirection: "row",
         },
+        $$stagger: 2,
       }}
     >
       <Tooltip content={<>Copy to clipboard</>}>

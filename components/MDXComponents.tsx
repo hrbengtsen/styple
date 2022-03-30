@@ -18,6 +18,7 @@ import { Link } from "./Link";
 import { NavLinkItem } from "./NavLinkItem";
 import { DemoNavbars } from "./DemoNavbars";
 import { Searchbar } from "./Searchbar";
+import { Sparkles } from "./Sparkles";
 
 export const components = {
   ...SDS,
@@ -33,6 +34,7 @@ export const components = {
   NavLinkItem,
   DemoNavbars,
   Searchbar,
+  Sparkles,
   h1: ({ children, ...props }: React.ComponentProps<typeof SDS.Heading>) => (
     <SDS.Heading size="2xl" css={{ mb: "$md", mt: "$3xl" }} {...props}>
       {children}

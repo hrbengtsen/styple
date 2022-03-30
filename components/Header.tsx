@@ -11,17 +11,8 @@ import { ThemeButton } from "./ThemeButton";
 import { ArrowLeft, ArrowRight, Github } from "lucide-react";
 import { useRouter } from "next/router";
 import { RemoveScroll } from "react-remove-scroll";
-import { keyframes } from "../packages/design-system";
+import { openNav, closeNav } from "../lib/animations";
 import { useEffect, useState } from "react";
-
-const openNav = keyframes({
-  from: { height: 0, opacity: 0 },
-  to: { height: "var(--radix-collapsible-content-height)", opacity: 1 },
-});
-const closeNav = keyframes({
-  from: { height: "var(--radix-collapsible-content-height)", opacity: 1 },
-  to: { height: 0, opacity: 0 },
-});
 
 export const Header = () => {
   const router = useRouter();

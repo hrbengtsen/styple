@@ -6,6 +6,7 @@ import { components } from "../../../components/MDXComponents";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { QuickNav } from "../../../components/QuickNav";
 import { MetaData } from "../../../components/MetaData";
+import { enterAndStagger } from "../../../lib/animations";
 
 type DocsType = {
   frontmatter: Frontmatter;
@@ -25,22 +26,24 @@ export default function DocsComponents({ frontmatter, code }: DocsType) {
           mx: "auto",
         }}
       >
-        <Section size="md">
-          <Heading size="3xl" css={{ fontWeight: "$black" }}>
-            {frontmatter.title}
-          </Heading>
-          <Heading
-            as="h2"
-            size="md"
-            css={{
-              fontWeight: "$semibold",
-              color: "$text200",
-            }}
-          >
-            {frontmatter.description}
-          </Heading>
-        </Section>
-        <Component components={components as any} />
+        <Container className={enterAndStagger()}>
+          <Section size="md">
+            <Heading size="3xl" css={{ fontWeight: "$black" }}>
+              {frontmatter.title}
+            </Heading>
+            <Heading
+              as="h2"
+              size="md"
+              css={{
+                fontWeight: "$semibold",
+                color: "$text200",
+              }}
+            >
+              {frontmatter.description}
+            </Heading>
+          </Section>
+          <Component components={components as any} />
+        </Container>
         <QuickNav
           // Add quicknav here instead of in Layout, to make it re-render with new headings when changing doc through this key
           key={frontmatter.slug}
