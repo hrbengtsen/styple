@@ -6,45 +6,47 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="c-bfwUwC c-bfwUwC-liXMRt-color-text c-bfwUwC-icKbjjX-css"
+        class="c-AsWAM c-AsWAM-wEsqY-size-sm c-AsWAM-icKbjjX-css"
       >
-        <svg
-          fill="none"
-          height="24"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
+        <div
+          class="c-loSnGF c-loSnGF-jsYDVA-color-text"
         >
-          <path
-            d="M22,12c0,5.5-4.5,10-10,10S2,17.5,2,12S6.5,2,12,2"
-          />
-        </svg>
+          <div />
+          <div />
+          <div />
+          <div />
+          <div />
+          <div />
+          <div />
+          <div />
+          <div />
+          <div />
+          <div />
+          <div />
+        </div>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="c-bfwUwC c-bfwUwC-liXMRt-color-text c-bfwUwC-icKbjjX-css"
+      class="c-AsWAM c-AsWAM-wEsqY-size-sm c-AsWAM-icKbjjX-css"
     >
-      <svg
-        fill="none"
-        height="24"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="c-loSnGF c-loSnGF-jsYDVA-color-text"
       >
-        <path
-          d="M22,12c0,5.5-4.5,10-10,10S2,17.5,2,12S6.5,2,12,2"
-        />
-      </svg>
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+      </div>
     </div>
   </div>,
   "debug": [Function],

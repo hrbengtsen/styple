@@ -1,18 +1,34 @@
 ---
 title: Spinner
-description: Display to signify loading of some content.
+description: Display to signify loading of some background task.
 ---
 
 ### Example
 
 <Preview>
-  <Spinner />
+  <Flex
+    css={{
+      gap: "$md",
+    }}
+  >
+    <Spinner />
+    <Spinner color="accent" />
+    <Spinner size="lg" />
+  </Flex>
 </Preview>
 
 ```tsx outline=true
 import { Spinner } from "@styple/design-system";
 
-<Spinner />
+<Flex
+  css={{
+    gap: "$md",
+  }}
+>
+  <Spinner />
+  <Spinner color="accent" />
+  <Spinner size="lg" />
+</Flex>
 ```
 
 ### API Reference
@@ -56,6 +72,16 @@ A styled component. With Props:
       </Td>
       <Td><Code color="normal">"text"</Code></Td>
       <Td><Text>Color variant.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>size</Code>
+      </Th>
+      <Td>
+        <Code color="normal">"sm" | "lg"</Code>
+      </Td>
+      <Td><Code color="normal">"sm"</Code></Td>
+      <Td><Text>Size variant.</Text></Td>
     </Tr>
     <Tr>
       <Th>

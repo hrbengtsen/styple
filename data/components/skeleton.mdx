@@ -44,7 +44,11 @@ description: Placeholder preview of content.
     <Skeleton variant="buttonLg" />
     <Skeleton variant="badgeSm" />
     <Skeleton variant="badgeLg" />
-    <Skeleton variant="card" />
+    <Skeleton css={{
+      width: "320px",
+      height: "192px",
+      borderRadius: "$xl"
+    }} />
   </Flex>
 </Preview>
 
@@ -89,7 +93,13 @@ import { Skeleton } from "@styple/design-system";
   <Skeleton variant="buttonLg" />
   <Skeleton variant="badgeSm" />
   <Skeleton variant="badgeLg" />
-  <Skeleton variant="card" />
+
+  // Override with css prop for a variable size element 
+  <Skeleton css={{
+    width: "320px",
+    height: "192px",
+    borderRadius: "$xl"
+  }} />
 </Flex>
 ```
 
@@ -123,7 +133,7 @@ A styled component. With props:
             <Code color="normal">"avatarLg" | "avatarXl" |</Code>
             <Code color="normal">"text" | "heading" | "title" |</Code>
             <Code color="normal">"buttonSm" | "buttonMd" | "buttonLg" |</Code>
-            <Code color="normal">"badgeSm" | "badgeLg" | "card"</Code>
+            <Code color="normal">"badgeSm" | "badgeLg"</Code>
           </Flex>
         }>
           <Button highlight size="circle" aria-label="Expanded prop type toggle" css={{
