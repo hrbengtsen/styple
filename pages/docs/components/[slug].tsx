@@ -1,7 +1,7 @@
 import { Container, Heading, Section } from "../../../packages/design-system";
 import { Frontmatter, getAllFrontmatter, getMdxBySlug } from "../../../lib/mdx";
 import { getMDXComponent } from "mdx-bundler/client";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { components } from "../../../components/MDXComponents";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { QuickNav } from "../../../components/QuickNav";
@@ -16,6 +16,14 @@ type DocsType = {
 export default function DocsComponents({ frontmatter, code }: DocsType) {
   const Component = useMemo(() => getMDXComponent(code), [code]);
 
+  // Remove enterAndStagger animation as soon as its done, because `transform` messes with `position: fixed` components (Dialog, Navbars, etc.) - could also Portal the examples, though would need separate Portal component for `Navbar`
+  const [removeEnterAnim, setRemoveEnterAnim] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setRemoveEnterAnim(true);
+    }, 500);
+  }, []);
+
   return (
     <>
       <MetaData title={`${frontmatter.title} — styple`} />
@@ -26,7 +34,7 @@ export default function DocsComponents({ frontmatter, code }: DocsType) {
           mx: "auto",
         }}
       >
-        <Container className={enterAndStagger()}>
+        <Container className={removeEnterAnim ? undefined : enterAndStagger()}>
           <Section size="md">
             <Heading size="3xl" css={{ fontWeight: "$black" }}>
               {frontmatter.title}

@@ -96,7 +96,7 @@ export const components = {
         py: "$md",
         mb: "$lg",
         bg: "$accent100A",
-        borderLeft: "2px solid $button100",
+        borderLeft: "$borderWidths$lg solid $accent200A",
         borderTopRightRadius: "$xl",
         borderBottomRightRadius: "$xl",
         "& p": {
