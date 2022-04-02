@@ -5,15 +5,23 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <div
+        class="c-lesPJm c-lesPJm-icoJoGn-css"
+      >
+        <span
+          class="c-bVgaJL c-bVgaJL-foSqJv-size-sm"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="c-lesPJm c-lesPJm-icoJoGn-css"
+    >
       <span
         class="c-bVgaJL c-bVgaJL-foSqJv-size-sm"
       />
     </div>
-  </body>,
-  "container": <div>
-    <span
-      class="c-bVgaJL c-bVgaJL-foSqJv-size-sm"
-    />
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -75,27 +83,43 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="c-jkGbbw"
+        class="c-kjmbBa"
       >
-        <span
-          class="c-bVgaJL c-bVgaJL-foSqJv-size-sm"
-        />
-        <span
-          class="c-bVgaJL c-bVgaJL-foSqJv-size-sm"
-        />
+        <div
+          class="c-lesPJm c-lesPJm-icoJoGn-css"
+        >
+          <span
+            class="c-bVgaJL c-bVgaJL-foSqJv-size-sm"
+          />
+        </div>
+        <div
+          class="c-lesPJm c-lesPJm-icoJoGn-css"
+        >
+          <span
+            class="c-bVgaJL c-bVgaJL-foSqJv-size-sm"
+          />
+        </div>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="c-jkGbbw"
+      class="c-kjmbBa"
     >
-      <span
-        class="c-bVgaJL c-bVgaJL-foSqJv-size-sm"
-      />
-      <span
-        class="c-bVgaJL c-bVgaJL-foSqJv-size-sm"
-      />
+      <div
+        class="c-lesPJm c-lesPJm-icoJoGn-css"
+      >
+        <span
+          class="c-bVgaJL c-bVgaJL-foSqJv-size-sm"
+        />
+      </div>
+      <div
+        class="c-lesPJm c-lesPJm-icoJoGn-css"
+      >
+        <span
+          class="c-bVgaJL c-bVgaJL-foSqJv-size-sm"
+        />
+      </div>
     </div>
   </div>,
   "debug": [Function],

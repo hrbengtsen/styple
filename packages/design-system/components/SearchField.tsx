@@ -23,7 +23,8 @@ export const SearchField = React.forwardRef<
           height: "100%",
           display: "flex",
           alignItems: "center",
-          px: "$sm",
+          pl: "$xs",
+          pr: "$sm",
         }}
       >
         <Search size="20" />
@@ -47,11 +48,12 @@ export const SearchField = React.forwardRef<
             right: "0",
             height: "100%",
             px: "$xs",
-            mx: "$xs",
+            ml: "$xs",
             display: "flex",
             alignItems: "center",
           }}
           onClick={() => setQuery("")}
+          aria-label="Remove search text"
         >
           <X size="20" />
         </Button>

@@ -5,30 +5,69 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
-        class="c-jITSck c-jITSck-gNxcie-size-sm"
+      <button
+        aria-autocomplete="none"
+        aria-controls="radix-0"
+        aria-expanded="false"
+        class="c-dtkWYc c-dtkWYc-ibYHtm-size-md"
+        role="combobox"
+        type="button"
       >
-        <select
-          class="c-cvjZqb"
+        <span
+          style="pointer-events: none;"
         >
-          <option>
-            Select 1
-          </option>
-          <option>
-            Select 2
-          </option>
-          <option>
-            Select 3
-          </option>
-        </select>
+          Select 1
+        </span>
+        <span
+          aria-hidden="true"
+        >
+          <svg
+            class="lucide lucide-chevron-down"
+            fill="none"
+            height="20"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            style="vertical-align: middle;"
+            viewBox="0 0 24 24"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polyline
+              points="6 9 12 15 18 9"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </body>,
+  "container": <div>
+    <button
+      aria-autocomplete="none"
+      aria-controls="radix-0"
+      aria-expanded="false"
+      class="c-dtkWYc c-dtkWYc-ibYHtm-size-md"
+      role="combobox"
+      type="button"
+    >
+      <span
+        style="pointer-events: none;"
+      >
+        Select 1
+      </span>
+      <span
+        aria-hidden="true"
+      >
         <svg
-          class="c-liHeTg c-liHeTg-eEbTYm-sizeOffset-sm"
+          class="lucide lucide-chevron-down"
           fill="none"
           height="20"
           stroke="currentColor"
           stroke-linecap="round"
           stroke-linejoin="round"
           stroke-width="2"
+          style="vertical-align: middle;"
           viewBox="0 0 24 24"
           width="20"
           xmlns="http://www.w3.org/2000/svg"
@@ -37,43 +76,8 @@ Object {
             points="6 9 12 15 18 9"
           />
         </svg>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="c-jITSck c-jITSck-gNxcie-size-sm"
-    >
-      <select
-        class="c-cvjZqb"
-      >
-        <option>
-          Select 1
-        </option>
-        <option>
-          Select 2
-        </option>
-        <option>
-          Select 3
-        </option>
-      </select>
-      <svg
-        class="c-liHeTg c-liHeTg-eEbTYm-sizeOffset-sm"
-        fill="none"
-        height="20"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-        width="20"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <polyline
-          points="6 9 12 15 18 9"
-        />
-      </svg>
-    </div>
+      </span>
+    </button>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

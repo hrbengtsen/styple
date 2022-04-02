@@ -10,7 +10,6 @@ description: Specific type of navigation bar using a Sheet.
     css={{
       width: "100%",
       gap: "$md",
-      px: "$md",
       flexDirection: "column",
     }}
   >
@@ -51,7 +50,6 @@ import { Sidebar } from "@styple/design-system";
   css={{
     width: "100%",
     gap: "$md",
-    px: "$md",
     flexDirection: "column",
   }}
 >
@@ -127,7 +125,7 @@ A custom styled component, using `Sheet` internally. With props:
         <Popover content={
           <Code color="normal">"bottom" | "left" | "right" | "top"</Code>
         }>
-          <Button highlight size="circle" css={{
+          <Button highlight size="circle" aria-label="Expanded prop type toggle" css={{
             size: "24px",
             p: 0,
             ml: "$xs",
@@ -147,7 +145,7 @@ A custom styled component, using `Sheet` internally. With props:
         <Popover content={
           <Code color="normal">"@bp1" | "@bp2" | "@bp3" | "@bp4"</Code>
         }>
-          <Button highlight size="circle" css={{
+          <Button highlight size="circle" aria-label="Expanded prop type toggle" css={{
             size: "24px",
             p: 0,
             ml: "$xs",
@@ -167,6 +165,26 @@ A custom styled component, using `Sheet` internally. With props:
       </Td>
       <Td><Code color="normal">"Menu"</Code></Td>
       <Td><Text>Icon of the `SheetTrigger`.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>open?</Code>
+      </Th>
+      <Td>
+        <Code color="normal">boolean</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Controlled open. Must use `onOpenChange` with it.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>onOpenChange?</Code>
+      </Th>
+      <Td>
+        <Code color="normal">(boolean) => void</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Function called when open changes.</Text></Td>
     </Tr>
   </Tbody>
 </Table>

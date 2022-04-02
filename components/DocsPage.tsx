@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   allDocsRoutes,
   docsRoutes,
@@ -11,11 +11,13 @@ import {
   Flex,
   Text,
   Sidebar,
-  ScrollArea,
+  Badge,
+  Button,
 } from "../packages/design-system";
 import { Sidebar as SidebarIcon, ArrowLeft, ArrowRight } from "lucide-react";
 import { Footer } from "./Footer";
 import { NavLinkItem } from "./NavLinkItem";
+import { ScrollShadow } from "../packages/design-system/components/ScrollShadow";
 
 export const DocsPage = ({
   children,
@@ -32,6 +34,15 @@ export const DocsPage = ({
   const previous = allDocsRoutes[currentPageIndex - 1];
   const next = allDocsRoutes[currentPageIndex + 1];
 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  useEffect(() => {
+    const handleRouteChange = () => setIsSidebarOpen(false);
+    router.events.on("routeChangeStart", handleRouteChange);
+
+    return () => router.events.off("routeChangeStart", handleRouteChange);
+  }, []);
+
   return (
     <Container
       css={{
@@ -40,7 +51,7 @@ export const DocsPage = ({
     >
       <Sidebar
         css={{
-          zIndex: 1,
+          zIndex: "$2",
           position: "fixed",
           left: 0,
           top: "$4xl",
@@ -58,8 +69,10 @@ export const DocsPage = ({
         }}
         side="left"
         bp="@bp3"
+        open={isSidebarOpen}
+        onOpenChange={(open) => setIsSidebarOpen(open)}
         content={
-          <ScrollArea>
+          <ScrollShadow withScrollArea>
             <Container css={{ px: "$lg" }}>
               {docsRoutes.map((routeSection: RouteProps) => (
                 <Container key={routeSection.label} css={{ py: "$lg" }}>
@@ -82,28 +95,43 @@ export const DocsPage = ({
                   >
                     {routeSection.pages.map((page: PageProps) => (
                       <Container as="li" key={page.slug}>
-                        <NavLinkItem
-                          highlight
-                          size="sm"
-                          href={`/${page.slug}`}
-                          css={{
-                            fontSize: "$xs",
-                            "&.active": {
-                              bg: "$bg300",
-                              fontWeight: "$semibold",
-                            },
-                            my: "$xs",
-                          }}
-                        >
-                          {page.title}
-                        </NavLinkItem>
+                        {page.draft ? (
+                          <Button
+                            highlight
+                            size="sm"
+                            disabled
+                            css={{
+                              fontSize: "$xs",
+                              my: "$xs",
+                            }}
+                          >
+                            {page.title}{" "}
+                            <Badge variant="primary">Coming...</Badge>
+                          </Button>
+                        ) : (
+                          <NavLinkItem
+                            highlight
+                            size="sm"
+                            href={`/${page.slug}`}
+                            css={{
+                              fontSize: "$xs",
+                              "&.active": {
+                                bg: "$bg300",
+                                fontWeight: "$semibold",
+                              },
+                              my: "$xs",
+                            }}
+                          >
+                            {page.title}
+                          </NavLinkItem>
+                        )}
                       </Container>
                     ))}
                   </Container>
                 </Container>
               ))}
             </Container>
-          </ScrollArea>
+          </ScrollShadow>
         }
         mobileContent={
           <>
@@ -124,21 +152,36 @@ export const DocsPage = ({
                 >
                   {routeSection.pages.map((page: PageProps) => (
                     <Container as="li" key={page.slug}>
-                      <NavLinkItem
-                        highlight
-                        size="sm"
-                        href={`/${page.slug}`}
-                        css={{
-                          fontSize: "$xs",
-                          "&.active": {
-                            bg: "$bg300",
-                            fontWeight: "$semibold",
-                          },
-                          my: "$xs",
-                        }}
-                      >
-                        {page.title}
-                      </NavLinkItem>
+                      {page.draft ? (
+                        <Button
+                          highlight
+                          size="sm"
+                          disabled
+                          css={{
+                            fontSize: "$xs",
+                            my: "$xs",
+                          }}
+                        >
+                          {page.title}{" "}
+                          <Badge variant="primary">Coming soon</Badge>
+                        </Button>
+                      ) : (
+                        <NavLinkItem
+                          highlight
+                          size="sm"
+                          href={`/${page.slug}`}
+                          css={{
+                            fontSize: "$xs",
+                            "&.active": {
+                              bg: "$bg300",
+                              fontWeight: "$semibold",
+                            },
+                            my: "$xs",
+                          }}
+                        >
+                          {page.title}
+                        </NavLinkItem>
+                      )}
                     </Container>
                   ))}
                 </Container>
@@ -171,6 +214,7 @@ export const DocsPage = ({
         }}
       >
         {children}
+
         {(previous || next) && (
           <Flex
             css={{

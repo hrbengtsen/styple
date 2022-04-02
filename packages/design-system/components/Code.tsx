@@ -4,8 +4,8 @@ export const Code = styled("code", {
   fontFamily: "$mono",
   fontSize: "max($xs, 85%)",
   whiteSpace: "nowrap",
-  p: "2px 3px",
-  borderRadius: "$xs",
+  p: "$xs",
+  borderRadius: "$lg",
 
   variants: {
     color: {

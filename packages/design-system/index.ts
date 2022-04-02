@@ -38,7 +38,13 @@ export { Radio, RadioGroup } from "./components/Radio";
 export { Slider } from "./components/Slider";
 export { Switch } from "./components/Switch";
 export { Toggle } from "./components/Toggle";
-export { Select } from "./components/Select";
+export {
+  Select,
+  SelectItem,
+  SelectGroup,
+  SelectLabel,
+  SelectSeparator,
+} from "./components/Select";
 
 export {
   Dialog,
@@ -102,3 +108,5 @@ export { Navbar, Sidebar } from "./components/Navigation";
 export { ScrollArea } from "./components/ScrollArea";
 
 export { CollapsibleTrigger } from "@radix-ui/react-collapsible";
+
+export { ScrollShadow } from "./components/ScrollShadow";

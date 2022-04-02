@@ -72,11 +72,6 @@ export const Skeleton = styled("div", {
         width: "$2xl",
         borderRadius: "$pill",
       },
-      card: {
-        height: "192px",
-        width: "320px",
-        borderRadius: "$xl",
-      },
     },
   },
   defaultVariants: {

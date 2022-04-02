@@ -5,7 +5,7 @@ import { useState, useEffect, MutableRefObject } from "react";
  * @param ref Ref of element to be observed
  * @returns Boolean of whether element is on screen
  */
-export const useOnScreen = (ref: MutableRefObject<Element>) => {
+export const useOnScreen = (ref: MutableRefObject<Element | null>) => {
   const [isIntersecting, setIntersecting] = useState<boolean>(false);
 
   useEffect(() => {

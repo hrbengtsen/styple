@@ -11,16 +11,8 @@ import { ThemeButton } from "./ThemeButton";
 import { ArrowLeft, ArrowRight, Github } from "lucide-react";
 import { useRouter } from "next/router";
 import { RemoveScroll } from "react-remove-scroll";
-import { keyframes } from "../packages/design-system";
-
-const openNav = keyframes({
-  from: { height: 0, opacity: 0 },
-  to: { height: "var(--radix-collapsible-content-height)", opacity: 1 },
-});
-const closeNav = keyframes({
-  from: { height: "var(--radix-collapsible-content-height)", opacity: 1 },
-  to: { height: 0, opacity: 0 },
-});
+import { openNav, closeNav } from "../lib/animations";
+import { useEffect, useState } from "react";
 
 export const Header = () => {
   const router = useRouter();
@@ -28,6 +20,15 @@ export const Header = () => {
   const bottomShadowOnDocs = router.pathname.includes("/docs")
     ? { boxShadow: "inset 0 -1px 2px -1px $colors$button100" }
     : {};
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const handleRouteChange = () => setIsOpen(false);
+    router.events.on("routeChangeStart", handleRouteChange);
+
+    return () => router.events.off("routeChangeStart", handleRouteChange);
+  }, []);
 
   return (
     <Container
@@ -37,7 +38,7 @@ export const Header = () => {
         bg: "$bg200A",
         backdropFilter: "blur(16px)",
         position: "fixed",
-        zIndex: "$1",
+        zIndex: "$3",
         ...bottomShadowOnDocs,
       }}
     >
@@ -54,6 +55,8 @@ export const Header = () => {
             height: "$2xl",
             mx: "auto",
           }}
+          open={isOpen}
+          onOpenChange={(open) => setIsOpen(open)}
           brand={
             <Flex
               css={{

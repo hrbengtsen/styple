@@ -6,34 +6,18 @@ import {
   Text,
   Flex,
   Card,
-  keyframes,
 } from "../packages/design-system";
 import { PersonStanding, Brush, Code2 } from "lucide-react";
 import { CodeCopy } from "../components/CodeCopy";
 import { Link } from "../components/Link";
 import NextLink from "next/link";
 import { MetaData } from "../components/MetaData";
-
-const personAnim = keyframes({
-  "0%": { transform: "translateY(0)" },
-  "10%": { transform: "translateY(2px)" },
-  "50%": { transform: "translateY(-8px)" },
-  "100%": { transform: "translateY(0)" },
-});
-
-const brushAnim = keyframes({
-  "0%": { transform: "rotate(0)" },
-  "20%": { transform: "rotate(-25deg)" },
-  "70%": { transform: "rotate(15deg)" },
-  "100%": { transform: "rotate(0)" },
-});
-
-const codeAnim = keyframes({
-  "0%": { transform: "scale(1)" },
-  "25%": { transform: "scale(1.2)" },
-  "75%": { transform: "scale(0.9)" },
-  "100%": { transform: "scale(1)" },
-});
+import {
+  enterAndStagger,
+  personAnim,
+  brushAnim,
+  codeAnim,
+} from "../lib/animations";
 
 export default function Home() {
   return (
@@ -53,6 +37,7 @@ export default function Home() {
           }}
         >
           <Heading
+            className={enterAndStagger()}
             css={{
               fontWeight: "$black",
               lineHeight: "1.15",
@@ -63,10 +48,12 @@ export default function Home() {
           <Heading
             as="h2"
             size="lg"
+            className={enterAndStagger()}
             css={{
               fontWeight: "$semibold",
               pt: "$xl",
               color: "$text200",
+              $$stagger: 1,
             }}
           >
             Built using <Link href="https://stitches.dev/">Stitches</Link> and{" "}
@@ -77,9 +64,11 @@ export default function Home() {
         </Section>
         <Section
           size="lg"
+          className={enterAndStagger()}
           css={{
             maxWidth: "$max",
             mx: "auto",
+            $$stagger: 3,
           }}
         >
           <Heading

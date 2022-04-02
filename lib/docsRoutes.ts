@@ -20,6 +20,16 @@ export const docsRoutes = [
       { title: "Card", slug: "docs/components/card" },
       { title: "Checkbox", slug: "docs/components/checkbox" },
       { title: "Code", slug: "docs/components/code" },
+      {
+        title: "Collapsible",
+        slug: "docs/components/collapsible",
+        draft: true,
+      },
+      {
+        title: "CommandPalette",
+        slug: "docs/components/commandpalette",
+        draft: true,
+      },
       { title: "Container", slug: "docs/components/container" },
       { title: "Dialog", slug: "docs/components/dialog" },
       { title: "DropdownMenu", slug: "docs/components/dropdownmenu" },
@@ -29,10 +39,16 @@ export const docsRoutes = [
       { title: "Label", slug: "docs/components/label" },
       { title: "Link", slug: "docs/components/link" },
       { title: "Navbar", slug: "docs/components/navbar" },
+      {
+        title: "NavigationMenu",
+        slug: "docs/components/navigationmenu",
+        draft: true,
+      },
       { title: "NavItem", slug: "docs/components/navitem" },
       { title: "Popover", slug: "docs/components/popover" },
       { title: "Radio", slug: "docs/components/radio" },
       { title: "ScrollArea", slug: "docs/components/scrollarea" },
+      { title: "ScrollShadow", slug: "docs/components/scrollshadow" },
       { title: "SearchField", slug: "docs/components/searchfield" },
       { title: "Section", slug: "docs/components/section" },
       { title: "Select", slug: "docs/components/select" },
@@ -51,6 +67,7 @@ export const docsRoutes = [
       { title: "TextField", slug: "docs/components/textfield" },
       { title: "Toggle", slug: "docs/components/toggle" },
       { title: "Tooltip", slug: "docs/components/tooltip" },
+      { title: "Toast", slug: "docs/components/toast", draft: true },
     ],
   },
 
@@ -70,6 +87,7 @@ export const docsRoutes = [
 export type PageProps = {
   title: string;
   slug: string;
+  draft?: boolean;
 };
 
 export type RouteProps = {
@@ -79,7 +97,7 @@ export type RouteProps = {
 
 export const allDocsRoutes: PageProps[] = docsRoutes.reduce(
   (acc: PageProps[], cur: RouteProps) => {
-    return [...acc, ...cur.pages];
+    return [...acc, ...cur.pages.filter((p) => p.draft !== true)];
   },
   []
 );

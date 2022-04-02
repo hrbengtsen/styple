@@ -58,12 +58,12 @@ const StyledCorner = styled(ScrollAreaPrimitive.Corner, {
 });
 
 export const ScrollArea = React.forwardRef<
-  React.ElementRef<typeof StyledScrollArea>,
+  React.ElementRef<typeof StyledViewport>,
   React.ComponentPropsWithRef<typeof StyledScrollArea>
 >(({ children, ...props }, forwardedRef) => {
   return (
-    <StyledScrollArea {...props} ref={forwardedRef}>
-      <StyledViewport>{children}</StyledViewport>
+    <StyledScrollArea scrollHideDelay={0} {...props}>
+      <StyledViewport ref={forwardedRef}>{children}</StyledViewport>
       <StyledScrollbar orientation="horizontal">
         <StyledThumb />
       </StyledScrollbar>

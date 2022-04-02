@@ -9,6 +9,7 @@ export const Button = styled("button", {
   verticalAlign: "middle",
   border: "none",
   cursor: "pointer",
+  userSelect: "none",
 
   transition: "$color, $bgColor, $transform, $border, $boxShadow",
 

@@ -37,7 +37,7 @@ function App({ Component, pageProps }: AppProps) {
           cozy: cozyTheme.className,
         }}
         enableSystem
-        enableColorScheme
+        enableColorScheme={false}
         defaultTheme="system"
       >
         <TooltipProvider delayDuration={600}>

@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <button
-        class="c-jcnnme c-jcnnme-dWmsQj-size-md c-jcnnme-zoiF-variant-normal"
+        class="c-jVSBjD c-jVSBjD-dWmsQj-size-md c-jVSBjD-zoiF-variant-normal"
       >
         Button
       </button>
@@ -14,7 +14,7 @@ Object {
   </body>,
   "container": <div>
     <button
-      class="c-jcnnme c-jcnnme-dWmsQj-size-md c-jcnnme-zoiF-variant-normal"
+      class="c-jVSBjD c-jVSBjD-dWmsQj-size-md c-jVSBjD-zoiF-variant-normal"
     >
       Button
     </button>

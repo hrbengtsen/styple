@@ -8,24 +8,7 @@ import {
   CollapsibleTrigger,
 } from "../packages/design-system";
 import { NavLinkItem } from "./NavLinkItem";
-
-// Keyframes for navbar examples
-const slideRight = keyframes({
-  from: { transform: "translateX(-32px)", opacity: 0 },
-  to: { transform: "translateX(0)", opacity: 1, visibility: "visible" },
-});
-const openNav = keyframes({
-  from: { height: 0, opacity: 0 },
-  to: { height: "var(--radix-collapsible-content-height)", opacity: 1 },
-});
-const closeNav = keyframes({
-  from: { height: "var(--radix-collapsible-content-height)", opacity: 1 },
-  to: { height: 0, opacity: 0 },
-});
-const openFullNav = keyframes({
-  from: { opacity: 0 },
-  to: { opacity: 1 },
-});
+import { slideRight, openNav, closeNav, openFullNav } from "../lib/animations";
 
 export function DemoNavbars() {
   return (
@@ -33,7 +16,6 @@ export function DemoNavbars() {
       css={{
         width: "100%",
         gap: "$md",
-        px: "$md",
         flexDirection: "column",
       }}
     >

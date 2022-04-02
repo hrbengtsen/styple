@@ -78,6 +78,7 @@ const Burger = React.forwardRef<
         display: "none",
       },
     }}
+    aria-label="Navigation menu toggle"
     {...props}
     ref={forwardedRef}
   >
@@ -95,41 +96,63 @@ type NavbarProps = React.ComponentProps<typeof Container> & {
   content: React.ReactNode;
   mobileContent: React.ReactNode;
   bp?: "@bp1" | "@bp2" | "@bp3" | "@bp4";
+  open?: boolean | undefined;
+  onOpenChange?: (open: boolean) => void | undefined;
 };
 
 export const Navbar = React.forwardRef<
   React.ElementRef<typeof StyledBurger>,
   NavbarProps
->(({ brand, content, mobileContent, bp = "@bp2", ...props }, forwardedRef) => {
-  const [internalOpen, setInternalOpen] = React.useState<boolean>(false);
+>(
+  (
+    {
+      brand,
+      content,
+      mobileContent,
+      bp = "@bp2",
+      open,
+      onOpenChange,
+      ...props
+    },
+    forwardedRef
+  ) => {
+    const [internalOpen, setInternalOpen] = React.useState<boolean>(
+      open || false
+    );
 
-  return (
-    <Collapsible.Root
-      open={internalOpen}
-      onOpenChange={(open) => {
-        setInternalOpen(open);
-      }}
-    >
-      <Container {...props}>
-        {brand}
-        <Container
-          css={{
-            display: "none",
-            [bp]: {
-              display: "flex",
-            },
-          }}
-        >
-          {content}
+    React.useEffect(() => {
+      if (typeof open !== "undefined") setInternalOpen(open);
+    }, [open]);
+
+    return (
+      <Collapsible.Root
+        open={internalOpen}
+        onOpenChange={(open) => {
+          if (onOpenChange) onOpenChange(open);
+          setInternalOpen(open);
+        }}
+      >
+        <Container {...props}>
+          {brand}
+          <Container
+            css={{
+              display: "none",
+              [bp]: {
+                display: "flex",
+              },
+            }}
+          >
+            {content}
+          </Container>
+          <Collapsible.Trigger asChild>
+            <Burger open={internalOpen} ref={forwardedRef} />
+          </Collapsible.Trigger>
         </Container>
-        <Collapsible.Trigger asChild>
-          <Burger open={internalOpen} ref={forwardedRef} />
-        </Collapsible.Trigger>
-      </Container>
-      <Collapsible.Content asChild>{mobileContent}</Collapsible.Content>
-    </Collapsible.Root>
-  );
-});
+        <Collapsible.Content asChild>{mobileContent}</Collapsible.Content>
+      </Collapsible.Root>
+    );
+  }
+);
 Navbar.displayName = "Navbar";
 
 // Sidebar
@@ -140,6 +163,8 @@ type SidebarProps = React.ComponentProps<typeof Container> & {
   side?: "bottom" | "left" | "right" | "top";
   bp?: "@bp1" | "@bp2" | "@bp3" | "@bp4";
   icon?: React.ReactNode;
+  open?: boolean | undefined;
+  onOpenChange?: (open: boolean) => void | undefined;
 };
 
 export const Sidebar = React.forwardRef<
@@ -154,12 +179,19 @@ export const Sidebar = React.forwardRef<
       side = "right",
       bp = "@bp2",
       icon,
+      open,
+      onOpenChange,
       ...props
     },
     forwardedRef
   ) => {
     return (
-      <Sheet>
+      <Sheet
+        open={open}
+        onOpenChange={(sheetOpen) => {
+          if (onOpenChange) onOpenChange(sheetOpen);
+        }}
+      >
         <Container {...props}>
           {brand}
           <Container

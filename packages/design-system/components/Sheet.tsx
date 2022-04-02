@@ -126,10 +126,17 @@ export const SheetContent = React.forwardRef<
   SheetContentProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledOverlay>
-    <StyledContent {...props} ref={forwardedRef}>
+    <StyledContent
+      {...props}
+      // Temp fix "pointerEvents: none" from staying due to closing animation and bug in Radix Dialog: https://github.com/radix-ui/primitives/issues/1241
+      onCloseAutoFocus={(_: Event) =>
+        (document.body.style.pointerEvents = "auto")
+      }
+      ref={forwardedRef}
+    >
       {children}
       <StyledCloseButton asChild>
-        <Button highlight size="circle">
+        <Button highlight size="circle" aria-label="Close button">
           <X />
         </Button>
       </StyledCloseButton>

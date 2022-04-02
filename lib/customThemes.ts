@@ -12,7 +12,7 @@ export const cozyTheme = createTheme("cozy-theme", {
     bg300: "#F5EDD6",
     bg100A: "#FEFCEEBF",
     bg200A: "#FDF9E2BF",
-    bg300A: "#F5EDD6",
+    bg300A: "#F5EDD6BF",
     bg100E: "#FEFCEE",
     bg200E: "#FDF9E2",
     bg300E: "#F5EDD6",

@@ -45,7 +45,14 @@ export const QuickNav = () => {
         }}
       >
         {headings.map(({ id, innerText, dataset }) => (
-          <Container as="li" key={id}>
+          <Container
+            as="li"
+            key={id}
+            css={{
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+            }}
+          >
             <Link
               href={`#${id}`}
               css={{

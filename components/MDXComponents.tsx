@@ -18,6 +18,7 @@ import { Link } from "./Link";
 import { NavLinkItem } from "./NavLinkItem";
 import { DemoNavbars } from "./DemoNavbars";
 import { Searchbar } from "./Searchbar";
+import { Sparkles } from "./Sparkles";
 
 export const components = {
   ...SDS,
@@ -33,6 +34,7 @@ export const components = {
   NavLinkItem,
   DemoNavbars,
   Searchbar,
+  Sparkles,
   h1: ({ children, ...props }: React.ComponentProps<typeof SDS.Heading>) => (
     <SDS.Heading size="2xl" css={{ mb: "$md", mt: "$3xl" }} {...props}>
       {children}
@@ -94,7 +96,7 @@ export const components = {
         py: "$md",
         mb: "$lg",
         bg: "$accent100A",
-        borderLeft: "2px solid $button100",
+        borderLeft: "$borderWidths$lg solid $accent200A",
         borderTopRightRadius: "$xl",
         borderBottomRightRadius: "$xl",
         "& p": {
