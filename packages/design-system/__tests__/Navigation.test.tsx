@@ -22,6 +22,7 @@ describe("Test Sidebar", () => {
       <Sidebar
         brand={<>Basic sidebar</>}
         content={<>Regular content</>}
+        mobileTitle="Test"
         mobileContent={<>Mobile content</>}
       />
     );
