@@ -77,12 +77,9 @@ export const DialogContent = React.forwardRef<
 
   const onScroll = () => {
     const { scrollTop = 0 } = currentNode || {};
-    console.log(">> all run");
     if (scrollTop > 0 && !scrolled) {
-      console.log("run true");
       setScrolled(true);
     } else if (scrollTop == 0 && scrolled) {
-      console.log("run false");
       setScrolled(false);
     }
   };
