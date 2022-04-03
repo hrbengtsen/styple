@@ -3,6 +3,7 @@ import Script from "next/script";
 import {
   globalStyles,
   darkTheme,
+  globalCss,
 } from "../packages/design-system/stitches.config";
 import { cozyTheme, deepTheme } from "../lib/customThemes";
 import { ThemeProvider } from "next-themes";
@@ -13,6 +14,16 @@ import { useRouter } from "next/router";
 
 function App({ Component, pageProps }: AppProps) {
   globalStyles();
+
+  // Set colorScheme for custom themes not compatible with next-themes
+  globalCss({
+    [`.${cozyTheme}`]: {
+      colorScheme: "light",
+    },
+    [`.${deepTheme}`]: {
+      colorScheme: "dark",
+    },
+  })();
 
   const router = useRouter();
   const isDocs = router.pathname.includes("/docs");
@@ -37,7 +48,7 @@ function App({ Component, pageProps }: AppProps) {
           cozy: cozyTheme.className,
         }}
         enableSystem
-        enableColorScheme={false}
+        enableColorScheme
         defaultTheme="system"
       >
         <TooltipProvider delayDuration={600}>
