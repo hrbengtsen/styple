@@ -19,7 +19,7 @@
     "prepare": "husky install",
     "build:clean": "rimraf packages/*/dist",
     "build:packages": "npm run build:clean && parcel build packages/*",
-    "release": "npm publish --access public --workspaces"
+    "release": "npm run build:packages && npm publish --access public --workspaces"
   },
   "dependencies": {
     "hast-util-to-html": "^8.0.3",

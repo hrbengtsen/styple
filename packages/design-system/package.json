@@ -1,7 +1,7 @@
 {
   "name": "@styple/design-system",
   "description": "styple design system",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "source": "index.ts",
   "main": "dist/index.js",

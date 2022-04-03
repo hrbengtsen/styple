@@ -18,6 +18,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Publish new release to npm
-        run: npm publish --access public --workspaces
+        run: npm run release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
