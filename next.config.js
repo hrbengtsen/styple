@@ -1,4 +1,6 @@
-module.exports = {
+const { withPlausibleProxy } = require("next-plausible");
+
+module.exports = withPlausibleProxy()({
   async redirects() {
     return [
       {
@@ -11,4 +13,4 @@ module.exports = {
   eslint: {
     dirs: ["pages", "lib", "packages", "components", "data"],
   },
-};
+});

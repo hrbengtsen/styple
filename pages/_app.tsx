@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Script from "next/script";
 import {
   globalStyles,
   darkTheme,
@@ -11,6 +10,7 @@ import { AppProps } from "next/app";
 import { TooltipProvider } from "../packages/design-system";
 import { Layout } from "../components/Layout";
 import { useRouter } from "next/router";
+import PlausibleProvider from "next-plausible";
 
 function App({ Component, pageProps }: AppProps) {
   globalStyles();
@@ -33,30 +33,27 @@ function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>styple</title>
       </Head>
-      <Script
-        defer
-        data-domain="styple.dev"
-        src="https://plausible.io/js/plausible.js"
-      />
-      <ThemeProvider
-        disableTransitionOnChange
-        attribute="class"
-        value={{
-          light: "light-theme",
-          dark: darkTheme.className,
-          deep: deepTheme.className,
-          cozy: cozyTheme.className,
-        }}
-        enableSystem
-        enableColorScheme
-        defaultTheme="system"
-      >
-        <TooltipProvider delayDuration={600}>
-          <Layout isDocs={isDocs}>
-            <Component {...pageProps} />
-          </Layout>
-        </TooltipProvider>
-      </ThemeProvider>
+      <PlausibleProvider domain="styple.dev">
+        <ThemeProvider
+          disableTransitionOnChange
+          attribute="class"
+          value={{
+            light: "light-theme",
+            dark: darkTheme.className,
+            deep: deepTheme.className,
+            cozy: cozyTheme.className,
+          }}
+          enableSystem
+          enableColorScheme
+          defaultTheme="system"
+        >
+          <TooltipProvider delayDuration={600}>
+            <Layout isDocs={isDocs}>
+              <Component {...pageProps} />
+            </Layout>
+          </TooltipProvider>
+        </ThemeProvider>
+      </PlausibleProvider>
     </>
   );
 }
