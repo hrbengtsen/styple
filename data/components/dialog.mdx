@@ -11,48 +11,32 @@ description: A modal overlaying the page or another dialog, rendering the conten
       <Button>Open dialog</Button>
     </DialogTrigger>
     <DialogContent
-      aria-labelledby="dialog-heading"
-      aria-describedby="dialog-desc"
+      headerTitle={<Heading as="h4">Example Heading</Heading>}
+      footerContent={<DialogClose asChild>
+          <Button transparent variant="success" css={{ ml: "auto" }}>Close sheet</Button>
+        </DialogClose>}
     >
-      <Heading id="dialog-heading" as="h4" css={{ mb: "$md" }}>Example Heading</Heading>
-      <Text id="dialog-desc" css={{ lineHeight: "25px" }}>Here is some lorem ipsum example description text.</Text>
-      <Flex
-        css={{
-          justifyContent: "flex-end",
-          marginTop: "$lg",
-        }}
-      >
-        <DialogClose asChild>
-          <Button transparent variant="success">Close dialog</Button>
-        </DialogClose>
-      </Flex>
+      <DialogDescription asChild>
+        <Text id="dialog-desc" css={{ lineHeight: "25px" }}>Here is some lorem ipsum example description text.</Text>
+      </DialogDescription>
     </DialogContent>
   </Dialog>
 </Preview>
 
 ```tsx outline=true
-import { Dialog, DialogTrigger, DialogContent, DialogCancel, DialogClose } from "@styple/design-system";
+import { Dialog, DialogTrigger, DialogContent, DialogDescription, DialogClose } from "@styple/design-system";
 
 <Dialog>
   <DialogTrigger asChild>
     <Button>Open dialog</Button>
   </DialogTrigger>
   <DialogContent
-    aria-labelledby="dialog-heading"
-    aria-describedby="dialog-desc"
+    headerTitle={<Heading as="h4">Example Heading</Heading>}
+    footerContent={<DialogClose asChild><Button transparent variant="success" css={{ ml: "auto" }}>Close sheet</Button></DialogClose>}
   >
-    <Heading id="dialog-heading" as="h4" css={{ mb: "$md" }}>Example Heading</Heading>
-    <Text id="dialog-desc" css={{ lineHeight: "25px" }}>Here is some lorem ipsum example description text.</Text>
-    <Flex
-      css={{
-        justifyContent: "flex-end",
-        marginTop: "$lg",
-      }}
-    >
-      <DialogClose asChild>
-        <Button transparent variant="success">Close dialog</Button>
-      </DialogClose>
-    </Flex>
+    <DialogDescription asChild>
+      <Text id="dialog-desc" css={{ lineHeight: "25px" }}>Here is some lorem ipsum example description text.</Text>
+    </DialogDescription>
   </DialogContent>
 </Dialog>
 ```
@@ -67,10 +51,43 @@ A styled component wrapper for `Dialog.Root`.
 
 #### DialogContent
 
-A styled abstraction combining `Dialog.Overlay`, `Dialog.Content` and a close button of `Dialog.Close`.
+A styled abstraction combining `Dialog.Portal`, `Dialog.Overlay` and `Dialog.Content`. With custom props:
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>headerTitle</Code>
+      </Th>
+      <Td>
+        <Code color="normal">Heading</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Dialog title as a sticky `Dialog.Title` with `Dialog.Close`.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>footerContent?</Code>
+      </Th>
+      <Td>
+        <Code color="normal">ReactNode</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Bottom-fixed Dialog footer.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>
 
 #### Others
 
-The rest of the components of the primitive are exported by **styple** with no changes. Aria-labels can be used as an alternative to `Dialog.Title` and `Dialog.Description` as in the example above.
+Besides above the following component wrappers are exported: `DialogTrigger`, `DialogClose`, `DialogDescription`. See example and Radix docs for use-cases.
 
 ---

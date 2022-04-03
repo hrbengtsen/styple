@@ -30,6 +30,7 @@ description: Specific type of navigation bar using a Sheet.
             <NavLinkItem ghost href="https://www.bitetap.com/">Link 3</NavLinkItem>
           </Flex>
         }
+        mobileTitle="Sidebar example"
         mobileContent={
           <>
             <NavLinkItem ghost href="/docs/components/sidebar">Link 1</NavLinkItem>
@@ -63,6 +64,7 @@ import { Sidebar } from "@styple/design-system";
         height: "$xl",
       }}
       brand={<Text>Sidebar</Text>}
+      mobileTitle="Sidebar example"
       content={/* Regular content as JSX */}
       mobileContent={/* Mobile content as JSX */} 
     />
@@ -105,6 +107,16 @@ A custom styled component, using `Sheet` internally. With props:
       </Td>
       <Td>-</Td>
       <Td><Text>The regular content of the sidebar.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>mobileTitle</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Title displayed on mobile with `mobileContent`.</Text></Td>
     </Tr>
     <Tr>
       <Th>

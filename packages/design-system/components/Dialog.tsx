@@ -1,10 +1,10 @@
 import React from "react";
 import { styled } from "../stitches.config";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { X } from "lucide-react";
 import { overlayStyles } from "./Overlay";
 import { panelStyles, contentFadeIn } from "./Panel";
-import { Button } from "..";
+import { Header as DialogHeader, Footer as DialogFooter } from "./DialogUtils";
+import { Container, Heading } from "..";
 
 const StyledOverlay = styled(DialogPrimitive.Overlay, overlayStyles, {
   position: "fixed",
@@ -16,11 +16,13 @@ const StyledOverlay = styled(DialogPrimitive.Overlay, overlayStyles, {
 
 const StyledContent = styled(DialogPrimitive.Content, panelStyles, {
   position: "fixed",
-  zIndex: "$max",
 
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
+
+  // Override panelStyles p: "$lg"
+  p: "0",
 
   maxWidth: "$4xl",
 
@@ -52,27 +54,78 @@ export function Dialog({ children, ...props }: DialogProps) {
   return <DialogPrimitive.Root {...props}>{children}</DialogPrimitive.Root>;
 }
 
-type DialogContentProps = React.ComponentProps<typeof StyledContent>;
+type DialogContentProps = React.ComponentProps<typeof StyledContent> & {
+  headerTitle: React.ReactElement<typeof Heading>;
+  footerContent?: React.ReactNode;
+};
 
 export const DialogContent = React.forwardRef<
   React.ElementRef<typeof StyledContent>,
   DialogContentProps
->(({ children, ...props }, forwardedRef) => (
-  <StyledOverlay>
-    <StyledContent {...props} ref={forwardedRef}>
-      {children}
-      <StyledCloseButton asChild>
-        <Button highlight size="circle" aria-label="Close button">
-          <X />
-        </Button>
-      </StyledCloseButton>
-    </StyledContent>
-  </StyledOverlay>
-));
+>(({ children, headerTitle, footerContent, ...props }, forwardedRef) => {
+  const [scrolled, setScrolled] = React.useState(false);
+  const [hasOverflowY, setHasOverflowY] = React.useState(false);
+  const [currentNode, setCurrentNode] = React.useState<HTMLDivElement>();
+
+  const ref = React.useCallback((node: HTMLDivElement | null) => {
+    if (node !== null) {
+      const hasOverflowY = node.offsetHeight < node.scrollHeight;
+      setHasOverflowY(hasOverflowY);
+      setCurrentNode(node);
+    }
+  }, []);
+
+  const onScroll = () => {
+    const { scrollTop = 0 } = currentNode || {};
+    console.log(">> all run");
+    if (scrollTop > 0 && !scrolled) {
+      console.log("run true");
+      setScrolled(true);
+    } else if (scrollTop == 0 && scrolled) {
+      console.log("run false");
+      setScrolled(false);
+    }
+  };
+
+  return (
+    <DialogPrimitive.Portal>
+      <StyledOverlay>
+        <StyledContent
+          {...props}
+          onScroll={onScroll}
+          ref={(node) => {
+            // Update internal ref
+            ref(node);
+
+            // Handle forwarded ref
+            if (typeof forwardedRef === "function") {
+              forwardedRef(node);
+            } else if (forwardedRef) {
+              (
+                forwardedRef as React.MutableRefObject<HTMLDivElement | null>
+              ).current = node;
+            }
+          }}
+        >
+          <DialogHeader headerTitle={headerTitle} scrolled={scrolled} />
+          <Container
+            css={{
+              px: "$lg",
+              pb: `${footerContent ? "0" : "$lg"}`,
+            }}
+          >
+            {children}
+          </Container>
+          {footerContent && (
+            <DialogFooter overflow={hasOverflowY}>{footerContent}</DialogFooter>
+          )}
+        </StyledContent>
+      </StyledOverlay>
+    </DialogPrimitive.Portal>
+  );
+});
 DialogContent.displayName = "DialogContent";
 
 export const DialogTrigger = DialogPrimitive.Trigger;
 export const DialogClose = DialogPrimitive.Close;
-export const DialogTitle = DialogPrimitive.Title;
 export const DialogDescription = DialogPrimitive.Description;
-export const DialogPortal = DialogPrimitive.Portal;

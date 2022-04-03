@@ -11,54 +11,32 @@ description: A modal overlaying a side of the page, rendering the content undern
       <Button>Open sheet</Button>
     </SheetTrigger>
     <SheetContent
-      aria-labelledby="sheet-heading"
-      aria-describedby="sheet-desc"
-      css={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}
+      headerTitle={<Heading as="h4">Example Heading</Heading>}
+      footerContent={<SheetClose asChild>
+          <Button transparent variant="success" css={{ ml: "auto" }}>Close sheet</Button>
+        </SheetClose>}
     >
-      <Container>
-        <Heading id="sheet-heading" as="h4" css={{ mb: "$md" }}>Example Heading</Heading>
-        <Text id="sheet-desc" css={{ lineHeight: "25px" }}>Here is some lorem ipsum example description text.</Text>
-      </Container>
-      <Flex
-        css={{
-          justifyContent: "flex-end",
-          marginTop: "$lg",
-        }}
-      >
-        <SheetClose asChild>
-          <Button transparent variant="success">Close sheet</Button>
-        </SheetClose>
-      </Flex>
+      <SheetDescription asChild>
+        <Text css={{ lineHeight: "25px" }}>Here is some lorem ipsum example description text.</Text>
+      </SheetDescription>
     </SheetContent>
   </Sheet>
 </Preview>
 
 ```tsx outline=true
-import { Sheet, SheetTrigger, SheetContent, SheetCancel, SheetClose } from "@styple/design-system";
+import { Sheet, SheetTrigger, SheetContent, SheetDescription, SheetClose } from "@styple/design-system";
 
 <Sheet>
   <SheetTrigger asChild>
     <Button>Open sheet</Button>
   </SheetTrigger>
   <SheetContent
-    aria-labelledby="sheet-heading"
-    aria-describedby="sheet-desc"
-    css={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}
+    headerTitle={<Heading as="h4">Example Heading</Heading>}
+    footerContent={<SheetClose asChild><Button transparent variant="success" css={{ ml: "auto" }}>Close sheet</Button></SheetClose>}
   >
-    <Container>
-      <Heading id="sheet-heading" as="h4" css={{ mb: "$md" }}>Example Heading</Heading>
-      <Text id="sheet-desc" css={{ lineHeight: "25px" }}>Here is some lorem ipsum example description text.</Text>
-    </Container>
-    <Flex
-      css={{
-        justifyContent: "flex-end",
-        marginTop: "$lg",
-      }}
-    >
-      <SheetClose asChild>
-        <Button transparent variant="success">Close sheet</Button>
-      </SheetClose>
-    </Flex>
+    <SheetDescription asChild>
+      <Text css={{ lineHeight: "25px" }}>Here is some lorem ipsum example description text.</Text>
+    </SheetDescription>
   </SheetContent>
 </Sheet>
 ```
@@ -73,10 +51,43 @@ A styled component wrapper for `Dialog.Root`.
 
 #### SheetContent
 
-A styled abstraction combining `Dialog.Overlay`, `Dialog.Content` and a close button of `Dialog.Close`.
+A styled abstraction combining `Dialog.Portal`, `Dialog.Overlay` and `Dialog.Content`. With custom props:
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>headerTitle</Code>
+      </Th>
+      <Td>
+        <Code color="normal">Heading</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Sheet title as a sticky `Dialog.Title` with `Dialog.Close`.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>footerContent?</Code>
+      </Th>
+      <Td>
+        <Code color="normal">ReactNode</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Bottom-fixed Sheet footer.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>
 
 #### Others
 
-The rest of the components of the primitive are exported by **styple** with no changes. Aria-labels can be used as an alternative to `Dialog.Title` and `Dialog.Description` as in the example above.
+Besides above the following component wrappers are exported: `SheetTrigger`, `SheetClose`, `SheetDescription`. See example and Radix docs for use-cases.
 
 ---

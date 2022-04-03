@@ -1,5 +1,12 @@
 import React from "react";
-import { Container, Sheet, SheetContent, SheetTrigger, Button } from "..";
+import {
+  Container,
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  Button,
+  Heading,
+} from "..";
 import { styled } from "../stitches.config";
 import * as Collapsible from "@radix-ui/react-collapsible";
 import { Menu } from "lucide-react";
@@ -159,6 +166,7 @@ Navbar.displayName = "Navbar";
 type SidebarProps = React.ComponentProps<typeof Container> & {
   brand?: React.ReactNode;
   content: React.ReactNode;
+  mobileTitle: string;
   mobileContent: React.ReactNode;
   side?: "bottom" | "left" | "right" | "top";
   bp?: "@bp1" | "@bp2" | "@bp3" | "@bp4";
@@ -175,6 +183,7 @@ export const Sidebar = React.forwardRef<
     {
       brand,
       content,
+      mobileTitle,
       mobileContent,
       side = "right",
       bp = "@bp2",
@@ -221,7 +230,16 @@ export const Sidebar = React.forwardRef<
             </Button>
           </SheetTrigger>
         </Container>
-        <SheetContent side={side}>{mobileContent}</SheetContent>
+        <SheetContent
+          headerTitle={
+            <Heading as="h4" css={{ fontSize: "$md" }}>
+              {mobileTitle}
+            </Heading>
+          }
+          side={side}
+        >
+          {mobileContent}
+        </SheetContent>
       </Sheet>
     );
   }

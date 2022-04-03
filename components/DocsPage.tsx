@@ -133,6 +133,7 @@ export const DocsPage = ({
             </Container>
           </ScrollShadow>
         }
+        mobileTitle="Documentation"
         mobileContent={
           <>
             {docsRoutes.map((routeSection: RouteProps) => (

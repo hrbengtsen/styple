@@ -14,7 +14,6 @@ const StyledOverlay = styled(AlertDialogPrimitive.Overlay, overlayStyles, {
 
 const StyledContent = styled(AlertDialogPrimitive.Content, panelStyles, {
   position: "fixed",
-  zIndex: "$max",
 
   top: "50%",
   left: "50%",
@@ -54,11 +53,13 @@ export const AlertDialogContent = React.forwardRef<
   React.ElementRef<typeof StyledContent>,
   AlertDialogContentProps
 >(({ children, ...props }, forwardedRef) => (
-  <StyledOverlay>
-    <StyledContent {...props} ref={forwardedRef}>
-      {children}
-    </StyledContent>
-  </StyledOverlay>
+  <AlertDialogPrimitive.Portal>
+    <StyledOverlay>
+      <StyledContent {...props} ref={forwardedRef}>
+        {children}
+      </StyledContent>
+    </StyledOverlay>
+  </AlertDialogPrimitive.Portal>
 ));
 AlertDialogContent.displayName = "AlertDialogContent";
 
@@ -67,4 +68,3 @@ export const AlertDialogAction = AlertDialogPrimitive.Action;
 export const AlertDialogCancel = AlertDialogPrimitive.Cancel;
 export const AlertDialogTitle = AlertDialogPrimitive.Title;
 export const AlertDialogDescription = AlertDialogPrimitive.Description;
-export const AlertDialogPortal = AlertDialogPrimitive.Portal;

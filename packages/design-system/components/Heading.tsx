@@ -13,7 +13,7 @@ type HeadingProps = React.ComponentPropsWithRef<typeof DEFAULT_TAG> &
     as?: HeadingTypeVariants;
   };
 
-export const StyledHeading = styled(Text, {
+const StyledHeading = styled(Text, {
   // Reset
   fontWeight: "$bold",
 
