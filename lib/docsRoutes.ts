@@ -23,7 +23,6 @@ export const docsRoutes = [
       {
         title: "Collapsible",
         slug: "docs/components/collapsible",
-        draft: true,
       },
       {
         title: "CommandPalette",
