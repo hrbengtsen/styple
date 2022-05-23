@@ -17,6 +17,7 @@ import Image from "next/image";
 import { Link } from "./Link";
 import { NavLinkItem } from "./NavLinkItem";
 import { DemoNavbars } from "./DemoNavbars";
+import { DemoToast } from "./DemoToast";
 import { Searchbar } from "./Searchbar";
 import { Sparkles } from "./Sparkles";
 
@@ -33,6 +34,7 @@ export const components = {
   Image,
   NavLinkItem,
   DemoNavbars,
+  DemoToast,
   Searchbar,
   Sparkles,
   h1: ({ children, ...props }: React.ComponentProps<typeof SDS.Heading>) => (

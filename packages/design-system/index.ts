@@ -109,3 +109,5 @@ export {
 } from "./components/Collapsible";
 
 export { ScrollShadow } from "./components/ScrollShadow";
+
+export { Toast, ToastProvider, ToastViewport } from "./components/Toast";

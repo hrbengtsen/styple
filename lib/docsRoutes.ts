@@ -66,7 +66,7 @@ export const docsRoutes = [
       { title: "TextField", slug: "docs/components/textfield" },
       { title: "Toggle", slug: "docs/components/toggle" },
       { title: "Tooltip", slug: "docs/components/tooltip" },
-      { title: "Toast", slug: "docs/components/toast", draft: true },
+      { title: "Toast", slug: "docs/components/toast" },
     ],
   },
 
