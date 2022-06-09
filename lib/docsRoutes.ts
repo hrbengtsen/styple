@@ -27,7 +27,6 @@ export const docsRoutes = [
       {
         title: "CommandPalette",
         slug: "docs/components/commandpalette",
-        draft: true,
       },
       { title: "Container", slug: "docs/components/container" },
       { title: "Dialog", slug: "docs/components/dialog" },

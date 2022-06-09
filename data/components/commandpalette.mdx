@@ -1,0 +1,83 @@
+---
+title: CommandPalette
+description: Popup that displays content on hover or keyboard focus of associated element.
+---
+
+### Examples
+
+<Preview>
+  <CommandPalette />
+</Preview>
+
+```tsx outline=true
+import { Tooltip } from "@styple/design-system";
+
+<Flex
+  css={{
+    gap: "$md",
+    alignItems: "center",
+  }}
+>
+  <Tooltip content="Tooltip content">
+    <Button highlight size="circle">
+      <Plus style={{ verticalAlign: "middle" }} />
+    </Button>
+  </Tooltip>
+  <Tooltip
+    content={
+      <><b>Drag</b> to move <br /> <b>Click</b> to open menu</>
+    }
+  >
+    <Button highlight css={{ p: "0", borderRadius: "$md" }}>
+      <GripVertical style={{ verticalAlign: "middle" }} />
+    </Button>
+  </Tooltip>
+</Flex>
+```
+
+### API Reference
+
+See [Radix-UI Tooltip (v0.1.7)](https://www.radix-ui.com/docs/primitives/components/tooltip) for details. This only covers **styple** abstractions.
+
+#### Tooltip
+
+A styled abstraction of the entire primitive (except provider). Forwards props `open`, `defaultOpen` and `onOpenChange`. Custom props:
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>children</Code>
+      </Th>
+      <Td>
+        <Code color="normal">ReactElement</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Child to trigger tooltip.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>content</Code>
+      </Th>
+      <Td>
+        <Code color="normal">ReactNode</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>The content of the tooltip.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>
+
+#### TooltipProvider
+
+The `Tooltip.Provider` that should wrap your app for tooltips to function properly.
+
+---
