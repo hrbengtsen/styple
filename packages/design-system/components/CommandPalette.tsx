@@ -3,7 +3,7 @@ import { Combobox } from "@headlessui/react";
 import { Button, NavItem, TextField, Container, Separator } from "..";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { StyledOverlay, StyledContent } from "./Dialog";
-import { Search, LucideProps } from "lucide-react";
+import { Search } from "lucide-react";
 import { css, keyframes } from "../stitches.config";
 
 const useEscape = (onEscape: () => void) => {
@@ -62,6 +62,8 @@ type CommandPaletteProps = {
   trigger: JSX.Element;
   displayOptionsOnEmpty?: boolean;
   placeholder?: string;
+  router: any;
+  customLink?: any;
 };
 
 export function CommandPalette({
@@ -72,6 +74,8 @@ export function CommandPalette({
   trigger,
   displayOptionsOnEmpty,
   placeholder,
+  router,
+  customLink,
 }: CommandPaletteProps) {
   const [open, setOpen] = useState(false);
   const [selectedData, setSelectedData] = useState("");
@@ -92,6 +96,8 @@ export function CommandPalette({
     filteredData.findIndex((item) => item.category === category)
   );
 
+  const NavItemCustom = customLink ?? NavItem;
+
   return (
     <DialogPrimitive.Root open={open} onOpenChange={setOpen}>
       <DialogPrimitive.Trigger asChild>{trigger}</DialogPrimitive.Trigger>
@@ -110,7 +116,22 @@ export function CommandPalette({
             },
           }}
         >
-          <Combobox value={selectedData} onChange={setSelectedData} nullable>
+          <Combobox
+            value={selectedData}
+            onChange={(value) => {
+              setSelectedData(value);
+              const dataItem = filteredData.find(
+                (item) => item.label === value
+              );
+
+              if (dataItem?.slug) {
+                router.push(dataItem.slug);
+                return;
+              }
+              dataItem?.action?.();
+            }}
+            nullable
+          >
             {({ open }) => (
               <>
                 <Container css={{ position: "sticky", top: "0" }}>
@@ -201,8 +222,7 @@ export function CommandPalette({
                                   if (item.slug) {
                                     return (
                                       <>
-                                        {item.icon}
-                                        <NavItem
+                                        <NavItemCustom
                                           href={item.slug}
                                           onClick={
                                             item.action
@@ -221,10 +241,14 @@ export function CommandPalette({
                                                 : "transparent"
                                             }`,
                                             color: "$text200",
+
+                                            display: "flex",
+                                            gap: "$sm",
                                           }}
                                         >
+                                          {item.icon}
                                           {item.label}
-                                        </NavItem>
+                                        </NavItemCustom>
                                       </>
                                     );
                                   }

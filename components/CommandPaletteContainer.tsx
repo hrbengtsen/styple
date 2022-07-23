@@ -1,5 +1,7 @@
 import { Button, CommandPalette, DataObj } from "../packages/design-system";
 import { Search } from "lucide-react";
+import { useRouter } from "next/router";
+import { NavLinkItem } from "./NavLinkItem";
 
 const dummyCategories = ["Final docs pages"];
 
@@ -12,27 +14,31 @@ const dummyData: DataObj[] = [
   },
   {
     label: "Introduction",
-    slug: "docs/overview/introduction",
+    slug: "/docs/overview/introduction",
     icon: <Search />,
   },
   {
     label: "Getting started",
-    slug: "docs/overview/getting-started",
+    slug: "/docs/overview/getting-started",
   },
   {
     label: "Toast",
-    slug: "docs/components/toast",
+    slug: "/docs/components/toast",
     category: dummyCategories[0],
   },
 ];
 
 // Boilerplate component of how to implement a CommandPalette
 export const CommandPaletteContainer = () => {
+  const router = useRouter();
+
   return (
     <CommandPalette
       data={dummyData}
       categories={dummyCategories}
       trigger={<Button>Open CommandPalette</Button>}
+      router={router}
+      customLink={NavLinkItem}
     />
   );
 };
