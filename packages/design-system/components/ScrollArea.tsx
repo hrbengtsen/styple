@@ -32,6 +32,7 @@ const StyledScrollbar = styled(ScrollAreaPrimitive.Scrollbar, {
     flexDirection: "column",
     height: SCROLLBAR_SIZE,
   },
+  zIndex: "$max",
 });
 
 const StyledThumb = styled(ScrollAreaPrimitive.Thumb, {
