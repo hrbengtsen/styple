@@ -1,4 +1,9 @@
-import { Button, CommandPalette, DataObj } from "../packages/design-system";
+import {
+  Button,
+  CommandPalette,
+  DataObj,
+  Flex,
+} from "../packages/design-system";
 import { Search } from "lucide-react";
 import { useRouter } from "next/router";
 import { NavLinkItem } from "./NavLinkItem";
@@ -39,13 +44,14 @@ export const CommandPaletteContainer = () => {
       trigger={<Button>Open CommandPalette</Button>}
       router={router}
       customLink={NavLinkItem}
+      preview={(selectedItemValue, data) => (
+        <Flex>test preview for {selectedItemValue}</Flex>
+      )}
     />
   );
 };
 
 /*
   CMDPALETTE todos:
-  - fix displaying of dataItem icons
-  - add preview possibility
   - improve performance (re-renders too often with too much computation)
 */

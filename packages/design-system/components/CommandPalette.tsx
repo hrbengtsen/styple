@@ -1,6 +1,6 @@
 import { ReactElement, useEffect, useState } from "react";
 import { Combobox } from "@headlessui/react";
-import { Button, NavItem, TextField, Container, Separator } from "..";
+import { Button, NavItem, TextField, Container, Separator, Flex } from "..";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { StyledOverlay, StyledContent } from "./Dialog";
 import { Search } from "lucide-react";
@@ -25,6 +25,7 @@ const optionsStyles = css({
   position: "relative",
   overflowY: "auto",
   maxHeight: "75vh",
+  flex: 1,
 });
 
 const optionStyles = css({
@@ -58,7 +59,7 @@ type CommandPaletteProps = {
   data: DataObj[];
   categories?: string[];
   filterData?: (query: string, data: DataObj[]) => DataObj[];
-  preview?: (selectedDataItem: string, data: DataObj[]) => JSX.Element;
+  preview?: (selectedValue: string, data: DataObj[]) => JSX.Element;
   trigger: JSX.Element;
   displayOptionsOnEmpty?: boolean;
   placeholder?: string;
@@ -78,11 +79,13 @@ export function CommandPalette({
   customLink,
 }: CommandPaletteProps) {
   const [open, setOpen] = useState(false);
-  const [selectedData, setSelectedData] = useState("");
+  const [selectedValue, setSelectedValue] = useState("");
   const [query, setQuery] = useState("");
 
   // Force close of Dialog on ESC
   useEscape(() => setOpen(false));
+
+  //useShortcut() <-- allow shortcut prop to allow opening through typing e.g: cmd+k
 
   const filteredData = filterData
     ? // Custom filtering
@@ -106,6 +109,7 @@ export function CommandPalette({
           css={{
             "@bp1": {
               minWidth: "$4xl",
+              maxWidth: preview ? "800px" : undefined,
               overflowY: "hidden",
               top: "10%",
               transform: "translate(-50%, 0)",
@@ -117,22 +121,22 @@ export function CommandPalette({
           }}
         >
           <Combobox
-            value={selectedData}
+            value={selectedValue}
             onChange={(value) => {
-              setSelectedData(value);
-              const dataItem = filteredData.find(
+              setSelectedValue(value);
+              const selectedData = filteredData.find(
                 (item) => item.label === value
               );
 
-              if (dataItem?.slug) {
-                router.push(dataItem.slug);
+              if (selectedData?.slug) {
+                router.push(selectedData.slug);
                 return;
               }
-              dataItem?.action?.();
+              selectedData?.action?.();
             }}
             nullable
           >
-            {({ open }) => (
+            {({ open, activeOption }) => (
               <>
                 <Container css={{ position: "sticky", top: "0" }}>
                   <Container
@@ -169,67 +173,108 @@ export function CommandPalette({
                   filteredData.length > 0 && (
                     <>
                       <Separator css={{ position: "fixed", top: "46px" }} />
-                      <Combobox.Options static hold className={optionsStyles()}>
-                        {filteredData.map((item, index) => {
-                          // Potential JSX of disabled category Combobox option
-                          let categoryOption;
+                      <Flex>
+                        <Combobox.Options
+                          static
+                          hold
+                          className={optionsStyles()}
+                        >
+                          {filteredData.map((item, index) => {
+                            // Potential JSX of disabled category Combobox option
+                            let categoryOption;
 
-                          // Index of category which current item is first category-item of
-                          const categoryOfItem =
-                            firstCategoryItemEncounters?.findIndex(
-                              (categoryFirstItemIndex) =>
-                                categoryFirstItemIndex === index
-                            );
+                            // Index of category which current item is first category-item of
+                            const categoryOfItem =
+                              firstCategoryItemEncounters?.findIndex(
+                                (categoryFirstItemIndex) =>
+                                  categoryFirstItemIndex === index
+                              );
 
-                          const categoryExistAndItemIsMember =
-                            typeof categoryOfItem !== "undefined" &&
-                            categories &&
-                            categoryOfItem !== -1;
+                            const categoryExistAndItemIsMember =
+                              typeof categoryOfItem !== "undefined" &&
+                              categories &&
+                              categoryOfItem !== -1;
 
-                          if (categoryExistAndItemIsMember) {
-                            categoryOption = (
-                              <Combobox.Option
-                                key={categories[categoryOfItem]}
-                                value={categories[categoryOfItem]}
-                                disabled
-                              >
-                                <Container
-                                  css={{
-                                    mx: "$lg",
-                                    px: "$md",
-                                    mt: "$xl",
-                                    mb: "$xs",
-                                    fontWeight: "$semibold",
-                                    color: "$text100",
-                                  }}
+                            if (categoryExistAndItemIsMember) {
+                              categoryOption = (
+                                <Combobox.Option
+                                  key={categories[categoryOfItem]}
+                                  value={categories[categoryOfItem]}
+                                  disabled
                                 >
-                                  {categories[categoryOfItem]}
-                                </Container>
-                              </Combobox.Option>
-                            );
-                          }
+                                  <Container
+                                    css={{
+                                      mx: "$lg",
+                                      px: "$md",
+                                      mt: "$xl",
+                                      mb: "$xs",
+                                      fontWeight: "$semibold",
+                                      color: "$text100",
+                                    }}
+                                  >
+                                    {categories[categoryOfItem]}
+                                  </Container>
+                                </Combobox.Option>
+                              );
+                            }
 
-                          return (
-                            <>
-                              {categoryOption}
-                              <Combobox.Option
-                                key={item.label}
-                                value={item.label}
-                                className={optionStyles()}
-                              >
-                                {({ active, selected }) => {
-                                  // Item has slug -> it should be rendered as anchor tag
-                                  if (item.slug) {
+                            return (
+                              <>
+                                {categoryOption}
+                                <Combobox.Option
+                                  key={item.label}
+                                  value={item.label}
+                                  className={optionStyles()}
+                                >
+                                  {({ active, selected }) => {
+                                    // Item has slug -> it should be rendered as anchor tag
+                                    if (item.slug) {
+                                      return (
+                                        <>
+                                          <NavItemCustom
+                                            href={item.slug}
+                                            onClick={
+                                              item.action
+                                                ? () => item.action()
+                                                : undefined
+                                            }
+                                            css={{
+                                              py: "$sm",
+                                              px: "$md",
+                                              borderRadius: "$xl",
+                                              bg: `${
+                                                active
+                                                  ? "$button200"
+                                                  : selected
+                                                  ? "$button300"
+                                                  : "transparent"
+                                              }`,
+                                              color: "$text200",
+
+                                              display: "flex",
+                                              gap: "$sm",
+                                            }}
+                                          >
+                                            {item.icon}
+                                            {item.label}
+                                          </NavItemCustom>
+                                        </>
+                                      );
+                                    }
+
+                                    // Item not slug -> it should be rendered as button tag
                                     return (
                                       <>
-                                        <NavItemCustom
-                                          href={item.slug}
+                                        {item.icon}
+                                        <Button
                                           onClick={
                                             item.action
                                               ? () => item.action()
                                               : undefined
                                           }
                                           css={{
+                                            width: "100%",
+                                            textAlign: "left",
                                             py: "$sm",
                                             px: "$md",
                                             borderRadius: "$xl",
@@ -241,54 +286,30 @@ export function CommandPalette({
                                                 : "transparent"
                                             }`,
                                             color: "$text200",
-
-                                            display: "flex",
-                                            gap: "$sm",
                                           }}
                                         >
-                                          {item.icon}
                                           {item.label}
-                                        </NavItemCustom>
+                                        </Button>
                                       </>
                                     );
-                                  }
-
-                                  // Item not slug -> it should be rendered as button tag
-                                  return (
-                                    <>
-                                      {item.icon}
-                                      <Button
-                                        onClick={
-                                          item.action
-                                            ? () => item.action()
-                                            : undefined
-                                        }
-                                        css={{
-                                          width: "100%",
-                                          textAlign: "left",
-                                          py: "$sm",
-                                          px: "$md",
-                                          borderRadius: "$xl",
-                                          bg: `${
-                                            active
-                                              ? "$button200"
-                                              : selected
-                                              ? "$button300"
-                                              : "transparent"
-                                          }`,
-                                          color: "$text200",
-                                        }}
-                                      >
-                                        {item.label}
-                                      </Button>
-                                    </>
-                                  );
-                                }}
-                              </Combobox.Option>
-                            </>
-                          );
-                        })}
-                      </Combobox.Options>
+                                  }}
+                                </Combobox.Option>
+                              </>
+                            );
+                          })}
+                        </Combobox.Options>
+                        <Container
+                          css={{
+                            display: "none",
+                            "@bp2": {
+                              display: "block",
+                              flex: 2,
+                            },
+                          }}
+                        >
+                          {activeOption && preview?.(activeOption, data)}
+                        </Container>
+                      </Flex>
                     </>
                   )}
               </>
