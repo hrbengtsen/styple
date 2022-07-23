@@ -12,18 +12,20 @@ description: A basic text input field used as search.
 </Preview>
 
 ```tsx outline=true
-import { SearchField } from "@styple/design-system";
+import { CommandPalette } from "@styple/design-system";
+
+const dummyData = [
+  "Docs page 1",
+  "Docs page 2",
+  "Docs page 3",
+  "Last docs page"
+];
 
 // Boilerplate component of how to implement a searchbar with SearchField
-export const Searchbar = () => {
+export const CommandPaletteContainer = () => {
   const [query, setQuery] = useState("");
 
-  function keyPressed(e: React.KeyboardEvent) {
-    // Check and prevent default for 'Enter'
-    if (e.key === "Enter") {
-      e.preventDefault();
-    }
-  }
+  const filteredData = query === "" ? dummyData : dummyData.filter((item) => (item.toLowerCase().includes(query.toLowerCase())));
 
   return (
     <form style={{ width: "100%" }}>

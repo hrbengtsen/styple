@@ -113,3 +113,4 @@ export { ScrollShadow } from "./components/ScrollShadow";
 export { Toast, ToastProvider, ToastViewport } from "./components/Toast";
 
 export { CommandPalette } from "./components/CommandPalette";
+export type { DataObj } from "./components/CommandPalette";

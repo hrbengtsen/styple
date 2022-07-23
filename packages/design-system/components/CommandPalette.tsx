@@ -1,16 +1,10 @@
-import { useEffect, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import { Combobox } from "@headlessui/react";
-import { Button, TextField } from "..";
+import { Button, NavItem, TextField, Container, Separator } from "..";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { StyledOverlay, StyledContent } from "./Dialog";
-
-const people = [
-  "Durward Reynolds",
-  "Kenton Towne",
-  "Therese Wunsch",
-  "Benedict Kessler",
-  "Katelyn Rohan",
-];
+import { Search, LucideProps } from "lucide-react";
+import { css, keyframes } from "../stitches.config";
 
 const useEscape = (onEscape: () => void) => {
   useEffect(() => {
@@ -20,49 +14,261 @@ const useEscape = (onEscape: () => void) => {
 
     window.addEventListener("keydown", handleEsc);
     return () => {
-      window.addEventListener("keydown", handleEsc);
+      window.removeEventListener("keydown", handleEsc);
     };
   });
 };
 
-export function CommandPalette() {
-  const [open, setOpen] = useState(false);
+const optionsStyles = css({
+  p: "0",
+  listStyleType: "none",
+  position: "relative",
+  overflowY: "auto",
+  maxHeight: "75vh",
+});
 
-  const [selectedPerson, setSelectedPerson] = useState("");
+const optionStyles = css({
+  cursor: "pointer",
+  mx: "$lg",
+  my: "$xs",
+  "&:first-child": {
+    mt: "$lg",
+  },
+  "&:last-child": {
+    mb: "$lg",
+  },
+});
+
+const contentFadeIn = keyframes({
+  "0%": { opacity: 0, transform: "translate(-50%, -2%) scale(.9)" },
+  "100%": { opacity: 1, transform: "translate(-50%, 0) scale(1)" },
+});
+
+export type DataObj = {
+  label: string;
+  category?: string;
+  icon?: ReactElement<any, any>;
+} & (
+  | { slug: string; action?: never } // Required to have atleast one of these props
+  | { slug?: never; action: () => void }
+  | { slug: string; action: () => void }
+);
+
+type CommandPaletteProps = {
+  data: DataObj[];
+  categories?: string[];
+  filterData?: (query: string, data: DataObj[]) => DataObj[];
+  preview?: (selectedDataItem: string, data: DataObj[]) => JSX.Element;
+  trigger: JSX.Element;
+  displayOptionsOnEmpty?: boolean;
+  placeholder?: string;
+};
+
+export function CommandPalette({
+  data,
+  categories,
+  filterData,
+  preview,
+  trigger,
+  displayOptionsOnEmpty,
+  placeholder,
+}: CommandPaletteProps) {
+  const [open, setOpen] = useState(false);
+  const [selectedData, setSelectedData] = useState("");
   const [query, setQuery] = useState("");
 
+  // Force close of Dialog on ESC
   useEscape(() => setOpen(false));
 
-  const filteredPeople =
-    query === ""
-      ? people
-      : people.filter((person) => {
-          return person.toLowerCase().includes(query.toLowerCase());
-        });
+  const filteredData = filterData
+    ? // Custom filtering
+      filterData(query, data)
+    : // Default filtering of data with query
+      data.filter((item) =>
+        item.label.toLowerCase().includes(query.toLowerCase())
+      );
+
+  const firstCategoryItemEncounters = categories?.map((category) =>
+    filteredData.findIndex((item) => item.category === category)
+  );
 
   return (
     <DialogPrimitive.Root open={open} onOpenChange={setOpen}>
-      <DialogPrimitive.Trigger asChild>
-        <Button>Open CommandPalette</Button>
-      </DialogPrimitive.Trigger>
+      <DialogPrimitive.Trigger asChild>{trigger}</DialogPrimitive.Trigger>
       <StyledOverlay>
-        <StyledContent>
-          <Combobox
-            value={selectedPerson}
-            onChange={setSelectedPerson}
-            nullable
-          >
-            <Combobox.Input
-              as={TextField}
-              onChange={(event) => setQuery(event.target.value)}
-            />
-            <Combobox.Options static>
-              {filteredPeople.map((person) => (
-                <Combobox.Option key={person} value={person}>
-                  {person}
-                </Combobox.Option>
-              ))}
-            </Combobox.Options>
+        <StyledContent
+          css={{
+            "@bp1": {
+              minWidth: "$4xl",
+              overflowY: "hidden",
+              top: "10%",
+              transform: "translate(-50%, 0)",
+              animation: `${contentFadeIn} .15s ease-out`,
+              "@motion": {
+                animation: "none",
+              },
+            },
+          }}
+        >
+          <Combobox value={selectedData} onChange={setSelectedData} nullable>
+            {({ open }) => (
+              <>
+                <Container css={{ position: "sticky", top: "0" }}>
+                  <Container
+                    css={{
+                      color: "$text200",
+                      position: "absolute",
+                      top: "0",
+                      left: "0",
+                      height: "100%",
+                      display: "flex",
+                      alignItems: "center",
+                      pl: "$lg",
+                      pr: "$sm",
+                    }}
+                  >
+                    <Search size="20" />
+                  </Container>
+                  <Combobox.Input
+                    as={TextField}
+                    variant="ghost"
+                    css={{
+                      px: "$3xl",
+                      height: "46px",
+                      "&:hover, &:focus": {
+                        boxShadow: "none",
+                      },
+                      bg: "$bg200E",
+                    }}
+                    placeholder={placeholder ?? "Search..."}
+                    onChange={(event) => setQuery(event.target.value)}
+                  />
+                </Container>
+                {(displayOptionsOnEmpty ? true : query && open) &&
+                  filteredData.length > 0 && (
+                    <>
+                      <Separator css={{ position: "fixed", top: "46px" }} />
+                      <Combobox.Options static hold className={optionsStyles()}>
+                        {filteredData.map((item, index) => {
+                          // Potential JSX of disabled category Combobox option
+                          let categoryOption;
+
+                          // Index of category which current item is first category-item of
+                          const categoryOfItem =
+                            firstCategoryItemEncounters?.findIndex(
+                              (categoryFirstItemIndex) =>
+                                categoryFirstItemIndex === index
+                            );
+
+                          const categoryExistAndItemIsMember =
+                            typeof categoryOfItem !== "undefined" &&
+                            categories &&
+                            categoryOfItem !== -1;
+
+                          if (categoryExistAndItemIsMember) {
+                            categoryOption = (
+                              <Combobox.Option
+                                key={categories[categoryOfItem]}
+                                value={categories[categoryOfItem]}
+                                disabled
+                              >
+                                <Container
+                                  css={{
+                                    mx: "$lg",
+                                    px: "$md",
+                                    mt: "$xl",
+                                    mb: "$xs",
+                                    fontWeight: "$semibold",
+                                    color: "$text100",
+                                  }}
+                                >
+                                  {categories[categoryOfItem]}
+                                </Container>
+                              </Combobox.Option>
+                            );
+                          }
+
+                          return (
+                            <>
+                              {categoryOption}
+                              <Combobox.Option
+                                key={item.label}
+                                value={item.label}
+                                className={optionStyles()}
+                              >
+                                {({ active, selected }) => {
+                                  // Item has slug -> it should be rendered as anchor tag
+                                  if (item.slug) {
+                                    return (
+                                      <>
+                                        {item.icon}
+                                        <NavItem
+                                          href={item.slug}
+                                          onClick={
+                                            item.action
+                                              ? () => item.action()
+                                              : undefined
+                                          }
+                                          css={{
+                                            py: "$sm",
+                                            px: "$md",
+                                            borderRadius: "$xl",
+                                            bg: `${
+                                              active
+                                                ? "$button200"
+                                                : selected
+                                                ? "$button300"
+                                                : "transparent"
+                                            }`,
+                                            color: "$text200",
+                                          }}
+                                        >
+                                          {item.label}
+                                        </NavItem>
+                                      </>
+                                    );
+                                  }
+
+                                  // Item not slug -> it should be rendered as button tag
+                                  return (
+                                    <>
+                                      {item.icon}
+                                      <Button
+                                        onClick={
+                                          item.action
+                                            ? () => item.action()
+                                            : undefined
+                                        }
+                                        css={{
+                                          width: "100%",
+                                          textAlign: "left",
+                                          py: "$sm",
+                                          px: "$md",
+                                          borderRadius: "$xl",
+                                          bg: `${
+                                            active
+                                              ? "$button200"
+                                              : selected
+                                              ? "$button300"
+                                              : "transparent"
+                                          }`,
+                                          color: "$text200",
+                                        }}
+                                      >
+                                        {item.label}
+                                      </Button>
+                                    </>
+                                  );
+                                }}
+                              </Combobox.Option>
+                            </>
+                          );
+                        })}
+                      </Combobox.Options>
+                    </>
+                  )}
+              </>
+            )}
           </Combobox>
         </StyledContent>
       </StyledOverlay>
