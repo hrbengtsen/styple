@@ -17,7 +17,9 @@ import Image from "next/image";
 import { Link } from "./Link";
 import { NavLinkItem } from "./NavLinkItem";
 import { DemoNavbars } from "./DemoNavbars";
+import { DemoToast } from "./DemoToast";
 import { Searchbar } from "./Searchbar";
+import { CommandPaletteContainer } from "./CommandPaletteContainer";
 import { Sparkles } from "./Sparkles";
 
 export const components = {
@@ -33,7 +35,9 @@ export const components = {
   Image,
   NavLinkItem,
   DemoNavbars,
+  DemoToast,
   Searchbar,
+  CommandPaletteContainer,
   Sparkles,
   h1: ({ children, ...props }: React.ComponentProps<typeof SDS.Heading>) => (
     <SDS.Heading size="2xl" css={{ mb: "$md", mt: "$3xl" }} {...props}>

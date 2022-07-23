@@ -6,7 +6,7 @@ import { panelStyles, contentFadeIn } from "./Panel";
 import { Header as DialogHeader, Footer as DialogFooter } from "./DialogUtils";
 import { Container, Heading } from "..";
 
-const StyledOverlay = styled(DialogPrimitive.Overlay, overlayStyles, {
+export const StyledOverlay = styled(DialogPrimitive.Overlay, overlayStyles, {
   position: "fixed",
   top: 0,
   right: 0,
@@ -14,7 +14,7 @@ const StyledOverlay = styled(DialogPrimitive.Overlay, overlayStyles, {
   left: 0,
 });
 
-const StyledContent = styled(DialogPrimitive.Content, panelStyles, {
+export const StyledContent = styled(DialogPrimitive.Content, panelStyles, {
   position: "fixed",
 
   top: "50%",
@@ -38,12 +38,6 @@ const StyledContent = styled(DialogPrimitive.Content, panelStyles, {
   "@motion": {
     animation: "none",
   },
-});
-
-const StyledCloseButton = styled(DialogPrimitive.Close, {
-  position: "absolute",
-  top: "$md",
-  right: "$md",
 });
 
 type DialogProps = React.ComponentProps<typeof DialogPrimitive.Root> & {

@@ -1,58 +1,39 @@
 ---
-title: Tooltip
+title: CommandPalette
 description: Popup that displays content on hover or keyboard focus of associated element.
 ---
 
 ### Examples
 
 <Preview>
-  <Flex
-    css={{
-      gap: "$md",
-      alignItems: "center",
-    }}
-  >
-    <Tooltip content="Tooltip content">
-      <Button highlight size="circle">
-        <Plus style={{ verticalAlign: "middle" }} />
-      </Button>
-    </Tooltip>
-    <Tooltip
-      content={
-        <><b>Drag</b> to move <br /> <b>Click</b> to open menu</>
-      }
-    >
-      <Button highlight css={{ p: "0", borderRadius: "$md" }}>
-        <GripVertical style={{ verticalAlign: "middle" }} />
-      </Button>
-    </Tooltip>
-  </Flex>
+  <CommandPaletteContainer />
 </Preview>
 
 ```tsx outline=true
-import { Tooltip } from "@styple/design-system";
+import { CommandPalette } from "@styple/design-system";
 
-<Flex
-  css={{
-    gap: "$md",
-    alignItems: "center",
-  }}
->
-  <Tooltip content="Tooltip content">
-    <Button highlight size="circle">
-      <Plus style={{ verticalAlign: "middle" }} />
-    </Button>
-  </Tooltip>
-  <Tooltip
-    content={
-      <><b>Drag</b> to move <br /> <b>Click</b> to open menu</>
-    }
-  >
-    <Button highlight css={{ p: "0", borderRadius: "$md" }}>
-      <GripVertical style={{ verticalAlign: "middle" }} />
-    </Button>
-  </Tooltip>
-</Flex>
+const dummyData = [
+  { label: "Docs page 1", isDiv: false },
+  { label: "Docs page 2", isDiv: false },
+  { label: "Docs page 3", isDiv: false },
+  { label: "Final pages", isDiv: true },
+  { label: "Last docs page", isDiv: false },
+];
+
+// Boilerplate component of how to implement a CommandPalette
+export const CommandPaletteContainer = () => {
+  const [query, setQuery] = useState("");
+
+  const filteredData = query === "" ? dummyData : dummyData.filter((item) => (item.toLowerCase().includes(query.toLowerCase())));
+
+  return (
+    <CommandPalette
+      query={query}
+      setQuery={setQuery} 
+      data={filteredData}
+    />
+  );
+};
 ```
 
 ### API Reference

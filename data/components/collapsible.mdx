@@ -1,0 +1,54 @@
+---
+title: Collapsible
+description: Component which reveals/hides some content.
+---
+
+### Example
+
+<Preview>
+  <Collapsible
+    css={{
+      width: "320px",
+    }}
+  >
+    <CollapsibleTrigger asChild><Button>Trigger</Button></CollapsibleTrigger>
+    <CollapsibleContent>
+      <Text css={{ p: "$sm" }}>Example collapsible content.</Text>
+    </CollapsibleContent>
+  </Collapsible>
+</Preview>
+
+```tsx outline=true
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@styple/design-system";
+
+<Collapsible
+  css={{
+    width: "320px",
+  }}
+>
+  <CollapsibleTrigger asChild>
+    <Button>Trigger</Button>
+  </CollapsibleTrigger>
+  <CollapsibleContent>
+    <Text css={{ p: "$sm" }}>Example collapsible content.</Text>
+  </CollapsibleContent>
+</Collapsible>
+```
+
+### API Reference
+
+See [Radix-UI Collapsible (v0.1.6)](https://www.radix-ui.com/docs/primitives/components/collapsible) for details. This only covers **styple** abstractions.
+
+#### Collapsible
+
+A styled component wrapper for `Collapsible.Root`.
+
+#### CollapsibleContent 
+
+A styled component wrapper for `Collapsible.Content`, which includes an open/close animation.
+
+#### CollapsibleTrigger
+
+A re-export of `Collapsible.Trigger`. Use the `asChild` prop to provide your own styled trigger, see example above.
+
+---

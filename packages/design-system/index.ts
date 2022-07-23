@@ -102,6 +102,15 @@ export { Navbar, Sidebar } from "./components/Navigation";
 
 export { ScrollArea } from "./components/ScrollArea";
 
-export { CollapsibleTrigger } from "@radix-ui/react-collapsible";
+export {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "./components/Collapsible";
 
 export { ScrollShadow } from "./components/ScrollShadow";
+
+export { Toast, ToastProvider, ToastViewport } from "./components/Toast";
+
+export { CommandPalette } from "./components/CommandPalette";
+export type { DataObj } from "./components/CommandPalette";

@@ -1,5 +1,4 @@
 import {
-  keyframes,
   Container,
   Navbar,
   Text,

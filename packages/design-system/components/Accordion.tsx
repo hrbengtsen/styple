@@ -112,4 +112,4 @@ export const AccordionTrigger = React.forwardRef<
     {!noSeparator && <Separator />}
   </AccordionHeader>
 ));
-AccordionTrigger.displayName = "Accordion";
+AccordionTrigger.displayName = "AccordionTrigger";
