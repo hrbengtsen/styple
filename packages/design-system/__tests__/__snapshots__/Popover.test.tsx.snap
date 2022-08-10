@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <button
-        aria-controls="radix-0"
+        aria-controls="radix-:r0:"
         aria-expanded="false"
         aria-haspopup="dialog"
         class="c-jVSBjD c-jVSBjD-dWmsQj-size-md c-jVSBjD-zoiF-variant-normal"
@@ -19,7 +19,7 @@ Object {
   </body>,
   "container": <div>
     <button
-      aria-controls="radix-0"
+      aria-controls="radix-:r0:"
       aria-expanded="false"
       aria-haspopup="dialog"
       class="c-jVSBjD c-jVSBjD-dWmsQj-size-md c-jVSBjD-zoiF-variant-normal"

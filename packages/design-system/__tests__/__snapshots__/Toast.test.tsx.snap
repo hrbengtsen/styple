@@ -11,17 +11,20 @@ Object {
         style=""
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          style="position: fixed; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+          tabindex="0"
+        />
         <ol
           class="c-dcarIp"
           tabindex="-1"
         >
           <li
-            aria-atomic="true"
-            aria-live="off"
             class="c-kKuJpB"
+            data-radix-collection-item=""
             data-state="open"
             data-swipe-direction="right"
-            role="status"
             style="user-select: none;"
             tabindex="0"
           >
@@ -64,9 +67,14 @@ Object {
             </button>
           </li>
         </ol>
+        <span
+          aria-hidden="true"
+          style="position: fixed; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+          tabindex="0"
+        />
       </div>
     </div>
-    <div
+    <span
       aria-atomic="true"
       aria-live="assertive"
       role="status"
@@ -80,17 +88,20 @@ Object {
       style=""
       tabindex="-1"
     >
+      <span
+        aria-hidden="true"
+        style="position: fixed; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+        tabindex="0"
+      />
       <ol
         class="c-dcarIp"
         tabindex="-1"
       >
         <li
-          aria-atomic="true"
-          aria-live="off"
           class="c-kKuJpB"
+          data-radix-collection-item=""
           data-state="open"
           data-swipe-direction="right"
-          role="status"
           style="user-select: none;"
           tabindex="0"
         >
@@ -133,6 +144,11 @@ Object {
           </button>
         </li>
       </ol>
+      <span
+        aria-hidden="true"
+        style="position: fixed; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+        tabindex="0"
+      />
     </div>
   </div>,
   "debug": [Function],

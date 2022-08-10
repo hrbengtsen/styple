@@ -10,7 +10,7 @@ Object {
         data-state="closed"
       >
         <button
-          aria-controls="radix-0"
+          aria-controls="radix-:r0:"
           aria-expanded="false"
           data-state="closed"
           type="button"
@@ -22,7 +22,7 @@ Object {
           data-state="closed"
           data-testid="content"
           hidden=""
-          id="radix-0"
+          id="radix-:r0:"
           style=""
         />
       </div>
@@ -34,7 +34,7 @@ Object {
       data-state="closed"
     >
       <button
-        aria-controls="radix-0"
+        aria-controls="radix-:r0:"
         aria-expanded="false"
         data-state="closed"
         type="button"
@@ -46,7 +46,7 @@ Object {
         data-state="closed"
         data-testid="content"
         hidden=""
-        id="radix-0"
+        id="radix-:r0:"
         style=""
       />
     </div>

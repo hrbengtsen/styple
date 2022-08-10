@@ -8,7 +8,7 @@ Object {
       <button
         aria-haspopup="menu"
         data-state="closed"
-        id="radix-0"
+        id="radix-:r0:"
         type="button"
       >
         trigger
@@ -19,7 +19,7 @@ Object {
     <button
       aria-haspopup="menu"
       data-state="closed"
-      id="radix-0"
+      id="radix-:r0:"
       type="button"
     >
       trigger

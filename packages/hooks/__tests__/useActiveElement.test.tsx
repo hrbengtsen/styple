@@ -1,10 +1,12 @@
-import * as React from "react";
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import { useActiveElement } from "..";
+import * as React from 'react';
+import { render, screen, act } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { useActiveElement } from '..';
 
 function ActiveElementExample() {
   const activeElement = useActiveElement();
+
+  console.log(activeElement);
 
   return (
     <div>
@@ -15,8 +17,10 @@ function ActiveElementExample() {
   );
 }
 
-describe("Test useActiveElement", () => {
-  it("should work as expected", () => {
+describe('Test useActiveElement', () => {
+  it('should work as expected', async () => {
+    const user = userEvent.setup();
+
     render(<ActiveElementExample />);
 
     const button1 = screen.getByText(/button 1/i);
@@ -24,12 +28,12 @@ describe("Test useActiveElement", () => {
     const active = screen.getByText(/active/i);
 
     // Active element is initially null
-    expect(active).toHaveTextContent("Active:");
+    expect(active).toHaveTextContent('Active:');
 
-    userEvent.click(button1);
-    expect(active).toHaveTextContent("Active: 1");
+    await user.click(button1);
+    expect(active).toHaveTextContent('Active: 1');
 
-    userEvent.click(button2);
-    expect(active).toHaveTextContent("Active: 2");
+    await user.click(button2);
+    expect(active).toHaveTextContent('Active: 2');
   });
 });

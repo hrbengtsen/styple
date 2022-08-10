@@ -1,13 +1,15 @@
-import * as React from "react";
-import { render, RenderResult } from "@testing-library/react";
-import { Tooltip, Button } from "..";
+import * as React from 'react';
+import { render, RenderResult } from '@testing-library/react';
+import { Tooltip, TooltipProvider, Button } from '..';
 
-describe("Test Tooltip", () => {
-  it("should render as expected", () => {
+describe('Test Tooltip', () => {
+  it('should render as expected', () => {
     const view: RenderResult = render(
-      <Tooltip content={<>Tooltip content</>}>
-        <Button>Tooltip trigger</Button>
-      </Tooltip>
+      <TooltipProvider>
+        <Tooltip content={<>Tooltip content</>}>
+          <Button>Tooltip trigger</Button>
+        </Tooltip>
+      </TooltipProvider>
     );
 
     expect(view).toMatchSnapshot();

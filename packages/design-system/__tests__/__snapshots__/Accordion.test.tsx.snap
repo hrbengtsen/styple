@@ -17,12 +17,12 @@ Object {
             data-state="closed"
           >
             <button
-              aria-controls="radix-0"
+              aria-controls="radix-:r1:"
               aria-expanded="false"
               class="c-brQuED"
               data-radix-collection-item=""
               data-state="closed"
-              id="radix-1"
+              id="radix-:r0:"
               type="button"
             >
               Accordion one
@@ -50,12 +50,12 @@ Object {
             />
           </h3>
           <div
-            aria-labelledby="radix-1"
+            aria-labelledby="radix-:r0:"
             class="c-kDvOPF"
             data-state="closed"
             data-testid="content-one"
             hidden=""
-            id="radix-0"
+            id="radix-:r1:"
             role="region"
             style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"
           />
@@ -69,12 +69,12 @@ Object {
             data-state="closed"
           >
             <button
-              aria-controls="radix-2"
+              aria-controls="radix-:r3:"
               aria-expanded="false"
               class="c-brQuED"
               data-radix-collection-item=""
               data-state="closed"
-              id="radix-3"
+              id="radix-:r2:"
               type="button"
             >
               Accordion two
@@ -102,11 +102,11 @@ Object {
             />
           </h3>
           <div
-            aria-labelledby="radix-3"
+            aria-labelledby="radix-:r2:"
             class="c-kDvOPF"
             data-state="closed"
             hidden=""
-            id="radix-2"
+            id="radix-:r3:"
             role="region"
             style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"
           />
@@ -127,12 +127,12 @@ Object {
           data-state="closed"
         >
           <button
-            aria-controls="radix-0"
+            aria-controls="radix-:r1:"
             aria-expanded="false"
             class="c-brQuED"
             data-radix-collection-item=""
             data-state="closed"
-            id="radix-1"
+            id="radix-:r0:"
             type="button"
           >
             Accordion one
@@ -160,12 +160,12 @@ Object {
           />
         </h3>
         <div
-          aria-labelledby="radix-1"
+          aria-labelledby="radix-:r0:"
           class="c-kDvOPF"
           data-state="closed"
           data-testid="content-one"
           hidden=""
-          id="radix-0"
+          id="radix-:r1:"
           role="region"
           style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"
         />
@@ -179,12 +179,12 @@ Object {
           data-state="closed"
         >
           <button
-            aria-controls="radix-2"
+            aria-controls="radix-:r3:"
             aria-expanded="false"
             class="c-brQuED"
             data-radix-collection-item=""
             data-state="closed"
-            id="radix-3"
+            id="radix-:r2:"
             type="button"
           >
             Accordion two
@@ -212,11 +212,11 @@ Object {
           />
         </h3>
         <div
-          aria-labelledby="radix-3"
+          aria-labelledby="radix-:r2:"
           class="c-kDvOPF"
           data-state="closed"
           hidden=""
-          id="radix-2"
+          id="radix-:r3:"
           role="region"
           style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"
         />

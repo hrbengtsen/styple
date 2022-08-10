@@ -7,9 +7,11 @@ Object {
     <div>
       <button
         aria-autocomplete="none"
-        aria-controls="radix-0"
+        aria-controls="radix-:r0:"
         aria-expanded="false"
         class="c-dtkWYc c-dtkWYc-ibYHtm-size-md"
+        data-state="closed"
+        dir="ltr"
         role="combobox"
         type="button"
       >
@@ -45,9 +47,11 @@ Object {
   "container": <div>
     <button
       aria-autocomplete="none"
-      aria-controls="radix-0"
+      aria-controls="radix-:r0:"
       aria-expanded="false"
       class="c-dtkWYc c-dtkWYc-ibYHtm-size-md"
+      data-state="closed"
+      dir="ltr"
       role="combobox"
       type="button"
     >
