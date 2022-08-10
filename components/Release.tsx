@@ -19,7 +19,7 @@ export const Release = ({ name, version, current = false }: ReleaseType) => (
   >
     {name}{" "}
     <Badge
-      variant={`${current ? "primary" : "normal"}`}
+      variant={current ? "primary" : "normal"}
       css={{ fontWeight: "$semibold" }}
     >
       {version}
