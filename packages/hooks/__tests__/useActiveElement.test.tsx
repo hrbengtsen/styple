@@ -6,8 +6,6 @@ import { useActiveElement } from '..';
 function ActiveElementExample() {
   const activeElement = useActiveElement();
 
-  console.log(activeElement);
-
   return (
     <div>
       <button id="1">button 1</button>

@@ -1,10 +1,12 @@
-import * as React from "react";
+import * as React from 'react';
 import {
+  act,
   fireEvent,
   render,
   RenderResult,
   screen,
-} from "@testing-library/react";
+  waitFor
+} from '@testing-library/react';
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -12,10 +14,10 @@ import {
   DropdownMenuItem,
   DropdownMenuCheckboxItem,
   DropdownMenuSeparator,
-  DropdownMenuLabel,
-} from "..";
+  DropdownMenuLabel
+} from '..';
 
-describe("Test DropdownMenu", () => {
+describe('Test DropdownMenu', () => {
   let view: RenderResult;
 
   const mockOnChange = jest.fn((bool) => bool);
@@ -36,26 +38,28 @@ describe("Test DropdownMenu", () => {
     );
   });
 
-  it("should render as expected", () => {
+  it('should render as expected', () => {
     expect(view).toMatchSnapshot();
   });
 
-  it("should support custom onChange", async () => {
-    const trigger: HTMLElement = screen.getByText("trigger");
+  it('should support custom onChange', () => {
+    const trigger: HTMLElement = screen.getByText('trigger');
 
     // Open dropdown
     fireEvent.pointerDown(
       trigger,
-      new PointerEvent("pointerdown", {
+      new PointerEvent('pointerdown', {
         ctrlKey: false,
-        button: 0,
+        button: 0
       })
     );
 
-    const checkbox: HTMLElement = await screen.findByText("checkbox");
+    const checkbox: HTMLElement = screen.getByText('checkbox');
 
     expect(checkbox).not.toBeChecked();
+
     fireEvent.click(checkbox);
+
     expect(checkbox).toBeChecked();
 
     // Check onChange was called just once, when checkbox was clicked
