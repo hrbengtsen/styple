@@ -3,43 +3,43 @@ import {
   Navbar,
   Flex,
   Text,
-  Tooltip,
-} from "../packages/design-system";
-import { NavLinkItem } from "./NavLinkItem";
-import { Link } from "./Link";
-import { ThemeButton } from "./ThemeButton";
-import { ArrowLeft, ArrowRight, Github } from "lucide-react";
-import { useRouter } from "next/router";
-import { RemoveScroll } from "react-remove-scroll";
-import { openNav, closeNav } from "../lib/animations";
-import { useEffect, useState } from "react";
+  Tooltip
+} from '../packages/design-system';
+import { NavLinkItem } from './NavLinkItem';
+import { Link } from './Link';
+import { ThemeButton } from './ThemeButton';
+import { ArrowLeft, ArrowRight, Github } from 'lucide-react';
+import { useRouter } from 'next/router';
+import { RemoveScroll } from 'react-remove-scroll';
+import { openNav, closeNav } from '../lib/animations';
+import { useEffect, useState } from 'react';
 
 export const Header = () => {
   const router = useRouter();
 
-  const bottomShadowOnDocs = router.pathname.includes("/docs")
-    ? { boxShadow: "inset 0 -1px 2px -1px $colors$button100" }
+  const bottomShadowOnDocs = router.pathname.includes('/docs')
+    ? { boxShadow: 'inset 0 -1px 2px -1px $colors$button100' }
     : {};
 
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleRouteChange = () => setIsOpen(false);
-    router.events.on("routeChangeStart", handleRouteChange);
+    router.events.on('routeChangeStart', handleRouteChange);
 
-    return () => router.events.off("routeChangeStart", handleRouteChange);
-  }, []);
+    return () => router.events.off('routeChangeStart', handleRouteChange);
+  }, [router.events]);
 
   return (
     <Container
       as="header"
       css={{
-        width: "100%",
-        bg: "$bg200A",
-        backdropFilter: "blur(16px)",
-        position: "fixed",
-        zIndex: "$3",
-        ...bottomShadowOnDocs,
+        width: '100%',
+        bg: '$bg200A',
+        backdropFilter: 'blur(16px)',
+        position: 'fixed',
+        zIndex: '$3',
+        ...bottomShadowOnDocs
       }}
     >
       <Container
@@ -48,41 +48,41 @@ export const Header = () => {
       >
         <Navbar
           css={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            p: "$lg",
-            height: "$2xl",
-            mx: "auto",
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            p: '$lg',
+            height: '$2xl',
+            mx: 'auto'
           }}
           open={isOpen}
           onOpenChange={(open) => setIsOpen(open)}
           brand={
             <Flex
               css={{
-                alignItems: "center",
-                gap: "$lg",
+                alignItems: 'center',
+                gap: '$lg'
               }}
             >
               <NavLinkItem
                 ghost
                 href="/"
                 css={{
-                  display: "flex",
-                  borderRadius: "0",
-                  pl: "0",
+                  display: 'flex',
+                  borderRadius: '0',
+                  pl: '0'
                 }}
               >
                 <Container
                   as="span"
                   css={{
-                    display: "inline-block",
-                    transition: "transform 350ms ease-out",
-                    willChange: "transform",
-                    "a:hover &": {
-                      transform: "translateX(84px) rotate(-45deg)",
+                    display: 'inline-block',
+                    transition: 'transform 350ms ease-out',
+                    willChange: 'transform',
+                    'a:hover &': {
+                      transform: 'translateX(84px) rotate(-45deg)'
                     },
-                    lineHeight: 0,
+                    lineHeight: 0
                   }}
                 >
                   <svg
@@ -106,12 +106,12 @@ export const Header = () => {
                 </Container>
                 <Text
                   css={{
-                    fontWeight: "$black",
-                    ml: "$sm",
-                    transition: "color 300ms ease-in-out",
-                    "a:hover &": {
-                      color: "$primary200",
-                    },
+                    fontWeight: '$black',
+                    ml: '$sm',
+                    transition: 'color 300ms ease-in-out',
+                    'a:hover &': {
+                      color: '$primary200'
+                    }
                   }}
                 >
                   styple
@@ -120,8 +120,8 @@ export const Header = () => {
               <Link
                 href="/docs/overview/releases"
                 css={{
-                  fontSize: "$xs",
-                  py: "$sm",
+                  fontSize: '$xs',
+                  py: '$sm'
                 }}
               >
                 v0.2.0
@@ -131,26 +131,26 @@ export const Header = () => {
           content={
             <Flex
               css={{
-                gap: "$xs",
+                gap: '$xs'
               }}
             >
-              {router.pathname == "/" ? (
+              {router.pathname == '/' ? (
                 <NavLinkItem ghost href="/docs">
-                  Explore docs{" "}
+                  Explore docs{' '}
                   <Container
                     as="span"
                     css={{
-                      display: "inline-block",
-                      transition: "transform 200ms ease-in-out",
-                      willChange: "transform",
-                      "a:hover &": {
-                        transform: "translateX(2px)",
-                      },
+                      display: 'inline-block',
+                      transition: 'transform 200ms ease-in-out',
+                      willChange: 'transform',
+                      'a:hover &': {
+                        transform: 'translateX(2px)'
+                      }
                     }}
                   >
                     <ArrowRight
                       size="16"
-                      style={{ position: "relative", top: "2px" }}
+                      style={{ position: 'relative', top: '2px' }}
                     />
                   </Container>
                 </NavLinkItem>
@@ -159,19 +159,19 @@ export const Header = () => {
                   <Container
                     as="span"
                     css={{
-                      display: "inline-block",
-                      transition: "transform 200ms ease-in-out",
-                      willChange: "transform",
-                      "a:hover &": {
-                        transform: "translateX(-2px)",
-                      },
+                      display: 'inline-block',
+                      transition: 'transform 200ms ease-in-out',
+                      willChange: 'transform',
+                      'a:hover &': {
+                        transform: 'translateX(-2px)'
+                      }
                     }}
                   >
                     <ArrowLeft
                       size="16"
-                      style={{ position: "relative", top: "2px" }}
+                      style={{ position: 'relative', top: '2px' }}
                     />
-                  </Container>{" "}
+                  </Container>{' '}
                   Go home
                 </NavLinkItem>
               )}
@@ -183,12 +183,12 @@ export const Header = () => {
                   ghost
                   href="https://github.com/hrbengtsen/styple"
                   css={{
-                    textAlign: "center",
+                    textAlign: 'center'
                   }}
                 >
                   <Github
                     size="20"
-                    style={{ position: "relative", top: "2px" }}
+                    style={{ position: 'relative', top: '2px' }}
                   />
                 </NavLinkItem>
               </Tooltip>
@@ -197,45 +197,45 @@ export const Header = () => {
           mobileContent={
             <Flex
               css={{
-                "@bp2": {
-                  display: "none",
+                '@bp2': {
+                  display: 'none'
                 },
-                flexDirection: "column",
-                width: "100%",
+                flexDirection: 'column',
+                width: '100%',
                 '&[data-state="open"]': {
-                  animation: `${openNav} 125ms ease-out`,
+                  animation: `${openNav} 125ms ease-out`
                 },
                 '&[data-state="closed"]': {
-                  animation: `${closeNav} 125ms ease-out`,
+                  animation: `${closeNav} 125ms ease-out`
                 },
-                gap: "$xs",
-                px: "$lg",
-                pb: "$lg",
+                gap: '$xs',
+                px: '$lg',
+                pb: '$lg'
               }}
             >
-              {router.pathname == "/" ? (
+              {router.pathname == '/' ? (
                 <NavLinkItem
                   ghost
                   href="/docs"
                   css={{
-                    pl: "0",
+                    pl: '0'
                   }}
                 >
-                  Explore docs{" "}
+                  Explore docs{' '}
                   <Container
                     as="span"
                     css={{
-                      display: "inline-block",
-                      transition: "transform 200ms ease-in-out",
-                      willChange: "transform",
-                      "a:hover &": {
-                        transform: "translateX(2px)",
-                      },
+                      display: 'inline-block',
+                      transition: 'transform 200ms ease-in-out',
+                      willChange: 'transform',
+                      'a:hover &': {
+                        transform: 'translateX(2px)'
+                      }
                     }}
                   >
                     <ArrowRight
                       size="16"
-                      style={{ position: "relative", top: "2px" }}
+                      style={{ position: 'relative', top: '2px' }}
                     />
                   </Container>
                 </NavLinkItem>
@@ -244,32 +244,32 @@ export const Header = () => {
                   ghost
                   href="/"
                   css={{
-                    pl: "0",
+                    pl: '0'
                   }}
                 >
                   <Container
                     as="span"
                     css={{
-                      display: "inline-block",
-                      transition: "transform 200ms ease-in-out",
-                      willChange: "transform",
-                      "a:hover &": {
-                        transform: "translateX(-2px)",
-                      },
+                      display: 'inline-block',
+                      transition: 'transform 200ms ease-in-out',
+                      willChange: 'transform',
+                      'a:hover &': {
+                        transform: 'translateX(-2px)'
+                      }
                     }}
                   >
                     <ArrowLeft
                       size="16"
-                      style={{ position: "relative", top: "2px" }}
+                      style={{ position: 'relative', top: '2px' }}
                     />
-                  </Container>{" "}
+                  </Container>{' '}
                   Go home
                 </NavLinkItem>
               )}
 
               <Flex
                 css={{
-                  gap: "$xs",
+                  gap: '$xs'
                 }}
               >
                 <ThemeButton />
@@ -279,12 +279,12 @@ export const Header = () => {
                     ghost
                     href="https://github.com/hrbengtsen/styple"
                     css={{
-                      textAlign: "center",
+                      textAlign: 'center'
                     }}
                   >
                     <Github
                       size="20"
-                      style={{ position: "relative", top: "2px" }}
+                      style={{ position: 'relative', top: '2px' }}
                     />
                   </NavLinkItem>
                 </Tooltip>

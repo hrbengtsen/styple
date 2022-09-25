@@ -1,11 +1,9 @@
 import * as React from 'react';
 import {
-  act,
   fireEvent,
   render,
   RenderResult,
-  screen,
-  waitFor
+  screen
 } from '@testing-library/react';
 import {
   DropdownMenu,
