@@ -1,33 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test Popover should render as expected 1`] = `
+exports[`Test Collapsible should render as expected 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <button
-        aria-controls="radix-:r0:"
-        aria-expanded="false"
-        aria-haspopup="dialog"
-        class="c-jVSBjD c-jVSBjD-dWmsQj-size-md c-jVSBjD-zoiF-variant-normal"
+      <div
+        class="c-PJLV"
         data-state="closed"
-        type="button"
       >
-        Popover trigger
-      </button>
+        <button
+          aria-controls="radix-:r0:"
+          aria-expanded="false"
+          data-state="closed"
+          type="button"
+        >
+          Trigger
+        </button>
+        <div
+          class="c-eFxSqw"
+          data-state="closed"
+          data-testid="content"
+          hidden=""
+          id="radix-:r0:"
+          style=""
+        />
+      </div>
     </div>
   </body>,
   "container": <div>
-    <button
-      aria-controls="radix-:r0:"
-      aria-expanded="false"
-      aria-haspopup="dialog"
-      class="c-jVSBjD c-jVSBjD-dWmsQj-size-md c-jVSBjD-zoiF-variant-normal"
+    <div
+      class="c-PJLV"
       data-state="closed"
-      type="button"
     >
-      Popover trigger
-    </button>
+      <button
+        aria-controls="radix-:r0:"
+        aria-expanded="false"
+        data-state="closed"
+        type="button"
+      >
+        Trigger
+      </button>
+      <div
+        class="c-eFxSqw"
+        data-state="closed"
+        data-testid="content"
+        hidden=""
+        id="radix-:r0:"
+        style=""
+      />
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

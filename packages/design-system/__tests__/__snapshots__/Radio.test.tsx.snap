@@ -6,6 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
+        aria-required="false"
         class="c-dhzjXW"
         dir="ltr"
         role="radiogroup"
@@ -42,6 +43,7 @@ Object {
   </body>,
   "container": <div>
     <div
+      aria-required="false"
       class="c-dhzjXW"
       dir="ltr"
       role="radiogroup"

@@ -7,6 +7,7 @@ Object {
     <div>
       <div
         class="c-hlWCvT"
+        dir="ltr"
         style="position: relative; --radix-scroll-area-corner-width: 0px; --radix-scroll-area-corner-height: 0px;"
       >
         <style>
@@ -29,6 +30,7 @@ Object {
   "container": <div>
     <div
       class="c-hlWCvT"
+      dir="ltr"
       style="position: relative; --radix-scroll-area-corner-width: 0px; --radix-scroll-area-corner-height: 0px;"
     >
       <style>

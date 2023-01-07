@@ -44,7 +44,7 @@ export async function getMdxBySlug(
   );
   const { frontmatter, code } = await bundleMDX({
     source,
-    xdmOptions(options, frontmatter) {
+    mdxOptions(options, frontmatter) {
       options.rehypePlugins = [
         ...(options.rehypePlugins ?? []),
         rehypeMetaAttr,

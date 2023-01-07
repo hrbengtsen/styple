@@ -9,6 +9,7 @@ Object {
         aria-disabled="false"
         class="c-bXudAR"
         data-orientation="horizontal"
+        dir="ltr"
         style="--radix-slider-thumb-transform: translateX(-50%);"
       >
         <span
@@ -45,6 +46,7 @@ Object {
       aria-disabled="false"
       class="c-bXudAR"
       data-orientation="horizontal"
+      dir="ltr"
       style="--radix-slider-thumb-transform: translateX(-50%);"
     >
       <span

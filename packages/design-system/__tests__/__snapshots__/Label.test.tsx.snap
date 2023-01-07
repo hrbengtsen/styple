@@ -7,7 +7,7 @@ Object {
     <div>
       <span
         class="c-bqRZPX c-gHWBzz c-bqRZPX-fAKXXr-size-sm c-bqRZPX-liXMRt-color-text"
-        id="radix-0"
+        id="radix-:r0:"
         role="label"
       >
         Test Label
@@ -17,7 +17,7 @@ Object {
   "container": <div>
     <span
       class="c-bqRZPX c-gHWBzz c-bqRZPX-fAKXXr-size-sm c-bqRZPX-liXMRt-color-text"
-      id="radix-0"
+      id="radix-:r0:"
       role="label"
     >
       Test Label

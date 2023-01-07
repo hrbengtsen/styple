@@ -18,7 +18,7 @@ Object {
             Regular content
           </div>
           <button
-            aria-controls="radix-0"
+            aria-controls="radix-:r0:"
             aria-expanded="false"
             aria-label="Navigation menu toggle"
             class="c-bcMgnR c-bcMgnR-igJqlz-css"
@@ -48,7 +48,7 @@ Object {
           Regular content
         </div>
         <button
-          aria-controls="radix-0"
+          aria-controls="radix-:r0:"
           aria-expanded="false"
           aria-label="Navigation menu toggle"
           class="c-bcMgnR c-bcMgnR-igJqlz-css"
@@ -132,7 +132,7 @@ Object {
           Regular content
         </div>
         <button
-          aria-controls="radix-1"
+          aria-controls="radix-:r1:"
           aria-expanded="false"
           aria-haspopup="dialog"
           class="c-jVSBjD c-jVSBjD-dWmsQj-size-md c-jVSBjD-eskvya-ghost-true c-jVSBjD-zoiF-variant-normal c-jVSBjD-jjweoh-cv c-jVSBjD-ihteOKz-css"
@@ -186,7 +186,7 @@ Object {
         Regular content
       </div>
       <button
-        aria-controls="radix-1"
+        aria-controls="radix-:r1:"
         aria-expanded="false"
         aria-haspopup="dialog"
         class="c-jVSBjD c-jVSBjD-dWmsQj-size-md c-jVSBjD-eskvya-ghost-true c-jVSBjD-zoiF-variant-normal c-jVSBjD-jjweoh-cv c-jVSBjD-ihteOKz-css"

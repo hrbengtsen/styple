@@ -1,13 +1,20 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:import/typescript"
+  ],
   "rules": {
     "react/no-unescaped-entities": "off",
     "testing-library/no-render-in-setup": [
       "error",
       { "allowTestingFrameworkSetupHook": "beforeEach" }
-    ]
+    ],
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off"
   },
-  "plugins": ["testing-library", "jest-dom"],
+  "plugins": ["testing-library", "jest-dom", "@typescript-eslint"],
   "overrides": [
     {
       "files": [

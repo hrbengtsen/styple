@@ -1,0 +1,141 @@
+---
+title: Toast
+description: A brief and concise notification displayed temporarily.
+---
+
+### Examples
+
+<Preview>
+  <DemoToast />
+</Preview>
+
+```tsx outline=true
+// Only imports needed for the actual Toasts
+import { Toast, ToastProvider, ToastViewport } from "@styple/design-system";
+
+type Status = "success" | "error" | undefined;
+
+export const DemoToast = () => {
+  const statuses: Status[] = [undefined, "success", "error"];
+
+  const [openToast, setOpenToast] = useState(false);
+  const [status, setStatus] = useState<Status>("success");
+
+  const [openActionToast, setOpenActionToast] = useState(false);
+
+  return (
+    <ToastProvider>
+      <Flex css={{ gap: "$md", flexWrap: "wrap" }}>
+        <Button
+          onClick={() => {
+            setOpenToast(true);
+            // Randomly choose a status (or none)
+            setStatus(statuses[randomInInterval(1, 4) - 1]);
+          }}
+        >Trigger Toast</Button>
+        <Button onClick={() => setOpenActionToast(true)}>Trigger Toast with Action</Button>
+      </Flex>
+
+      <Toast
+        open={openToast}
+        onOpenChange={setOpenToast}
+        content="Description of the toast"
+        status={status}
+      />
+
+      <Toast
+        open={openActionToast}
+        onOpenChange={setOpenActionToast}
+        title="Example Title"
+        content="A rather long description, which you should usually avoid."
+        actionAlt="Description of alternative way of actioning"
+      >
+        <Button size="sm">Cancel</Button>
+      </Toast>
+
+      <ToastViewport />
+    </ToastProvider>
+  );
+};
+```
+
+### API Reference
+
+See [Radix-UI Toast (v0.1.1)](https://www.radix-ui.com/docs/primitives/components/toast) for details. This only covers **styple** abstractions.
+
+#### Toast
+
+A styled abstraction of the primitive parts (`Root`, `Title`, `Description`, `Action`, `Close`). Custom props:
+
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Prop</Th>
+      <Td>Type</Td>
+      <Td>Default</Td>
+      <Td>Explanation</Td>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Th>
+        <Code>title</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Toast title.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>content</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Toast description.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>status?</Code>
+      </Th>
+      <Td>
+        <Code color="normal">"success" | "error"</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Icon indicating status of notification.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>children?</Code>
+      </Th>
+      <Td>
+        <Code color="normal">ReactElement</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Should be an action Button as the child.</Text></Td>
+    </Tr>
+    <Tr>
+      <Th>
+        <Code>actionAlt?</Code>
+      </Th>
+      <Td>
+        <Code color="normal">string</Code>
+      </Td>
+      <Td>-</Td>
+      <Td><Text>Should describe an alternative way of actioning. Required if children is present.</Text></Td>
+    </Tr>
+  </Tbody>
+</Table>
+
+#### ToastProvider
+
+The `Toast.Provider` that should wrap your app for toasts to function properly.
+
+#### ToastViewport
+
+The `Toast.Viewport` that defines the fixed area where toasts will appear.
+
+---

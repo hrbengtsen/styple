@@ -1,54 +1,58 @@
-import React from "react";
-import { Button } from "../packages/design-system/components/Button";
-import { useTheme } from "next-themes";
-import { Sun, Moon, Coffee, MountainSnow } from "lucide-react";
-import { Tooltip } from "../packages/design-system";
+import React from 'react';
+import { Button } from '../packages/design-system/components/Button';
+import { useTheme } from 'next-themes';
+import { Sun, Moon, Coffee, MountainSnow } from 'lucide-react';
+import { Tooltip } from '../packages/design-system';
+import { useMounted } from '../packages/hooks';
 
 export function ThemeButton() {
   const { resolvedTheme, setTheme } = useTheme();
+  const isMounted = useMounted();
 
   function changeTheme() {
     switch (resolvedTheme) {
-      case "light":
-        setTheme("dark");
+      case 'light':
+        setTheme('dark');
         break;
 
-      case "dark":
-        setTheme("deep");
+      case 'dark':
+        setTheme('deep');
         break;
 
-      case "deep":
-        setTheme("cozy");
+      case 'deep':
+        setTheme('cozy');
         break;
 
-      case "cozy":
-        setTheme("light");
+      case 'cozy':
+        setTheme('light');
         break;
     }
   }
 
   function getThemeIcon() {
     switch (resolvedTheme) {
-      case "light":
-        return <Sun size="20" style={{ position: "relative", top: "2px" }} />;
+      case 'light':
+        return <Sun size="20" style={{ position: 'relative', top: '2px' }} />;
 
-      case "dark":
-        return <Moon size="20" style={{ position: "relative", top: "2px" }} />;
+      case 'dark':
+        return <Moon size="20" style={{ position: 'relative', top: '2px' }} />;
 
-      case "deep":
+      case 'deep':
         return (
           <MountainSnow
             size="20"
-            style={{ position: "relative", top: "2px" }}
+            style={{ position: 'relative', top: '2px' }}
           />
         );
 
-      case "cozy":
+      case 'cozy':
         return (
-          <Coffee size="20" style={{ position: "relative", top: "2px" }} />
+          <Coffee size="20" style={{ position: 'relative', top: '2px' }} />
         );
     }
   }
+
+  if (!isMounted) return null;
 
   return (
     <Tooltip
@@ -63,11 +67,11 @@ export function ThemeButton() {
         ghost
         onClick={() => changeTheme()}
         css={{
-          transition: "transform 200ms ease-in-out",
-          willChange: "transform",
-          "&:hover": {
-            transform: "rotate(12deg)",
-          },
+          transition: 'transform 200ms ease-in-out',
+          willChange: 'transform',
+          '&:hover': {
+            transform: 'rotate(12deg)'
+          }
         }}
       >
         {getThemeIcon()}

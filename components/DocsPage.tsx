@@ -1,32 +1,32 @@
-import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
 import {
   allDocsRoutes,
   docsRoutes,
   PageProps,
-  RouteProps,
-} from "../lib/docsRoutes";
+  RouteProps
+} from '../lib/docsRoutes';
 import {
   Container,
   Flex,
   Text,
   Sidebar,
   Badge,
-  Button,
-} from "../packages/design-system";
-import { Sidebar as SidebarIcon, ArrowLeft, ArrowRight } from "lucide-react";
-import { Footer } from "./Footer";
-import { NavLinkItem } from "./NavLinkItem";
-import { ScrollShadow } from "../packages/design-system/components/ScrollShadow";
+  Button
+} from '../packages/design-system';
+import { Sidebar as SidebarIcon, ArrowLeft, ArrowRight } from 'lucide-react';
+import { Footer } from './Footer';
+import { NavLinkItem } from './NavLinkItem';
+import { ScrollShadow } from '../packages/design-system/components/ScrollShadow';
 
 export const DocsPage = ({
-  children,
+  children
 }: React.ComponentProps<typeof Container>) => {
   const router = useRouter();
 
   const currentPageSlug =
-    typeof router.query.slug === "string" &&
-    router.pathname.substring(1).replace("[slug]", router.query.slug);
+    typeof router.query.slug === 'string' &&
+    router.pathname.substring(1).replace('[slug]', router.query.slug);
 
   const currentPageIndex = allDocsRoutes.findIndex(
     (page) => page.slug === currentPageSlug
@@ -38,34 +38,34 @@ export const DocsPage = ({
 
   useEffect(() => {
     const handleRouteChange = () => setIsSidebarOpen(false);
-    router.events.on("routeChangeStart", handleRouteChange);
+    router.events.on('routeChangeStart', handleRouteChange);
 
-    return () => router.events.off("routeChangeStart", handleRouteChange);
-  }, []);
+    return () => router.events.off('routeChangeStart', handleRouteChange);
+  }, [router.events]);
 
   return (
     <Container
       css={{
-        pt: "$4xl",
+        pt: '$4xl'
       }}
     >
       <Sidebar
         css={{
-          zIndex: "$2",
-          position: "fixed",
+          zIndex: '$2',
+          position: 'fixed',
           left: 0,
-          top: "$4xl",
+          top: '$4xl',
 
-          bg: "$bg200A",
-          backdropFilter: "blur(16px)",
-          width: "100%",
-          boxShadow: "inset 0 -1px 2px -1px $colors$button100",
+          bg: '$bg200A',
+          backdropFilter: 'blur(16px)',
+          width: '100%',
+          boxShadow: 'inset 0 -1px 2px -1px $colors$button100',
 
-          "@bp3": {
+          '@bp3': {
             width: 250,
             bottom: 0,
-            boxShadow: "inset -1px 0 2px -1px $colors$button100",
-          },
+            boxShadow: 'inset -1px 0 2px -1px $colors$button100'
+          }
         }}
         side="left"
         bp="@bp3"
@@ -73,14 +73,14 @@ export const DocsPage = ({
         onOpenChange={(open) => setIsSidebarOpen(open)}
         content={
           <ScrollShadow withScrollArea>
-            <Container css={{ px: "$lg" }}>
+            <Container css={{ px: '$lg' }}>
               {docsRoutes.map((routeSection: RouteProps) => (
-                <Container key={routeSection.label} css={{ py: "$lg" }}>
+                <Container key={routeSection.label} css={{ py: '$lg' }}>
                   <Text
                     css={{
-                      fontWeight: "$bold",
-                      mb: "$sm",
-                      color: "$text100",
+                      fontWeight: '$bold',
+                      mb: '$sm',
+                      color: '$text100'
                     }}
                   >
                     {routeSection.label}
@@ -88,9 +88,9 @@ export const DocsPage = ({
                   <Container
                     as="ul"
                     css={{
-                      listStyleType: "none",
+                      listStyleType: 'none',
                       p: 0,
-                      m: 0,
+                      m: 0
                     }}
                   >
                     {routeSection.pages.map((page: PageProps) => (
@@ -101,11 +101,11 @@ export const DocsPage = ({
                             size="sm"
                             disabled
                             css={{
-                              fontSize: "$xs",
-                              my: "$xs",
+                              fontSize: '$xs',
+                              my: '$xs'
                             }}
                           >
-                            {page.title}{" "}
+                            {page.title}{' '}
                             <Badge variant="primary">Coming...</Badge>
                           </Button>
                         ) : (
@@ -114,12 +114,12 @@ export const DocsPage = ({
                             size="sm"
                             href={`/${page.slug}`}
                             css={{
-                              fontSize: "$xs",
-                              "&.active": {
-                                bg: "$bg300",
-                                fontWeight: "$semibold",
+                              fontSize: '$xs',
+                              '&.active': {
+                                bg: '$bg300',
+                                fontWeight: '$semibold'
                               },
-                              my: "$xs",
+                              my: '$xs'
                             }}
                           >
                             {page.title}
@@ -137,18 +137,18 @@ export const DocsPage = ({
         mobileContent={
           <>
             {docsRoutes.map((routeSection: RouteProps) => (
-              <Container key={routeSection.label} css={{ py: "$lg" }}>
+              <Container key={routeSection.label} css={{ py: '$lg' }}>
                 <Text
-                  css={{ fontWeight: "$bold", mb: "$sm", color: "$text100" }}
+                  css={{ fontWeight: '$bold', mb: '$sm', color: '$text100' }}
                 >
                   {routeSection.label}
                 </Text>
                 <Container
                   as="ul"
                   css={{
-                    listStyleType: "none",
+                    listStyleType: 'none',
                     p: 0,
-                    m: 0,
+                    m: 0
                   }}
                 >
                   {routeSection.pages.map((page: PageProps) => (
@@ -159,11 +159,11 @@ export const DocsPage = ({
                           size="sm"
                           disabled
                           css={{
-                            fontSize: "$xs",
-                            my: "$xs",
+                            fontSize: '$xs',
+                            my: '$xs'
                           }}
                         >
-                          {page.title}{" "}
+                          {page.title}{' '}
                           <Badge variant="primary">Coming soon</Badge>
                         </Button>
                       ) : (
@@ -172,12 +172,12 @@ export const DocsPage = ({
                           size="sm"
                           href={`/${page.slug}`}
                           css={{
-                            fontSize: "$xs",
-                            "&.active": {
-                              bg: "$bg300",
-                              fontWeight: "$semibold",
+                            fontSize: '$xs',
+                            '&.active': {
+                              bg: '$bg300',
+                              fontWeight: '$semibold'
                             },
-                            my: "$xs",
+                            my: '$xs'
                           }}
                         >
                           {page.title}
@@ -193,11 +193,11 @@ export const DocsPage = ({
         icon={
           <Flex
             css={{
-              gap: "$xs",
-              ml: "$sm",
+              gap: '$xs',
+              ml: '$sm'
             }}
           >
-            <SidebarIcon style={{ verticalAlign: "middle" }} />
+            <SidebarIcon style={{ verticalAlign: 'middle' }} />
             Menu
           </Flex>
         }
@@ -206,12 +206,12 @@ export const DocsPage = ({
         css={{
           pl: 0,
           pr: 0,
-          "@bp3": {
-            pl: "250px",
+          '@bp3': {
+            pl: '250px'
           },
-          "@bp4": {
-            pr: "200px",
-          },
+          '@bp4': {
+            pr: '200px'
+          }
         }}
       >
         {children}
@@ -219,63 +219,63 @@ export const DocsPage = ({
         {(previous || next) && (
           <Flex
             css={{
-              maxWidth: "768px",
-              mx: "auto",
-              px: "$lg",
-              mt: "$4xl",
-              justifyContent: "space-between",
+              maxWidth: '768px',
+              mx: 'auto',
+              px: '$lg',
+              mt: '$4xl',
+              justifyContent: 'space-between'
             }}
           >
             {previous && (
               <NavLinkItem ghost href={`/${previous.slug}`}>
-                <Text css={{ fontWeight: "$semibold", color: "$text300" }}>
+                <Text css={{ fontWeight: '$semibold', color: '$text300' }}>
                   Previous
                 </Text>
                 <Container
                   as="span"
                   css={{
-                    display: "inline-block",
-                    transition: "transform 200ms ease-in-out",
-                    willChange: "transform",
-                    "a:hover &": {
-                      transform: "translateX(-2px)",
-                    },
+                    display: 'inline-block',
+                    transition: 'transform 200ms ease-in-out',
+                    willChange: 'transform',
+                    'a:hover &': {
+                      transform: 'translateX(-2px)'
+                    }
                   }}
                 >
                   <ArrowLeft
                     size="16"
-                    style={{ position: "relative", top: "2px" }}
+                    style={{ position: 'relative', top: '2px' }}
                   />
-                </Container>{" "}
+                </Container>{' '}
                 {previous.title}
               </NavLinkItem>
             )}
             {next && (
-              <NavLinkItem ghost href={`/${next.slug}`} css={{ ml: "auto" }}>
+              <NavLinkItem ghost href={`/${next.slug}`} css={{ ml: 'auto' }}>
                 <Text
                   css={{
-                    fontWeight: "$semibold",
-                    color: "$text300",
-                    textAlign: "right",
+                    fontWeight: '$semibold',
+                    color: '$text300',
+                    textAlign: 'right'
                   }}
                 >
                   Next
                 </Text>
-                {next.title}{" "}
+                {next.title}{' '}
                 <Container
                   as="span"
                   css={{
-                    display: "inline-block",
-                    transition: "transform 200ms ease-in-out",
-                    willChange: "transform",
-                    "a:hover &": {
-                      transform: "translateX(2px)",
-                    },
+                    display: 'inline-block',
+                    transition: 'transform 200ms ease-in-out',
+                    willChange: 'transform',
+                    'a:hover &': {
+                      transform: 'translateX(2px)'
+                    }
                   }}
                 >
                   <ArrowRight
                     size="16"
-                    style={{ position: "relative", top: "2px" }}
+                    style={{ position: 'relative', top: '2px' }}
                   />
                 </Container>
               </NavLinkItem>

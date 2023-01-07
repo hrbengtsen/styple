@@ -23,12 +23,10 @@ export const docsRoutes = [
       {
         title: "Collapsible",
         slug: "docs/components/collapsible",
-        draft: true,
       },
       {
         title: "CommandPalette",
         slug: "docs/components/commandpalette",
-        draft: true,
       },
       { title: "Container", slug: "docs/components/container" },
       { title: "Dialog", slug: "docs/components/dialog" },
@@ -67,7 +65,7 @@ export const docsRoutes = [
       { title: "TextField", slug: "docs/components/textfield" },
       { title: "Toggle", slug: "docs/components/toggle" },
       { title: "Tooltip", slug: "docs/components/tooltip" },
-      { title: "Toast", slug: "docs/components/toast", draft: true },
+      { title: "Toast", slug: "docs/components/toast" },
     ],
   },
 

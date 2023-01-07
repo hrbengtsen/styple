@@ -8,24 +8,24 @@ Object {
       <div
         class="c-cFaYiI"
         data-orientation="horizontal"
+        dir="ltr"
       >
         <div
           aria-orientation="horizontal"
           class="c-ihnDDS"
           data-orientation="horizontal"
-          dir="ltr"
           role="tablist"
           style="outline: none;"
           tabindex="0"
         >
           <button
-            aria-controls="radix-2-content-tab1"
+            aria-controls="radix-:r0:-content-tab1"
             aria-selected="true"
             class="c-iIbSyB"
             data-orientation="horizontal"
             data-radix-collection-item=""
             data-state="active"
-            id="radix-2-trigger-tab1"
+            id="radix-:r0:-trigger-tab1"
             role="tab"
             tabindex="-1"
             type="button"
@@ -33,13 +33,13 @@ Object {
             Account
           </button>
           <button
-            aria-controls="radix-2-content-tab2"
+            aria-controls="radix-:r0:-content-tab2"
             aria-selected="false"
             class="c-iIbSyB"
             data-orientation="horizontal"
             data-radix-collection-item=""
             data-state="inactive"
-            id="radix-2-trigger-tab2"
+            id="radix-:r0:-trigger-tab2"
             role="tab"
             tabindex="-1"
             type="button"
@@ -53,23 +53,24 @@ Object {
           role="separator"
         />
         <div
-          aria-labelledby="radix-2-trigger-tab1"
+          aria-labelledby="radix-:r0:-trigger-tab1"
           class="c-iCEDLM"
           data-orientation="horizontal"
           data-state="active"
-          id="radix-2-content-tab1"
+          id="radix-:r0:-content-tab1"
           role="tabpanel"
+          style="animation-duration: 0s;"
           tabindex="0"
         >
           Account tab content is here
         </div>
         <div
-          aria-labelledby="radix-2-trigger-tab2"
+          aria-labelledby="radix-:r0:-trigger-tab2"
           class="c-iCEDLM"
           data-orientation="horizontal"
           data-state="inactive"
           hidden=""
-          id="radix-2-content-tab2"
+          id="radix-:r0:-content-tab2"
           role="tabpanel"
           tabindex="0"
         />
@@ -80,24 +81,24 @@ Object {
     <div
       class="c-cFaYiI"
       data-orientation="horizontal"
+      dir="ltr"
     >
       <div
         aria-orientation="horizontal"
         class="c-ihnDDS"
         data-orientation="horizontal"
-        dir="ltr"
         role="tablist"
         style="outline: none;"
         tabindex="0"
       >
         <button
-          aria-controls="radix-2-content-tab1"
+          aria-controls="radix-:r0:-content-tab1"
           aria-selected="true"
           class="c-iIbSyB"
           data-orientation="horizontal"
           data-radix-collection-item=""
           data-state="active"
-          id="radix-2-trigger-tab1"
+          id="radix-:r0:-trigger-tab1"
           role="tab"
           tabindex="-1"
           type="button"
@@ -105,13 +106,13 @@ Object {
           Account
         </button>
         <button
-          aria-controls="radix-2-content-tab2"
+          aria-controls="radix-:r0:-content-tab2"
           aria-selected="false"
           class="c-iIbSyB"
           data-orientation="horizontal"
           data-radix-collection-item=""
           data-state="inactive"
-          id="radix-2-trigger-tab2"
+          id="radix-:r0:-trigger-tab2"
           role="tab"
           tabindex="-1"
           type="button"
@@ -125,23 +126,24 @@ Object {
         role="separator"
       />
       <div
-        aria-labelledby="radix-2-trigger-tab1"
+        aria-labelledby="radix-:r0:-trigger-tab1"
         class="c-iCEDLM"
         data-orientation="horizontal"
         data-state="active"
-        id="radix-2-content-tab1"
+        id="radix-:r0:-content-tab1"
         role="tabpanel"
+        style="animation-duration: 0s;"
         tabindex="0"
       >
         Account tab content is here
       </div>
       <div
-        aria-labelledby="radix-2-trigger-tab2"
+        aria-labelledby="radix-:r0:-trigger-tab2"
         class="c-iCEDLM"
         data-orientation="horizontal"
         data-state="inactive"
         hidden=""
-        id="radix-2-content-tab2"
+        id="radix-:r0:-content-tab2"
         role="tabpanel"
         tabindex="0"
       />
