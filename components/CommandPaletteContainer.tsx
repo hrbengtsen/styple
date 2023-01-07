@@ -1,7 +1,7 @@
 import {
   Button,
   CommandPalette,
-  DataObj,
+  DataItem,
   Flex
 } from '../packages/design-system';
 import { Search } from 'lucide-react';
@@ -10,7 +10,7 @@ import { NavLinkItem } from './NavLinkItem';
 
 const dummyCategories = ['Final docs pages'];
 
-const dummyData: DataObj[] = [
+const dummyData: DataItem[] = [
   {
     label: 'Do custom action',
     action: () => {
@@ -18,18 +18,22 @@ const dummyData: DataObj[] = [
     }
   },
   {
-    label: 'Introduction',
-    slug: '/docs/overview/introduction',
-    icon: <Search />
-  },
-  {
-    label: 'Getting started',
-    slug: '/docs/overview/getting-started'
-  },
-  {
-    label: 'Toast',
-    slug: '/docs/components/toast',
-    category: dummyCategories[0]
+    label: 'Docs pages',
+    subItems: [
+      {
+        label: 'Introduction',
+        slug: '/docs/overview/introduction',
+        icon: <Search />
+      },
+      {
+        label: 'Getting started',
+        slug: '/docs/overview/getting-started'
+      },
+      {
+        label: 'Toast',
+        slug: '/docs/components/toast'
+      }
+    ]
   }
 ];
 
@@ -37,7 +41,18 @@ const dummyData: DataObj[] = [
 export const CommandPaletteContainer = () => {
   const router = useRouter();
 
-  return <CommandPalette />;
+  return (
+    <CommandPalette
+      data={dummyData}
+      categories={dummyCategories}
+      trigger={<Button>Open CommandPalette</Button>}
+      router={router}
+      customLink={NavLinkItem}
+      preview={(selectedItemValue, data) => (
+        <Flex>test preview for {selectedItemValue}</Flex>
+      )}
+    />
+  );
 };
 
 /*
